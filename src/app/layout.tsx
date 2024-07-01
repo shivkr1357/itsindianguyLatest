@@ -3,6 +3,9 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Topbar from "@/components/Topbar/Topbar";
 import AppMainProvider from "@/context/ThemeContext";
+import { Suspense } from "react";
+import { CircularProgress } from "@mui/material";
+import Progress from "@/components/Progress/Progress";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,11 +22,13 @@ export default function RootLayout({
    return (
       <html lang='en'>
          <body className={inter.className}>
-            <AppMainProvider>
-               <Topbar />
+            <Suspense fallback={<Progress />}>
+               <AppMainProvider>
+                  <Topbar />
 
-               {children}
-            </AppMainProvider>
+                  {children}
+               </AppMainProvider>
+            </Suspense>
          </body>
       </html>
    );

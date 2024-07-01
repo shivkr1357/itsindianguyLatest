@@ -3,7 +3,7 @@ import { useThemeState } from "@/context/ThemeContext";
 import Head from "next/head";
 import React, { Fragment } from "react";
 
-const Blog = () => {
+const InterviewQA = () => {
    const { customTheme } = useThemeState();
    return (
       <Fragment>
@@ -26,10 +26,10 @@ const Blog = () => {
                padding: "20px",
             }}
          >
-            Blog
+            InterviewQA
          </main>
       </Fragment>
    );
 };
 
-export default Blog;
+export default InterviewQA;

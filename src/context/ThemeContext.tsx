@@ -2,21 +2,21 @@
 import { createContext, useContext, useState } from "react";
 
 export interface ThemeStateValues {
-   theme: string;
+   customTheme: string;
    toggleTheme: () => void;
 }
 
 const ThemeContext = createContext<ThemeStateValues | undefined>(undefined);
 
 const AppMainProvider = ({ children }: any) => {
-   const [theme, setTheme] = useState("dark");
+   const [customTheme, setCustomTheme] = useState("dark");
 
    const toggleTheme = () => {
-      setTheme((prevTheme) => (prevTheme === "dark" ? "light" : "dark"));
+      setCustomTheme((prevTheme) => (prevTheme === "dark" ? "light" : "dark"));
    };
 
    return (
-      <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      <ThemeContext.Provider value={{ customTheme, toggleTheme }}>
          {children}
       </ThemeContext.Provider>
    );

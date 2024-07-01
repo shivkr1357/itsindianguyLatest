@@ -5,7 +5,7 @@ import Head from "next/head";
 import React, { Fragment } from "react";
 
 const Meme = () => {
-   const { theme } = useThemeState();
+   const { customTheme } = useThemeState();
 
    return (
       <Fragment>
@@ -23,7 +23,7 @@ const Meme = () => {
          <main
             style={{
                marginTop: "60px",
-               backgroundColor: theme === "dark" ? "#222" : "#ddd",
+               backgroundColor: customTheme === "dark" ? "#222" : "#ddd",
             }}
          >
             <MemeComponent />

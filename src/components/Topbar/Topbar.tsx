@@ -13,6 +13,7 @@ import {
 import { useThemeState } from "@/context/ThemeContext";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
+import Link from "next/link";
 
 const CustomButton = styled("button")({
    color: "white",
@@ -27,13 +28,14 @@ const CustomButton = styled("button")({
 });
 
 const Topbar = () => {
-   const { theme, toggleTheme } = useThemeState();
+   const { customTheme, toggleTheme } = useThemeState();
 
    return (
       <AppBar
          position='fixed'
          sx={{
-            backgroundColor: theme === "dark" ? "rgb(28,27,34)" : "#f1f1f1",
+            backgroundColor:
+               customTheme === "dark" ? "rgb(28,27,34)" : "#f1f1f1",
          }}
       >
          <Container maxWidth='xl'>
@@ -47,18 +49,37 @@ const Topbar = () => {
                   }}
                >
                   <Stack direction={"row"} gap={2}>
-                     <Typography color={theme === "dark" ? "#fff" : "#000"}>
-                        ItsIndianGuy
-                     </Typography>
-                     <Typography color={theme === "dark" ? "#fff" : "#000"}>
-                        Memes
-                     </Typography>
-                     <Typography color={theme === "dark" ? "#fff" : "#000"}>
-                        Blog
-                     </Typography>
-                     <Typography color={theme === "dark" ? "#fff" : "#000"}>
-                        Interview QA
-                     </Typography>
+                     <Link href={"/"} style={{ textDecoration: "none" }}>
+                        <Typography
+                           color={customTheme === "dark" ? "#fff" : "#000"}
+                        >
+                           ItsIndianGuy
+                        </Typography>
+                     </Link>
+                     <Link href={"/memes"} style={{ textDecoration: "none" }}>
+                        <Typography
+                           color={customTheme === "dark" ? "#fff" : "#000"}
+                        >
+                           Memes
+                        </Typography>
+                     </Link>
+                     <Link href={"/blog"} style={{ textDecoration: "none" }}>
+                        <Typography
+                           color={customTheme === "dark" ? "#fff" : "#000"}
+                        >
+                           Blog
+                        </Typography>
+                     </Link>
+                     <Link
+                        href={"/interview-qa"}
+                        style={{ textDecoration: "none" }}
+                     >
+                        <Typography
+                           color={customTheme === "dark" ? "#fff" : "#000"}
+                        >
+                           Interview QA
+                        </Typography>
+                     </Link>
                   </Stack>
                   <Box
                      sx={{
@@ -70,12 +91,12 @@ const Topbar = () => {
                   >
                      <ToggleButton
                         value='check'
-                        selected={theme === "light"}
+                        selected={customTheme === "light"}
                         onChange={() => {
                            toggleTheme();
                         }}
                      >
-                        {theme === "light" ? (
+                        {customTheme === "light" ? (
                            <>
                               <DarkModeIcon sx={{ color: "#000" }} />
                            </>
