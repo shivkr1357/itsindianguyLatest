@@ -3,11 +3,11 @@ import { ImageListItem, ImageList, useMediaQuery } from "@mui/material";
 import React, { Fragment, useState } from "react";
 import ImageViewModal from "../ImageViewComponent/ImageViewModal";
 
-const ImageListItemComp = ({ itemData }) => {
+const ImageListItemComp = ({ itemData }: any) => {
    const [showModal, setShowModal] = useState(false);
    const [selectedImage, setSelectedImage] = useState("");
 
-   const handleImageClick = (imageUrl) => {
+   const handleImageClick = (imageUrl: any) => {
       setSelectedImage(imageUrl);
       setShowModal(true);
    };
@@ -49,7 +49,7 @@ const ImageListItemComp = ({ itemData }) => {
    return (
       <Fragment>
          <ImageList variant='quilted' cols={cols}>
-            {itemData.map((item, key) => (
+            {itemData.map((item: any, key: any) => (
                <ImageListItem key={key}>
                   <img
                      style={{
