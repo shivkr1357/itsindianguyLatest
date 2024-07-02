@@ -41,7 +41,7 @@ const DevCards = () => {
                   <CustomTypography>
                      <FontAwesomeIcon
                         icon={faGlobe}
-                        style={{ marginRight: "10px" }}
+                        style={{ marginRight: "8px" }}
                      />
                      Web Development
                   </CustomTypography>
@@ -52,7 +52,7 @@ const DevCards = () => {
                   <CustomTypography>
                      <FontAwesomeIcon
                         icon={faMobile}
-                        style={{ marginRight: "10px" }}
+                        style={{ marginRight: "8px" }}
                      />
                      Mobile Development
                   </CustomTypography>
@@ -63,7 +63,7 @@ const DevCards = () => {
                   <CustomTypography>
                      <FontAwesomeIcon
                         icon={faDesktop}
-                        style={{ marginRight: "10px" }}
+                        style={{ marginRight: "8px" }}
                      />
                      Machine Learning
                   </CustomTypography>
@@ -74,7 +74,7 @@ const DevCards = () => {
                   <CustomTypography>
                      <FontAwesomeIcon
                         icon={faQuestion}
-                        style={{ marginRight: "10px" }}
+                        style={{ marginRight: "8px" }}
                      />
                      Interview Preparation
                   </CustomTypography>
@@ -85,7 +85,7 @@ const DevCards = () => {
                   <CustomTypography>
                      <FontAwesomeIcon
                         icon={faFacebookF}
-                        style={{ marginRight: "10px" }}
+                        style={{ marginRight: "8px" }}
                      />
                      Facebook Follow
                   </CustomTypography>
@@ -96,9 +96,7 @@ const DevCards = () => {
                   <CustomTypography>
                      <FontAwesomeIcon
                         icon={faYoutube}
-                        style={{
-                           marginRight: "10px",
-                        }}
+                        style={{ marginRight: "8px" }}
                      />
                      Youtube Subscribe
                   </CustomTypography>
