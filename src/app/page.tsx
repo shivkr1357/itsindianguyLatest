@@ -1,4 +1,5 @@
 "use client";
+import InterviewCard from "@/components/InterviewCards/InterviewCard";
 import AboutCard from "@/components/LandingPage/AboutCard";
 import DevCards from "@/components/LandingPage/DevCards";
 import { useThemeState } from "@/context/ThemeContext";
@@ -13,6 +14,7 @@ export default function Home() {
             marginTop: "60px",
             backgroundColor: customTheme === "dark" ? "#222" : "#ddd",
             minHeight: "100vh",
+            height: "100%",
          }}
       >
          <section style={{ margin: 5, paddingTop: 2 }}>
@@ -21,8 +23,11 @@ export default function Home() {
             </Stack>
          </section>
 
-         <section className='row mt-3 pt-2 '>
+         <section style={{ margin: 5, paddingTop: 2 }}>
             <DevCards />
+         </section>
+         <section style={{ margin: 5, paddingTop: 2 }}>
+            <InterviewCard />
          </section>
       </main>
    );

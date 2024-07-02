@@ -48,39 +48,6 @@ const Topbar = () => {
                      width: "100%",
                   }}
                >
-                  <Stack direction={"row"} gap={2}>
-                     <Link href={"/"} style={{ textDecoration: "none" }}>
-                        <Typography
-                           color={customTheme === "dark" ? "#fff" : "#000"}
-                        >
-                           ItsIndianGuy
-                        </Typography>
-                     </Link>
-                     <Link href={"/memes"} style={{ textDecoration: "none" }}>
-                        <Typography
-                           color={customTheme === "dark" ? "#fff" : "#000"}
-                        >
-                           Memes
-                        </Typography>
-                     </Link>
-                     <Link href={"/blog"} style={{ textDecoration: "none" }}>
-                        <Typography
-                           color={customTheme === "dark" ? "#fff" : "#000"}
-                        >
-                           Blog
-                        </Typography>
-                     </Link>
-                     <Link
-                        href={"/interview-qa"}
-                        style={{ textDecoration: "none" }}
-                     >
-                        <Typography
-                           color={customTheme === "dark" ? "#fff" : "#000"}
-                        >
-                           Interview QA
-                        </Typography>
-                     </Link>
-                  </Stack>
                   <Box
                      sx={{
                         display: "flex",
@@ -107,6 +74,43 @@ const Topbar = () => {
                         )}
                      </ToggleButton>
                   </Box>
+                  <Stack direction={"row"} gap={2}>
+                     <Link href={"/memes"} style={{ textDecoration: "none" }}>
+                        <Typography
+                           color={customTheme === "dark" ? "#fff" : "#000"}
+                        >
+                           Memes
+                        </Typography>
+                     </Link>
+                     <Link
+                        href={"https://blog.itsindianguy.in"}
+                        target='blank'
+                        style={{ textDecoration: "none" }}
+                     >
+                        <Typography
+                           color={customTheme === "dark" ? "#fff" : "#000"}
+                        >
+                           Blog
+                        </Typography>
+                     </Link>
+                     <Link
+                        href={"/interview-qa"}
+                        style={{ textDecoration: "none" }}
+                     >
+                        <Typography
+                           color={customTheme === "dark" ? "#fff" : "#000"}
+                        >
+                           Interview QA
+                        </Typography>
+                     </Link>
+                     <Link href={"/"} style={{ textDecoration: "none" }}>
+                        <Typography
+                           color={customTheme === "dark" ? "#fff" : "#000"}
+                        >
+                           ItsIndianGuy
+                        </Typography>
+                     </Link>
+                  </Stack>
                </Box>
             </Toolbar>
          </Container>

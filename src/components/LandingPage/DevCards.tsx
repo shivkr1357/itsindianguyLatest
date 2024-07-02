@@ -35,7 +35,7 @@ const DevCards = () => {
 
    return (
       <Fragment>
-         <Grid container justifyContent='center' spacing={2}>
+         <Grid container justifyContent='center' spacing={1}>
             <Grid item xs={11} sm={5.5} md={2}>
                <CustomBox className={styles.DevCardsColumnsCard}>
                   <CustomTypography>
@@ -58,7 +58,7 @@ const DevCards = () => {
                   </CustomTypography>
                </CustomBox>
             </Grid>
-            <Grid item xs={11} sm={5.5} md={2}>
+            <Grid item xs={11} sm={5.5} md={1.8}>
                <CustomBox className={styles.DevCardsColumnsCard}>
                   <CustomTypography>
                      <FontAwesomeIcon
@@ -69,7 +69,7 @@ const DevCards = () => {
                   </CustomTypography>
                </CustomBox>
             </Grid>
-            <Grid item xs={11} sm={5.5} md={2}>
+            <Grid item xs={11} sm={5.5} md={2.2}>
                <CustomBox className={styles.DevCardsColumnsCard}>
                   <CustomTypography>
                      <FontAwesomeIcon
