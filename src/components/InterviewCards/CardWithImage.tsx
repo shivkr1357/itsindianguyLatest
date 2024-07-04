@@ -1,25 +1,18 @@
 import { useThemeState } from "@/context/ThemeContext";
-import {
-   Box,
-   Stack,
-   Typography,
-   styled,
-   useMediaQuery,
-   useTheme,
-} from "@mui/material";
+import { Box, Stack, Typography, styled } from "@mui/material";
 import Image from "next/image";
+import { usePathname, useRouter } from "next/navigation";
 import React from "react";
+import { imageLinksInterview } from "@/config/config";
 
 const CardWithImage = () => {
    const { customTheme } = useThemeState();
-   const theme = useTheme();
-   const isXs = useMediaQuery(theme.breakpoints.down("xs"));
-   const isSm = useMediaQuery(theme.breakpoints.down("sm"));
-   const isMdUp = useMediaQuery(theme.breakpoints.up("md"));
+   const router = useRouter();
+   const pathname = usePathname();
 
    const CustomBox = styled(Box)(({ theme }) => ({
-      width: "220px",
-      height: "300px",
+      width: pathname === "/" ? "250px" : "220px",
+      height: pathname === "/" ? "310" : "300px",
       boxShadow: theme.shadows[5],
       display: "flex",
       flexDirection: "column",
@@ -35,14 +28,9 @@ const CardWithImage = () => {
       color: customTheme === "dark" ? "#ddd" : "#333",
    }));
 
-   const images = [
-      { src: "/interview/javascript.png", label: "JavaScript" },
-      { src: "/interview/react.png", label: "React" },
-      { src: "/interview/next.png", label: "Next.js" },
-      { src: "/interview/node.png", label: "Node.js" },
-      { src: "/interview/nest.png", label: "NestJS" },
-      { src: "/interview/python.png", label: "Python" },
-   ];
+   const handleClick = (link: string) => {
+      router.push(link);
+   };
 
    return (
       <Stack
@@ -52,20 +40,27 @@ const CardWithImage = () => {
          flexWrap='wrap'
          justifyContent='center'
       >
-         {images.map((image, index) => (
-            <CustomBox key={index}>
-               <Image
-                  src={image.src}
-                  alt={image.label}
-                  width={200}
-                  height={200}
-                  objectFit='cover'
-               />
-               <CustomTypography variant='body1'>
-                  {image.label}
-               </CustomTypography>
-            </CustomBox>
-         ))}
+         {imageLinksInterview
+            .slice(0, pathname === "/" ? 5 : imageLinksInterview.length)
+            .map((image, index) => (
+               <CustomBox
+                  key={index}
+                  onClick={() => {
+                     handleClick(image?.link);
+                  }}
+               >
+                  <Image
+                     src={image.src}
+                     alt={image.label}
+                     width={200}
+                     height={200}
+                     objectFit='cover'
+                  />
+                  <CustomTypography variant='body1'>
+                     {image.label}
+                  </CustomTypography>
+               </CustomBox>
+            ))}
       </Stack>
    );
 };

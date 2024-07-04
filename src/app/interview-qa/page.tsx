@@ -1,4 +1,5 @@
 "use client";
+import InterviewCard from "@/components/InterviewCards/InterviewCard";
 import { useThemeState } from "@/context/ThemeContext";
 import Head from "next/head";
 import React, { Fragment } from "react";
@@ -8,7 +9,7 @@ const InterviewQA = () => {
    return (
       <Fragment>
          <Head>
-            <title>Memes | ItsIndianguy</title>
+            <title>InterviewQA | ItsIndianguy</title>
             <meta
                name='description'
                content='Top memes of the year, get this and share the memes '
@@ -26,7 +27,7 @@ const InterviewQA = () => {
                padding: "20px",
             }}
          >
-            InterviewQA
+            <InterviewCard />
          </main>
       </Fragment>
    );

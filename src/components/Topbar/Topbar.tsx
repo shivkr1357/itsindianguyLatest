@@ -75,11 +75,21 @@ const Topbar = () => {
                      </ToggleButton>
                   </Box>
                   <Stack direction={"row"} gap={2}>
-                     <Link href={"/memes"} style={{ textDecoration: "none" }}>
+                     <Link href={"/"} style={{ textDecoration: "none" }}>
                         <Typography
                            color={customTheme === "dark" ? "#fff" : "#000"}
                         >
-                           Memes
+                           ItsIndianGuy
+                        </Typography>
+                     </Link>
+                     <Link
+                        href={"/interview-qa"}
+                        style={{ textDecoration: "none" }}
+                     >
+                        <Typography
+                           color={customTheme === "dark" ? "#fff" : "#000"}
+                        >
+                           Interview QA
                         </Typography>
                      </Link>
                      <Link
@@ -93,21 +103,11 @@ const Topbar = () => {
                            Blog
                         </Typography>
                      </Link>
-                     <Link
-                        href={"/interview-qa"}
-                        style={{ textDecoration: "none" }}
-                     >
+                     <Link href={"/memes"} style={{ textDecoration: "none" }}>
                         <Typography
                            color={customTheme === "dark" ? "#fff" : "#000"}
                         >
-                           Interview QA
-                        </Typography>
-                     </Link>
-                     <Link href={"/"} style={{ textDecoration: "none" }}>
-                        <Typography
-                           color={customTheme === "dark" ? "#fff" : "#000"}
-                        >
-                           ItsIndianGuy
+                           Memes
                         </Typography>
                      </Link>
                   </Stack>
