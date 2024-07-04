@@ -1,34 +1,20 @@
-"use client";
 import InterviewCard from "@/components/InterviewCards/InterviewCard";
-import { useThemeState } from "@/context/ThemeContext";
-import Head from "next/head";
+import { Metadata } from "next";
 import React, { Fragment } from "react";
 
+export const metadata: Metadata = {
+   title: `InterviewQA |  ItsIndianGuy`,
+   description:
+      "Explore interview questions in various programming languages such as JavaScript, Python, C++ and more. Enhance your preparation with comprehensive language-specific content.",
+   alternates: {
+      canonical: "https://itsindianguy.in/interview-qa",
+   },
+};
+
 const InterviewQA = () => {
-   const { customTheme } = useThemeState();
    return (
       <Fragment>
-         <Head>
-            <title>InterviewQA | ItsIndianguy</title>
-            <meta
-               name='description'
-               content='Top memes of the year, get this and share the memes '
-            />
-            <meta
-               name='viewport'
-               content='width=device-width, initial-scale=1'
-            />
-         </Head>
-         <main
-            style={{
-               marginTop: "60px",
-               backgroundColor: customTheme === "dark" ? "#222" : "#ddd",
-               minHeight: "100vh",
-               padding: "20px",
-            }}
-         >
-            <InterviewCard />
-         </main>
+         <InterviewCard />
       </Fragment>
    );
 };

@@ -7,7 +7,14 @@ const InterviewCard = () => {
    const { customTheme } = useThemeState();
 
    return (
-      <main>
+      <main
+         style={{
+            marginTop: "60px",
+            backgroundColor: customTheme === "dark" ? "#222" : "#ddd",
+            minHeight: "100vh",
+            padding: "20px",
+         }}
+      >
          <CardWithImage />
       </main>
    );
