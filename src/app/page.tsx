@@ -81,6 +81,14 @@ export default function Home() {
                <AboutCard />
             </Stack>
          </section>
+         <section
+            className={`${styles.child} ${animations.fadeIn} ${
+               inViewInterview ? animations.fadeInVisible : ""
+            }`}
+            ref={refInterview}
+         >
+            <InterviewCard />
+         </section>
 
          <section
             className={`${styles.child} ${animations.fadeIn} ${
@@ -89,15 +97,6 @@ export default function Home() {
             ref={refDev}
          >
             <DevCards />
-         </section>
-
-         <section
-            className={`${styles.child} ${animations.fadeIn} ${
-               inViewInterview ? animations.fadeInVisible : ""
-            }`}
-            ref={refInterview}
-         >
-            <InterviewCard />
          </section>
       </main>
    );

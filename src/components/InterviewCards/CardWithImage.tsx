@@ -53,6 +53,7 @@ const CardWithImage = () => {
          height: pathname === "/" ? "250px" : "300px",
          boxShadow: theme.shadows[5],
          flexDirection: "column",
+
          marginTop: "20px",
       },
    }));
@@ -83,7 +84,12 @@ const CardWithImage = () => {
 
    return (
       <Fragment>
-         <Grid container justifyContent='center' spacing={2}>
+         <Grid
+            container
+            justifyContent='center'
+            alignContent={"center"}
+            spacing={2}
+         >
             {imageLinksInterview
                .slice(
                   0,

@@ -1,11 +1,22 @@
 "use client";
 import React from "react";
 import styles from "@/styles/Home.module.css";
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Stack, styled, Typography } from "@mui/material";
 import { useThemeState } from "@/context/ThemeContext";
+import { width } from "@fortawesome/free-brands-svg-icons/fa42Group";
 
 const AboutCard = () => {
    const { customTheme } = useThemeState();
+
+   const CustomStack = styled(Stack)(({ theme }) => ({
+      [theme.breakpoints.up("xs")]: {
+         width: "100%",
+         height: "100%",
+      },
+      [theme.breakpoints.up("sm")]: {},
+      [theme.breakpoints.up("md")]: {},
+   }));
+
    return (
       <Stack
          className={styles.aboutCard}
