@@ -2,7 +2,6 @@ import { ImageListItem, ImageList, useMediaQuery } from "@mui/material";
 
 import React, { Fragment, useState } from "react";
 import ImageViewModal from "../ImageViewComponent/ImageViewModal";
-import Image from "next/image";
 
 const ImageListItemComp = ({ itemData }: any) => {
    const [showModal, setShowModal] = useState(false);
@@ -52,10 +51,10 @@ const ImageListItemComp = ({ itemData }: any) => {
          <ImageList variant='quilted' cols={cols}>
             {itemData.map((item: any, key: any) => (
                <ImageListItem key={key}>
-                  <Image
-                     width={250}
-                     height={250}
+                  <img
                      style={{
+                        width: 250,
+                        height: 250,
                         margin: "20px",
                         marginBottom: "50px",
                         cursor: "pointer",
