@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
    AppBar,
    Box,
@@ -14,6 +14,7 @@ import { useThemeState } from "@/context/ThemeContext";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import Link from "next/link";
+import styles from "@/styles/Home.module.css";
 
 const CustomButton = styled("button")({
    color: "white",
@@ -29,13 +30,39 @@ const CustomButton = styled("button")({
 
 const Topbar = () => {
    const { customTheme, toggleTheme } = useThemeState();
+   const [showTopbar, setShowTopbar] = useState(true);
+   const [lastScrollY, setLastScrollY] = useState(0);
+
+   useEffect(() => {
+      const handleScroll = () => {
+         const currentScrollY = window.scrollY;
+         console.log("Current Scroll Y:", currentScrollY);
+         console.log("Last Scroll Y:", lastScrollY);
+
+         if (currentScrollY > lastScrollY) {
+            // Scrolling down
+            setShowTopbar(false);
+         } else {
+            // Scrolling up
+            setShowTopbar(true);
+         }
+         setLastScrollY(currentScrollY);
+      };
+
+      window.addEventListener("scroll", handleScroll);
+
+      return () => {
+         window.removeEventListener("scroll", handleScroll);
+      };
+   }, [lastScrollY]);
 
    return (
       <AppBar
          position='fixed'
-         sx={{
-            backgroundColor:
-               customTheme === "dark" ? "rgb(28,27,34)" : "#f1f1f1",
+         className={styles.topbarLinearGradient}
+         style={{
+            transform: showTopbar ? "translateY(0)" : "translateY(-100%)",
+            transition: "transform 0.3s ease-in-out",
          }}
       >
          <Container maxWidth='xl'>

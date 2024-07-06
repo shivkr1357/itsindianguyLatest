@@ -19,3 +19,20 @@
    background-color: #888; /* color of the scrollbar itself */
    border-radius: 5px; /* roundness of the scrollbar */
 }
+/* 
+html {
+   font-family: var(--font-inter);
+} */
+
+body {
+   background: linear-gradient(
+      90deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(121, 9, 43, 0.7147233893557423) 35%,
+      rgba(0, 212, 255, 1) 100%
+   );
+}
+
+h1 {
+   font-family: var(--font-roboto);
+}

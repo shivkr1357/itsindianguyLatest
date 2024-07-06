@@ -9,10 +9,9 @@ const InterviewCard = () => {
    return (
       <main
          style={{
-            marginTop: "60px",
-            backgroundColor: customTheme === "dark" ? "#222" : "#ddd",
+            marginTop: "100px",
             minHeight: "100vh",
-            padding: "20px",
+            // padding: "80px",
          }}
       >
          <CardWithImage />

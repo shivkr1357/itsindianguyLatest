@@ -1,33 +1,20 @@
-"use client";
 import MemeComponent from "@/components/MemeComponent/MemeComponent";
-import { useThemeState } from "@/context/ThemeContext";
-import Head from "next/head";
+import { Metadata } from "next";
 import React, { Fragment } from "react";
 
-const Meme = () => {
-   const { customTheme } = useThemeState();
+export const metadata: Metadata = {
+   title: ` ItsIndianGuy`,
+   description:
+      "Discover the funniest and most viral memes on ItsIndianGuy's dedicated meme page. Browse through a collection of the latest memes across various categories, perfect for sharing with friends and bringing a smile to your day. Stay updated with the trending humor and join the meme community at ItsIndianGuy.",
+   alternates: {
+      canonical: "https://itsindianguy.in",
+   },
+};
 
+const Meme = () => {
    return (
       <Fragment>
-         <Head>
-            <title>Memes | ItsIndianguy</title>
-            <meta
-               name='description'
-               content='Top memes of the year, get this and share the memes '
-            />
-            <meta
-               name='viewport'
-               content='width=device-width, initial-scale=1'
-            />
-         </Head>
-         <main
-            style={{
-               marginTop: "60px",
-               backgroundColor: customTheme === "dark" ? "#222" : "#ddd",
-            }}
-         >
-            <MemeComponent />
-         </main>
+         <MemeComponent />
       </Fragment>
    );
 };

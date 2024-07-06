@@ -1,17 +1,20 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Roboto } from "next/font/google";
 import "./globals.css";
 import Topbar from "@/components/Topbar/Topbar";
 import AppMainProvider from "@/context/ThemeContext";
 import { Suspense } from "react";
 import Progress from "@/components/Progress/Progress";
 
-const inter = Inter({ subsets: ["latin"] });
+const roboto = Roboto({
+   subsets: ["latin"],
+   weight: "400",
+});
 
 export const metadata: Metadata = {
-   title: ` ItsIndianGuy`,
+   title: `ItsIndianGuy: Your Go-To Resource for Web Development, Tech Guides, and Tutorials`,
    description:
-      "ItsIndianGuy provides tutorials, tech videos, and project-building guides, focusing on web development, mobile development, and machine learning. The site also offers resources for interview preparation and features a blog with various tech-related topics. Stay connected through social networks to enhance your learning and stay updated with the latest in tech.",
+      "ItsIndianGuy offers tutorials, tech videos, and project guides on web and mobile development, and machine learning. Enhance your skills with our comprehensive resources and stay updated with the latest in tech.",
    alternates: {
       canonical: "https://itsindianguy.in",
    },
@@ -24,7 +27,7 @@ export default function RootLayout({
 }>) {
    return (
       <html lang='en'>
-         <body className={inter.className}>
+         <body className={roboto.className}>
             <Suspense fallback={<Progress />}>
                <AppMainProvider>
                   <Topbar />

@@ -1,12 +1,15 @@
+"use client";
 import React, { useEffect, useState } from "react";
 import ImageList from "@/components/ImageList/ImageListItemComp";
 import { imgArray } from "@/config/imgArray";
+import { useThemeState } from "@/context/ThemeContext";
 
 const MemeComponent = () => {
    const [fileNames, setFileNames] = useState<string[]>([]); // Ensure fileNames is typed as string[]
    const [loading, setLoading] = useState<boolean>(false); // Typed loading state
    const [error, setError] = useState<Error | null>(null); // Typed error state
    const [page, setPage] = useState<number>(1); // Manage page state with useState
+   const { customTheme } = useThemeState();
 
    // Pagination function with typed data input
    const paginationFunction = (data: string[]): string[] => {
@@ -23,7 +26,6 @@ const MemeComponent = () => {
 
       try {
          const data = paginationFunction(imgArray.names); // Use paginationFunction to get data
-         console.log(page);
 
          setPage(page + 1); // Update page using setPage function
          setFileNames((prev) => [...prev, ...data]);
@@ -54,29 +56,36 @@ const MemeComponent = () => {
    }, [loading, page]);
 
    return (
-      <div
+      <main
          style={{
-            width: "100%",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            overflowX: "hidden",
+            marginTop: "60px",
+            backgroundColor: customTheme === "dark" ? "#222" : "#ddd",
          }}
       >
-         <ImageList itemData={fileNames} />
-
          <div
             style={{
+               width: "100%",
                display: "flex",
                justifyContent: "center",
                alignItems: "center",
-               // marginBottom: "20px",
+               overflowX: "hidden",
             }}
          >
-            {loading && <div>Loading...</div>}
-            {error && <p>Error: {error.message}</p>}
+            <ImageList itemData={fileNames} />
+
+            <div
+               style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  // marginBottom: "20px",
+               }}
+            >
+               {loading && <div>Loading...</div>}
+               {error && <p>Error: {error.message}</p>}
+            </div>
          </div>
-      </div>
+      </main>
    );
 };
 

@@ -44,3 +44,12 @@
    -moz-box-shadow: -2px 0px 33px 0px rgba(0, 0, 0, 0.75);
    box-shadow: -2px 0px 33px 0px rgba(0, 0, 0, 0.75);
 }
+
+.topbarLinearGradient {
+   background: linear-gradient(
+      90deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(121, 9, 43, 0.7147233893557423) 35%,
+      rgba(0, 212, 255, 1) 100%
+   );
+}

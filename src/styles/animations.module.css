@@ -1,0 +1,23 @@
+/* animations.module.css */
+.fadeIn {
+   opacity: 0;
+   transform: translateY(20px);
+   transition: opacity 0.9s ease-out, transform 0.8s ease-out;
+}
+
+.fadeInVisible {
+   opacity: 1;
+   transform: translateY(0);
+}
+
+/* animations.module.css */
+.fadeInDown {
+   opacity: 0;
+   transform: translateY(-50px);
+   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fadeInDownVisible {
+   opacity: 1;
+   transform: translateY(0);
+}
