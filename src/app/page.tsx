@@ -59,13 +59,14 @@ export default function Home() {
                   padding={"30px"}
                   sx={{ fontSize: { xs: "20px", sm: "30px", md: "50px" } }}
                >
-                  Your ultimate destination for tech insights, engaging blogs,
-                  hilarious memes, and in-depth tutorials. Whether you're here
-                  to stay updated on the latest tech trends, read
-                  thought-provoking articles, enjoy a good laugh, or learn
-                  something new, you've come to the right place. Join our
-                  community of enthusiasts and let's explore the dynamic world
-                  of technology together!
+                  Your ultimate destination for tech insights&#44; engaging
+                  blogs&#44; hilarious memes&#44; and in&#45;depth
+                  tutorials&#46; Whether you&apos;re here to stay updated on the
+                  latest tech trends&#44; read thought&#45;provoking
+                  articles&#44; enjoy a good laugh&#44; or learn something
+                  new&#44; you&apos;ve come to the right place&#46; Join our
+                  community of enthusiasts and let&apos;s explore the dynamic
+                  world of technology together&#33;
                </Typography>
             </Stack>
          </section>
