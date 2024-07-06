@@ -16,6 +16,10 @@ import { Typography, styled, Box, Grid } from "@mui/material";
 
 const DevCards = () => {
    const { customTheme } = useThemeState();
+   const { ref, inView } = useInView({
+      triggerOnce: true,
+      threshold: 0.1,
+   });
 
    const CustomTypography = styled(Typography)({
       color: customTheme === "dark" ? "#ddd" : "#222",
@@ -57,11 +61,6 @@ const DevCards = () => {
       <Fragment>
          <Grid container justifyContent='center' spacing={1}>
             {items.map((item, index) => {
-               const { ref, inView } = useInView({
-                  triggerOnce: true,
-                  threshold: 0.1,
-               });
-
                return (
                   <Grid
                      item
