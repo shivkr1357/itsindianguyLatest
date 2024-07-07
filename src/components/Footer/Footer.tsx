@@ -73,6 +73,22 @@ const Footer = () => {
                   >
                      Memes
                   </Link>
+                  <br />
+                  <Link
+                     href='/contact-us'
+                     sx={{ color: "#e0e0e0", "&:hover": { color: "#41a317" } }}
+                     underline='none'
+                  >
+                     Contact Us
+                  </Link>
+                  <br />
+                  <Link
+                     href='/about'
+                     sx={{ color: "#e0e0e0", "&:hover": { color: "#41a317" } }}
+                     underline='none'
+                  >
+                     About Us
+                  </Link>
                </Grid>
                <Grid item xs={12} sm={6} md={3}>
                   <Typography variant='h6' gutterBottom>

@@ -2,6 +2,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import YouTubeIcon from "@mui/icons-material/YouTube";
 import { FC } from "react";
 
 export interface SocialIcon {
@@ -73,5 +74,10 @@ export const socialIcons: SocialIcon[] = [
       color: "#0077B5",
       href: "https://www.linkedin.com/in/shiv-shankar-prasad-03b0a715b/",
       icon: LinkedInIcon,
+   },
+   {
+      color: "#FF0000",
+      href: "https://www.youtube.com/@shivshankarprasad3427",
+      icon: YouTubeIcon,
    },
 ];

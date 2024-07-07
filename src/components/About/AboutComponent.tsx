@@ -8,7 +8,6 @@ import {
    CardContent,
    Avatar,
 } from "@mui/material";
-import styles from "@/styles/About.module.css";
 
 const teamMembers = [
    {
@@ -16,7 +15,7 @@ const teamMembers = [
       role: "Founder & CEO",
       image: "/images/john.jpg",
       description:
-         "Shiv is a tech enthusiast with over 4 years of experience in software development.",
+         "Shiv is a tech enthusiast with over 4 years of experience in Software development and Mobile Development",
    },
    // {
    //    name: "Jane Smith",
@@ -39,18 +38,21 @@ const AboutComponent = () => {
       <Box
          component='main'
          sx={{
-            // backgroundColor: "#f4f4f4",
             my: 8,
             color: "#333",
             py: 8,
-            // minHeight: "100vh",
          }}
       >
          <Container maxWidth='lg'>
             <Typography variant='h4' gutterBottom textAlign='center'>
                About Us
             </Typography>
-            <Typography variant='body1' gutterBottom textAlign='center'>
+            <Typography
+               variant='body1'
+               gutterBottom
+               textAlign='center'
+               color='white'
+            >
                Welcome to ItsIndianGuy! We are a team of tech enthusiasts
                dedicated to providing the latest news, tutorials, and
                entertainment in the tech world.
@@ -80,7 +82,10 @@ const AboutComponent = () => {
                               </Typography>
                               <Typography
                                  variant='body2'
-                                 sx={{ mt: 2, textAlign: "center" }}
+                                 sx={{
+                                    mt: 2,
+                                    textAlign: "center",
+                                 }}
                               >
                                  {member.description}
                               </Typography>
