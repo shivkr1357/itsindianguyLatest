@@ -1,4 +1,5 @@
 "use client";
+import { Caveat } from "next/font/google";
 import { useInView } from "react-intersection-observer";
 import InterviewCard from "@/components/InterviewCards/InterviewCard";
 import AboutCard from "@/components/LandingPage/AboutCard";
@@ -7,6 +8,11 @@ import { useThemeState } from "@/context/ThemeContext";
 import { Stack, Typography } from "@mui/material";
 import styles from "@/styles/Main.module.css";
 import animations from "@/styles/animations.module.css";
+
+const caveat = Caveat({
+   subsets: ["latin"],
+   weight: "400",
+});
 
 export default function Home() {
    const { customTheme } = useThemeState();
@@ -32,7 +38,7 @@ export default function Home() {
       <main
          className={styles.container}
          style={{
-            marginTop: "60px",
+            marginTop: "100px",
          }}
       >
          <section
@@ -43,7 +49,7 @@ export default function Home() {
          >
             <Stack>
                <Typography
-                  variant='h2'
+                  variant='h3'
                   component={"h1"}
                   className={
                      customTheme === "dark"
@@ -57,7 +63,11 @@ export default function Home() {
                   variant='h4'
                   component={"h2"}
                   padding={"30px"}
-                  sx={{ fontSize: { xs: "20px", sm: "30px", md: "50px" } }}
+                  className={caveat.className}
+                  sx={{
+                     fontSize: { xs: "20px", sm: "30px", md: "50px" },
+                     fontWeight: 500,
+                  }}
                >
                   Your ultimate destination for tech insights&#44; engaging
                   blogs&#44; hilarious memes&#44; and in&#45;depth
@@ -96,6 +106,17 @@ export default function Home() {
             }`}
             ref={refDev}
          >
+            <Typography
+               variant='h4'
+               component='h6'
+               sx={{
+                  padding: "10px",
+                  paddingBottom: "20px",
+                  color: customTheme === "dark" ? "#ddd" : "#222",
+               }}
+            >
+               Latest Technologies
+            </Typography>
             <DevCards />
          </section>
       </main>

@@ -29,8 +29,6 @@ const CardWithImage = () => {
    const isSm = useMediaQuery(theme.breakpoints.only("sm"));
    const isMd = useMediaQuery(theme.breakpoints.only("md"));
 
-   console.log("isXS", isXs, isSm, isMd);
-
    const CustomBox = styled(Box)(({ theme }) => ({
       display: "flex",
       justifyContent: "center",
@@ -38,14 +36,14 @@ const CardWithImage = () => {
       borderRadius: "10px",
       cursor: "pointer",
       [theme.breakpoints.up("xs")]: {
-         width: pathname === "/" ? "100%" : "220px",
-         height: pathname === "/" ? "70px" : "300px",
+         width: pathname === "/" ? "100%" : "100%",
+         height: pathname === "/" ? "70px" : "350px",
          boxShadow: theme.shadows[5],
          flexDirection: "row",
       },
       [theme.breakpoints.up("sm")]: {
          width: pathname === "/" ? "100%" : "220px",
-         height: pathname === "/" ? "170px" : "300px",
+         height: pathname === "/" ? "170px" : "220px",
          flexDirection: "row",
       },
       [theme.breakpoints.up("md")]: {
@@ -53,7 +51,6 @@ const CardWithImage = () => {
          height: pathname === "/" ? "250px" : "300px",
          boxShadow: theme.shadows[5],
          flexDirection: "column",
-
          marginTop: "20px",
       },
    }));
@@ -74,7 +71,10 @@ const CardWithImage = () => {
       } else if (isSm) {
          return { width: 150, height: 150 };
       } else if (isXs) {
-         return { width: 100, height: 50 };
+         return {
+            width: pathname === "/" ? 50 : 250,
+            height: pathname === "/" ? 50 : 250,
+         };
       } else {
          return { width: 200, height: 200 };
       }
@@ -89,6 +89,7 @@ const CardWithImage = () => {
             justifyContent='center'
             alignContent={"center"}
             spacing={2}
+            mb={8}
          >
             {imageLinksInterview
                .slice(
@@ -106,15 +107,17 @@ const CardWithImage = () => {
                      <Grid
                         item
                         xs={12}
-                        sm={6}
+                        sm={5.5}
                         md={3}
                         justifyContent='center'
+                        alignItems={"center"}
                         key={index}
                         ref={ref}
+                        spacing={2}
                         className={`${animations.fadeInDown} ${
                            inView ? animations.fadeInDownVisible : ""
                         }`}
-                        style={{ transitionDelay: `${index * 100}ms` }}
+                        style={{ transitionDelay: `${index * 50}ms` }}
                      >
                         <CustomBox
                            onClick={() => {
@@ -126,7 +129,7 @@ const CardWithImage = () => {
                               alt={image.label}
                               width={imageSize.width}
                               height={imageSize.height}
-                              objectFit='contain'
+                              objectFit='cover'
                            />
                         </CustomBox>
                      </Grid>

@@ -10,13 +10,24 @@ const InterviewCard = () => {
    return (
       <main
          style={{
-            marginTop: "40px",
-            minHeight: "100vh",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexDirection: "column",
+            marginTop: "80px",
          }}
       >
-         {/* <Typography variant='h2' component={"h2"}>
-            Top Interview Subjects
-         </Typography> */}
+         <Typography
+            variant='h4'
+            component='h5'
+            sx={{
+               padding: "10px",
+               paddingBottom: "20px",
+               color: customTheme === "dark" ? "#ddd" : "#222",
+            }}
+         >
+            Interview Topics
+         </Typography>
          <CardWithImage />
       </main>
    );

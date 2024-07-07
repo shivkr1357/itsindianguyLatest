@@ -12,7 +12,7 @@ import {
    faDesktop,
 } from "@fortawesome/free-solid-svg-icons";
 import { faFacebookF, faYoutube } from "@fortawesome/free-brands-svg-icons";
-import { Typography, styled, Box, Grid } from "@mui/material";
+import { Typography, styled, Box, Grid, Stack } from "@mui/material";
 
 const DevCards = () => {
    const { customTheme } = useThemeState();
@@ -58,14 +58,14 @@ const DevCards = () => {
    ];
 
    return (
-      <Fragment>
-         <Grid container justifyContent='center' spacing={1}>
+      <>
+         <Grid container justifyContent='center' spacing={1} py={8}>
             {items.map((item, index) => {
                return (
                   <Grid
                      item
-                     xs={11}
-                     sm={5.5}
+                     xs={12}
+                     sm={6}
                      md={2}
                      key={index}
                      ref={ref}
@@ -87,7 +87,7 @@ const DevCards = () => {
                );
             })}
          </Grid>
-      </Fragment>
+      </>
    );
 };
 

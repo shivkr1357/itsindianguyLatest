@@ -53,3 +53,27 @@
       rgba(0, 212, 255, 1) 100%
    );
 }
+
+.linkContainer {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 2%;
+}
+
+.customLink {
+   text-decoration: none;
+   padding: 10px;
+}
+
+.closeIconButton {
+   padding: 20px;
+   padding-top: 10%;
+   border-radius: none;
+   text-decoration: none;
+   background-color: aliceblue;
+   color: brown;
+}
+.closeIcon {
+   font-size: 30px;
+}

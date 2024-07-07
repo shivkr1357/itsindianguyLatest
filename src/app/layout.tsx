@@ -5,6 +5,7 @@ import Topbar from "@/components/Topbar/Topbar";
 import AppMainProvider from "@/context/ThemeContext";
 import { Suspense } from "react";
 import Progress from "@/components/Progress/Progress";
+import Footer from "@/components/Footer/Footer";
 
 const roboto = Roboto({
    subsets: ["latin"],
@@ -33,6 +34,7 @@ export default function RootLayout({
                   <Topbar />
 
                   {children}
+                  <Footer />
                </AppMainProvider>
             </Suspense>
          </body>

@@ -9,7 +9,17 @@ import {
    Typography,
    ToggleButton,
    Stack,
+   IconButton,
+   Drawer,
+   List,
+   ListItem,
+   ListItemText,
+   useMediaQuery,
+   useTheme,
+   Button,
 } from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 import { useThemeState } from "@/context/ThemeContext";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
@@ -32,12 +42,13 @@ const Topbar = () => {
    const { customTheme, toggleTheme } = useThemeState();
    const [showTopbar, setShowTopbar] = useState(true);
    const [lastScrollY, setLastScrollY] = useState(0);
+   const [drawerOpen, setDrawerOpen] = useState(false);
+   const theme = useTheme();
+   const isXs = useMediaQuery(theme.breakpoints.only("xs"));
 
    useEffect(() => {
       const handleScroll = () => {
          const currentScrollY = window.scrollY;
-         console.log("Current Scroll Y:", currentScrollY);
-         console.log("Last Scroll Y:", lastScrollY);
 
          if (currentScrollY > lastScrollY) {
             // Scrolling down
@@ -56,25 +67,106 @@ const Topbar = () => {
       };
    }, [lastScrollY]);
 
-   return (
-      <AppBar
-         position='fixed'
-         className={styles.topbarLinearGradient}
-         style={{
-            transform: showTopbar ? "translateY(0)" : "translateY(-100%)",
-            transition: "transform 0.3s ease-in-out",
-         }}
+   const handleDrawerToggle = () => {
+      setDrawerOpen(!drawerOpen);
+   };
+
+   const getDrawerBackground = () => {
+      return customTheme === "dark" ? "#333" : "#fff";
+   };
+
+   const menuItems = (
+      <Stack
+         className={styles.linkContainer}
+         gap={3}
+         flexDirection={{ sm: "row", md: "row" }}
       >
-         <Container maxWidth='xl'>
-            <Toolbar disableGutters sx={{ justifyContent: "flex-end" }}>
-               <Box
-                  sx={{
-                     display: "flex",
-                     justifyContent: "space-between",
-                     alignItems: "center",
-                     width: "100%",
+         <Link href={"/"} className={styles.customLink}>
+            <Typography color={customTheme === "dark" ? "#fff" : "#000"}>
+               ItsIndianGuy
+            </Typography>
+         </Link>
+         <Link href={"/interview-qa"} className={styles.customLink}>
+            <Typography color={customTheme === "dark" ? "#fff" : "#000"}>
+               InterviewQA
+            </Typography>
+         </Link>
+         <Link
+            href={"https://blog.itsindianguy.in"}
+            target='blank'
+            className={styles.customLink}
+         >
+            <Typography color={customTheme === "dark" ? "#fff" : "#000"}>
+               Blog
+            </Typography>
+         </Link>
+         <Link
+            href={"https://portfolio.itsindianguy.in"}
+            target='blank'
+            className={styles.customLink}
+         >
+            <Typography color={customTheme === "dark" ? "#fff" : "#000"}>
+               Portfolio
+            </Typography>
+         </Link>
+         <Link href={"/memes"} className={styles.customLink}>
+            <Typography color={customTheme === "dark" ? "#fff" : "#000"}>
+               Memes
+            </Typography>
+         </Link>
+         <Link href={"/about"} className={styles.customLink}>
+            <Typography color={customTheme === "dark" ? "#fff" : "#000"}>
+               AboutUs
+            </Typography>
+         </Link>
+         <Link href={"/contact-us"} className={styles.customLink}>
+            <Typography color={customTheme === "dark" ? "#fff" : "#000"}>
+               ContactUs
+            </Typography>
+         </Link>
+         {isXs && (
+            <Box
+               sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+               }}
+               gap={2}
+            >
+               <ToggleButton
+                  value='check'
+                  selected={customTheme === "light"}
+                  onChange={() => {
+                     toggleTheme();
                   }}
                >
+                  {customTheme === "light" ? (
+                     <>
+                        <DarkModeIcon sx={{ color: "#000" }} />
+                     </>
+                  ) : (
+                     <>
+                        <WbSunnyIcon sx={{ color: "white" }} />
+                     </>
+                  )}
+               </ToggleButton>
+            </Box>
+         )}
+      </Stack>
+   );
+
+   return (
+      <>
+         <AppBar
+            position='fixed'
+            className={styles.topbarLinearGradient}
+            style={{
+               transform: showTopbar ? "translateY(0)" : "translateY(-100%)",
+               transition: "transform 0.3s ease-in-out",
+            }}
+         >
+            <Container maxWidth='xl'>
+               <Toolbar disableGutters sx={{ justifyContent: "space-between" }}>
                   <Box
                      sx={{
                         display: "flex",
@@ -101,47 +193,51 @@ const Topbar = () => {
                         )}
                      </ToggleButton>
                   </Box>
-                  <Stack direction={"row"} gap={2}>
-                     <Link href={"/"} style={{ textDecoration: "none" }}>
-                        <Typography
-                           color={customTheme === "dark" ? "#fff" : "#000"}
+                  {isXs ? (
+                     <>
+                        <IconButton
+                           edge='start'
+                           color='inherit'
+                           aria-label='menu'
+                           onClick={handleDrawerToggle}
                         >
-                           ItsIndianGuy
-                        </Typography>
-                     </Link>
-                     <Link
-                        href={"/interview-qa"}
-                        style={{ textDecoration: "none" }}
-                     >
-                        <Typography
-                           color={customTheme === "dark" ? "#fff" : "#000"}
+                           <MenuIcon />
+                        </IconButton>
+                        <Drawer
+                           anchor='right'
+                           open={drawerOpen}
+                           onClose={handleDrawerToggle}
+                           PaperProps={{
+                              sx: {
+                                 backgroundColor: getDrawerBackground(),
+                                 width: "80%",
+                              },
+                           }}
                         >
-                           Interview QA
-                        </Typography>
-                     </Link>
-                     <Link
-                        href={"https://blog.itsindianguy.in"}
-                        target='blank'
-                        style={{ textDecoration: "none" }}
-                     >
-                        <Typography
-                           color={customTheme === "dark" ? "#fff" : "#000"}
-                        >
-                           Blog
-                        </Typography>
-                     </Link>
-                     <Link href={"/memes"} style={{ textDecoration: "none" }}>
-                        <Typography
-                           color={customTheme === "dark" ? "#fff" : "#000"}
-                        >
-                           Memes
-                        </Typography>
-                     </Link>
-                  </Stack>
-               </Box>
-            </Toolbar>
-         </Container>
-      </AppBar>
+                           <Button
+                              className={styles.closeIconButton}
+                              onClick={handleDrawerToggle}
+                           >
+                              <CloseIcon className={styles.closeIcon} />
+                           </Button>
+                           <List>
+                              {React.Children.map(menuItems, (child, index) => (
+                                 <ListItem key={index}>
+                                    <ListItemText primary={child} />
+                                 </ListItem>
+                              ))}
+                           </List>
+                        </Drawer>
+                     </>
+                  ) : (
+                     <Stack direction={"row"} gap={2}>
+                        {menuItems}
+                     </Stack>
+                  )}
+               </Toolbar>
+            </Container>
+         </AppBar>
+      </>
    );
 };
 
