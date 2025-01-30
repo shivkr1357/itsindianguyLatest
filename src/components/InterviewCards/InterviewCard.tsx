@@ -8,42 +8,42 @@ const imageLinksInterview = [
   {
     label: "JavaScript",
     src: "https://cdn-icons-png.flaticon.com/512/5968/5968292.png",
-    link: "/javascript-interview",
+    link: "/interview-qa/javascript",
   },
   {
     label: "React",
     src: "https://cdn-icons-png.flaticon.com/512/1183/1183672.png",
-    link: "/react-interview",
+    link: "/interview-qa/react",
   },
   {
     label: "Node.js",
     src: "https://cdn-icons-png.flaticon.com/512/5968/5968322.png",
-    link: "/node-interview",
+    link: "/interview-qa/node",
   },
   {
     label: "System Design",
     src: "https://cdn-icons-png.flaticon.com/512/2059/2059309.png",
-    link: "/system-design",
+    link: "/interview-qa/cpp",
   },
   {
     label: "Python",
     src: "https://cdn-icons-png.flaticon.com/512/5968/5968350.png",
-    link: "/python-interview",
+    link: "/interview-qa/python",
   },
   {
     label: "Data Structures",
     src: "https://cdn-icons-png.flaticon.com/512/2942/2942789.png",
-    link: "/dsa-interview",
+    link: "/interview-qa/dsa-interview",
   },
   {
     label: "Database",
     src: "https://cdn-icons-png.flaticon.com/512/4248/4248443.png",
-    link: "/database-interview",
+    link: "/interview-qa/database-interview",
   },
   {
     label: "Machine Learning",
     src: "https://cdn-icons-png.flaticon.com/512/2103/2103832.png",
-    link: "/ml-interview",
+    link: "/interview-qa/ml-interview",
   }
 ];
 
