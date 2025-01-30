@@ -1,14 +1,16 @@
-import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import YouTubeIcon from "@mui/icons-material/YouTube";
-import { FC } from "react";
+import { 
+  faFacebook, 
+  faTwitter, 
+  faInstagram, 
+  faLinkedin, 
+  faYoutube 
+} from '@fortawesome/free-brands-svg-icons';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
 export interface SocialIcon {
    color: string;
    href: string;
-   icon: FC; // Function component type
+   icon: IconDefinition;
 }
 
 export const imageLinksInterview = [
@@ -58,26 +60,26 @@ export const socialIcons: SocialIcon[] = [
    {
       color: "#1877F2",
       href: "https://facebook.com/itsindianguy",
-      icon: FacebookIcon,
+      icon: faFacebook,
    },
    {
       color: "#1DA1F2",
       href: "https://twitter.com/itsindianguy",
-      icon: TwitterIcon,
+      icon: faTwitter,
    },
    {
       color: "rgb(88,81,216)",
       href: "https://instagram.com/itsindianguy",
-      icon: InstagramIcon,
+      icon: faInstagram,
    },
    {
       color: "#0077B5",
       href: "https://www.linkedin.com/in/shiv-shankar-prasad-03b0a715b/",
-      icon: LinkedInIcon,
+      icon: faLinkedin,
    },
    {
       color: "#FF0000",
       href: "https://www.youtube.com/@shivshankarprasad3427",
-      icon: YouTubeIcon,
+      icon: faYoutube,
    },
 ];

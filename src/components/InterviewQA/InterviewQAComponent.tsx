@@ -3,18 +3,12 @@ import { usePathname } from "next/navigation";
 import React, { Fragment, useEffect, useState } from "react";
 import { interviewQA } from "@/config/InterviewQA";
 import Head from "next/head";
-import { useThemeState } from "@/context/ThemeContext";
-import { Typography } from "@mui/material";
-import { Stack } from "@mui/system";
 
 const InterviewQAComponent = () => {
    const pathname = usePathname();
    const [qa, setQa] = useState<any[]>([]);
    const [canonical, setCanonical] = useState<string>("");
    const language = pathname.split("/")[2];
-   const { customTheme } = useThemeState();
-
-   const canonicalUrl = `https://itsindianguy.in/${pathname}`;
 
    useEffect(() => {
       setCanonical(`https://itsindianguy.in/${pathname}`);
@@ -27,7 +21,7 @@ const InterviewQAComponent = () => {
             <title>InterviewQA | ItsIndianguy</title>
             <meta
                name='description'
-               content='Top memes of the year, get this and share the memes '
+               content='Top interview questions and answers for developers'
             />
             <meta
                name='viewport'
@@ -35,44 +29,26 @@ const InterviewQAComponent = () => {
             />
             <link rel='canonical' href={canonical} />
          </Head>
-         <main
-            style={{
-               marginTop: "60px",
-               backgroundColor: customTheme === "dark" ? "#222" : "#ddd",
-               minHeight: "100vh",
-               padding: "20px",
-            }}
-         >
+         <main className="mt-16 min-h-screen bg-neutral-50 dark:bg-neutral-900 p-5">
             {qa.map((item) => (
-               <div key={item.id}>
-                  <Typography
-                     color={customTheme === "dark" ? "#ddd" : "#222"}
-                     variant='h4'
-                     component='h1'
-                  >
+               <div key={item.id} className="max-w-4xl mx-auto">
+                  <h1 className="text-3xl font-bold text-neutral-800 dark:text-neutral-100 mb-8">
                      {item.slug.toUpperCase() + " Interview Questions"}
-                  </Typography>
-                  <Stack p={4}>
-                     {item.data.map((subItem: any, index: any) => (
-                        <Stack gap={2} key={index}>
-                           <Typography
-                              color={customTheme === "dark" ? "#ddd" : "#222"}
-                              variant='h5'
-                              component={"h2"}
-                           >
-                              <small>{index + 1 + ": "}</small> {subItem.que}
-                           </Typography>
-                           <Typography
-                              color={customTheme === "dark" ? "#ddd" : "#222"}
-                              variant='body1'
-                              component='h3'
-                              marginBottom={"50px"}
-                           >
-                              <small>{"Ans" + ": "}</small> {subItem.ans}
-                           </Typography>
-                        </Stack>
+                  </h1>
+                  <div className="space-y-8">
+                     {item.data.map((subItem: any, index: number) => (
+                        <div key={index} className="space-y-4">
+                           <h2 className="text-xl font-semibold text-neutral-800 dark:text-neutral-100">
+                              <span className="text-primary-200">{index + 1 + ": "}</span>
+                              {subItem.que}
+                           </h2>
+                           <p className="text-neutral-600 dark:text-neutral-300 leading-relaxed">
+                              <span className="font-semibold text-primary-200">{"Ans: "}</span>
+                              {subItem.ans}
+                           </p>
+                        </div>
                      ))}
-                  </Stack>
+                  </div>
                </div>
             ))}
          </main>

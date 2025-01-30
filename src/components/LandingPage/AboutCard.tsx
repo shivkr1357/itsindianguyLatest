@@ -1,59 +1,48 @@
 "use client";
 
 import React from "react";
-import styles from "@/styles/Home.module.css";
-import { Box, Stack, styled, Typography } from "@mui/material";
-import { useThemeState } from "@/context/ThemeContext";
-import { Caveat } from "next/font/google";
-
-const caveat = Caveat({
-   subsets: ["latin"],
-   weight: "400",
-});
+import Link from "next/link";
+import Image from "next/image";
 
 const AboutCard = () => {
-   const { customTheme } = useThemeState();
-
-   const CustomStack = styled(Stack)(({ theme }) => ({
-      [theme.breakpoints.up("xs")]: {
-         width: "100%",
-         height: "100%",
-      },
-      [theme.breakpoints.up("sm")]: {},
-      [theme.breakpoints.up("md")]: {},
-   }));
-
    return (
-      <Stack
-         className={styles.aboutCard}
-         sx={{
-            backgroundColor: customTheme === "dark" ? "#222" : "#ddd",
-            color: customTheme === "dark" ? "#ddd" : "#222",
-         }}
-      >
-         <Stack justifyContent={"center"} alignItems={"center"}>
-            <Typography
-               variant='body1'
-               component={"h3"}
-               sx={{ fontWeight: "bold", fontSize: "30px" }}
-            >
-               A Little About Us
-            </Typography>
-            <Typography
-               className={caveat.className}
-               variant='body1'
-               sx={{ fontSize: "25px" }}
-               component={"h4"}
-            >
-               Hey&#44; Welcome to our website - We make videos about tech&#44;
-               tutorials&#44; some interesting attempts of building new
-               Projects. Make sure you&apos;re following us on all of the social
-               networks so we can stay in touch. We gained some expertise in Web
-               development and Mobile Development. Thanks for visiting our
-               website
-            </Typography>
-         </Stack>
-      </Stack>
+      <div className="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto px-4">
+         <div className="relative w-full max-w-[300px] mx-auto md:max-w-none aspect-square rounded-lg overflow-hidden">
+            <Image
+               src="/profile/profile.jpg"
+               alt="Profile"
+               fill
+               sizes="(max-width: 768px) 300px, 400px"
+               className="object-cover object-center hover:scale-105 transition-transform duration-300"
+               priority
+               objectFit="contain"
+            />
+         </div>
+         <div className="space-y-4">
+            <h2 className="text-2xl font-bold text-neutral-800 dark:text-neutral-100">
+               About Me
+            </h2>
+            <p className="text-base text-neutral-600 dark:text-neutral-300">
+               Hi&lsquo; I&apos;m Shiv Shankar Prasad&lsquo; a passionate software developer with expertise 
+               in web and mobile development. I love creating content that helps developers 
+               learn and grow in their careers.
+            </p>
+            <div className="flex flex-wrap gap-3">
+               <Link
+                  href="/about"
+                  className="inline-flex items-center px-4 py-2 bg-primary-200 text-white rounded-lg hover:bg-primary-300 transition-colors"
+               >
+                  Learn More
+               </Link>
+               <Link
+                  href="/contact"
+                  className="inline-flex items-center px-4 py-2 border border-primary-200 text-primary-200 rounded-lg hover:bg-primary-200/10 transition-colors"
+               >
+                  Get in Touch
+               </Link>
+            </div>
+         </div>
+      </div>
    );
 };
 

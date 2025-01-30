@@ -6,10 +6,17 @@ export interface ThemeStateValues {
    toggleTheme: () => void;
 }
 
-const ThemeContext = createContext<ThemeStateValues | undefined>(undefined);
+export const ThemeContext = createContext<ThemeStateValues | undefined>(undefined);
 
-const AppMainProvider = ({ children }: any) => {
-   const [customTheme, setCustomTheme] = useState("dark");
+interface ThemeProviderProps {
+  children: React.ReactNode;
+}
+
+/**
+ * Provider component that wraps your app and makes theme available to all child components
+ */
+const ThemeProvider = ({ children }: ThemeProviderProps) => {
+   const [customTheme, setCustomTheme] = useState("light");
 
    const toggleTheme = () => {
       setCustomTheme((prevTheme) => (prevTheme === "dark" ? "light" : "dark"));
@@ -22,7 +29,7 @@ const AppMainProvider = ({ children }: any) => {
    );
 };
 
-export default AppMainProvider;
+export default ThemeProvider;
 
 export const useThemeState = (): ThemeStateValues => {
    const context = useContext(ThemeContext);

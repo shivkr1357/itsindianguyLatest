@@ -2,59 +2,35 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import Topbar from "@/components/Topbar/Topbar";
-import AppMainProvider from "@/context/ThemeContext";
-import { Suspense } from "react";
-import Progress from "@/components/Progress/Progress";
 import Footer from "@/components/Footer/Footer";
+import ThemeProvider from '@/context/ThemeContext'
 
 const roboto = Roboto({
-  subsets: ["latin"],
-  weight: "400",
+  weight: ['400', '500', '700'],
+  subsets: ['latin'],
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
-  title: `ItsIndianGuy | Your Ultimate Resource for Tech Guides and Tutorials`,
-  description:
-    "Explore tech guides, tutorials, and updates in web and mobile development at ItsIndianGuy. Learn from our comprehensive resources and stay updated with the latest in tech.",
-  alternates: {
-    canonical: "https://itsindianguy.in",
-  },
-  openGraph: {
-    title:
-      "ItsIndianGuy | Your Ultimate Resource for Tech Guides and Tutorials",
-    description:
-      "Explore tech guides, tutorials, and updates in web and mobile development at ItsIndianGuy. Learn from our comprehensive resources and stay updated with the latest in tech.",
-    url: "https://itsindianguy.in",
-    siteName: "ItsIndianGuy",
-    type: "website",
-    locale: "en_US",
-    images: [
-      {
-        url: "https://itsindianguy.in/profile/profile.jpg",
-        width: 1200,
-        height: 630,
-        alt: "ItsIndianGuy",
-      },
-    ],
-  },
+  title: "ItsIndianGuy",
+  description: "Your one-stop destination for programming tutorials and interview preparation",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body className={roboto.className}>
-        <Suspense fallback={<Progress />}>
-          <AppMainProvider>
-            <Topbar />
-
+      <body className={`${roboto.className} min-h-screen flex flex-col bg-neutral-50 dark:bg-neutral-900`}>
+        <ThemeProvider>
+          <Topbar />
+          <main className="flex-grow pt-16">
             {children}
-            <Footer />
-          </AppMainProvider>
-        </Suspense>
+          </main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

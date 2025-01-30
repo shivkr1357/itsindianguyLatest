@@ -1,7 +1,65 @@
-* {
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-50: #fff1f1;
+  --primary-100: #ffdfdf;
+  --primary-200: #ff4d4d;
+  --primary-300: #ff3333;
+  --primary-400: #ff1a1a;
+  --primary-500: #ff0000;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Base styles */
+body {
+  @apply bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-50;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-neutral-100 dark:bg-neutral-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-neutral-300 dark:bg-neutral-700 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-neutral-400 dark:bg-neutral-600;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  @apply font-bold tracking-tight;
+}
+
+/* Focus styles */
+:focus-visible {
+  @apply outline-none ring-2 ring-primary-200 ring-offset-2 ring-offset-white dark:ring-offset-neutral-900;
+}
+
+/* Button hover effect */
+.btn-hover {
+  @apply relative overflow-hidden;
+}
+
+.btn-hover::after {
+  content: '';
+  @apply absolute inset-0 bg-white opacity-0 transition-opacity duration-300;
+}
+
+.btn-hover:hover::after {
+  @apply opacity-10;
 }
 
 /* styles/globals.css */
@@ -25,12 +83,7 @@ html {
 } */
 
 body {
-   background: linear-gradient(
-      90deg,
-      rgba(2, 0, 36, 1) 0%,
-      rgba(121, 9, 43, 0.7147233893557423) 35%,
-      rgba(0, 212, 255, 1) 100%
-   );
+
 }
 
 h1 {

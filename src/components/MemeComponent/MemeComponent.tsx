@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import ImageList from "@/components/ImageList/ImageListItemComp";
 import { imgArray } from "@/config/imgArray";
 import { useThemeState } from "@/context/ThemeContext";
@@ -12,15 +12,16 @@ const MemeComponent = () => {
    const { customTheme } = useThemeState();
 
    // Pagination function with typed data input
-   const paginationFunction = (data: string[]): string[] => {
+   const paginationFunction = useCallback((data: string[]): string[] => {
       const pageSize = 20;
       const startIndex = (page - 1) * pageSize;
       const endIndex = startIndex + pageSize;
-      const slicedFileNames = data.slice(startIndex, endIndex);
-      return slicedFileNames;
-   };
+      return data.slice(startIndex, endIndex);
+    }, [page]);
+    
+   
 
-   const loadMoreFileNames = async () => {
+   const loadMoreFileNames = useCallback(() => {
       setLoading(true);
       setError(null);
 
@@ -34,13 +35,16 @@ const MemeComponent = () => {
       } finally {
          setLoading(false);
       }
-   };
+   
+    }, [page, paginationFunction]);
 
    useEffect(() => {
       loadMoreFileNames();
-   }, []);
+   }, [loadMoreFileNames]);
 
-   const handleScroll = () => {
+ 
+   const handleScroll = useCallback(() => {
+      
       if (
          window.innerHeight + document.documentElement.scrollTop >=
             document.documentElement.offsetHeight - 100 ||
@@ -48,17 +52,16 @@ const MemeComponent = () => {
       ) {
          loadMoreFileNames();
       }
-   };
+    }, [loading, loadMoreFileNames]);
 
-   useEffect(() => {
-      window.addEventListener("scroll", handleScroll);
-      return () => window.removeEventListener("scroll", handleScroll);
-   }, [loading, page]);
+    useEffect(() => {
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
+    }, [handleScroll]);
 
    return (
       <main
          style={{
-            marginTop: "60px",
             backgroundColor: customTheme === "dark" ? "#222" : "#ddd",
          }}
       >

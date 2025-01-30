@@ -1,13 +1,13 @@
-import { ImageListItem, ImageList, useMediaQuery } from "@mui/material";
-
+"use client";
 import React, { Fragment, useState } from "react";
 import ImageViewModal from "../ImageViewComponent/ImageViewModal";
+import Image from "next/image";
 
-const ImageListItemComp = ({ itemData }: any) => {
+const ImageListItemComp = ({ itemData }: { itemData: string[] }) => {
    const [showModal, setShowModal] = useState(false);
    const [selectedImage, setSelectedImage] = useState("");
 
-   const handleImageClick = (imageUrl: any) => {
+   const handleImageClick = (imageUrl: string) => {
       setSelectedImage(imageUrl);
       setShowModal(true);
    };
@@ -16,58 +16,35 @@ const ImageListItemComp = ({ itemData }: any) => {
       setShowModal(false);
    };
 
-   const sxScreen = useMediaQuery("(max-width:480px)");
-   const mdScreen = useMediaQuery("(max-width:720px)");
-   const lgScreen = useMediaQuery("(max-width:1080px)");
-   const exLgScreen = useMediaQuery("(max-width:1280px)");
-   const xxLgScreen = useMediaQuery("(max-width:1400px)");
-
-   console.log(
-      "sx Screen",
-      sxScreen,
-      mdScreen,
-      lgScreen,
-      exLgScreen,
-      xxLgScreen
-   );
-
-   let cols;
-   if (sxScreen) {
-      cols = 1;
-   } else if (mdScreen) {
-      cols = 2;
-   } else if (lgScreen) {
-      cols = 3;
-   } else if (exLgScreen) {
-      cols = 3;
-   } else if (xxLgScreen) {
-      cols = 4;
-   } else {
-      cols = 5;
-   }
+   // Responsive grid columns
+   const getGridCols = () => {
+      if (typeof window === "undefined") return "grid-cols-1";
+      const width = window.innerWidth;
+      if (width <= 480) return "grid-cols-1";
+      if (width <= 720) return "grid-cols-2";
+      if (width <= 1080) return "grid-cols-3";
+      if (width <= 1280) return "grid-cols-3";
+      if (width <= 1400) return "grid-cols-4";
+      return "grid-cols-5";
+   };
 
    return (
       <Fragment>
-         <ImageList variant='quilted' cols={cols}>
-            {itemData.map((item: any, key: any) => (
-               <ImageListItem key={key}>
-                  <img
-                     style={{
-                        width: 250,
-                        height: 250,
-                        margin: "20px",
-                        marginBottom: "50px",
-                        cursor: "pointer",
-                        border: "1px solid gray",
-                     }}
-                     src={`/memes/${item} `}
-                     alt={"Memes"}
-                     loading='lazy'
-                     onClick={() => handleImageClick(`/memes/${item} `)}
+         <div className={`grid gap-4 ${getGridCols()}`}>
+            {itemData.map((item, key) => (
+               <div key={key} className="flex justify-center">
+                  <Image
+                     className="w-[250px] h-[250px] m-5 mb-[50px] cursor-pointer border border-gray-300 hover:shadow-lg transition-shadow"
+                     src={`/memes/${item}`}
+                     alt="Memes"
+                     loading="lazy"
+                     onClick={() => handleImageClick(`/memes/${item}`)}
+                     width={250}
+                     height={250}
                   />
-               </ImageListItem>
+               </div>
             ))}
-         </ImageList>
+         </div>
 
          {showModal && (
             <ImageViewModal

@@ -1,142 +1,82 @@
-import { useThemeState } from "@/context/ThemeContext";
-import {
-  Box,
-  Grid,
-  Typography,
-  styled,
-  useTheme,
-  useMediaQuery,
-} from "@mui/material";
+"use client";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
-import React, { Fragment } from "react";
 import { imageLinksInterview } from "@/config/config";
-import animations from "@/styles/animations.module.css";
 import { useInView } from "react-intersection-observer";
 
 const CardWithImage = () => {
-  const { customTheme } = useThemeState();
   const router = useRouter();
   const pathname = usePathname();
-  const theme = useTheme();
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
-
-  // Define breakpoints
-  const isXs = useMediaQuery(theme.breakpoints.only("xs"));
-  const isSm = useMediaQuery(theme.breakpoints.only("sm"));
-  const isMd = useMediaQuery(theme.breakpoints.only("md"));
-
-  const CustomBox = styled(Box)(({ theme }) => ({
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    borderRadius: "10px",
-    cursor: "pointer",
-    [theme.breakpoints.up("xs")]: {
-      width: pathname === "/" ? "100%" : "100%",
-      height: pathname === "/" ? "70px" : "350px",
-      boxShadow: theme.shadows[5],
-      flexDirection: "row",
-    },
-    [theme.breakpoints.up("sm")]: {
-      width: pathname === "/" ? "100%" : "220px",
-      height: pathname === "/" ? "170px" : "220px",
-      flexDirection: "row",
-    },
-    [theme.breakpoints.up("md")]: {
-      width: pathname === "/" ? "100%" : "100%",
-      height: pathname === "/" ? "250px" : "300px",
-      boxShadow: theme.shadows[5],
-      flexDirection: "column",
-      marginTop: "20px",
-    },
-  }));
-
-  const CustomTypography = styled(Typography)(({ theme }) => ({
-    fontSize: "18px",
-    fontWeight: 500,
-    color: customTheme === "dark" ? "#ddd" : "#333",
-  }));
 
   const handleClick = (link: string) => {
     router.push(link);
   };
 
   const getImageSize = () => {
-    if (isMd) {
-      return { width: 250, height: 250 };
-    } else if (isSm) {
-      return { width: 150, height: 150 };
-    } else if (isXs) {
-      return {
-        width: pathname === "/" ? 50 : 250,
-        height: pathname === "/" ? 50 : 250,
-      };
-    } else {
-      return { width: 200, height: 200 };
+    if (typeof window === "undefined") return { width: 150, height: 150 };
+    const width = window.innerWidth;
+    const isHomePage = pathname === "/";
+
+    if (width <= 600) {
+      return { width: isHomePage ? 40 : 150, height: isHomePage ? 40 : 150 };
     }
+    if (width <= 960) return { width: 100, height: 100 };
+    if (width <= 1280) return { width: 150, height: 150 };
+    return { width: 150, height: 150 };
   };
 
+  const isHomePage = pathname === "/";
   const imageSize = getImageSize();
+  const visibleItems = isHomePage 
+    ? imageLinksInterview.slice(0, 
+        window?.innerWidth <= 600 ? 5 : 
+        window?.innerWidth <= 960 ? 6 : 
+        imageLinksInterview.length
+      )
+    : imageLinksInterview;
 
   return (
-    <Fragment>
-      <Grid
-        container
-        justifyContent="center"
-        alignContent={"center"}
-        spacing={2}
-        mb={8}
-      >
-        {imageLinksInterview
-          .slice(
-            0,
-            pathname === "/"
-              ? isXs
-                ? 5
-                : isSm
-                ? 6
-                : imageLinksInterview.length
-              : imageLinksInterview.length
-          )
-          .map((image, index) => {
-            return (
-              <Grid
-                item
-                xs={12}
-                sm={5.5}
-                md={3}
-                justifyContent="center"
-                alignItems={"center"}
-                key={index}
-                ref={ref}
-                spacing={2}
-                className={`${animations.fadeInDown} ${
-                  inView ? animations.fadeInDownVisible : ""
-                }`}
-                style={{ transitionDelay: `${index * 50}ms` }}
-              >
-                <CustomBox
-                  onClick={() => {
-                    handleClick(image?.link);
-                  }}
-                >
-                  <Image
-                    src={image.src}
-                    alt={image.label}
-                    width={imageSize.width}
-                    height={imageSize.height}
-                    style={{ objectFit: "fill" }}
-                  />
-                </CustomBox>
-              </Grid>
-            );
-          })}
-      </Grid>
-    </Fragment>
+    <div className="container mx-auto px-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+        {visibleItems.map((image, index) => (
+          <div
+            key={index}
+            ref={ref}
+            className={`transform transition-all duration-500 ${
+              inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`}
+            style={{ transitionDelay: `${index * 50}ms` }}
+          >
+            <div
+              onClick={() => handleClick(image.link)}
+              className={`
+                bg-white dark:bg-neutral-800 
+                rounded-lg shadow-lg 
+                cursor-pointer 
+                transition-transform hover:-translate-y-1
+                flex justify-center items-center
+                ${isHomePage 
+                  ? 'h-[50px] sm:h-[120px] md:h-[180px]' 
+                  : 'h-[200px] sm:h-[180px] md:h-[220px]'
+                }
+              `}
+            >
+              <Image
+                src={image.src}
+                alt={image.label}
+                width={imageSize.width}
+                height={imageSize.height}
+                className="object-contain p-4"
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 };
 

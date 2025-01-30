@@ -1,93 +1,92 @@
 "use client";
-import React, { Fragment } from "react";
-import { useInView } from "react-intersection-observer";
-import styles from "@/styles/Home.module.css";
-import animations from "@/styles/animations.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useThemeState } from "@/context/ThemeContext";
-import {
-   faGlobe,
-   faMobile,
-   faQuestion,
-   faDesktop,
-} from "@fortawesome/free-solid-svg-icons";
-import { faFacebookF, faYoutube } from "@fortawesome/free-brands-svg-icons";
-import { Typography, styled, Box, Grid, Stack } from "@mui/material";
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+
+
+
+
+const devCards = [
+   {
+      title: "Web Frontend",
+      image: "https://cdn-icons-png.flaticon.com/512/2721/2721725.png",
+      link: "/web-development",
+   },
+   {
+      title: "Mobile Apps",
+      image: "https://cdn-icons-png.flaticon.com/512/2586/2586488.png",
+      link: "/mobile-development",
+   },
+   {
+      title: "Backend",
+      image: "https://cdn-icons-png.flaticon.com/512/8099/8099100.png",
+      link: "/backend-development",
+   },
+   {
+      title: "DevOps",
+      image: "https://cdn-icons-png.flaticon.com/512/9433/9433667.png",
+      link: "/devops",
+   },
+   {
+      title: "Cloud",
+      image: "https://cdn-icons-png.flaticon.com/512/4116/4116139.png",
+      link: "/cloud",
+   },
+   {
+      title: "Database",
+      image: "https://cdn-icons-png.flaticon.com/512/4248/4248443.png",
+      link: "/database",
+   },
+   {
+      title: "UI/UX",
+      image: "https://cdn-icons-png.flaticon.com/512/5278/5278663.png",
+      link: "/ui-ux",
+   },
+   {
+      title: "AI/ML",
+      image: "https://cdn-icons-png.flaticon.com/512/2103/2103832.png",
+      link: "/ai-ml",
+   },
+   {
+      title: "Blockchain",
+      image: "https://cdn-icons-png.flaticon.com/512/2091/2091665.png",
+      link: "/blockchain",
+   },
+   {
+      title: "Security",
+      image: "https://cdn-icons-png.flaticon.com/512/2716/2716652.png",
+      link: "/security",
+   },
+];
 
 const DevCards = () => {
-   const { customTheme } = useThemeState();
-   const { ref, inView } = useInView({
-      triggerOnce: true,
-      threshold: 0.1,
-   });
-
-   const CustomTypography = styled(Typography)({
-      color: customTheme === "dark" ? "#ddd" : "#222",
-      textDecoration: "none",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-   });
-
-   const CustomBox = styled(Box)(({ theme }) => ({
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      borderRadius: "10px",
-      width: "100%",
-      height: "300px",
-      cursor: "pointer",
-      [theme.breakpoints.up("xs")]: {
-         height: "65px",
-      },
-      [theme.breakpoints.up("sm")]: {
-         height: "170px",
-      },
-      [theme.breakpoints.up("md")]: {
-         height: "300px",
-      },
-   }));
-
-   const items = [
-      { icon: faGlobe, text: "Web Development" },
-      { icon: faMobile, text: "Mobile Development" },
-      { icon: faDesktop, text: "Machine Learning" },
-      { icon: faQuestion, text: "Interview Preparation" },
-      { icon: faFacebookF, text: "Facebook Follow" },
-      { icon: faYoutube, text: "YouTube Subscribe" },
-   ];
+  
+  
 
    return (
-      <>
-         <Grid container justifyContent='center' spacing={1} py={8}>
-            {items.map((item, index) => {
-               return (
-                  <Grid
-                     item
-                     xs={12}
-                     sm={6}
-                     md={2}
-                     key={index}
-                     ref={ref}
-                     className={`${animations.fadeInDown} ${
-                        inView ? animations.fadeInDownVisible : ""
-                     }`}
-                     style={{ transitionDelay: `${index * 100}ms` }} // Stagger the animation
-                  >
-                     <CustomBox className={styles.DevCardsColumnsCard}>
-                        <CustomTypography>
-                           <FontAwesomeIcon
-                              icon={item.icon}
-                              style={{ marginRight: "8px" }}
-                           />
-                           {item.text}
-                        </CustomTypography>
-                     </CustomBox>
-                  </Grid>
-               );
-            })}
-         </Grid>
-      </>
+      <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 max-w-6xl mx-auto px-4">
+         {devCards.map((card, index) => (
+            <Link
+               href={card.link}
+               key={index}
+               className="group block bg-white dark:bg-neutral-800 rounded-lg shadow-sm overflow-hidden transform transition-all hover:-translate-y-1 hover:shadow-md"
+            >
+               <div className="aspect-square relative p-2 h-[60px] sm:h-[80px]">
+                  <Image
+                     src={card.image}
+                     alt={card.title}
+                     fill
+                     className="object-contain p-1"
+                  />
+               </div>
+               <div className="p-2 bg-neutral-50 dark:bg-neutral-700">
+                  <h3 className="text-center text-xs font-medium text-neutral-800 dark:text-neutral-100">
+                     {card.title}
+                  </h3>
+               </div>
+            </Link>
+         ))}
+      </div>
    );
 };
 

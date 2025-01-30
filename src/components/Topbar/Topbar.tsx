@@ -1,243 +1,105 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import {
-   AppBar,
-   Box,
-   Toolbar,
-   Container,
-   styled,
-   Typography,
-   ToggleButton,
-   Stack,
-   IconButton,
-   Drawer,
-   List,
-   ListItem,
-   ListItemText,
-   useMediaQuery,
-   useTheme,
-   Button,
-} from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
-import CloseIcon from "@mui/icons-material/Close";
+import React, { useState } from "react";
 import { useThemeState } from "@/context/ThemeContext";
-import WbSunnyIcon from "@mui/icons-material/WbSunny";
-import DarkModeIcon from "@mui/icons-material/DarkMode";
 import Link from "next/link";
-import styles from "@/styles/Home.module.css";
-
-const CustomButton = styled("button")({
-   color: "white",
-   backgroundColor: "green",
-   padding: 15,
-   borderRadius: 4,
-   border: "none",
-   "&:hover": {
-      backgroundColor: "#41a317",
-      cursor: "pointer",
-   },
-});
+import { WiDaySunny, WiMoonAltWaxingCrescent4 } from "react-icons/wi";
+import { HiMenu, HiX } from "react-icons/hi";
 
 const Topbar = () => {
    const { customTheme, toggleTheme } = useThemeState();
-   const [showTopbar, setShowTopbar] = useState(true);
-   const [lastScrollY, setLastScrollY] = useState(0);
    const [drawerOpen, setDrawerOpen] = useState(false);
-   const theme = useTheme();
-   const isXs = useMediaQuery(theme.breakpoints.only("xs"));
-
-   useEffect(() => {
-      const handleScroll = () => {
-         const currentScrollY = window.scrollY;
-
-         if (currentScrollY > lastScrollY) {
-            // Scrolling down
-            setShowTopbar(false);
-         } else {
-            // Scrolling up
-            setShowTopbar(true);
-         }
-         setLastScrollY(currentScrollY);
-      };
-
-      window.addEventListener("scroll", handleScroll);
-
-      return () => {
-         window.removeEventListener("scroll", handleScroll);
-      };
-   }, [lastScrollY]);
-
-   const handleDrawerToggle = () => {
-      setDrawerOpen(!drawerOpen);
-   };
-
-   const getDrawerBackground = () => {
-      return customTheme === "dark" ? "#333" : "#fff";
-   };
 
    const menuItems = (
-      <Stack
-         className={styles.linkContainer}
-         gap={3}
-         flexDirection={{ sm: "row", md: "row" }}
-      >
-         <Link href={"/"} className={styles.customLink}>
-            <Typography color={customTheme === "dark" ? "#fff" : "#000"}>
+      <div className="flex flex-col sm:flex-row items-center gap-6">
+         <Link href="/" className="hover:text-primary-500 transition-colors">
+            <span className={customTheme === "dark" ? "text-white" : "text-primary-500"}>
                ItsIndianGuy
-            </Typography>
+            </span>
          </Link>
-         <Link href={"/interview-qa"} className={styles.customLink}>
-            <Typography color={customTheme === "dark" ? "#fff" : "#000"}>
+         <Link href="/interview-qa" className="hover:text-primary-500 transition-colors">
+            <span className={customTheme === "dark" ? "text-white" : "text-primary-500"}>
                InterviewQA
-            </Typography>
+            </span>
          </Link>
-         <Link
-            href={"https://blog.itsindianguy.in"}
-            target='blank'
-            className={styles.customLink}
-         >
-            <Typography color={customTheme === "dark" ? "#fff" : "#000"}>
+         <Link href="https://blog.itsindianguy.in" target="blank" className="hover:text-primary-500 transition-colors">
+            <span className={customTheme === "dark" ? "text-white" : "text-primary-500"}>
                Blog
-            </Typography>
+            </span>
          </Link>
-         <Link
-            href={"https://portfolio.itsindianguy.in"}
-            target='blank'
-            className={styles.customLink}
-         >
-            <Typography color={customTheme === "dark" ? "#fff" : "#000"}>
+         <Link href="https://portfolio.itsindianguy.in" target="blank" className="hover:text-primary-500 transition-colors">
+            <span className={customTheme === "dark" ? "text-white" : "text-primary-500"}>
                Portfolio
-            </Typography>
+            </span>
          </Link>
-         <Link href={"/memes"} className={styles.customLink}>
-            <Typography color={customTheme === "dark" ? "#fff" : "#000"}>
+         <Link href="/memes" className="hover:text-primary-500 transition-colors">
+            <span className={customTheme === "dark" ? "text-white" : "text-primary-500"}>
                Memes
-            </Typography>
+            </span>
          </Link>
-         <Link href={"/about"} className={styles.customLink}>
-            <Typography color={customTheme === "dark" ? "#fff" : "#000"}>
+         <Link href="/about" className="hover:text-primary-500 transition-colors">
+            <span className={customTheme === "dark" ? "text-white" : "text-primary-500"}>
                AboutUs
-            </Typography>
+            </span>
          </Link>
-         <Link href={"/contact-us"} className={styles.customLink}>
-            <Typography color={customTheme === "dark" ? "#fff" : "#000"}>
+         <Link href="/contact-us" className="hover:text-primary-500 transition-colors">
+            <span className={customTheme === "dark" ? "text-white" : "text-primary-500"}>
                ContactUs
-            </Typography>
+            </span>
          </Link>
-         {isXs && (
-            <Box
-               sx={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-               }}
-               gap={2}
-            >
-               <ToggleButton
-                  value='check'
-                  selected={customTheme === "light"}
-                  onChange={() => {
-                     toggleTheme();
-                  }}
-               >
-                  {customTheme === "light" ? (
-                     <>
-                        <DarkModeIcon sx={{ color: "#000" }} />
-                     </>
-                  ) : (
-                     <>
-                        <WbSunnyIcon sx={{ color: "white" }} />
-                     </>
-                  )}
-               </ToggleButton>
-            </Box>
-         )}
-      </Stack>
+      </div>
    );
 
    return (
-      <>
-         <AppBar
-            position='fixed'
-            className={styles.topbarLinearGradient}
-            style={{
-               transform: showTopbar ? "translateY(0)" : "translateY(-100%)",
-               transition: "transform 0.3s ease-in-out",
-            }}
-         >
-            <Container maxWidth='xl'>
-               <Toolbar disableGutters sx={{ justifyContent: "space-between" }}>
-                  <Box
-                     sx={{
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                     }}
-                     gap={2}
-                  >
-                     <ToggleButton
-                        value='check'
-                        selected={customTheme === "light"}
-                        onChange={() => {
-                           toggleTheme();
-                        }}
-                     >
-                        {customTheme === "light" ? (
-                           <>
-                              <DarkModeIcon sx={{ color: "#000" }} />
-                           </>
-                        ) : (
-                           <>
-                              <WbSunnyIcon sx={{ color: "white" }} />
-                           </>
-                        )}
-                     </ToggleButton>
-                  </Box>
-                  {isXs ? (
-                     <>
-                        <IconButton
-                           edge='start'
-                           color='inherit'
-                           aria-label='menu'
-                           onClick={handleDrawerToggle}
-                        >
-                           <MenuIcon />
-                        </IconButton>
-                        <Drawer
-                           anchor='right'
-                           open={drawerOpen}
-                           onClose={handleDrawerToggle}
-                           PaperProps={{
-                              sx: {
-                                 backgroundColor: getDrawerBackground(),
-                                 width: "80%",
-                              },
-                           }}
-                        >
-                           <Button
-                              className={styles.closeIconButton}
-                              onClick={handleDrawerToggle}
-                           >
-                              <CloseIcon className={styles.closeIcon} />
-                           </Button>
-                           <List>
-                              {React.Children.map(menuItems, (child, index) => (
-                                 <ListItem key={index}>
-                                    <ListItemText primary={child} />
-                                 </ListItem>
-                              ))}
-                           </List>
-                        </Drawer>
-                     </>
+      <nav
+         className={`fixed top-0 w-full z-50
+            ${customTheme === "dark" ? "bg-neutral-900/90 backdrop-blur-md" : "bg-white/90 backdrop-blur-md"} shadow-md`}
+      >
+         <div className="max-w-7xl mx-auto px-4">
+            <div className="flex justify-between items-center h-16">
+               {/* Theme Toggle Button */}
+               <button
+                  onClick={toggleTheme}
+                  className={`p-2 rounded-lg transition-colors
+                     ${customTheme === "dark" 
+                        ? "hover:bg-neutral-800 text-white" 
+                        : "hover:bg-gray-100 text-primary-500"
+                     }`}
+               >
+                  {customTheme === "light" ? (
+                     <WiMoonAltWaxingCrescent4 size={24} />
                   ) : (
-                     <Stack direction={"row"} gap={2}>
-                        {menuItems}
-                     </Stack>
+                     <WiDaySunny size={24} />
                   )}
-               </Toolbar>
-            </Container>
-         </AppBar>
-      </>
+               </button>
+
+               {/* Mobile Menu Button */}
+               <button
+                  className="sm:hidden p-2 rounded-lg"
+                  onClick={() => setDrawerOpen(!drawerOpen)}
+               >
+                  {drawerOpen ? (
+                     <HiX size={24} className={customTheme === "dark" ? "text-white" : "text-primary-500"} />
+                  ) : (
+                     <HiMenu size={24} className={customTheme === "dark" ? "text-white" : "text-primary-500"} />
+                  )}
+               </button>
+
+               {/* Desktop Navigation */}
+               <div className="hidden sm:flex items-center">
+                  {menuItems}
+               </div>
+            </div>
+
+            {/* Mobile Navigation Drawer */}
+            {drawerOpen && (
+               <div className="sm:hidden py-4">
+                  <div className="flex flex-col items-center space-y-4">
+                     {menuItems}
+                  </div>
+               </div>
+            )}
+         </div>
+      </nav>
    );
 };
 

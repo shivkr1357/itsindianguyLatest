@@ -1,4 +1,4 @@
-import ContactUsComponent from "@/components/ContactUs/ContactUsComponent";
+import ContactUsComponent from "@/components/Contact/ContactUsComponent";
 import InterviewCard from "@/components/InterviewCards/InterviewCard";
 import { Metadata } from "next";
 import React, { Fragment } from "react";
