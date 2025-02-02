@@ -9,7 +9,7 @@ const Topbar = () => {
    const { customTheme, toggleTheme } = useThemeState();
    const [drawerOpen, setDrawerOpen] = useState(false);
 
-   const menuItems = (
+   const navigationLinks = (
       <div className="flex flex-col sm:flex-row items-center gap-6">
          <Link href="/" className="hover:text-primary-500 transition-colors">
             <span className={customTheme === "dark" ? "text-white" : "text-primary-500"}>
@@ -49,6 +49,31 @@ const Topbar = () => {
       </div>
    );
 
+   const authButtons = (
+      <div className="flex items-center gap-4">
+         <Link 
+            href="/login" 
+            className={`px-4 py-2 rounded-lg transition-colors
+               ${customTheme === "dark" 
+                  ? "text-white hover:bg-neutral-800" 
+                  : "text-primary-500 hover:bg-gray-100"
+               }`}
+         >
+            Login
+         </Link>
+         <Link 
+            href="/signup" 
+            className={`px-4 py-2 rounded-lg transition-colors
+               ${customTheme === "dark" 
+                  ? "bg-primary-500 text-white hover:bg-primary-600" 
+                  : "bg-primary-500 text-white hover:bg-primary-600"
+               }`}
+         >
+            Sign Up
+         </Link>
+      </div>
+   );
+
    return (
       <nav
          className={`fixed top-0 w-full z-50
@@ -72,6 +97,16 @@ const Topbar = () => {
                   )}
                </button>
 
+               {/* Desktop Navigation - Centered */}
+               <div className="hidden sm:flex items-center justify-center flex-1">
+                  {navigationLinks}
+               </div>
+
+               {/* Auth Buttons - Right */}
+               <div className="hidden sm:flex">
+                  {authButtons}
+               </div>
+
                {/* Mobile Menu Button */}
                <button
                   className="sm:hidden p-2 rounded-lg"
@@ -83,18 +118,14 @@ const Topbar = () => {
                      <HiMenu size={24} className={customTheme === "dark" ? "text-white" : "text-primary-500"} />
                   )}
                </button>
-
-               {/* Desktop Navigation */}
-               <div className="hidden sm:flex items-center">
-                  {menuItems}
-               </div>
             </div>
 
             {/* Mobile Navigation Drawer */}
             {drawerOpen && (
                <div className="sm:hidden py-4">
                   <div className="flex flex-col items-center space-y-4">
-                     {menuItems}
+                     {navigationLinks}
+                     {authButtons}
                   </div>
                </div>
             )}
