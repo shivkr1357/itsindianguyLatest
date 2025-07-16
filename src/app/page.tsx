@@ -1,184 +1,118 @@
-"use client";
-import { useEffect, useState } from "react";
-import InterviewCard from "@/components/InterviewCards/InterviewCard";
-import AboutCard from "@/components/LandingPage/AboutCard";
-import DevCards from "@/components/LandingPage/DevCards";
-import Layout from '@/components/Layout/Layout';
-import FeaturedBlogs from "@/components/LandingPage/FeaturedBlogs";
-import ProjectShowcase from "@/components/LandingPage/ProjectShowcase";
-import Testimonials from "@/components/LandingPage/Testimonials";
-import ContactSection from "@/components/LandingPage/ContactSection";
-import NewsletterSignup from "@/components/LandingPage/NewsletterSignup";
-import LatestTutorials from "@/components/LandingPage//LatestTutorials";
-import GithubActivity from "@/components/LandingPage/GithubActivity";
-import SocialFeed from "@/components/LandingPage/SocialFeed";
+import React, { Fragment } from "react";
+import { Metadata } from "next";
+import HomePageClient from "@/components/HomePageClient";
 
-export default function Home() {
-   const [showScrollTop, setShowScrollTop] = useState(false);
+export const metadata: Metadata = {
+  title:
+    "ItsIndianGuy - Programming Tutorials, Interview Prep & Tech Resources",
+  description:
+    "Master programming with comprehensive tutorials, interview questions, and tech resources. Learn web development, mobile apps, AI/ML, and more with ItsIndianGuy.",
+  keywords:
+    "programming tutorials, interview questions, web development, coding, software development, tech resources, programming courses, coding interview prep, JavaScript, React, Python, Node.js, mobile development, AI/ML, blockchain, cybersecurity",
+  alternates: {
+    canonical: "https://www.itsindianguy.in",
+  },
+  openGraph: {
+    title: "ItsIndianGuy - Programming Tutorials & Interview Preparation",
+    description:
+      "Master programming with comprehensive tutorials, interview questions, and tech resources. Learn web development, mobile apps, AI/ML, and more.",
+    url: "https://www.itsindianguy.in",
+    siteName: "ItsIndianGuy",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "https://www.itsindianguy.in/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "ItsIndianGuy - Programming Tutorials & Interview Preparation",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ItsIndianGuy - Programming Tutorials & Interview Preparation",
+    description:
+      "Master programming with comprehensive tutorials, interview questions, and tech resources.",
+    images: ["https://www.itsindianguy.in/og-image.jpg"],
+  },
+};
 
-   useEffect(() => {
-      const handleScroll = () => {
-         setShowScrollTop(window.scrollY > 400);
-      };
-      window.addEventListener("scroll", handleScroll);
-      return () => window.removeEventListener("scroll", handleScroll);
-   }, []);
+const Home = () => {
+  // Schema.org structured data
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "ItsIndianGuy",
+    description:
+      "Your one-stop destination for programming tutorials and interview preparation",
+    url: "https://www.itsindianguy.in",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: "https://www.itsindianguy.in/search?q={search_term_string}",
+      "query-input": "required name=search_term_string",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "ItsIndianGuy",
+      url: "https://www.itsindianguy.in",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.itsindianguy.in/logo.png",
+      },
+    },
+    mainEntity: {
+      "@type": "ItemList",
+      name: "Programming Tutorials and Resources",
+      description:
+        "Comprehensive collection of programming tutorials, interview questions, and tech resources",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Web Development Tutorials",
+          url: "https://www.itsindianguy.in/web-development",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Mobile Development Tutorials",
+          url: "https://www.itsindianguy.in/mobile-development",
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Interview Questions",
+          url: "https://www.itsindianguy.in/interview-qa",
+        },
+        {
+          "@type": "ListItem",
+          position: 4,
+          name: "Programming Blog",
+          url: "https://www.itsindianguy.in/blog",
+        },
+        {
+          "@type": "ListItem",
+          position: 5,
+          name: "Tech Resources",
+          url: "https://www.itsindianguy.in/resources",
+        },
+      ],
+    },
+  };
 
-   const scrollToTop = () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-   };
+  return (
+    <Fragment>
+      {/* Schema.org structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData),
+        }}
+      />
+      <HomePageClient />
+    </Fragment>
+  );
+};
 
-   return (
-      <Layout>
-         <main className="min-h-screen bg-neutral-50 dark:bg-neutral-900">
-            {/* Hero Section */}
-            <section className="container mx-auto px-4 pt-24 pb-16">
-               <div className="grid lg:grid-cols-2 gap-8 items-center">
-                  <div>
-                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-800 dark:text-neutral-50 mb-6">
-                        Your Gateway to
-                        <span className="text-primary-200 block">Tech Excellence</span>
-                     </h1>
-                     <p className="text-lg md:text-xl text-neutral-600 dark:text-neutral-300 mb-8">
-                        Discover comprehensive tutorials, engaging blogs, and cutting-edge tech insights
-                        all in one place.
-                     </p>
-                     <div className="flex flex-col sm:flex-row gap-4">
-                        <button className="px-6 py-3 bg-primary-200 hover:bg-primary-300 text-white rounded-lg transition-colors">
-                           Get Started
-                        </button>
-                        <button className="px-6 py-3 border border-primary-200 text-primary-200 hover:bg-primary-200/10 rounded-lg transition-colors">
-                           Learn More
-                        </button>
-                     </div>
-                  </div>
-                  <div className="relative">
-                     <div className="absolute inset-0 bg-gradient-to-r from-primary-200/20 to-transparent rounded-2xl -z-10" />
-                     {/* Add your hero image here */}
-                  </div>
-               </div>
-            </section>
-
-            {/* Featured Blogs Section */}
-            <section className="bg-white dark:bg-neutral-800 py-16">
-               <div className="container mx-auto px-4">
-                  <h2 className="text-3xl font-bold text-center text-neutral-800 dark:text-neutral-50 mb-12">
-                     Featured Blog Posts
-                  </h2>
-                  <FeaturedBlogs />
-               </div>
-            </section>
-
-            {/* Dev Cards Section */}
-            <section className="py-16">
-               <div className="container mx-auto px-4">
-                  <h2 className="text-3xl font-bold text-center text-neutral-800 dark:text-neutral-50 mb-12">
-                     Latest Technologies
-                  </h2>
-                  <DevCards />
-               </div>
-            </section>
-
-            {/* Project Showcase */}
-            <section className="bg-white dark:bg-neutral-800 py-16">
-               <div className="container mx-auto px-4">
-                  <h2 className="text-3xl font-bold text-center text-neutral-800 dark:text-neutral-50 mb-12">
-                     Featured Projects
-                  </h2>
-                  <ProjectShowcase />
-               </div>
-            </section>
-
-            {/* Latest Tutorials */}
-            <section className="py-16">
-               <div className="container mx-auto px-4">
-                  <h2 className="text-3xl font-bold text-center text-neutral-800 dark:text-neutral-50 mb-12">
-                     Latest Tutorials
-                  </h2>
-                  <LatestTutorials />
-               </div>
-            </section>
-
-            {/* Interview Section */}
-            <section className="bg-white dark:bg-neutral-800 py-16">
-               <div className="container mx-auto px-4">
-                  <h2 className="text-3xl font-bold text-center text-neutral-800 dark:text-neutral-50 mb-12">
-                     Interview Prep
-                  </h2>
-                  <InterviewCard />
-               </div>
-            </section>
-
-            {/* About Section */}
-            <section className="py-16">
-               <div className="container mx-auto px-4">
-                  <AboutCard />
-               </div>
-            </section>
-
-            {/* GitHub Activity */}
-            <section className="bg-white dark:bg-neutral-800 py-16">
-               <div className="container mx-auto px-4">
-                  <h2 className="text-3xl font-bold text-center text-neutral-800 dark:text-neutral-50 mb-12">
-                     GitHub Contributions
-                  </h2>
-                  <GithubActivity />
-               </div>
-            </section>
-
-            {/* Testimonials */}
-            <section className="py-16">
-               <div className="container mx-auto px-4">
-                  <h2 className="text-3xl font-bold text-center text-neutral-800 dark:text-neutral-50 mb-12">
-                     What People Say
-                  </h2>
-                  <Testimonials />
-               </div>
-            </section>
-
-            {/* Social Feed */}
-            <section className="bg-white dark:bg-neutral-800 py-16">
-               <div className="container mx-auto px-4">
-                  <h2 className="text-3xl font-bold text-center text-neutral-800 dark:text-neutral-50 mb-12">
-                     Social Updates
-                  </h2>
-                  <SocialFeed />
-               </div>
-            </section>
-
-            {/* Newsletter & Contact */}
-            <section className="py-16">
-               <div className="container mx-auto px-4">
-                  <div className="grid md:grid-cols-2 gap-12">
-                     <NewsletterSignup />
-                     <ContactSection />
-                  </div>
-               </div>
-            </section>
-
-            {/* Scroll to Top Button */}
-            {showScrollTop && (
-               <button
-                  onClick={scrollToTop}
-                  className="fixed bottom-8 right-8 p-3 bg-primary-200 hover:bg-primary-300 text-white rounded-full shadow-lg transition-colors"
-               >
-                  <svg
-                     className="w-6 h-6"
-                     fill="none"
-                     stroke="currentColor"
-                     viewBox="0 0 24 24"
-                  >
-                     <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 10l7-7m0 0l7 7m-7-7v18"
-                     />
-                  </svg>
-               </button>
-            )}
-         </main>
-      </Layout>
-   );
-}
-
+export default Home;

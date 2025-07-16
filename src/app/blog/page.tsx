@@ -1,11 +1,13 @@
-import { Metadata } from "next";
 import React, { Fragment } from "react";
 import BlogListClient from "@/components/Blog/BlogListClient";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: `Blog | ItsIndianGuy - Tech Insights, Tutorials & Updates`,
   description:
     "Explore our latest blog posts covering web development, mobile apps, AI/ML, and tech trends. Stay updated with tutorials, insights, and industry news.",
+  keywords:
+    "programming blog, tech articles, web development blog, coding tutorials, software development, tech insights, programming tips, developer blog, coding articles, tech trends",
   alternates: {
     canonical: "https://www.itsindianguy.in/blog",
   },
@@ -106,26 +108,98 @@ const samplePosts = [
 ];
 
 const Blog = () => {
+  // Schema.org structured data for blog listing
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    name: "ItsIndianGuy Programming Blog",
+    description:
+      "Latest programming tutorials, tech insights, and development articles",
+    url: "https://www.itsindianguy.in/blog",
+    publisher: {
+      "@type": "Organization",
+      name: "ItsIndianGuy",
+      url: "https://www.itsindianguy.in",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.itsindianguy.in/logo.png",
+      },
+    },
+    mainEntity: {
+      "@type": "ItemList",
+      name: "Programming Blog Posts",
+      description: "Collection of programming tutorials and tech articles",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Web Development Tutorials",
+          url: "https://www.itsindianguy.in/blog/web-development",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Mobile Development Guides",
+          url: "https://www.itsindianguy.in/blog/mobile-development",
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "AI/ML Articles",
+          url: "https://www.itsindianguy.in/blog/ai-ml",
+        },
+        {
+          "@type": "ListItem",
+          position: 4,
+          name: "Programming Tips",
+          url: "https://www.itsindianguy.in/blog/programming-tips",
+        },
+        {
+          "@type": "ListItem",
+          position: 5,
+          name: "Tech Trends",
+          url: "https://www.itsindianguy.in/blog/tech-trends",
+        },
+      ],
+    },
+  };
+
   return (
     <Fragment>
+      {/* Schema.org structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData),
+        }}
+      />
       <div className="min-h-screen bg-neutral-50 dark:bg-neutral-900">
         {/* Header */}
         <div className="bg-white dark:bg-neutral-800 shadow-sm">
           <div className="container mx-auto px-4 py-16">
-            <div className="text-center">
+            <div className="max-w-4xl mx-auto">
+              <div className="mb-4">
+                <a
+                  href="/"
+                  className="text-primary-200 hover:text-primary-300 transition-colors"
+                >
+                  ← Back to Home
+                </a>
+              </div>
+
               <h1 className="text-4xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-100 mb-4">
-                Our Blog
+                Programming Blog
               </h1>
-              <p className="text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
-                Discover insights, tutorials, and the latest trends in
-                technology. From web development to AI/ML, we&apos;ve got you
-                covered.
+              <p className="text-lg text-neutral-600 dark:text-neutral-400">
+                Latest programming tutorials, tech insights, and development
+                articles to help you stay ahead in the world of software
+                development.
               </p>
             </div>
           </div>
         </div>
 
-        {/* Search and Blog Posts */}
+        {/* Blog List */}
         <div className="container mx-auto px-4 py-8">
           <div className="max-w-6xl mx-auto">
             <BlogListClient posts={samplePosts} />
