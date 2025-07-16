@@ -60,7 +60,7 @@ const FAQClient = ({ faqs }: FAQClientProps) => {
           Still have questions?
         </h2>
         <p className="text-neutral-600 dark:text-neutral-400 mb-6">
-          Can't find what you're looking for? We're here to help!
+          Can&apos;t find what you&apos;re looking for? We&apos;re here to help!
         </p>
         <div className="flex flex-wrap gap-4">
           <Link

@@ -31,7 +31,7 @@ const faqs = [
   {
     question: "Do you offer certificates?",
     answer:
-      "Currently, we focus on providing quality educational content. While we don't offer formal certificates, our tutorials and resources are designed to help you build real-world skills.",
+      "Currently, we focus on providing quality educational content. While we don&apos;t offer formal certificates, our tutorials and resources are designed to help you build real-world skills.",
   },
   {
     question: "How often do you publish new content?",
@@ -41,12 +41,12 @@ const faqs = [
   {
     question: "Can I request specific topics?",
     answer:
-      "Absolutely! We love hearing from our community about topics they'd like to learn. Send us your suggestions through our contact form or social media channels.",
+      "Absolutely! We love hearing from our community about topics they&apos;d like to learn. Send us your suggestions through our contact form or social media channels.",
   },
   {
     question: "Do you offer one-on-one mentoring?",
     answer:
-      "We currently focus on self-paced learning through our platform. However, we're exploring options for community mentoring and group sessions.",
+      "We currently focus on self-paced learning through our platform. However, we&apos;re exploring options for community mentoring and group sessions.",
   },
   {
     question: "How can I stay updated?",

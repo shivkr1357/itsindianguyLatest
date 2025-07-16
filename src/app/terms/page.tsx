@@ -34,10 +34,10 @@ const Terms = () => {
             <div className="bg-white dark:bg-neutral-800 rounded-lg shadow-sm p-8">
               <h2>1. Acceptance of Terms</h2>
               <p>
-                By accessing and using ItsIndianGuy ("the Service"), you accept
-                and agree to be bound by the terms and provision of this
-                agreement. If you do not agree to abide by the above, please do
-                not use this service.
+                By accessing and using ItsIndianGuy (&ldquo;the Service&rdquo;),
+                you accept and agree to be bound by the terms and provision of
+                this agreement. If you do not agree to abide by the above,
+                please do not use this service.
               </p>
 
               <h2>2. Description of Service</h2>
@@ -113,12 +113,12 @@ const Terms = () => {
 
               <h2>10. Disclaimers</h2>
               <p>
-                The information on this website is provided on an "as is" basis.
-                We make no warranties, expressed or implied, and hereby disclaim
-                and negate all other warranties including without limitation,
-                implied warranties or conditions of merchantability, fitness for
-                a particular purpose, or non-infringement of intellectual
-                property.
+                The information on this website is provided on an &ldquo;as
+                is&rdquo; basis. We make no warranties, expressed or implied,
+                and hereby disclaim and negate all other warranties including
+                without limitation, implied warranties or conditions of
+                merchantability, fitness for a particular purpose, or
+                non-infringement of intellectual property.
               </p>
 
               <h2>11. Governing Law</h2>
