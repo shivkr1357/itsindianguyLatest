@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import { adminDb, adminAuth } from "@/lib/firebase-admin";
-import { FieldValue } from "firebase-admin/firestore";
+import {
+  FieldValue,
+  DocumentData,
+  QueryDocumentSnapshot,
+} from "firebase-admin/firestore";
 
 // Types
 interface BlogPost {
@@ -38,10 +42,12 @@ export async function GET(request: NextRequest) {
       .limit(limit)
       .get();
 
-    const posts = querySnapshot.docs.map((doc) => ({
-      id: doc.id,
-      ...doc.data(),
-    })) as BlogPost[];
+    const posts = querySnapshot.docs.map(
+      (doc: QueryDocumentSnapshot<DocumentData>) => ({
+        id: doc.id,
+        ...doc.data(),
+      })
+    ) as BlogPost[];
 
     return NextResponse.json({ success: true, data: posts });
   } catch (error) {
