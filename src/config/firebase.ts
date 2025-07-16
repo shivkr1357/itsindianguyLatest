@@ -1,5 +1,10 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import {
+  getAuth,
+  GoogleAuthProvider,
+  connectAuthEmulator,
+} from "firebase/auth";
+import { getFirestore, connectFirestoreEmulator } from "firebase/firestore";
 
 // Your Firebase configuration
 // Replace these with your actual Firebase config values
@@ -18,7 +23,26 @@ const app = initializeApp(firebaseConfig);
 // Initialize Firebase Authentication and get a reference to the service
 export const auth = getAuth(app);
 
+// Initialize Firestore and get a reference to the service
+export const db = getFirestore(app);
+
 // Google Auth Provider
 export const googleProvider = new GoogleAuthProvider();
+
+// Add custom parameters for Google sign-in
+googleProvider.setCustomParameters({
+  prompt: "select_account",
+});
+
+// Connect to auth emulator in development
+if (process.env.NODE_ENV === "development") {
+  try {
+    connectAuthEmulator(auth, "http://localhost:9099");
+    connectFirestoreEmulator(db, "localhost", 8080);
+  } catch (error) {
+    // Emulator might not be running, which is fine
+    console.log("Firebase Emulators not running");
+  }
+}
 
 export default app;
