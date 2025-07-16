@@ -4,34 +4,38 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: `Blockchain | ItsIndianGuy - Learn Blockchain and Web3 Development`,
+  title: `Blockchain Tutorials | ItsIndianGuy - Learn Solidity, Web3, DeFi & Smart Contracts`,
   description:
-    "Master blockchain development, smart contracts, and Web3 technologies with our comprehensive guides and tutorials.",
+    "Master blockchain development with comprehensive tutorials covering Solidity, Web3, DeFi protocols, smart contracts, NFTs, and decentralized applications. Learn to build secure, scalable blockchain solutions.",
+  keywords:
+    "blockchain tutorials, Solidity tutorials, Web3 tutorials, DeFi tutorials, smart contracts, ItsIndianGuy blockchain, programming tutorials, coding tutorials, blockchain programming, cryptocurrency tutorials",
   alternates: {
     canonical: "https://www.itsindianguy.in/blockchain",
   },
   openGraph: {
-    title: "Blockchain | ItsIndianGuy - Learn Blockchain and Web3 Development",
+    title:
+      "Blockchain Tutorials | ItsIndianGuy - Learn Solidity, Web3, DeFi & Smart Contracts",
     description:
-      "Master blockchain development, smart contracts, and Web3 technologies with our comprehensive guides and tutorials.",
+      "Master blockchain development with comprehensive tutorials covering Solidity, Web3, DeFi protocols, smart contracts, NFTs, and decentralized applications. Learn to build secure, scalable blockchain solutions and understand cryptocurrency technologies.",
     url: "https://www.itsindianguy.in/blockchain",
     siteName: "ItsIndianGuy",
-    locale: "en_US",
+    locale: "en_IN",
     type: "website",
     images: [
       {
         url: "https://www.itsindianguy.in/og-blockchain.jpg",
         width: 1200,
         height: 630,
-        alt: "Blockchain and Web3 Development - ItsIndianGuy",
+        alt: "Blockchain Tutorials - Solidity, Web3, DeFi & Smart Contracts",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blockchain | ItsIndianGuy - Learn Blockchain and Web3 Development",
+    title:
+      "Blockchain Tutorials | ItsIndianGuy - Learn Solidity, Web3, DeFi & Smart Contracts",
     description:
-      "Master blockchain development, smart contracts, and Web3 technologies with our comprehensive guides and tutorials.",
+      "Master blockchain development with comprehensive tutorials covering Solidity, Web3, DeFi protocols, smart contracts, NFTs, and decentralized applications. Learn to build secure, scalable blockchain solutions.",
     images: ["https://www.itsindianguy.in/og-blockchain.jpg"],
   },
 };

@@ -4,34 +4,38 @@ import Image from "next/image";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: `Web Development | ItsIndianGuy`,
+  title: `Web Development Tutorials | ItsIndianGuy - Learn Frontend, Backend & Full-Stack Development`,
   description:
-    "Master the art of building modern, responsive web applications. From frontend frameworks to backend technologies, learn everything you need to become a full-stack developer.",
+    "Master web development with comprehensive tutorials covering HTML, CSS, JavaScript, React, Node.js, and modern frameworks. Learn frontend, backend, and full-stack development with hands-on projects.",
+  keywords:
+    "web development tutorials, frontend development, backend development, full-stack development, HTML tutorials, CSS tutorials, JavaScript tutorials, React tutorials, Node.js tutorials, ItsIndianGuy web development, programming tutorials, coding tutorials",
   alternates: {
     canonical: "https://www.itsindianguy.in/web-development",
   },
   openGraph: {
-    title: "Web Development | ItsIndianGuy",
+    title:
+      "Web Development Tutorials | ItsIndianGuy - Learn Frontend, Backend & Full-Stack Development",
     description:
-      "Master the art of building modern, responsive web applications. From frontend frameworks to backend technologies, learn everything you need to become a full-stack developer.",
+      "Master web development with comprehensive tutorials covering HTML, CSS, JavaScript, React, Node.js, and modern frameworks. Learn frontend, backend, and full-stack development with hands-on projects and real-world examples for beginners and advanced developers.",
     url: "https://www.itsindianguy.in/web-development",
     siteName: "ItsIndianGuy",
-    locale: "en_US",
+    locale: "en_IN",
     type: "website",
     images: [
       {
         url: "https://www.itsindianguy.in/og-web-dev.jpg",
         width: 1200,
         height: 630,
-        alt: "Web Development - ItsIndianGuy",
+        alt: "Web Development Tutorials - Frontend, Backend & Full-Stack Development",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Web Development | ItsIndianGuy",
+    title:
+      "Web Development Tutorials | ItsIndianGuy - Learn Frontend, Backend & Full-Stack Development",
     description:
-      "Master the art of building modern, responsive web applications. From frontend frameworks to backend technologies.",
+      "Master web development with comprehensive tutorials covering HTML, CSS, JavaScript, React, Node.js, and modern frameworks. Learn frontend, backend, and full-stack development with hands-on projects.",
     images: ["https://www.itsindianguy.in/og-web-dev.jpg"],
   },
 };

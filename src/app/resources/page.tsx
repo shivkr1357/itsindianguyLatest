@@ -4,34 +4,38 @@ import Image from "next/image";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: `Resources | ItsIndianGuy`,
+  title: `Developer Resources | ItsIndianGuy - Programming Tools, Frameworks & Learning Materials`,
   description:
-    "Curated collection of essential tools, platforms, and resources for developers. Everything you need to build amazing applications.",
+    "Discover curated developer resources including programming tools, frameworks, learning platforms, and essential software for web development, mobile apps, and software engineering.",
+  keywords:
+    "developer resources, programming tools, frameworks, learning materials, ItsIndianGuy resources, programming resources, web development tools, coding resources, ItsIndianGuy developer resources, programming learning materials",
   alternates: {
     canonical: "https://www.itsindianguy.in/resources",
   },
   openGraph: {
-    title: "Resources | ItsIndianGuy",
+    title:
+      "Developer Resources | ItsIndianGuy - Programming Tools, Frameworks & Learning Materials",
     description:
-      "Curated collection of essential tools, platforms, and resources for developers. Everything you need to build amazing applications.",
+      "Discover curated developer resources including programming tools, frameworks, learning platforms, and essential software for web development, mobile apps, and software engineering. Everything you need to build amazing applications.",
     url: "https://www.itsindianguy.in/resources",
     siteName: "ItsIndianGuy",
-    locale: "en_US",
+    locale: "en_IN",
     type: "website",
     images: [
       {
         url: "https://www.itsindianguy.in/og-resources.jpg",
         width: 1200,
         height: 630,
-        alt: "Developer Resources - ItsIndianGuy",
+        alt: "Developer Resources - Programming Tools, Frameworks & Learning Materials",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Resources | ItsIndianGuy",
+    title:
+      "Developer Resources | ItsIndianGuy - Programming Tools, Frameworks & Learning Materials",
     description:
-      "Curated collection of essential tools, platforms, and resources for developers.",
+      "Discover curated developer resources including programming tools, frameworks, learning platforms, and essential software for web development, mobile apps, and software engineering.",
     images: ["https://www.itsindianguy.in/og-resources.jpg"],
   },
 };

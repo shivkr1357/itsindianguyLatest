@@ -4,34 +4,38 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: `Cloud Computing | ItsIndianGuy - Learn AWS, Azure, GCP`,
+  title: `Cloud Computing Tutorials | ItsIndianGuy - Learn AWS, Azure, Google Cloud & Serverless`,
   description:
-    "Master cloud computing with our comprehensive guides covering AWS, Azure, Google Cloud Platform, and cloud architecture.",
+    "Master cloud computing with comprehensive tutorials covering AWS, Azure, Google Cloud Platform, serverless architecture, and cloud deployment. Learn to build scalable applications and manage cloud infrastructure.",
+  keywords:
+    "cloud computing tutorials, AWS tutorials, Azure tutorials, Google Cloud tutorials, serverless tutorials, ItsIndianGuy cloud, programming tutorials, coding tutorials, cloud programming, cloud deployment",
   alternates: {
     canonical: "https://www.itsindianguy.in/cloud",
   },
   openGraph: {
-    title: "Cloud Computing | ItsIndianGuy - Learn AWS, Azure, GCP",
+    title:
+      "Cloud Computing Tutorials | ItsIndianGuy - Learn AWS, Azure, Google Cloud & Serverless",
     description:
-      "Master cloud computing with our comprehensive guides covering AWS, Azure, Google Cloud Platform, and cloud architecture.",
+      "Master cloud computing with comprehensive tutorials covering AWS, Azure, Google Cloud Platform, serverless architecture, and cloud deployment. Learn to build scalable applications, manage cloud infrastructure, and optimize costs for modern web applications.",
     url: "https://www.itsindianguy.in/cloud",
     siteName: "ItsIndianGuy",
-    locale: "en_US",
+    locale: "en_IN",
     type: "website",
     images: [
       {
         url: "https://www.itsindianguy.in/og-cloud.jpg",
         width: 1200,
         height: 630,
-        alt: "Cloud Computing - ItsIndianGuy",
+        alt: "Cloud Computing Tutorials - AWS, Azure, Google Cloud & Serverless",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cloud Computing | ItsIndianGuy - Learn AWS, Azure, GCP",
+    title:
+      "Cloud Computing Tutorials | ItsIndianGuy - Learn AWS, Azure, Google Cloud & Serverless",
     description:
-      "Master cloud computing with our comprehensive guides covering AWS, Azure, Google Cloud Platform, and cloud architecture.",
+      "Master cloud computing with comprehensive tutorials covering AWS, Azure, Google Cloud Platform, serverless architecture, and cloud deployment. Learn to build scalable applications, manage cloud infrastructure, and optimize costs.",
     images: ["https://www.itsindianguy.in/og-cloud.jpg"],
   },
 };

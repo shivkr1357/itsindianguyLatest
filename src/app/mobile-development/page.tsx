@@ -4,34 +4,38 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: `Mobile Development | ItsIndianGuy - Learn Mobile App Development`,
+  title: `Mobile App Development Tutorials | ItsIndianGuy - Learn React Native, Flutter, iOS & Android`,
   description:
-    "Master mobile app development with our comprehensive guides covering React Native, Flutter, iOS, and Android development.",
+    "Master mobile app development with comprehensive tutorials covering React Native, Flutter, iOS Swift, Android Kotlin, and cross-platform development. Learn to build native and hybrid mobile applications.",
+  keywords:
+    "mobile app development tutorials, React Native tutorials, Flutter tutorials, iOS development, Android development, mobile programming, ItsIndianGuy mobile development, programming tutorials, coding tutorials, mobile app programming",
   alternates: {
     canonical: "https://www.itsindianguy.in/mobile-development",
   },
   openGraph: {
-    title: "Mobile Development | ItsIndianGuy - Learn Mobile App Development",
+    title:
+      "Mobile App Development Tutorials | ItsIndianGuy - Learn React Native, Flutter, iOS & Android",
     description:
-      "Master mobile app development with our comprehensive guides covering React Native, Flutter, iOS, and Android development.",
+      "Master mobile app development with comprehensive tutorials covering React Native, Flutter, iOS Swift, Android Kotlin, and cross-platform development. Learn to build native and hybrid mobile applications with step-by-step guides and real-world projects.",
     url: "https://www.itsindianguy.in/mobile-development",
     siteName: "ItsIndianGuy",
-    locale: "en_US",
+    locale: "en_IN",
     type: "website",
     images: [
       {
         url: "https://www.itsindianguy.in/og-mobile-dev.jpg",
         width: 1200,
         height: 630,
-        alt: "Mobile App Development - ItsIndianGuy",
+        alt: "Mobile App Development Tutorials - React Native, Flutter, iOS & Android",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mobile Development | ItsIndianGuy - Learn Mobile App Development",
+    title:
+      "Mobile App Development Tutorials | ItsIndianGuy - Learn React Native, Flutter, iOS & Android",
     description:
-      "Master mobile app development with our comprehensive guides covering React Native, Flutter, iOS, and Android development.",
+      "Master mobile app development with comprehensive tutorials covering React Native, Flutter, iOS Swift, Android Kotlin, and cross-platform development. Learn to build native and hybrid mobile applications.",
     images: ["https://www.itsindianguy.in/og-mobile-dev.jpg"],
   },
 };

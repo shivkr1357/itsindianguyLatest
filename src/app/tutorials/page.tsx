@@ -3,36 +3,38 @@ import TutorialsClient from "@/components/Tutorials/TutorialsClient";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: `Tutorials | ItsIndianGuy - Learn Web Development`,
+  title: `Programming Tutorials | ItsIndianGuy - Learn Web Development, React, Node.js & Full-Stack Development`,
   description:
-    "Master new skills with our comprehensive tutorials. From beginner to advanced, we have something for every developer.",
+    "Master programming with step-by-step tutorials covering web development, React, Node.js, TypeScript, and full-stack development. From beginner to advanced, learn practical coding skills.",
   keywords:
-    "programming tutorials, web development tutorials, coding tutorials, software development courses, learn programming, coding lessons, developer tutorials, programming courses, tech tutorials, coding education",
+    "programming tutorials, web development tutorials, coding tutorials, software development courses, learn programming, coding lessons, developer tutorials, programming courses, tech tutorials, coding education, React tutorials, Node.js guides, TypeScript lessons, ItsIndianGuy, programming courses",
   alternates: {
     canonical: "https://www.itsindianguy.in/tutorials",
   },
   openGraph: {
-    title: "Tutorials | ItsIndianGuy - Learn Web Development",
+    title:
+      "Programming Tutorials | ItsIndianGuy - Learn Web Development, React, Node.js & Full-Stack Development",
     description:
-      "Master new skills with our comprehensive tutorials. From beginner to advanced, we have something for every developer.",
+      "Master programming with step-by-step tutorials covering web development, React, Node.js, TypeScript, and full-stack development. From beginner to advanced, learn practical coding skills with hands-on projects and real-world examples.",
     url: "https://www.itsindianguy.in/tutorials",
     siteName: "ItsIndianGuy",
-    locale: "en_US",
+    locale: "en_IN",
     type: "website",
     images: [
       {
         url: "https://www.itsindianguy.in/og-tutorials.jpg",
         width: 1200,
         height: 630,
-        alt: "Web Development Tutorials - ItsIndianGuy",
+        alt: "Programming Tutorials - Web Development, React, Node.js & Full-Stack Development",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tutorials | ItsIndianGuy - Learn Web Development",
+    title:
+      "Programming Tutorials | ItsIndianGuy - Learn Web Development, React, Node.js & Full-Stack Development",
     description:
-      "Master new skills with our comprehensive tutorials. From beginner to advanced, we have something for every developer.",
+      "Master programming with step-by-step tutorials covering web development, React, Node.js, TypeScript, and full-stack development. From beginner to advanced, learn practical coding skills.",
     images: ["https://www.itsindianguy.in/og-tutorials.jpg"],
   },
 };

@@ -3,34 +3,38 @@ import { Metadata } from "next";
 import React, { Fragment } from "react";
 
 export const metadata: Metadata = {
-  title: `InterviewQA: Master Programming Interviews | ItsIndianGuy`,
+  title: `Programming Interview Questions | ItsIndianGuy - JavaScript, Python, React, Node.js Interview Prep`,
   description:
-    "Explore interview questions in JavaScript, Python, C++, and more. Enhance your prep with comprehensive language-specific content.",
+    "Master programming interviews with comprehensive question banks covering JavaScript, Python, React, Node.js, data structures, algorithms, and system design. Practice with detailed explanations and coding challenges.",
+  keywords:
+    "programming interview questions, JavaScript interview prep, Python interview questions, React interview prep, Node.js interview questions, coding interviews, ItsIndianGuy interview prep, programming interview preparation, ItsIndianGuy interview questions",
   alternates: {
     canonical: "https://www.itsindianguy.in/interview-qa",
   },
   openGraph: {
-    title: "InterviewQA: Master Programming Interviews | ItsIndianGuy",
+    title:
+      "Programming Interview Questions | ItsIndianGuy - JavaScript, Python, React, Node.js Interview Prep",
     description:
-      "Explore interview questions in JavaScript, Python, C++, and more. Enhance your prep with comprehensive language-specific content.",
+      "Master programming interviews with comprehensive question banks covering JavaScript, Python, React, Node.js, data structures, algorithms, and system design. Practice with detailed explanations and coding challenges for top tech companies.",
     url: "https://www.itsindianguy.in/interview-qa",
     siteName: "ItsIndianGuy",
-    locale: "en_US",
+    locale: "en_IN",
     type: "website",
     images: [
       {
         url: "https://www.itsindianguy.in/og-interview.jpg",
         width: 1200,
         height: 630,
-        alt: "Programming Interview Questions - ItsIndianGuy",
+        alt: "Programming Interview Questions - JavaScript, Python, React, Node.js Interview Prep",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "InterviewQA: Master Programming Interviews | ItsIndianGuy",
+    title:
+      "Programming Interview Questions | ItsIndianGuy - JavaScript, Python, React, Node.js Interview Prep",
     description:
-      "Explore interview questions in JavaScript, Python, C++, and more. Enhance your prep with comprehensive language-specific content.",
+      "Master programming interviews with comprehensive question banks covering JavaScript, Python, React, Node.js, data structures, algorithms, and system design. Practice with detailed explanations and coding challenges.",
     images: ["https://www.itsindianguy.in/og-interview.jpg"],
   },
 };

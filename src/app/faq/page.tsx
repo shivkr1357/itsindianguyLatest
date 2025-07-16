@@ -4,34 +4,38 @@ import Link from "next/link";
 import FAQClient from "@/components/FAQ/FAQClient";
 
 export const metadata: Metadata = {
-  title: `FAQ | ItsIndianGuy - Frequently Asked Questions`,
+  title: `FAQ | ItsIndianGuy - Programming Tutorials, Web Development & Learning Platform Questions`,
   description:
-    "Find answers to common questions about our platform and services.",
+    "Find answers to frequently asked questions about ItsIndianGuy programming tutorials, web development courses, interview preparation, and our learning platform. Get help with tutorials and resources.",
+  keywords:
+    "ItsIndianGuy FAQ, programming tutorials FAQ, web development questions, ItsIndianGuy frequently asked questions, programming courses FAQ, coding tutorials help, ItsIndianGuy support questions, ItsIndianGuy FAQ",
   alternates: {
     canonical: "https://www.itsindianguy.in/faq",
   },
   openGraph: {
-    title: "FAQ | ItsIndianGuy - Frequently Asked Questions",
+    title:
+      "FAQ | ItsIndianGuy - Programming Tutorials, Web Development & Learning Platform Questions",
     description:
-      "Find answers to common questions about our platform and services.",
+      "Find answers to frequently asked questions about ItsIndianGuy programming tutorials, web development courses, interview preparation, and our learning platform. Get help with tutorials, resources, and developer community support.",
     url: "https://www.itsindianguy.in/faq",
     siteName: "ItsIndianGuy",
-    locale: "en_US",
+    locale: "en_IN",
     type: "website",
     images: [
       {
         url: "https://www.itsindianguy.in/og-faq.jpg",
         width: 1200,
         height: 630,
-        alt: "Frequently Asked Questions - ItsIndianGuy",
+        alt: "FAQ - Programming Tutorials, Web Development & Learning Platform Questions",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "FAQ | ItsIndianGuy - Frequently Asked Questions",
+    title:
+      "FAQ | ItsIndianGuy - Programming Tutorials, Web Development & Learning Platform Questions",
     description:
-      "Find answers to common questions about our platform and services.",
+      "Find answers to frequently asked questions about ItsIndianGuy programming tutorials, web development courses, interview preparation, and our learning platform. Get help with tutorials, resources, and developer community support.",
     images: ["https://www.itsindianguy.in/og-faq.jpg"],
   },
 };

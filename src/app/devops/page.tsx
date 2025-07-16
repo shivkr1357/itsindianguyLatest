@@ -4,34 +4,38 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: `DevOps | ItsIndianGuy - Learn DevOps and CI/CD`,
+  title: `DevOps Tutorials | ItsIndianGuy - Learn CI/CD, Docker, Kubernetes & Infrastructure as Code`,
   description:
-    "Master DevOps practices, CI/CD pipelines, containerization, and infrastructure as code with our comprehensive guides.",
+    "Master DevOps practices with comprehensive tutorials covering Docker, Kubernetes, CI/CD pipelines, infrastructure as code, Terraform, and cloud deployment. Learn to automate development workflows.",
+  keywords:
+    "DevOps tutorials, CI/CD tutorials, Docker tutorials, Kubernetes tutorials, infrastructure as code, ItsIndianGuy DevOps, programming tutorials, coding tutorials, DevOps programming, automation tutorials",
   alternates: {
     canonical: "https://www.itsindianguy.in/devops",
   },
   openGraph: {
-    title: "DevOps | ItsIndianGuy - Learn DevOps and CI/CD",
+    title:
+      "DevOps Tutorials | ItsIndianGuy - Learn CI/CD, Docker, Kubernetes & Infrastructure as Code",
     description:
-      "Master DevOps practices, CI/CD pipelines, containerization, and infrastructure as code with our comprehensive guides.",
+      "Master DevOps practices with comprehensive tutorials covering Docker, Kubernetes, CI/CD pipelines, infrastructure as code, Terraform, and cloud deployment. Learn to automate development workflows and scale applications efficiently.",
     url: "https://www.itsindianguy.in/devops",
     siteName: "ItsIndianGuy",
-    locale: "en_US",
+    locale: "en_IN",
     type: "website",
     images: [
       {
         url: "https://www.itsindianguy.in/og-devops.jpg",
         width: 1200,
         height: 630,
-        alt: "DevOps and CI/CD - ItsIndianGuy",
+        alt: "DevOps Tutorials - CI/CD, Docker, Kubernetes & Infrastructure as Code",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "DevOps | ItsIndianGuy - Learn DevOps and CI/CD",
+    title:
+      "DevOps Tutorials | ItsIndianGuy - Learn CI/CD, Docker, Kubernetes & Infrastructure as Code",
     description:
-      "Master DevOps practices, CI/CD pipelines, containerization, and infrastructure as code with our comprehensive guides.",
+      "Master DevOps practices with comprehensive tutorials covering Docker, Kubernetes, CI/CD pipelines, infrastructure as code, Terraform, and cloud deployment. Learn to automate development workflows and scale applications efficiently.",
     images: ["https://www.itsindianguy.in/og-devops.jpg"],
   },
 };

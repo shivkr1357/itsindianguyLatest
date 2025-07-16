@@ -4,36 +4,38 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: `Security | ItsIndianGuy - Learn Cybersecurity and Application Security`,
+  title: `Cybersecurity Tutorials | ItsIndianGuy - Learn Web Security, Penetration Testing & Secure Coding`,
   description:
-    "Master cybersecurity, application security, and secure coding practices with our comprehensive guides and tutorials.",
+    "Master cybersecurity with comprehensive tutorials covering web security, penetration testing, cryptography, secure coding practices, and ethical hacking. Learn to protect applications from vulnerabilities.",
+  keywords:
+    "cybersecurity tutorials, web security tutorials, penetration testing, secure coding, ethical hacking, ItsIndianGuy security, programming tutorials, coding tutorials, security programming, cybersecurity courses",
   alternates: {
     canonical: "https://www.itsindianguy.in/security",
   },
   openGraph: {
     title:
-      "Security | ItsIndianGuy - Learn Cybersecurity and Application Security",
+      "Cybersecurity Tutorials | ItsIndianGuy - Learn Web Security, Penetration Testing & Secure Coding",
     description:
-      "Master cybersecurity, application security, and secure coding practices with our comprehensive guides and tutorials.",
+      "Master cybersecurity with comprehensive tutorials covering web security, penetration testing, cryptography, secure coding practices, and ethical hacking. Learn to protect applications from vulnerabilities and build secure software systems.",
     url: "https://www.itsindianguy.in/security",
     siteName: "ItsIndianGuy",
-    locale: "en_US",
+    locale: "en_IN",
     type: "website",
     images: [
       {
         url: "https://www.itsindianguy.in/og-security.jpg",
         width: 1200,
         height: 630,
-        alt: "Cybersecurity and Application Security - ItsIndianGuy",
+        alt: "Cybersecurity Tutorials - Web Security, Penetration Testing & Secure Coding",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title:
-      "Security | ItsIndianGuy - Learn Cybersecurity and Application Security",
+      "Cybersecurity Tutorials | ItsIndianGuy - Learn Web Security, Penetration Testing & Secure Coding",
     description:
-      "Master cybersecurity, application security, and secure coding practices with our comprehensive guides and tutorials.",
+      "Master cybersecurity with comprehensive tutorials covering web security, penetration testing, cryptography, secure coding practices, and ethical hacking. Learn to protect applications from vulnerabilities.",
     images: ["https://www.itsindianguy.in/og-security.jpg"],
   },
 };

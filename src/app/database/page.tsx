@@ -4,34 +4,38 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: `Database | ItsIndianGuy - Learn SQL, NoSQL, and Database Design`,
+  title: `Database Tutorials | ItsIndianGuy - Learn SQL, NoSQL, MongoDB, PostgreSQL & Database Design`,
   description:
-    "Master database design, SQL, NoSQL databases, and data modeling with our comprehensive guides and tutorials.",
+    "Master database design and management with comprehensive tutorials covering SQL, NoSQL, MongoDB, PostgreSQL, MySQL, Redis, and data modeling. Learn database optimization and ORM tools.",
+  keywords:
+    "database tutorials, SQL tutorials, NoSQL tutorials, MongoDB tutorials, PostgreSQL tutorials, database design, ItsIndianGuy database, programming tutorials, coding tutorials, database programming",
   alternates: {
     canonical: "https://www.itsindianguy.in/database",
   },
   openGraph: {
-    title: "Database | ItsIndianGuy - Learn SQL, NoSQL, and Database Design",
+    title:
+      "Database Tutorials | ItsIndianGuy - Learn SQL, NoSQL, MongoDB, PostgreSQL & Database Design",
     description:
-      "Master database design, SQL, NoSQL databases, and data modeling with our comprehensive guides and tutorials.",
+      "Master database design and management with comprehensive tutorials covering SQL, NoSQL, MongoDB, PostgreSQL, MySQL, Redis, and data modeling. Learn database optimization, ORM tools, and build scalable data solutions for modern applications.",
     url: "https://www.itsindianguy.in/database",
     siteName: "ItsIndianGuy",
-    locale: "en_US",
+    locale: "en_IN",
     type: "website",
     images: [
       {
         url: "https://www.itsindianguy.in/og-database.jpg",
         width: 1200,
         height: 630,
-        alt: "Database Design and SQL - ItsIndianGuy",
+        alt: "Database Tutorials - SQL, NoSQL, MongoDB, PostgreSQL & Database Design",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Database | ItsIndianGuy - Learn SQL, NoSQL, and Database Design",
+    title:
+      "Database Tutorials | ItsIndianGuy - Learn SQL, NoSQL, MongoDB, PostgreSQL & Database Design",
     description:
-      "Master database design, SQL, NoSQL databases, and data modeling with our comprehensive guides and tutorials.",
+      "Master database design and management with comprehensive tutorials covering SQL, NoSQL, MongoDB, PostgreSQL, MySQL, Redis, and data modeling. Learn database optimization, ORM tools, and build scalable data solutions.",
     images: ["https://www.itsindianguy.in/og-database.jpg"],
   },
 };

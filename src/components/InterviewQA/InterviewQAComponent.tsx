@@ -18,10 +18,13 @@ const InterviewQAComponent = () => {
   return (
     <Fragment>
       <Head>
-        <title>InterviewQA | ItsIndianguy</title>
+        <title>
+          InterviewQA | ItsIndianGuy | {language.toUpperCase()} Interview
+          Questions
+        </title>
         <meta
           name="description"
-          content="Top interview questions and answers for developers"
+          content={`Top ${language.toUpperCase()} interview questions and answers for developers`}
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href={canonical} />

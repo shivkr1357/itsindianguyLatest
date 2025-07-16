@@ -4,36 +4,38 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: `UI/UX Design | ItsIndianGuy - Learn User Interface and Experience Design`,
+  title: `UI/UX Design Tutorials | ItsIndianGuy - Learn Figma, Design Systems & User Experience`,
   description:
-    "Master UI/UX design principles, tools, and best practices with our comprehensive guides and tutorials.",
+    "Master UI/UX design with comprehensive tutorials covering Figma, design systems, user research, prototyping, and user experience principles. Learn to create beautiful, accessible, and user-friendly interfaces.",
+  keywords:
+    "UI/UX design tutorials, Figma tutorials, design systems, user experience, user interface design, ItsIndianGuy UI UX, programming tutorials, coding tutorials, design programming, UI design tutorials",
   alternates: {
     canonical: "https://www.itsindianguy.in/ui-ux",
   },
   openGraph: {
     title:
-      "UI/UX Design | ItsIndianGuy - Learn User Interface and Experience Design",
+      "UI/UX Design Tutorials | ItsIndianGuy - Learn Figma, Design Systems & User Experience",
     description:
-      "Master UI/UX design principles, tools, and best practices with our comprehensive guides and tutorials.",
+      "Master UI/UX design with comprehensive tutorials covering Figma, design systems, user research, prototyping, and user experience principles. Learn to create beautiful, accessible, and user-friendly interfaces for web and mobile applications.",
     url: "https://www.itsindianguy.in/ui-ux",
     siteName: "ItsIndianGuy",
-    locale: "en_US",
+    locale: "en_IN",
     type: "website",
     images: [
       {
         url: "https://www.itsindianguy.in/og-ui-ux.jpg",
         width: 1200,
         height: 630,
-        alt: "UI/UX Design - ItsIndianGuy",
+        alt: "UI/UX Design Tutorials - Figma, Design Systems & User Experience",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title:
-      "UI/UX Design | ItsIndianGuy - Learn User Interface and Experience Design",
+      "UI/UX Design Tutorials | ItsIndianGuy - Learn Figma, Design Systems & User Experience",
     description:
-      "Master UI/UX design principles, tools, and best practices with our comprehensive guides and tutorials.",
+      "Master UI/UX design with comprehensive tutorials covering Figma, design systems, user research, prototyping, and user experience principles. Learn to create beautiful, accessible, and user-friendly interfaces.",
     images: ["https://www.itsindianguy.in/og-ui-ux.jpg"],
   },
 };

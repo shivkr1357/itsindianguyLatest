@@ -3,36 +3,38 @@ import BlogListClient from "@/components/Blog/BlogListClient";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: `Blog | ItsIndianGuy - Tech Insights, Tutorials & Updates`,
+  title: `Programming Blog | ItsIndianGuy - Web Development, React, Node.js Tutorials & Tech Insights`,
   description:
-    "Explore our latest blog posts covering web development, mobile apps, AI/ML, and tech trends. Stay updated with tutorials, insights, and industry news.",
+    "Discover in-depth programming tutorials, web development guides, React tips, Node.js best practices, and the latest tech trends. Expert insights for developers at all skill levels.",
   keywords:
-    "programming blog, tech articles, web development blog, coding tutorials, software development, tech insights, programming tips, developer blog, coding articles, tech trends",
+    "programming blog, tech articles, web development blog, coding tutorials, software development, tech insights, programming tips, developer blog, coding articles, tech trends, React tutorials, Node.js guides, JavaScript tips, ItsIndianGuy, programming tutorials",
   alternates: {
     canonical: "https://www.itsindianguy.in/blog",
   },
   openGraph: {
-    title: "Blog | ItsIndianGuy - Tech Insights, Tutorials & Updates",
+    title:
+      "Programming Blog | ItsIndianGuy - Web Development, React, Node.js Tutorials & Tech Insights",
     description:
-      "Explore our latest blog posts covering web development, mobile apps, AI/ML, and tech trends. Stay updated with tutorials, insights, and industry news.",
+      "Discover in-depth programming tutorials, web development guides, React tips, Node.js best practices, and the latest tech trends. Expert insights for developers at all skill levels with practical coding examples and industry updates.",
     url: "https://www.itsindianguy.in/blog",
     siteName: "ItsIndianGuy",
-    locale: "en_US",
+    locale: "en_IN",
     type: "website",
     images: [
       {
         url: "https://www.itsindianguy.in/og-blog.jpg",
         width: 1200,
         height: 630,
-        alt: "Blog - Tech Insights and Tutorials",
+        alt: "Programming Blog - Web Development, React, Node.js Tutorials & Tech Insights",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blog | ItsIndianGuy - Tech Insights, Tutorials & Updates",
+    title:
+      "Programming Blog | ItsIndianGuy - Web Development, React, Node.js Tutorials & Tech Insights",
     description:
-      "Explore our latest blog posts covering web development, mobile apps, AI/ML, and tech trends.",
+      "Discover in-depth programming tutorials, web development guides, React tips, Node.js best practices, and the latest tech trends. Expert insights for developers at all skill levels.",
     images: ["https://www.itsindianguy.in/og-blog.jpg"],
   },
 };

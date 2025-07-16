@@ -13,34 +13,39 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "ItsIndianGuy",
+  title:
+    "ItsIndianGuy - Programming Tutorials, Web Development Guides & Interview Preparation",
   description:
-    "Your one-stop destination for programming tutorials and interview preparation",
+    "Master programming with comprehensive tutorials, web development guides, and interview preparation resources. Learn JavaScript, React, Node.js, Python, and more with step-by-step guides.",
+  keywords:
+    "programming tutorials, web development, JavaScript tutorials, React tutorials, Node.js tutorials, Python tutorials, interview preparation, coding tutorials, software development, programming courses, ItsIndianGuy",
   alternates: {
     canonical: "https://www.itsindianguy.in",
   },
   openGraph: {
-    title: "ItsIndianGuy - Programming Tutorials & Interview Preparation",
+    title:
+      "ItsIndianGuy - Programming Tutorials, Web Development Guides & Interview Preparation",
     description:
-      "Your one-stop destination for programming tutorials and interview preparation",
+      "Master programming with comprehensive tutorials, web development guides, and interview preparation resources. Learn JavaScript, React, Node.js, Python, and more with step-by-step guides for beginners and advanced developers.",
     url: "https://www.itsindianguy.in",
     siteName: "ItsIndianGuy",
-    locale: "en_US",
+    locale: "en_IN",
     type: "website",
     images: [
       {
         url: "https://www.itsindianguy.in/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "ItsIndianGuy - Programming Tutorials & Interview Preparation",
+        alt: "ItsIndianGuy - Programming Tutorials, Web Development Guides & Interview Preparation",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "ItsIndianGuy - Programming Tutorials & Interview Preparation",
+    title:
+      "ItsIndianGuy - Programming Tutorials, Web Development Guides & Interview Preparation",
     description:
-      "Your one-stop destination for programming tutorials and interview preparation",
+      "Master programming with comprehensive tutorials, web development guides, and interview preparation resources. Learn JavaScript, React, Node.js, Python, and more.",
     images: ["https://www.itsindianguy.in/og-image.jpg"],
   },
 };
