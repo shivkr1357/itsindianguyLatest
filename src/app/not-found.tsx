@@ -5,7 +5,7 @@ import React, { Fragment } from "react";
 export const metadata: Metadata = {
   title: `Page Not Found | ItsIndianGuy - Programming Tutorials & Web Development Guides`,
   description:
-    "The page you're looking for doesn't exist. Browse our programming tutorials, web development guides, interview questions, and resources to find what you need.",
+    "The page you&apos;re looking for doesn&apos;t exist. Browse our programming tutorials, web development guides, interview questions, and resources to find what you need.",
   keywords:
     "404 error, page not found, ItsIndianGuy, programming tutorials, web development guides, coding tutorials, ItsIndianGuy 404",
   alternates: {
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     title:
       "Page Not Found | ItsIndianGuy - Programming Tutorials & Web Development Guides",
     description:
-      "The page you're looking for doesn't exist. Browse our programming tutorials, web development guides, interview questions, and resources to find what you need.",
+      "The page you&apos;re looking for doesn&apos;t exist. Browse our programming tutorials, web development guides, interview questions, and resources to find what you need.",
     url: "https://www.itsindianguy.in/404",
     siteName: "ItsIndianGuy",
     locale: "en_IN",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title:
       "Page Not Found | ItsIndianGuy - Programming Tutorials & Web Development Guides",
     description:
-      "The page you're looking for doesn't exist. Browse our programming tutorials, web development guides, interview questions, and resources to find what you need.",
+      "The page you&apos;re looking for doesn&apos;t exist. Browse our programming tutorials, web development guides, interview questions, and resources to find what you need.",
     images: ["https://www.itsindianguy.in/og-404.jpg"],
   },
 };
@@ -152,8 +152,9 @@ const NotFound = () => {
             </h1>
 
             <p className="text-lg text-neutral-600 dark:text-neutral-400 mb-8 max-w-2xl mx-auto">
-              The page you're looking for doesn't exist or has been moved. Don't
-              worry, we have plenty of amazing content for you to explore!
+              The page you&apos;re looking for doesn&apos;t exist or has been
+              moved. Don&apos;t worry, we have plenty of amazing content for you
+              to explore!
             </p>
 
             {/* Action Buttons */}
@@ -200,7 +201,7 @@ const NotFound = () => {
             {/* Search Suggestion */}
             <div className="mt-8 p-6 bg-neutral-100 dark:bg-neutral-800 rounded-lg">
               <h3 className="text-lg font-semibold text-neutral-800 dark:text-neutral-100 mb-3">
-                Can't find what you're looking for?
+                Can&apos;t find what you&apos;re looking for?
               </h3>
               <p className="text-neutral-600 dark:text-neutral-400 mb-4">
                 Try browsing our categories or contact us for help.

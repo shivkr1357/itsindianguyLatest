@@ -133,7 +133,7 @@ const SignIn = ({ onToggleMode, onClose }: SignInProps) => {
 
         <div className="mt-6 text-center">
           <p className="text-sm text-neutral-600 dark:text-neutral-400">
-            Don't have an account?{" "}
+            Don&apos;t have an account?{" "}
             <button
               onClick={onToggleMode}
               className="text-primary-200 hover:text-primary-300 font-semibold"
