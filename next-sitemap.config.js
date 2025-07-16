@@ -58,11 +58,56 @@ module.exports = {
     };
   },
   additionalPaths: async (config) => {
-    const paths = imageLinksInterview.map((item) => ({
-      loc: item.link,
-      changefreq: config.changefreq,
-      priority: config.priority,
-    }));
+    const paths = [
+      // Main pages with high priority
+      { loc: "/", changefreq: "daily", priority: 1.0 },
+      { loc: "/about", changefreq: "weekly", priority: 0.9 },
+      { loc: "/contact-us", changefreq: "weekly", priority: 0.8 },
+      { loc: "/blog", changefreq: "daily", priority: 0.9 },
+      { loc: "/tutorials", changefreq: "daily", priority: 0.9 },
+      { loc: "/resources", changefreq: "weekly", priority: 0.8 },
+      { loc: "/search", changefreq: "weekly", priority: 0.7 },
+      { loc: "/faq", changefreq: "weekly", priority: 0.8 },
+      { loc: "/support", changefreq: "weekly", priority: 0.8 },
+      { loc: "/documentation", changefreq: "weekly", priority: 0.8 },
+      { loc: "/memes", changefreq: "weekly", priority: 0.7 },
+
+      // Auth pages
+      { loc: "/login", changefreq: "monthly", priority: 0.6 },
+      { loc: "/signup", changefreq: "monthly", priority: 0.6 },
+      { loc: "/forgot-password", changefreq: "monthly", priority: 0.5 },
+
+      // Legal pages
+      { loc: "/privacy-policy", changefreq: "monthly", priority: 0.5 },
+      { loc: "/terms", changefreq: "monthly", priority: 0.5 },
+
+      // Interview pages
+      ...imageLinksInterview.map((item) => ({
+        loc: item.link,
+        changefreq: config.changefreq,
+        priority: 0.7,
+      })),
+
+      // Development category pages
+      { loc: "/web-development", changefreq: config.changefreq, priority: 0.8 },
+      {
+        loc: "/mobile-development",
+        changefreq: config.changefreq,
+        priority: 0.8,
+      },
+      {
+        loc: "/backend-development",
+        changefreq: config.changefreq,
+        priority: 0.8,
+      },
+      { loc: "/devops", changefreq: config.changefreq, priority: 0.8 },
+      { loc: "/cloud", changefreq: config.changefreq, priority: 0.8 },
+      { loc: "/database", changefreq: config.changefreq, priority: 0.8 },
+      { loc: "/ui-ux", changefreq: config.changefreq, priority: 0.8 },
+      { loc: "/ai-ml", changefreq: config.changefreq, priority: 0.8 },
+      { loc: "/blockchain", changefreq: config.changefreq, priority: 0.8 },
+      { loc: "/security", changefreq: config.changefreq, priority: 0.8 },
+    ];
     return paths;
   },
   robotsTxtOptions: {

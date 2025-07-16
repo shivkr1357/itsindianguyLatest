@@ -1,16 +1,57 @@
-# *
+# Robots.txt for ItsIndianGuy
+# Allow search engines to crawl the site
+
+# Allow all search engines
 User-agent: *
 Allow: /
 
-# test-bot
-User-agent: test-bot
-Allow: /path
-Allow: /path-2
+# Disallow sensitive areas
+Disallow: /login
+Disallow: /signup
+Disallow: /forgot-password
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /private/
 
-# black-listed-bot
-User-agent: black-listed-bot
-Disallow: /sub-path-1
-Disallow: /path-2
+# Allow important pages
+Allow: /about
+Allow: /blog
+Allow: /tutorials
+Allow: /resources
+Allow: /interview-qa
+Allow: /faq
+Allow: /support
+Allow: /documentation
+Allow: /contact-us
+Allow: /memes
+Allow: /privacy-policy
+Allow: /terms
+
+# Development category pages
+Allow: /web-development
+Allow: /mobile-development
+Allow: /backend-development
+Allow: /devops
+Allow: /cloud
+Allow: /database
+Allow: /ui-ux
+Allow: /ai-ml
+Allow: /blockchain
+Allow: /security
+
+# Specific bot configurations
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Crawl delay (optional - helps with server load)
+Crawl-delay: 1
 
 # Host
 Host: https://itsindianguy.in
