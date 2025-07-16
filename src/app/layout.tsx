@@ -4,6 +4,7 @@ import "./globals.css";
 import Topbar from "@/components/Topbar/Topbar";
 import Footer from "@/components/Footer/Footer";
 import ThemeProvider from "@/context/ThemeContext";
+import { AuthProvider } from "@/context/AuthContext";
 import Script from "next/script";
 
 const roboto = Roboto({
@@ -84,9 +85,11 @@ export default function RootLayout({
         {/* End Google Tag Manager (noscript) */}
 
         <ThemeProvider>
-          <Topbar />
-          <main className="flex-grow pt-16">{children}</main>
-          <Footer />
+          <AuthProvider>
+            <Topbar />
+            <main className="flex-grow pt-16">{children}</main>
+            <Footer />
+          </AuthProvider>
         </ThemeProvider>
       </body>
     </html>
