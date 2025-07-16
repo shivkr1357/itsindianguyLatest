@@ -72,16 +72,6 @@ export const useUser = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Fetch user profile when user changes
-  useEffect(() => {
-    if (user) {
-      fetchProfile();
-    } else {
-      setProfile(null);
-      setError(null);
-    }
-  }, [user]);
-
   const fetchProfile = useCallback(async () => {
     if (!user) return;
 
@@ -98,6 +88,16 @@ export const useUser = () => {
 
     setLoading(false);
   }, [user]);
+
+  // Fetch user profile when user changes
+  useEffect(() => {
+    if (user) {
+      fetchProfile();
+    } else {
+      setProfile(null);
+      setError(null);
+    }
+  }, [user, fetchProfile]);
 
   const createProfile = useCallback(
     async (userData: Partial<UserProfile>) => {
