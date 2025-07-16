@@ -1,5 +1,39 @@
 import React, { Fragment } from "react";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: `Support | ItsIndianGuy`,
+  description:
+    "Get help and support for ItsIndianGuy. Find answers to your questions, report issues, and get assistance with our platform.",
+  alternates: {
+    canonical: "https://www.itsindianguy.in/support",
+  },
+  openGraph: {
+    title: "Support | ItsIndianGuy",
+    description:
+      "Get help and support for ItsIndianGuy. Find answers to your questions, report issues, and get assistance with our platform.",
+    url: "https://www.itsindianguy.in/support",
+    siteName: "ItsIndianGuy",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "https://www.itsindianguy.in/og-support.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Support Center - ItsIndianGuy",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Support | ItsIndianGuy",
+    description:
+      "Get help and support for ItsIndianGuy. Find answers to your questions and get assistance.",
+    images: ["https://www.itsindianguy.in/og-support.jpg"],
+  },
+};
 
 const supportChannels = [
   {

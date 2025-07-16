@@ -8,7 +8,31 @@ export const metadata: Metadata = {
   description:
     "Master mobile app development with our comprehensive guides covering React Native, Flutter, iOS, and Android development.",
   alternates: {
-    canonical: "https://itsindianguy.in/mobile-development",
+    canonical: "https://www.itsindianguy.in/mobile-development",
+  },
+  openGraph: {
+    title: "Mobile Development | ItsIndianGuy - Learn Mobile App Development",
+    description:
+      "Master mobile app development with our comprehensive guides covering React Native, Flutter, iOS, and Android development.",
+    url: "https://www.itsindianguy.in/mobile-development",
+    siteName: "ItsIndianGuy",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "https://www.itsindianguy.in/og-mobile-dev.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Mobile App Development - ItsIndianGuy",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mobile Development | ItsIndianGuy - Learn Mobile App Development",
+    description:
+      "Master mobile app development with our comprehensive guides covering React Native, Flutter, iOS, and Android development.",
+    images: ["https://www.itsindianguy.in/og-mobile-dev.jpg"],
   },
 };
 

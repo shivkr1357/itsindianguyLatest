@@ -8,7 +8,31 @@ export const metadata: Metadata = {
   description:
     "Search across our platform for tutorials, blog posts, and interview questions.",
   alternates: {
-    canonical: "https://itsindianguy.in/search",
+    canonical: "https://www.itsindianguy.in/search",
+  },
+  openGraph: {
+    title: "Search | ItsIndianGuy",
+    description:
+      "Search across our platform for tutorials, blog posts, and interview questions.",
+    url: "https://www.itsindianguy.in/search",
+    siteName: "ItsIndianGuy",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "https://www.itsindianguy.in/og-search.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Search - ItsIndianGuy",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Search | ItsIndianGuy",
+    description:
+      "Search across our platform for tutorials, blog posts, and interview questions.",
+    images: ["https://www.itsindianguy.in/og-search.jpg"],
   },
 };
 

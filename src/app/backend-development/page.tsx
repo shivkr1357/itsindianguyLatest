@@ -8,7 +8,31 @@ export const metadata: Metadata = {
   description:
     "Master backend development with our comprehensive guides covering Node.js, Python, databases, APIs, and server architecture.",
   alternates: {
-    canonical: "https://itsindianguy.in/backend-development",
+    canonical: "https://www.itsindianguy.in/backend-development",
+  },
+  openGraph: {
+    title: "Backend Development | ItsIndianGuy - Learn Server-Side Development",
+    description:
+      "Master backend development with our comprehensive guides covering Node.js, Python, databases, APIs, and server architecture.",
+    url: "https://www.itsindianguy.in/backend-development",
+    siteName: "ItsIndianGuy",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "https://www.itsindianguy.in/og-backend-dev.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Backend Development - ItsIndianGuy",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Backend Development | ItsIndianGuy - Learn Server-Side Development",
+    description:
+      "Master backend development with our comprehensive guides covering Node.js, Python, databases, APIs, and server architecture.",
+    images: ["https://www.itsindianguy.in/og-backend-dev.jpg"],
   },
 };
 

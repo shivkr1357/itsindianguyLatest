@@ -8,7 +8,33 @@ export const metadata: Metadata = {
   description:
     "Master cybersecurity, application security, and secure coding practices with our comprehensive guides and tutorials.",
   alternates: {
-    canonical: "https://itsindianguy.in/security",
+    canonical: "https://www.itsindianguy.in/security",
+  },
+  openGraph: {
+    title:
+      "Security | ItsIndianGuy - Learn Cybersecurity and Application Security",
+    description:
+      "Master cybersecurity, application security, and secure coding practices with our comprehensive guides and tutorials.",
+    url: "https://www.itsindianguy.in/security",
+    siteName: "ItsIndianGuy",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "https://www.itsindianguy.in/og-security.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Cybersecurity and Application Security - ItsIndianGuy",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title:
+      "Security | ItsIndianGuy - Learn Cybersecurity and Application Security",
+    description:
+      "Master cybersecurity, application security, and secure coding practices with our comprehensive guides and tutorials.",
+    images: ["https://www.itsindianguy.in/og-security.jpg"],
   },
 };
 

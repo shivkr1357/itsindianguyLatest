@@ -7,7 +7,31 @@ export const metadata: Metadata = {
   description:
     "Login to your ItsIndianGuy account to access exclusive content, track your progress, and personalize your experience.",
   alternates: {
-    canonical: "https://itsindianguy.in/login",
+    canonical: "https://www.itsindianguy.in/login",
+  },
+  openGraph: {
+    title: "Login | ItsIndianGuy",
+    description:
+      "Login to your ItsIndianGuy account to access exclusive content, track your progress, and personalize your experience.",
+    url: "https://www.itsindianguy.in/login",
+    siteName: "ItsIndianGuy",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "https://www.itsindianguy.in/og-login.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Login - ItsIndianGuy",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Login | ItsIndianGuy",
+    description:
+      "Login to your ItsIndianGuy account to access exclusive content and track your progress.",
+    images: ["https://www.itsindianguy.in/og-login.jpg"],
   },
 };
 

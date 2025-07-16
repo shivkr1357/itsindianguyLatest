@@ -8,7 +8,31 @@ export const metadata: Metadata = {
   description:
     "Master DevOps practices, CI/CD pipelines, containerization, and infrastructure as code with our comprehensive guides.",
   alternates: {
-    canonical: "https://itsindianguy.in/devops",
+    canonical: "https://www.itsindianguy.in/devops",
+  },
+  openGraph: {
+    title: "DevOps | ItsIndianGuy - Learn DevOps and CI/CD",
+    description:
+      "Master DevOps practices, CI/CD pipelines, containerization, and infrastructure as code with our comprehensive guides.",
+    url: "https://www.itsindianguy.in/devops",
+    siteName: "ItsIndianGuy",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "https://www.itsindianguy.in/og-devops.jpg",
+        width: 1200,
+        height: 630,
+        alt: "DevOps and CI/CD - ItsIndianGuy",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "DevOps | ItsIndianGuy - Learn DevOps and CI/CD",
+    description:
+      "Master DevOps practices, CI/CD pipelines, containerization, and infrastructure as code with our comprehensive guides.",
+    images: ["https://www.itsindianguy.in/og-devops.jpg"],
   },
 };
 

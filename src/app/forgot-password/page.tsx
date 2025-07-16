@@ -1,5 +1,39 @@
 import React, { Fragment } from "react";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: `Forgot Password | ItsIndianGuy`,
+  description:
+    "Reset your ItsIndianGuy account password. Enter your email to receive a password reset link.",
+  alternates: {
+    canonical: "https://www.itsindianguy.in/forgot-password",
+  },
+  openGraph: {
+    title: "Forgot Password | ItsIndianGuy",
+    description:
+      "Reset your ItsIndianGuy account password. Enter your email to receive a password reset link.",
+    url: "https://www.itsindianguy.in/forgot-password",
+    siteName: "ItsIndianGuy",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "https://www.itsindianguy.in/og-forgot-password.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Forgot Password - ItsIndianGuy",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Forgot Password | ItsIndianGuy",
+    description:
+      "Reset your ItsIndianGuy account password. Enter your email to receive a password reset link.",
+    images: ["https://www.itsindianguy.in/og-forgot-password.jpg"],
+  },
+};
 
 const ForgotPassword = () => {
   return (

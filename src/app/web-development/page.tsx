@@ -1,6 +1,40 @@
 import React, { Fragment } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: `Web Development | ItsIndianGuy`,
+  description:
+    "Master the art of building modern, responsive web applications. From frontend frameworks to backend technologies, learn everything you need to become a full-stack developer.",
+  alternates: {
+    canonical: "https://www.itsindianguy.in/web-development",
+  },
+  openGraph: {
+    title: "Web Development | ItsIndianGuy",
+    description:
+      "Master the art of building modern, responsive web applications. From frontend frameworks to backend technologies, learn everything you need to become a full-stack developer.",
+    url: "https://www.itsindianguy.in/web-development",
+    siteName: "ItsIndianGuy",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "https://www.itsindianguy.in/og-web-dev.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Web Development - ItsIndianGuy",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Web Development | ItsIndianGuy",
+    description:
+      "Master the art of building modern, responsive web applications. From frontend frameworks to backend technologies.",
+    images: ["https://www.itsindianguy.in/og-web-dev.jpg"],
+  },
+};
 
 const webDevelopmentContent = {
   title: "Web Development",

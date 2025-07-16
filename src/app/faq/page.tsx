@@ -8,7 +8,31 @@ export const metadata: Metadata = {
   description:
     "Find answers to common questions about our platform and services.",
   alternates: {
-    canonical: "https://itsindianguy.in/faq",
+    canonical: "https://www.itsindianguy.in/faq",
+  },
+  openGraph: {
+    title: "FAQ | ItsIndianGuy - Frequently Asked Questions",
+    description:
+      "Find answers to common questions about our platform and services.",
+    url: "https://www.itsindianguy.in/faq",
+    siteName: "ItsIndianGuy",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "https://www.itsindianguy.in/og-faq.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Frequently Asked Questions - ItsIndianGuy",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "FAQ | ItsIndianGuy - Frequently Asked Questions",
+    description:
+      "Find answers to common questions about our platform and services.",
+    images: ["https://www.itsindianguy.in/og-faq.jpg"],
   },
 };
 

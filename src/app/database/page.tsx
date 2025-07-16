@@ -8,7 +8,31 @@ export const metadata: Metadata = {
   description:
     "Master database design, SQL, NoSQL databases, and data modeling with our comprehensive guides and tutorials.",
   alternates: {
-    canonical: "https://itsindianguy.in/database",
+    canonical: "https://www.itsindianguy.in/database",
+  },
+  openGraph: {
+    title: "Database | ItsIndianGuy - Learn SQL, NoSQL, and Database Design",
+    description:
+      "Master database design, SQL, NoSQL databases, and data modeling with our comprehensive guides and tutorials.",
+    url: "https://www.itsindianguy.in/database",
+    siteName: "ItsIndianGuy",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "https://www.itsindianguy.in/og-database.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Database Design and SQL - ItsIndianGuy",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Database | ItsIndianGuy - Learn SQL, NoSQL, and Database Design",
+    description:
+      "Master database design, SQL, NoSQL databases, and data modeling with our comprehensive guides and tutorials.",
+    images: ["https://www.itsindianguy.in/og-database.jpg"],
   },
 };
 

@@ -8,7 +8,33 @@ export const metadata: Metadata = {
   description:
     "Master UI/UX design principles, tools, and best practices with our comprehensive guides and tutorials.",
   alternates: {
-    canonical: "https://itsindianguy.in/ui-ux",
+    canonical: "https://www.itsindianguy.in/ui-ux",
+  },
+  openGraph: {
+    title:
+      "UI/UX Design | ItsIndianGuy - Learn User Interface and Experience Design",
+    description:
+      "Master UI/UX design principles, tools, and best practices with our comprehensive guides and tutorials.",
+    url: "https://www.itsindianguy.in/ui-ux",
+    siteName: "ItsIndianGuy",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "https://www.itsindianguy.in/og-ui-ux.jpg",
+        width: 1200,
+        height: 630,
+        alt: "UI/UX Design - ItsIndianGuy",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title:
+      "UI/UX Design | ItsIndianGuy - Learn User Interface and Experience Design",
+    description:
+      "Master UI/UX design principles, tools, and best practices with our comprehensive guides and tutorials.",
+    images: ["https://www.itsindianguy.in/og-ui-ux.jpg"],
   },
 };
 

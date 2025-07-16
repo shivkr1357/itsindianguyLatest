@@ -27,7 +27,29 @@ export async function generateMetadata(
     title: `${post.title} | ItsIndianGuy Blog`,
     description: post.description,
     alternates: {
-      canonical: `https://itsindianguy.in/blog/${slug}`,
+      canonical: `https://www.itsindianguy.in/blog/${slug}`,
+    },
+    openGraph: {
+      title: `${post.title} | ItsIndianGuy`,
+      description: post.description,
+      url: `https://www.itsindianguy.in/blog/${slug}`,
+      siteName: "ItsIndianGuy",
+      locale: "en_US",
+      type: "article",
+      images: [
+        {
+          url: "https://www.itsindianguy.in/og-blog.jpg",
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${post.title} | ItsIndianGuy`,
+      description: post.description,
+      images: ["https://www.itsindianguy.in/og-blog.jpg"],
     },
   };
 }

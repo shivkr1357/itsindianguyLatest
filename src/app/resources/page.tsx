@@ -1,6 +1,40 @@
 import React, { Fragment } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: `Resources | ItsIndianGuy`,
+  description:
+    "Curated collection of essential tools, platforms, and resources for developers. Everything you need to build amazing applications.",
+  alternates: {
+    canonical: "https://www.itsindianguy.in/resources",
+  },
+  openGraph: {
+    title: "Resources | ItsIndianGuy",
+    description:
+      "Curated collection of essential tools, platforms, and resources for developers. Everything you need to build amazing applications.",
+    url: "https://www.itsindianguy.in/resources",
+    siteName: "ItsIndianGuy",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "https://www.itsindianguy.in/og-resources.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Developer Resources - ItsIndianGuy",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Resources | ItsIndianGuy",
+    description:
+      "Curated collection of essential tools, platforms, and resources for developers.",
+    images: ["https://www.itsindianguy.in/og-resources.jpg"],
+  },
+};
 
 const resources = [
   {

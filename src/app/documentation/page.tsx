@@ -1,5 +1,39 @@
 import React, { Fragment } from "react";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: `Documentation | ItsIndianGuy`,
+  description:
+    "Comprehensive documentation and guides for web development, programming, and technology. Learn from our detailed tutorials and resources.",
+  alternates: {
+    canonical: "https://www.itsindianguy.in/documentation",
+  },
+  openGraph: {
+    title: "Documentation | ItsIndianGuy",
+    description:
+      "Comprehensive documentation and guides for web development, programming, and technology. Learn from our detailed tutorials and resources.",
+    url: "https://www.itsindianguy.in/documentation",
+    siteName: "ItsIndianGuy",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "https://www.itsindianguy.in/og-documentation.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Documentation and Guides - ItsIndianGuy",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Documentation | ItsIndianGuy",
+    description:
+      "Comprehensive documentation and guides for web development, programming, and technology.",
+    images: ["https://www.itsindianguy.in/og-documentation.jpg"],
+  },
+};
 
 const documentationSections = [
   {

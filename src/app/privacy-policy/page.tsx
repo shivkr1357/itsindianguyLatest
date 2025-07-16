@@ -1,5 +1,39 @@
 import React, { Fragment } from "react";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: `Privacy Policy | ItsIndianGuy`,
+  description:
+    "Learn about how ItsIndianGuy collects, uses, and protects your personal information. Read our comprehensive privacy policy.",
+  alternates: {
+    canonical: "https://www.itsindianguy.in/privacy-policy",
+  },
+  openGraph: {
+    title: "Privacy Policy | ItsIndianGuy",
+    description:
+      "Learn about how ItsIndianGuy collects, uses, and protects your personal information. Read our comprehensive privacy policy.",
+    url: "https://www.itsindianguy.in/privacy-policy",
+    siteName: "ItsIndianGuy",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "https://www.itsindianguy.in/og-privacy.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Privacy Policy - ItsIndianGuy",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Privacy Policy | ItsIndianGuy",
+    description:
+      "Learn about how ItsIndianGuy collects, uses, and protects your personal information.",
+    images: ["https://www.itsindianguy.in/og-privacy.jpg"],
+  },
+};
 
 const PrivacyPolicy = () => {
   return (

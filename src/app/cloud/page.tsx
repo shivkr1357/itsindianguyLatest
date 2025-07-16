@@ -8,7 +8,31 @@ export const metadata: Metadata = {
   description:
     "Master cloud computing with our comprehensive guides covering AWS, Azure, Google Cloud Platform, and cloud architecture.",
   alternates: {
-    canonical: "https://itsindianguy.in/cloud",
+    canonical: "https://www.itsindianguy.in/cloud",
+  },
+  openGraph: {
+    title: "Cloud Computing | ItsIndianGuy - Learn AWS, Azure, GCP",
+    description:
+      "Master cloud computing with our comprehensive guides covering AWS, Azure, Google Cloud Platform, and cloud architecture.",
+    url: "https://www.itsindianguy.in/cloud",
+    siteName: "ItsIndianGuy",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "https://www.itsindianguy.in/og-cloud.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Cloud Computing - ItsIndianGuy",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cloud Computing | ItsIndianGuy - Learn AWS, Azure, GCP",
+    description:
+      "Master cloud computing with our comprehensive guides covering AWS, Azure, Google Cloud Platform, and cloud architecture.",
+    images: ["https://www.itsindianguy.in/og-cloud.jpg"],
   },
 };
 

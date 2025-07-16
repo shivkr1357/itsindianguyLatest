@@ -8,7 +8,31 @@ export const metadata: Metadata = {
   description:
     "Master blockchain development, smart contracts, and Web3 technologies with our comprehensive guides and tutorials.",
   alternates: {
-    canonical: "https://itsindianguy.in/blockchain",
+    canonical: "https://www.itsindianguy.in/blockchain",
+  },
+  openGraph: {
+    title: "Blockchain | ItsIndianGuy - Learn Blockchain and Web3 Development",
+    description:
+      "Master blockchain development, smart contracts, and Web3 technologies with our comprehensive guides and tutorials.",
+    url: "https://www.itsindianguy.in/blockchain",
+    siteName: "ItsIndianGuy",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "https://www.itsindianguy.in/og-blockchain.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Blockchain and Web3 Development - ItsIndianGuy",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blockchain | ItsIndianGuy - Learn Blockchain and Web3 Development",
+    description:
+      "Master blockchain development, smart contracts, and Web3 technologies with our comprehensive guides and tutorials.",
+    images: ["https://www.itsindianguy.in/og-blockchain.jpg"],
   },
 };
 

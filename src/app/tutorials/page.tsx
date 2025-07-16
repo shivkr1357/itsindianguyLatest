@@ -7,7 +7,31 @@ export const metadata: Metadata = {
   description:
     "Master new skills with our comprehensive tutorials. From beginner to advanced, we have something for every developer.",
   alternates: {
-    canonical: "https://itsindianguy.in/tutorials",
+    canonical: "https://www.itsindianguy.in/tutorials",
+  },
+  openGraph: {
+    title: "Tutorials | ItsIndianGuy - Learn Web Development",
+    description:
+      "Master new skills with our comprehensive tutorials. From beginner to advanced, we have something for every developer.",
+    url: "https://www.itsindianguy.in/tutorials",
+    siteName: "ItsIndianGuy",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "https://www.itsindianguy.in/og-tutorials.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Web Development Tutorials - ItsIndianGuy",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tutorials | ItsIndianGuy - Learn Web Development",
+    description:
+      "Master new skills with our comprehensive tutorials. From beginner to advanced, we have something for every developer.",
+    images: ["https://www.itsindianguy.in/og-tutorials.jpg"],
   },
 };
 

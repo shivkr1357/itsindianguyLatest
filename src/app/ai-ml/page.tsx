@@ -8,7 +8,33 @@ export const metadata: Metadata = {
   description:
     "Master artificial intelligence and machine learning with our comprehensive guides covering Python, TensorFlow, PyTorch, and real-world applications.",
   alternates: {
-    canonical: "https://itsindianguy.in/ai-ml",
+    canonical: "https://www.itsindianguy.in/ai-ml",
+  },
+  openGraph: {
+    title:
+      "AI/ML | ItsIndianGuy - Learn Artificial Intelligence and Machine Learning",
+    description:
+      "Master artificial intelligence and machine learning with our comprehensive guides covering Python, TensorFlow, PyTorch, and real-world applications.",
+    url: "https://www.itsindianguy.in/ai-ml",
+    siteName: "ItsIndianGuy",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "https://www.itsindianguy.in/og-ai-ml.jpg",
+        width: 1200,
+        height: 630,
+        alt: "AI and Machine Learning - ItsIndianGuy",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title:
+      "AI/ML | ItsIndianGuy - Learn Artificial Intelligence and Machine Learning",
+    description:
+      "Master artificial intelligence and machine learning with our comprehensive guides covering Python, TensorFlow, PyTorch, and real-world applications.",
+    images: ["https://www.itsindianguy.in/og-ai-ml.jpg"],
   },
 };
 
