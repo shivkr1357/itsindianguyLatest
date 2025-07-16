@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import { adminDb, adminAuth } from "@/lib/firebase-admin";
-import { FieldValue } from "firebase-admin/firestore";
+import {
+  FieldValue,
+  DocumentData,
+  QueryDocumentSnapshot,
+} from "firebase-admin/firestore";
 
 // Types
 interface Tutorial {
@@ -44,10 +48,12 @@ export async function GET(request: NextRequest) {
       .limit(limit)
       .get();
 
-    const tutorials = querySnapshot.docs.map((doc) => ({
-      id: doc.id,
-      ...doc.data(),
-    })) as Tutorial[];
+    const tutorials = querySnapshot.docs.map(
+      (doc: QueryDocumentSnapshot<DocumentData>) => ({
+        id: doc.id,
+        ...doc.data(),
+      })
+    ) as Tutorial[];
 
     return NextResponse.json({ success: true, data: tutorials });
   } catch (error) {
