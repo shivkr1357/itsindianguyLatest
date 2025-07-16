@@ -94,7 +94,7 @@ const Blog = () => {
               </h1>
               <p className="text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
                 Discover insights, tutorials, and the latest trends in
-                technology. From web development to AI/ML, we've got you
+                technology. From web development to AI/ML, we&apos;ve got you
                 covered.
               </p>
             </div>

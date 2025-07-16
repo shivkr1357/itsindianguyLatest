@@ -36,9 +36,9 @@ const supportChannels = [
 
 const commonIssues = [
   {
-    title: "Can't access tutorials",
+    title: "Can&apos;t access tutorials",
     solution:
-      "Make sure you're logged in and try refreshing the page. If the issue persists, clear your browser cache.",
+      "Make sure you&apos;re logged in and try refreshing the page. If the issue persists, clear your browser cache.",
     link: "/tutorials",
   },
   {
@@ -50,7 +50,7 @@ const commonIssues = [
   {
     title: "Account login issues",
     solution:
-      "Try resetting your password or contact support if you can't access your account.",
+      "Try resetting your password or contact support if you can&apos;t access your account.",
     link: "/login",
   },
   {
@@ -82,8 +82,8 @@ const Support = () => {
                 Support Center
               </h1>
               <p className="text-lg text-neutral-600 dark:text-neutral-400">
-                We're here to help! Find the support you need to make the most
-                of our platform.
+                We&apos;re here to help! Find the support you need to make the
+                most of our platform.
               </p>
             </div>
           </div>
@@ -154,8 +154,8 @@ const Support = () => {
                 Still Need Help?
               </h2>
               <p className="text-neutral-600 dark:text-neutral-400 mb-8">
-                Can't find what you're looking for? Our support team is ready to
-                assist you.
+                Can&apos;t find what you&apos;re looking for? Our support team
+                is ready to assist you.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Link

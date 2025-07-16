@@ -86,7 +86,7 @@ const PrivacyPolicy = () => {
                 <li>Lodge a complaint with supervisory authorities</li>
               </ul>
 
-              <h2>7. Children's Privacy</h2>
+              <h2>7. Children&apos;s Privacy</h2>
               <p>
                 Our services are not intended for children under 13 years of
                 age. We do not knowingly collect personal information from
@@ -97,7 +97,7 @@ const PrivacyPolicy = () => {
               <p>
                 We may update this privacy policy from time to time. We will
                 notify you of any changes by posting the new policy on this page
-                and updating the "Last updated" date.
+                and updating the &ldquo;Last updated&rdquo; date.
               </p>
 
               <h2>9. Contact Us</h2>
