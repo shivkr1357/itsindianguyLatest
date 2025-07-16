@@ -152,8 +152,24 @@ Add these to your `.env.local`:
 # Firebase Admin SDK
 FIREBASE_PROJECT_ID=your-project-id
 FIREBASE_CLIENT_EMAIL=your-service-account-email
-FIREBASE_PRIVATE_KEY=your-private-key
+FIREBASE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\nYour Private Key Here\n-----END PRIVATE KEY-----\n"
 ```
+
+### Getting Firebase Admin SDK Credentials
+
+1. **Go to Firebase Console** → Project Settings → Service Accounts
+2. **Generate new private key** → Download JSON file
+3. **Extract values** from the JSON:
+   - `project_id` → `FIREBASE_PROJECT_ID`
+   - `client_email` → `FIREBASE_CLIENT_EMAIL`
+   - `private_key` → `FIREBASE_PRIVATE_KEY`
+
+### Important Notes
+
+- **Never commit** `.env.local` to version control
+- The private key must include the `-----BEGIN PRIVATE KEY-----` and `-----END PRIVATE KEY-----` lines
+- For Vercel deployment, add these variables in your Vercel dashboard
+- The app will work in development without these variables (with warnings)
 
 ## Database Collections
 
