@@ -64,6 +64,16 @@ export default function RootLayout({
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7213785205715000"
           crossOrigin="anonymous"
         ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (adsbygoogle = window.adsbygoogle || []).push({
+                google_ad_client: "ca-pub-7213785205715000",
+                enable_page_level_ads: true
+              });
+            `,
+          }}
+        />
       </head>
       <body
         className={`${roboto.className} min-h-screen flex flex-col bg-neutral-50 dark:bg-neutral-900`}
