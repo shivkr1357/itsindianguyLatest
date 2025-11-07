@@ -49,9 +49,9 @@ export default function Navbar() {
               About
             </Link>
             
-            <button className="px-4 py-2 bg-primary-200 hover:bg-primary-300 text-white rounded-lg transition-colors">
+            <Link href="/newsletter" className="px-4 py-2 bg-primary-200 hover:bg-primary-300 text-white rounded-lg transition-colors">
               Subscribe
-            </button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -104,9 +104,9 @@ export default function Navbar() {
                 </svg>
               )}
             </button>
-            <button className="px-4 py-2 bg-primary-200 hover:bg-primary-300 text-white rounded-lg">
+            <Link href="/newsletter" className="px-4 py-2 bg-primary-200 hover:bg-primary-300 text-white rounded-lg">
               Subscribe
-            </button>
+            </Link>
           </div>
         </div>
       </div>

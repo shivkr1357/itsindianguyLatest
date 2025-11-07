@@ -45,12 +45,18 @@ export default function HomePageClient() {
                 one place.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="px-6 py-3 bg-primary-200 hover:bg-primary-300 text-white rounded-lg transition-colors">
+                <a
+                  href="/tutorials"
+                  className="px-6 py-3 bg-primary-200 hover:bg-primary-300 text-white rounded-lg transition-colors text-center"
+                >
                   Get Started
-                </button>
-                <button className="px-6 py-3 border border-primary-200 text-primary-200 hover:bg-primary-200/10 rounded-lg transition-colors">
+                </a>
+                <a
+                  href="/about"
+                  className="px-6 py-3 border border-primary-200 text-primary-200 hover:bg-primary-200/10 rounded-lg transition-colors text-center"
+                >
                   Learn More
-                </button>
+                </a>
               </div>
             </div>
             <div className="relative">

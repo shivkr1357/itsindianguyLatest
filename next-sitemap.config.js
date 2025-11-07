@@ -41,6 +41,14 @@ module.exports = {
       });
     });
 
+    // Newsletter page
+    result.push({
+      loc: '/newsletter',
+      changefreq: 'monthly',
+      priority: 0.6,
+      lastmod: new Date().toISOString(),
+    });
+
     return result;
   },
   robotsTxtOptions: {
