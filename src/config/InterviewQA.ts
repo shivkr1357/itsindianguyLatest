@@ -1236,4 +1236,462 @@ export const interviewQA = [
          },
       ],
    },
+   {
+      id: "8",
+      slug: "dsa-interview",
+      data: [
+         {
+            que: "What is a Data Structure?",
+            ans: "A data structure is a way of organizing and storing data in a computer so that it can be accessed and modified efficiently.",
+         },
+         {
+            que: "What is an Array?",
+            ans: "An array is a collection of elements stored at contiguous memory locations, accessible by an index.",
+         },
+         {
+            que: "What is a Linked List?",
+            ans: "A linked list is a linear data structure where elements are stored in nodes, and each node points to the next node in the sequence.",
+         },
+         {
+            que: "What is the difference between Array and Linked List?",
+            ans: "Arrays have fixed size and contiguous memory allocation, while linked lists have dynamic size and non-contiguous memory allocation.",
+         },
+         {
+            que: "What is a Stack?",
+            ans: "A stack is a linear data structure that follows the Last-In-First-Out (LIFO) principle, where the last element added is the first to be removed.",
+         },
+         {
+            que: "What is a Queue?",
+            ans: "A queue is a linear data structure that follows the First-In-First-Out (FIFO) principle, where the first element added is the first to be removed.",
+         },
+         {
+            que: "What is a Binary Tree?",
+            ans: "A binary tree is a hierarchical data structure where each node has at most two children, referred to as the left child and the right child.",
+         },
+         {
+            que: "What is a Binary Search Tree (BST)?",
+            ans: "A BST is a binary tree where the left subtree contains nodes with values less than the parent node, and the right subtree contains nodes with values greater than the parent node.",
+         },
+         {
+            que: "What is Tree Traversal?",
+            ans: "Tree traversal is the process of visiting all nodes in a tree in a specific order. Common methods include in-order, pre-order, and post-order traversal.",
+         },
+         {
+            que: "What is a Hash Table?",
+            ans: "A hash table is a data structure that stores key-value pairs and uses a hash function to compute an index where the value is stored.",
+         },
+         {
+            que: "What is a Graph?",
+            ans: "A graph is a non-linear data structure consisting of vertices (nodes) and edges that connect pairs of vertices.",
+         },
+         {
+            que: "What is the difference between BFS and DFS?",
+            ans: "BFS (Breadth-First Search) explores nodes level by level, while DFS (Depth-First Search) explores as far as possible along each branch before backtracking.",
+         },
+         {
+            que: "What is Recursion?",
+            ans: "Recursion is a programming technique where a function calls itself to solve a problem by breaking it down into smaller subproblems.",
+         },
+         {
+            que: "What is Dynamic Programming?",
+            ans: "Dynamic Programming is an optimization technique that solves complex problems by breaking them down into simpler subproblems and storing the results to avoid redundant calculations.",
+         },
+         {
+            que: "What is Memoization?",
+            ans: "Memoization is a technique used in dynamic programming to store the results of expensive function calls and return the cached result when the same inputs occur again.",
+         },
+         {
+            que: "What is Greedy Algorithm?",
+            ans: "A greedy algorithm makes the locally optimal choice at each step with the hope of finding a global optimum.",
+         },
+         {
+            que: "What is Divide and Conquer?",
+            ans: "Divide and Conquer is an algorithm design paradigm that works by recursively breaking down a problem into smaller subproblems until they become simple enough to solve directly.",
+         },
+         {
+            que: "What is Binary Search?",
+            ans: "Binary search is an efficient algorithm for finding an element in a sorted array by repeatedly dividing the search interval in half.",
+         },
+         {
+            que: "What is the time complexity of Binary Search?",
+            ans: "The time complexity of binary search is O(log n), where n is the number of elements in the array.",
+         },
+         {
+            que: "What is Bubble Sort?",
+            ans: "Bubble sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order.",
+         },
+         {
+            que: "What is Merge Sort?",
+            ans: "Merge sort is a divide-and-conquer algorithm that divides the array into halves, sorts them, and then merges the sorted halves.",
+         },
+         {
+            que: "What is Quick Sort?",
+            ans: "Quick sort is a divide-and-conquer algorithm that picks a pivot element and partitions the array around the pivot, then recursively sorts the subarrays.",
+         },
+         {
+            que: "What is the time complexity of Quick Sort?",
+            ans: "The average time complexity of quick sort is O(n log n), but the worst case is O(n²).",
+         },
+         {
+            que: "What is a Heap?",
+            ans: "A heap is a specialized tree-based data structure that satisfies the heap property: in a max heap, parent nodes are greater than child nodes; in a min heap, parent nodes are less than child nodes.",
+         },
+         {
+            que: "What is Heap Sort?",
+            ans: "Heap sort is a comparison-based sorting algorithm that uses a binary heap data structure to sort elements.",
+         },
+         {
+            que: "What is a Priority Queue?",
+            ans: "A priority queue is an abstract data type where each element has a priority, and elements with higher priority are served before elements with lower priority.",
+         },
+         {
+            que: "What is the difference between Stack and Queue?",
+            ans: "A stack follows LIFO (Last-In-First-Out), while a queue follows FIFO (First-In-First-Out).",
+         },
+         {
+            que: "What is a Circular Queue?",
+            ans: "A circular queue is a queue where the last position is connected back to the first position to make a circle, efficiently utilizing memory.",
+         },
+         {
+            que: "What is a Deque?",
+            ans: "A deque (double-ended queue) is a data structure that allows insertion and deletion at both ends.",
+         },
+         {
+            que: "What is Time Complexity?",
+            ans: "Time complexity is a measure of the amount of time an algorithm takes to complete as a function of the input size.",
+         },
+         {
+            que: "What is Space Complexity?",
+            ans: "Space complexity is a measure of the amount of memory an algorithm uses as a function of the input size.",
+         },
+         {
+            que: "What is Big O Notation?",
+            ans: "Big O notation is a mathematical notation used to describe the upper bound of an algorithm's time or space complexity in the worst case.",
+         },
+         {
+            que: "What is the difference between O(n) and O(log n)?",
+            ans: "O(n) represents linear time complexity where time increases proportionally with input size, while O(log n) represents logarithmic time complexity where time increases slowly as input size grows.",
+         },
+         {
+            que: "What is a Trie?",
+            ans: "A trie is a tree-like data structure used to store strings, where each node represents a character and paths represent strings.",
+         },
+         {
+            que: "What is a Segment Tree?",
+            ans: "A segment tree is a binary tree used for storing intervals or segments, allowing efficient range queries and updates.",
+         },
+         {
+            que: "What is a Disjoint Set (Union-Find)?",
+            ans: "A disjoint set is a data structure that keeps track of elements partitioned into non-overlapping sets, supporting union and find operations.",
+         },
+         {
+            que: "What is Topological Sorting?",
+            ans: "Topological sorting is a linear ordering of vertices in a directed acyclic graph (DAG) such that for every directed edge from vertex u to vertex v, u comes before v.",
+         },
+         {
+            que: "What is the Shortest Path Algorithm?",
+            ans: "Shortest path algorithms find the path with minimum distance between two vertices in a graph. Examples include Dijkstra's and Bellman-Ford algorithms.",
+         },
+         {
+            que: "What is Dijkstra's Algorithm?",
+            ans: "Dijkstra's algorithm finds the shortest path from a source vertex to all other vertices in a weighted graph with non-negative edge weights.",
+         },
+         {
+            que: "What is the Knapsack Problem?",
+            ans: "The knapsack problem is an optimization problem where you need to select items with given weights and values to maximize total value without exceeding a weight limit.",
+         },
+      ],
+   },
+   {
+      id: "9",
+      slug: "database-interview",
+      data: [
+         {
+            que: "What is a Database?",
+            ans: "A database is an organized collection of structured data stored electronically in a computer system, managed by a Database Management System (DBMS).",
+         },
+         {
+            que: "What is SQL?",
+            ans: "SQL (Structured Query Language) is a standard programming language used to manage and manipulate relational databases.",
+         },
+         {
+            que: "What is NoSQL?",
+            ans: "NoSQL databases are non-relational databases designed to store and retrieve data that is modeled in ways other than tabular relations.",
+         },
+         {
+            que: "What is the difference between SQL and NoSQL?",
+            ans: "SQL databases are relational, use structured schema, and support ACID transactions. NoSQL databases are non-relational, have flexible schemas, and are designed for horizontal scalability.",
+         },
+         {
+            que: "What is a Primary Key?",
+            ans: "A primary key is a column or set of columns that uniquely identifies each row in a table.",
+         },
+         {
+            que: "What is a Foreign Key?",
+            ans: "A foreign key is a column or set of columns in one table that references the primary key of another table, establishing a relationship between the two tables.",
+         },
+         {
+            que: "What is Normalization?",
+            ans: "Normalization is the process of organizing data in a database to reduce redundancy and improve data integrity by dividing large tables into smaller ones.",
+         },
+         {
+            que: "What are the different Normal Forms?",
+            ans: "Common normal forms include 1NF (First Normal Form), 2NF (Second Normal Form), 3NF (Third Normal Form), BCNF (Boyce-Codd Normal Form), and 4NF (Fourth Normal Form).",
+         },
+         {
+            que: "What is Denormalization?",
+            ans: "Denormalization is the process of adding redundant data to a database to improve read performance by reducing the number of joins required.",
+         },
+         {
+            que: "What is an Index?",
+            ans: "An index is a database object that improves the speed of data retrieval operations by providing quick access to rows in a table.",
+         },
+         {
+            que: "What are the types of Indexes?",
+            ans: "Common types include clustered index, non-clustered index, unique index, composite index, and full-text index.",
+         },
+         {
+            que: "What is a Transaction?",
+            ans: "A transaction is a sequence of one or more database operations that are treated as a single unit of work, ensuring data consistency.",
+         },
+         {
+            que: "What are ACID properties?",
+            ans: "ACID stands for Atomicity, Consistency, Isolation, and Durability - properties that guarantee reliable database transactions.",
+         },
+         {
+            que: "What is a JOIN in SQL?",
+            ans: "A JOIN is an SQL operation that combines rows from two or more tables based on a related column between them.",
+         },
+         {
+            que: "What are the different types of JOINs?",
+            ans: "Common types include INNER JOIN, LEFT JOIN (LEFT OUTER JOIN), RIGHT JOIN (RIGHT OUTER JOIN), and FULL JOIN (FULL OUTER JOIN).",
+         },
+         {
+            que: "What is the difference between INNER JOIN and OUTER JOIN?",
+            ans: "INNER JOIN returns only matching rows from both tables, while OUTER JOIN returns matching rows plus unmatched rows from one or both tables.",
+         },
+         {
+            que: "What is a View in SQL?",
+            ans: "A view is a virtual table based on the result of an SQL query, providing a way to simplify complex queries and control data access.",
+         },
+         {
+            que: "What is a Stored Procedure?",
+            ans: "A stored procedure is a precompiled collection of SQL statements stored in the database that can be executed as a single unit.",
+         },
+         {
+            que: "What is a Trigger?",
+            ans: "A trigger is a database object that automatically executes a specified action when certain events (INSERT, UPDATE, DELETE) occur on a table.",
+         },
+         {
+            que: "What is the difference between WHERE and HAVING clauses?",
+            ans: "WHERE filters rows before grouping, while HAVING filters groups after the GROUP BY operation.",
+         },
+         {
+            que: "What is a Cursor?",
+            ans: "A cursor is a database object used to retrieve and manipulate rows from a result set one row at a time.",
+         },
+         {
+            que: "What is Database Sharding?",
+            ans: "Sharding is a database partitioning technique that distributes data across multiple database instances to improve performance and scalability.",
+         },
+         {
+            que: "What is Replication?",
+            ans: "Replication is the process of copying and maintaining database objects in multiple databases to improve availability, fault tolerance, and performance.",
+         },
+         {
+            que: "What is a Deadlock?",
+            ans: "A deadlock occurs when two or more transactions are waiting for each other to release locks, resulting in a circular dependency.",
+         },
+         {
+            que: "What is Query Optimization?",
+            ans: "Query optimization is the process of selecting the most efficient execution plan for a query to minimize resource usage and response time.",
+         },
+         {
+            que: "What is the EXPLAIN command?",
+            ans: "EXPLAIN is a command that shows the execution plan of a query, helping developers understand how the database will execute the query.",
+         },
+         {
+            que: "What is CAP Theorem?",
+            ans: "CAP theorem states that a distributed database system can only guarantee two of three properties: Consistency, Availability, and Partition tolerance.",
+         },
+         {
+            que: "What is MongoDB?",
+            ans: "MongoDB is a popular NoSQL document database that stores data in flexible, JSON-like documents called BSON.",
+         },
+         {
+            que: "What is Redis?",
+            ans: "Redis is an in-memory key-value data store used as a database, cache, and message broker, known for its high performance.",
+         },
+         {
+            que: "What is the difference between DELETE and TRUNCATE?",
+            ans: "DELETE removes rows one at a time and can be rolled back, while TRUNCATE removes all rows at once, is faster, but cannot be rolled back in most databases.",
+         },
+         {
+            que: "What is a Composite Key?",
+            ans: "A composite key is a primary key composed of two or more columns used together to uniquely identify a row in a table.",
+         },
+         {
+            que: "What is Data Integrity?",
+            ans: "Data integrity refers to the accuracy, consistency, and reliability of data stored in a database.",
+         },
+         {
+            que: "What is a Schema?",
+            ans: "A schema is the structure or blueprint of a database that defines how data is organized, including tables, columns, relationships, and constraints.",
+         },
+         {
+            que: "What is the difference between UNION and UNION ALL?",
+            ans: "UNION combines results from multiple queries and removes duplicates, while UNION ALL combines results and keeps all duplicates.",
+         },
+         {
+            que: "What is Connection Pooling?",
+            ans: "Connection pooling is a technique that maintains a cache of database connections that can be reused, improving performance by reducing the overhead of creating new connections.",
+         },
+      ],
+   },
+   {
+      id: "10",
+      slug: "ml-interview",
+      data: [
+         {
+            que: "What is Machine Learning?",
+            ans: "Machine Learning is a subset of artificial intelligence that enables systems to learn and improve from experience without being explicitly programmed.",
+         },
+         {
+            que: "What are the types of Machine Learning?",
+            ans: "The main types are Supervised Learning, Unsupervised Learning, Semi-supervised Learning, and Reinforcement Learning.",
+         },
+         {
+            que: "What is Supervised Learning?",
+            ans: "Supervised learning is a type of machine learning where the model is trained on labeled data, learning to map inputs to known outputs.",
+         },
+         {
+            que: "What is Unsupervised Learning?",
+            ans: "Unsupervised learning is a type of machine learning where the model finds patterns in unlabeled data without predefined outputs.",
+         },
+         {
+            que: "What is Reinforcement Learning?",
+            ans: "Reinforcement learning is a type of machine learning where an agent learns to make decisions by taking actions in an environment to maximize cumulative reward.",
+         },
+         {
+            que: "What is the difference between Classification and Regression?",
+            ans: "Classification predicts discrete class labels, while regression predicts continuous numerical values.",
+         },
+         {
+            que: "What is Overfitting?",
+            ans: "Overfitting occurs when a model learns the training data too well, including noise, resulting in poor performance on new, unseen data.",
+         },
+         {
+            que: "What is Underfitting?",
+            ans: "Underfitting occurs when a model is too simple to capture the underlying patterns in the data, resulting in poor performance on both training and test data.",
+         },
+         {
+            que: "What is a Neural Network?",
+            ans: "A neural network is a computational model inspired by biological neural networks, consisting of layers of interconnected nodes (neurons) that process information.",
+         },
+         {
+            que: "What is Deep Learning?",
+            ans: "Deep learning is a subset of machine learning that uses neural networks with multiple hidden layers to learn complex patterns in large amounts of data.",
+         },
+         {
+            que: "What is a Convolutional Neural Network (CNN)?",
+            ans: "A CNN is a deep learning architecture designed for processing structured grid data like images, using convolutional layers to extract features.",
+         },
+         {
+            que: "What is a Recurrent Neural Network (RNN)?",
+            ans: "An RNN is a type of neural network designed for sequential data, where connections between nodes form directed cycles, allowing information to persist.",
+         },
+         {
+            que: "What is Backpropagation?",
+            ans: "Backpropagation is an algorithm used to train neural networks by calculating gradients of the loss function with respect to weights and updating them to minimize error.",
+         },
+         {
+            que: "What is Gradient Descent?",
+            ans: "Gradient descent is an optimization algorithm that iteratively adjusts model parameters in the direction of steepest descent of the loss function to find the minimum.",
+         },
+         {
+            que: "What is the difference between Batch Gradient Descent and Stochastic Gradient Descent?",
+            ans: "Batch gradient descent uses the entire dataset to compute gradients, while stochastic gradient descent uses one sample at a time, making it faster but noisier.",
+         },
+         {
+            que: "What is a Loss Function?",
+            ans: "A loss function measures the difference between predicted and actual values, guiding the optimization process during training.",
+         },
+         {
+            que: "What is Regularization?",
+            ans: "Regularization is a technique used to prevent overfitting by adding a penalty term to the loss function, discouraging complex models.",
+         },
+         {
+            que: "What is L1 and L2 Regularization?",
+            ans: "L1 regularization (Lasso) adds the absolute value of coefficients to the loss, promoting sparsity. L2 regularization (Ridge) adds the squared value of coefficients, shrinking them towards zero.",
+         },
+         {
+            que: "What is Dropout?",
+            ans: "Dropout is a regularization technique that randomly deactivates neurons during training to prevent overfitting and improve generalization.",
+         },
+         {
+            que: "What is Cross-Validation?",
+            ans: "Cross-validation is a technique for assessing model performance by splitting data into multiple folds and training/testing on different combinations.",
+         },
+         {
+            que: "What is K-Fold Cross-Validation?",
+            ans: "K-fold cross-validation divides the dataset into K equal parts, training on K-1 folds and testing on the remaining fold, repeating K times.",
+         },
+         {
+            que: "What is Feature Engineering?",
+            ans: "Feature engineering is the process of selecting, transforming, and creating features from raw data to improve model performance.",
+         },
+         {
+            que: "What is Feature Scaling?",
+            ans: "Feature scaling is the process of normalizing or standardizing features to bring them to a similar scale, improving model convergence.",
+         },
+         {
+            que: "What is the difference between Normalization and Standardization?",
+            ans: "Normalization scales features to a range [0,1], while standardization transforms features to have mean 0 and standard deviation 1.",
+         },
+         {
+            que: "What is Principal Component Analysis (PCA)?",
+            ans: "PCA is a dimensionality reduction technique that transforms data into a new coordinate system, retaining the most important variance.",
+         },
+         {
+            que: "What is a Decision Tree?",
+            ans: "A decision tree is a supervised learning algorithm that makes predictions by learning decision rules from features, represented as a tree structure.",
+         },
+         {
+            que: "What is Random Forest?",
+            ans: "Random Forest is an ensemble learning method that builds multiple decision trees and combines their predictions to improve accuracy and reduce overfitting.",
+         },
+         {
+            que: "What is Support Vector Machine (SVM)?",
+            ans: "SVM is a supervised learning algorithm that finds the optimal hyperplane to separate classes in high-dimensional space.",
+         },
+         {
+            que: "What is K-Means Clustering?",
+            ans: "K-means is an unsupervised learning algorithm that partitions data into K clusters by minimizing the distance between points and cluster centroids.",
+         },
+         {
+            que: "What is the Confusion Matrix?",
+            ans: "A confusion matrix is a table used to evaluate classification model performance, showing true positives, true negatives, false positives, and false negatives.",
+         },
+         {
+            que: "What are Precision and Recall?",
+            ans: "Precision is the ratio of true positives to predicted positives. Recall is the ratio of true positives to actual positives.",
+         },
+         {
+            que: "What is the F1 Score?",
+            ans: "The F1 score is the harmonic mean of precision and recall, providing a single metric for model evaluation.",
+         },
+         {
+            que: "What is Transfer Learning?",
+            ans: "Transfer learning is a technique where a model trained on one task is adapted for a different but related task, leveraging learned features.",
+         },
+         {
+            que: "What is a Hyperparameter?",
+            ans: "A hyperparameter is a configuration setting external to the model that controls the learning process, such as learning rate or number of epochs.",
+         },
+         {
+            que: "What is Model Deployment?",
+            ans: "Model deployment is the process of integrating a trained machine learning model into a production environment to make predictions on new data.",
+         },
+      ],
+   },
 ];

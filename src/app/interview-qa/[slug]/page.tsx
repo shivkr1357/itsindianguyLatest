@@ -65,6 +65,24 @@ export async function generateMetadata(
       title =
         "Comprehensive TypeScript Interview Questions on Annotations, Generics | ItsIndianGuy";
       break;
+    case "dsa-interview":
+      description =
+        "Master Data Structures and Algorithms with comprehensive interview questions on arrays, linked lists, trees, graphs, sorting, and dynamic programming.";
+      title =
+        "Data Structures and Algorithms Interview Questions | ItsIndianGuy";
+      break;
+    case "database-interview":
+      description =
+        "Prepare for database interviews with questions on SQL, NoSQL, indexing, normalization, transactions, and query optimization.";
+      title =
+        "Database Interview Questions on SQL, NoSQL, Optimization | ItsIndianGuy";
+      break;
+    case "ml-interview":
+      description =
+        "Get ready for Machine Learning interviews with questions on algorithms, neural networks, deep learning, model evaluation, and deployment.";
+      title =
+        "Machine Learning Interview Questions on Algorithms, Deep Learning | ItsIndianGuy";
+      break;
     default:
       break;
   }
