@@ -58,16 +58,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        className={`${roboto.className} min-h-screen flex flex-col bg-neutral-50 dark:bg-neutral-900`}
-      >
-        {/* Google AdSense */}
-        <Script
+      <head>
+        <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7213785205715000"
           crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
+        ></script>
+      </head>
+      <body
+        className={`${roboto.className} min-h-screen flex flex-col bg-neutral-50 dark:bg-neutral-900`}
+      >
         {/* Google Tag Manager */}
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`
