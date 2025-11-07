@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import InterviewCard from "@/components/InterviewCards/InterviewCard";
 import AboutCard from "@/components/LandingPage/AboutCard";
 import DevCards from "@/components/LandingPage/DevCards";
@@ -32,7 +33,7 @@ export default function HomePageClient() {
     <Layout>
       <main className="min-h-screen bg-neutral-50 dark:bg-neutral-900">
         {/* Hero Section */}
-        <section className="container mx-auto px-4 pt-24 pb-16">
+        <section className="container mx-auto px-4 pt-5 pb-5">
           <div className="grid lg:grid-cols-2 gap-8 items-center">
             <div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-800 dark:text-neutral-50 mb-6">
@@ -60,8 +61,24 @@ export default function HomePageClient() {
               </div>
             </div>
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-primary-200/20 to-transparent rounded-2xl -z-10" />
-              {/* Add your hero image here */}
+              {/* Image container with subtle blend */}
+              <div className="relative w-full aspect-square max-w-md mx-auto rounded-2xl overflow-hidden shadow-lg">
+                <Image
+                  src="/hero-image.jpg"
+                  alt="Professional Woman Developer"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
+                  className="object-cover"
+                  priority
+                  quality={90}
+                />
+                {/* Subtle bottom gradient for smooth blend */}
+                <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-neutral-50/40 to-transparent dark:from-neutral-900/40" />
+              </div>
+
+              {/* Decorative blur elements */}
+              <div className="absolute -top-8 -right-8 w-32 h-32 bg-primary-200/20 rounded-full blur-3xl -z-10" />
+              <div className="absolute -bottom-8 -left-8 w-40 h-40 bg-blue-500/15 rounded-full blur-3xl -z-10" />
             </div>
           </div>
         </section>
