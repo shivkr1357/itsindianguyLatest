@@ -14,6 +14,35 @@ module.exports = {
     "/signup",
     "/forgot-password",
   ],
+  additionalPaths: async (config) => {
+    const result = [];
+
+    // Interview Q&A pages
+    const interviewSlugs = [
+      'javascript',
+      'react',
+      'node',
+      'cpp',
+      'python',
+      'dsa-interview',
+      'database-interview',
+      'ml-interview',
+      'typescript',
+      'next',
+      'nest'
+    ];
+
+    interviewSlugs.forEach((slug) => {
+      result.push({
+        loc: `/interview-qa/${slug}`,
+        changefreq: 'monthly',
+        priority: 0.7,
+        lastmod: new Date().toISOString(),
+      });
+    });
+
+    return result;
+  },
   robotsTxtOptions: {
     policies: [
       {
