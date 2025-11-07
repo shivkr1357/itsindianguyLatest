@@ -1,3 +1,5 @@
+import CodeBlock from "../CodeBlock";
+
 const ReactPerformanceContent = () => {
   return (
     <>
@@ -53,11 +55,11 @@ const ReactPerformanceContent = () => {
             <p className="text-sm text-neutral-700 dark:text-neutral-300 mb-4">
               Wrap functional components with React.memo() to skip rendering when props haven&apos;t changed. This is especially useful for expensive components.
             </p>
-            <div className="bg-neutral-900 rounded-xl p-4">
-              <code className="text-green-400 text-xs font-mono">
-{`const ExpensiveComponent = React.memo(({ data }) => {
+            <CodeBlock
+              title="React.memo Example"
+              code={`const ExpensiveComponent = React.memo(({ data }) => {
   // Complex rendering logic
-  return <div>{/* ... */}</div>;
+  return <div>{/* ... */}</div>);
 });
 
 // With custom comparison
@@ -65,8 +67,7 @@ const MemoizedComponent = React.memo(
   ({ user }) => <div>{user.name}</div>,
   (prevProps, nextProps) => prevProps.user.id === nextProps.user.id
 );`}
-              </code>
-            </div>
+            />
           </div>
 
           <div className="p-6 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20 rounded-xl border border-blue-200 dark:border-blue-800">
@@ -77,9 +78,9 @@ const MemoizedComponent = React.memo(
             <p className="text-sm text-neutral-700 dark:text-neutral-300 mb-4">
               Cache the result of expensive computations and only recalculate when dependencies change. Perfect for complex filtering, sorting, or transformations.
             </p>
-            <div className="bg-neutral-900 rounded-xl p-4">
-              <code className="text-green-400 text-xs font-mono">
-{`function DataTable({ data, filters }) {
+            <CodeBlock
+              title="useMemo Example"
+              code={`function DataTable({ data, filters }) {
   // Only recalculate when data or filters change
   const filteredData = useMemo(() => {
     return data.filter(item => 
@@ -89,8 +90,7 @@ const MemoizedComponent = React.memo(
 
   return <Table data={filteredData} />;
 }`}
-              </code>
-            </div>
+            />
           </div>
 
           <div className="p-6 bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-950/20 dark:to-purple-950/20 rounded-xl border border-indigo-200 dark:border-indigo-800">
@@ -101,9 +101,9 @@ const MemoizedComponent = React.memo(
             <p className="text-sm text-neutral-700 dark:text-neutral-300 mb-4">
               Prevent child components from re-rendering by maintaining stable callback references. Essential when passing callbacks to memoized children.
             </p>
-            <div className="bg-neutral-900 rounded-xl p-4">
-              <code className="text-green-400 text-xs font-mono">
-{`function Parent() {
+            <CodeBlock
+              title="useCallback Example"
+              code={`function Parent() {
   const [count, setCount] = useState(0);
   
   const handleClick = useCallback(() => {
@@ -112,8 +112,7 @@ const MemoizedComponent = React.memo(
 
   return <MemoizedChild onClick={handleClick} />;
 }`}
-              </code>
-            </div>
+            />
           </div>
         </div>
       </section>

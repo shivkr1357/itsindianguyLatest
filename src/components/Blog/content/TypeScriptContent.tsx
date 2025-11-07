@@ -1,3 +1,5 @@
+import CodeBlock from "../CodeBlock";
+
 const TypeScriptContent = () => {
   return (
     <>
@@ -53,13 +55,9 @@ const TypeScriptContent = () => {
         </p>
         
         <div className="space-y-4">
-          <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 border border-neutral-800">
-            <div className="flex items-center justify-between mb-4">
-              <span className="text-sm text-neutral-400">Basic Generic Function</span>
-            </div>
-            <pre className="text-sm overflow-x-auto">
-              <code className="text-green-400 font-mono">
-{`function identity<T>(arg: T): T {
+          <CodeBlock
+            title="Basic Generic Function"
+            code={`function identity<T>(arg: T): T {
   return arg;
 }
 
@@ -67,9 +65,7 @@ const TypeScriptContent = () => {
 const num = identity<number>(42);
 const str = identity<string>("Hello");
 const obj = identity({ name: "John" });`}
-              </code>
-            </pre>
-          </div>
+          />
 
           <div className="p-4 bg-blue-50 dark:bg-blue-950/20 rounded-xl border border-blue-200 dark:border-blue-800">
             <p className="text-sm text-neutral-700 dark:text-neutral-300">
@@ -89,13 +85,9 @@ const obj = identity({ name: "John" });`}
         </p>
         
         <div className="space-y-4">
-          <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 border border-neutral-800">
-            <div className="flex items-center justify-between mb-4">
-              <span className="text-sm text-neutral-400">Generic Interface Example</span>
-            </div>
-            <pre className="text-sm overflow-x-auto">
-              <code className="text-green-400 font-mono">
-{`interface ApiResponse<T> {
+          <CodeBlock
+            title="Generic Interface Example"
+            code={`interface ApiResponse<T> {
   data: T;
   status: number;
   message: string;
@@ -113,17 +105,11 @@ const response: ApiResponse<User> = {
   status: 200,
   message: "Success"
 };`}
-              </code>
-            </pre>
-          </div>
+          />
 
-          <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 border border-neutral-800">
-            <div className="flex items-center justify-between mb-4">
-              <span className="text-sm text-neutral-400">Generic Class Example</span>
-            </div>
-            <pre className="text-sm overflow-x-auto">
-              <code className="text-green-400 font-mono">
-{`class DataStore<T> {
+          <CodeBlock
+            title="Generic Class Example"
+            code={`class DataStore<T> {
   private data: T[] = [];
 
   add(item: T): void {
@@ -141,9 +127,7 @@ const response: ApiResponse<User> = {
 
 const userStore = new DataStore<User>();
 userStore.add({ id: 1, name: "John", email: "john@example.com" });`}
-              </code>
-            </pre>
-          </div>
+          />
         </div>
       </section>
 
@@ -162,17 +146,16 @@ userStore.add({ id: 1, name: "John", email: "john@example.com" });`}
             <p className="text-sm text-neutral-700 dark:text-neutral-300 mb-4">
               Use constraints to limit the types that can be used with your generic. This provides additional type safety while maintaining flexibility.
             </p>
-            <div className="bg-neutral-900 rounded-lg p-4">
-              <code className="text-green-400 text-xs font-mono">
-{`function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {
+            <CodeBlock
+              title="Generic Constraints"
+              code={`function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {
   return obj[key];
 }
 
 const user = { id: 1, name: "John", age: 30 };
 const name = getProperty(user, "name"); // ✓ Type-safe
 // const invalid = getProperty(user, "invalid"); // ✗ Error`}
-              </code>
-            </div>
+            />
           </div>
 
           <div className="p-6 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20 rounded-xl border border-blue-200 dark:border-blue-800">
@@ -183,16 +166,15 @@ const name = getProperty(user, "name"); // ✓ Type-safe
             <p className="text-sm text-neutral-700 dark:text-neutral-300 mb-4">
               Use multiple type parameters when you need to capture relationships between different types.
             </p>
-            <div className="bg-neutral-900 rounded-lg p-4">
-              <code className="text-green-400 text-xs font-mono">
-{`function map<T, U>(array: T[], fn: (item: T) => U): U[] {
+            <CodeBlock
+              title="Multiple Type Parameters"
+              code={`function map<T, U>(array: T[], fn: (item: T) => U): U[] {
   return array.map(fn);
 }
 
 const numbers = [1, 2, 3];
 const strings = map(numbers, num => num.toString()); // string[]`}
-              </code>
-            </div>
+            />
           </div>
 
           <div className="p-6 bg-gradient-to-r from-green-50 to-teal-50 dark:from-green-950/20 dark:to-teal-950/20 rounded-xl border border-green-200 dark:border-green-800">
@@ -203,15 +185,14 @@ const strings = map(numbers, num => num.toString()); // string[]`}
             <p className="text-sm text-neutral-700 dark:text-neutral-300 mb-4">
               Combine generics with conditional types for powerful type transformations.
             </p>
-            <div className="bg-neutral-900 rounded-lg p-4">
-              <code className="text-green-400 text-xs font-mono">
-{`type Flatten<T> = T extends Array<infer U> ? U : T;
+            <CodeBlock
+              title="Conditional Types"
+              code={`type Flatten<T> = T extends Array<infer U> ? U : T;
 
 type Num = Flatten<number[]>;    // number
 type Str = Flatten<string>;      // string
 type Nested = Flatten<number[][]>; // number[]`}
-              </code>
-            </div>
+            />
           </div>
         </div>
       </section>

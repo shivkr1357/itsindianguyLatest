@@ -1,3 +1,5 @@
+import CodeBlock from "../CodeBlock";
+
 const DockerContent = () => {
   return (
     <>
@@ -54,9 +56,9 @@ const DockerContent = () => {
         <div className="space-y-6">
           <div>
             <h3 className="font-bold text-xl mb-4">Creating a Dockerfile for Node.js App</h3>
-            <div className="bg-neutral-900 rounded-xl p-6">
-              <code className="text-green-400 text-sm font-mono">
-{`# Use official Node.js image
+            <CodeBlock
+              title="Dockerfile"
+              code={`# Use official Node.js image
 FROM node:18-alpine
 
 # Set working directory
@@ -76,16 +78,15 @@ EXPOSE 3000
 
 # Start application
 CMD ["node", "server.js"]`}
-              </code>
-            </div>
+            />
           </div>
 
           <div className="grid md:grid-cols-2 gap-4">
             <div className="p-4 bg-blue-50 dark:bg-blue-950/20 rounded-xl">
               <h4 className="font-bold mb-2">🚀 Build Image</h4>
-              <div className="bg-neutral-900 rounded p-3 text-xs text-green-400 font-mono mb-2">
-                docker build -t my-app:1.0 .
-              </div>
+              <pre className="bg-neutral-900 rounded p-3 mb-2 overflow-x-auto">
+                <code className="text-xs text-green-400 font-mono">docker build -t my-app:1.0 .</code>
+              </pre>
               <p className="text-xs text-neutral-600 dark:text-neutral-400">
                 Creates a Docker image with tag &quot;my-app:1.0&quot;
               </p>
@@ -93,9 +94,9 @@ CMD ["node", "server.js"]`}
 
             <div className="p-4 bg-indigo-50 dark:bg-indigo-950/20 rounded-xl">
               <h4 className="font-bold mb-2">▶️ Run Container</h4>
-              <div className="bg-neutral-900 rounded p-3 text-xs text-green-400 font-mono mb-2">
-                docker run -p 3000:3000 my-app:1.0
-              </div>
+              <pre className="bg-neutral-900 rounded p-3 mb-2 overflow-x-auto">
+                <code className="text-xs text-green-400 font-mono">docker run -p 3000:3000 my-app:1.0</code>
+              </pre>
               <p className="text-xs text-neutral-600 dark:text-neutral-400">
                 Runs container and maps port 3000
               </p>
@@ -112,9 +113,9 @@ CMD ["node", "server.js"]`}
           Docker Compose lets you define and run multi-container applications. Perfect for development environments with databases, caches, and multiple services.
         </p>
         
-        <div className="bg-neutral-900 rounded-xl p-6">
-          <code className="text-green-400 text-sm font-mono">
-{`version: '3.8'
+        <CodeBlock
+          title="docker-compose.yml"
+          code={`version: '3.8'
 
 services:
   app:
@@ -140,8 +141,7 @@ services:
 
 volumes:
   mongo-data:`}
-          </code>
-        </div>
+        />
 
         <div className="mt-4 p-4 bg-green-50 dark:bg-green-950/20 rounded-xl">
           <p className="text-sm text-neutral-700 dark:text-neutral-300">

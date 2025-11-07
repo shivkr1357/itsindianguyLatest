@@ -1,3 +1,5 @@
+import CodeBlock from "../CodeBlock";
+
 const MachineLearningContent = () => {
   return (
     <>
@@ -116,9 +118,9 @@ const MachineLearningContent = () => {
         <div className="space-y-6">
           <div className="p-6 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-950/20 dark:to-pink-950/20 rounded-xl">
             <h3 className="font-bold text-xl mb-4">Building a Simple Classification Model</h3>
-            <div className="bg-neutral-900 rounded-xl p-4 mb-4">
-              <code className="text-green-400 text-xs font-mono">
-{`import numpy as np
+            <CodeBlock
+              title="ml_model.py"
+              code={`import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
@@ -137,8 +139,8 @@ model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 accuracy = accuracy_score(y_test, y_pred)
 print(f"Accuracy: {accuracy:.2%}")`}
-              </code>
-            </div>
+              className="mb-4"
+            />
             <div className="p-3 bg-blue-50 dark:bg-blue-950/20 rounded text-sm">
               <strong>💡 Pro Tip:</strong> Always split your data into training, validation, and test sets to properly evaluate model performance.
             </div>

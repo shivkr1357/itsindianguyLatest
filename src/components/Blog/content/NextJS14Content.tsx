@@ -76,11 +76,11 @@ const NextJS14Content = () => {
         </h2>
         <div className="p-6 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20 rounded-xl">
           <h3 className="font-bold text-lg mb-4">Upgrading to Next.js 14</h3>
-          <div className="bg-neutral-900 rounded-lg p-4 mb-4">
-            <code className="text-green-400 text-sm font-mono">
-              npm install next@latest react@latest react-dom@latest
-            </code>
-          </div>
+            <div className="bg-neutral-900 rounded-lg p-4 mb-4">
+              <pre className="overflow-x-auto">
+                <code className="text-green-400 text-sm font-mono block">npm install next@latest react@latest react-dom@latest</code>
+              </pre>
+            </div>
           <div className="space-y-3 text-sm text-neutral-700 dark:text-neutral-300">
             <div className="flex items-start gap-2">
               <span className="text-green-500 mt-1">1.</span>

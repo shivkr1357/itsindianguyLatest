@@ -1,3 +1,5 @@
+import CodeBlock from "../CodeBlock";
+
 const NextJSContent = () => {
   return (
     <>
@@ -261,9 +263,9 @@ const NextJSContent = () => {
         <p className="text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">
           Next.js 14 revolutionizes data fetching with native async/await support in Server Components. You can fetch data directly in your components without useEffect or useState. The framework automatically handles request deduplication, caching, and revalidation, making data fetching simpler and more efficient than ever before.
         </p>
-        <div className="bg-neutral-900 rounded-xl p-6 mb-4">
-          <code className="text-green-400 text-sm font-mono">
-{`// Server Component with async data fetching
+        <CodeBlock
+          title="Server Component"
+          code={`// Server Component with async data fetching
 async function BlogPost({ params }) {
   const post = await fetchPost(params.id);
   const comments = await fetchComments(params.id);
@@ -276,8 +278,8 @@ async function BlogPost({ params }) {
     </div>
   );
 }`}
-          </code>
-        </div>
+          className="mb-4"
+        />
         <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed">
           This approach eliminates the complexity of managing loading states, error handling, and data synchronization that was previously required with client-side data fetching. Next.js handles all of this for you, allowing you to focus on building features rather than managing infrastructure.
         </p>

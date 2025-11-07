@@ -1,3 +1,5 @@
+import CodeBlock from "../CodeBlock";
+
 const NodeJSContent = () => {
   return (
     <>
@@ -54,9 +56,9 @@ const NodeJSContent = () => {
         <div className="space-y-6">
           <div>
             <h3 className="font-bold text-xl mb-4">🚀 Initial Setup</h3>
-            <div className="bg-neutral-900 rounded-xl p-6">
-              <code className="text-green-400 text-sm font-mono">
-{`# Initialize project
+            <CodeBlock
+              title="Terminal"
+              code={`# Initialize project
 mkdir my-api && cd my-api
 npm init -y
 
@@ -66,14 +68,14 @@ npm install -D nodemon
 
 # Install TypeScript (optional but recommended)
 npm install -D typescript @types/express @types/node`}
-              </code>
-            </div>
+            />
           </div>
 
           <div className="p-6 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20 rounded-xl">
             <h3 className="font-bold text-xl mb-3">📁 Recommended Project Structure</h3>
-            <div className="bg-neutral-900 rounded-lg p-4 font-mono text-sm text-neutral-300">
-{`src/
+            <CodeBlock
+              title="Project Structure"
+              code={`src/
 ├── config/          # Configuration files
 │   └── database.js
 ├── controllers/     # Request handlers
@@ -87,7 +89,7 @@ npm install -D typescript @types/express @types/node`}
 ├── utils/           # Utility functions
 │   └── validation.js
 └── server.js        # Entry point`}
-            </div>
+            />
           </div>
         </div>
       </section>
@@ -100,9 +102,9 @@ npm install -D typescript @types/express @types/node`}
         <div className="space-y-6">
           <div className="p-6 bg-gradient-to-br from-emerald-50 to-green-50 dark:from-emerald-950/20 dark:to-green-950/20 rounded-xl border border-emerald-200 dark:border-emerald-800">
             <h3 className="font-bold text-xl mb-4">1. Setup Express Server</h3>
-            <div className="bg-neutral-900 rounded-lg p-4 mb-3">
-              <code className="text-green-400 text-xs font-mono">
-{`const express = require('express');
+            <CodeBlock
+              title="server.js"
+              code={`const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const helmet = require('helmet');
@@ -127,15 +129,14 @@ app.use((err, req, res, next) => {
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(\`Server on port \${PORT}\`));`}
-              </code>
-            </div>
+            />
           </div>
 
           <div className="p-6 bg-gradient-to-br from-green-50 to-teal-50 dark:from-green-950/20 dark:to-teal-950/20 rounded-xl border border-green-200 dark:border-green-800">
             <h3 className="font-bold text-xl mb-4">2. Create Mongoose Model</h3>
-            <div className="bg-neutral-900 rounded-lg p-4">
-              <code className="text-green-400 text-xs font-mono">
-{`const mongoose = require('mongoose');
+            <CodeBlock
+              title="models/User.js"
+              code={`const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
   name: {
@@ -164,15 +165,14 @@ const userSchema = new mongoose.Schema({
 }, { timestamps: true });
 
 module.exports = mongoose.model('User', userSchema);`}
-              </code>
-            </div>
+            />
           </div>
 
           <div className="p-6 bg-gradient-to-br from-teal-50 to-cyan-50 dark:from-teal-950/20 dark:to-cyan-950/20 rounded-xl border border-teal-200 dark:border-teal-800">
             <h3 className="font-bold text-xl mb-4">3. Implement Controllers</h3>
-            <div className="bg-neutral-900 rounded-lg p-4">
-              <code className="text-green-400 text-xs font-mono">
-{`const User = require('../models/User');
+            <CodeBlock
+              title="controllers/userController.js"
+              code={`const User = require('../models/User');
 
 exports.getUsers = async (req, res, next) => {
   try {
@@ -206,8 +206,7 @@ exports.getUserById = async (req, res, next) => {
     next(error);
   }
 };`}
-              </code>
-            </div>
+            />
           </div>
         </div>
       </section>
