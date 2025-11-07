@@ -2,6 +2,10 @@ import type { Metadata, ResolvingMetadata } from "next";
 import React, { Fragment } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import BlogPostContent from "@/components/Blog/BlogPostContent";
+import BlogAuthorSection from "@/components/Blog/BlogAuthorSection";
+import BlogShareSection from "@/components/Blog/BlogShareSection";
+import { getBlogPost } from "@/lib/blogContent";
 
 type Props = {
   params: { slug: string };
@@ -14,10 +18,11 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const slug = params.slug;
 
-  // This would typically fetch from a CMS or database
-  const post = {
-    title: "Sample Blog Post",
-    description: "This is a sample blog post description.",
+  // Fetch blog post data
+  const post = getBlogPost(slug) || {
+    title: "Blog Post",
+    description:
+      "Read our latest blog post on programming and web development.",
     author: "ItsIndianGuy",
     date: "2024-01-15",
     readTime: "8 min read",
@@ -57,81 +62,84 @@ export async function generateMetadata(
 const BlogPost = ({ params }: Props) => {
   const { slug } = params;
 
-  // This would typically fetch from a CMS or database
-  const post = {
-    title: "Getting Started with Next.js 14",
-    description:
-      "Learn the fundamentals of Next.js 14 and build your first application with the latest features and improvements.",
-    content: `
-      <p>Next.js 14 brings exciting new features that make building React applications even more powerful and efficient. In this comprehensive guide, we'll explore the key improvements and how to leverage them in your projects.</p>
-      
-      <h2>What's New in Next.js 14</h2>
-      <p>The latest version introduces several groundbreaking features:</p>
-      <ul>
-        <li><strong>App Router:</strong> The new app directory provides a more intuitive way to organize your application</li>
-        <li><strong>Server Components:</strong> Built-in support for React Server Components</li>
-        <li><strong>Improved Performance:</strong> Faster builds and better runtime performance</li>
-        <li><strong>Enhanced Developer Experience:</strong> Better error messages and debugging tools</li>
-      </ul>
-      
-      <h2>Setting Up Your First Next.js 14 Project</h2>
-      <p>Getting started with Next.js 14 is straightforward. Here's how to create your first project:</p>
-      
-      <pre><code>npx create-next-app@latest my-app
-cd my-app
-npm run dev</code></pre>
-      
-      <p>This will create a new Next.js project with all the latest features enabled by default.</p>
-      
-      <h2>Understanding the App Router</h2>
-      <p>The app router introduces a new file-system based routing approach that's more intuitive than the traditional pages directory. Each folder represents a route segment, and special files like page.tsx define the UI for that route.</p>
-      
-      <h2>Server Components by Default</h2>
-      <p>In Next.js 14, all components in the app directory are Server Components by default. This means they run on the server, reducing the JavaScript bundle size sent to the client and improving performance.</p>
-      
-      <h2>Conclusion</h2>
-      <p>Next.js 14 represents a significant step forward in the React ecosystem. With its improved performance, better developer experience, and powerful new features, it's the perfect choice for building modern web applications.</p>
-    `,
+  // Fetch blog post data based on slug
+  const post = getBlogPost(slug) || {
+    title: "Blog Post Not Found",
+    description: "The requested blog post could not be found.",
     author: "ItsIndianGuy",
     date: "2024-01-15",
-    readTime: "8 min read",
+    readTime: "5 min read",
     image: "https://cdn-icons-png.flaticon.com/512/6062/6062646.png",
+    slug: slug,
   };
 
   return (
     <Fragment>
-      <div className="min-h-screen bg-neutral-50 dark:bg-neutral-900">
-        {/* Header */}
-        <div className="bg-white dark:bg-neutral-800 shadow-sm">
-          <div className="container mx-auto px-4 py-16">
+      <main className="min-h-screen bg-gradient-to-br from-neutral-50 via-green-50/20 to-teal-50/10 dark:from-neutral-900 dark:via-green-950/10 dark:to-teal-950/5">
+        {/* Hero Section */}
+        <section className="relative bg-gradient-to-b from-white to-green-50/20 dark:from-neutral-800 dark:to-green-950/10 overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-green-500 via-teal-500 to-blue-500" />
+
+          <div className="container mx-auto px-4 py-12">
             <div className="max-w-4xl mx-auto">
-              <div className="mb-8">
-                <Link
-                  href="/blog"
-                  className="text-primary-200 hover:text-primary-300 transition-colors"
+              <Link
+                href="/blog"
+                className="inline-flex items-center gap-2 text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300 transition-colors mb-8 group"
+              >
+                <svg
+                  className="w-5 h-5 group-hover:-translate-x-1 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
                 >
-                  ← Back to Blog
-                </Link>
-              </div>
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 19l-7-7 7-7"
+                  />
+                </svg>
+                Back to Blog
+              </Link>
 
               <div className="mb-8">
-                <h1 className="text-4xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-100 mb-4">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="px-3 py-1 bg-gradient-to-r from-green-500 to-teal-500 text-white text-xs font-semibold rounded-full">
+                    {post.readTime}
+                  </span>
+                  <span className="text-sm text-neutral-500 dark:text-neutral-400">
+                    {new Date(post.date).toLocaleDateString("en-US", {
+                      month: "long",
+                      day: "numeric",
+                      year: "numeric",
+                    })}
+                  </span>
+                </div>
+
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-800 dark:text-neutral-100 mb-6 leading-tight">
                   {post.title}
                 </h1>
-                <p className="text-lg text-neutral-600 dark:text-neutral-400 mb-6">
+
+                <p className="text-xl text-neutral-600 dark:text-neutral-400 leading-relaxed mb-6">
                   {post.description}
                 </p>
 
-                <div className="flex items-center gap-4 text-sm text-neutral-500 dark:text-neutral-400">
-                  <span>By {post.author}</span>
-                  <span>•</span>
-                  <span>{post.date}</span>
-                  <span>•</span>
-                  <span>{post.readTime}</span>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                    {post.author.charAt(0)}
+                  </div>
+                  <div>
+                    <p className="font-semibold text-neutral-800 dark:text-neutral-100">
+                      {post.author}
+                    </p>
+                    <p className="text-sm text-neutral-500 dark:text-neutral-400">
+                      Author
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              <div className="relative h-64 md:h-96 rounded-lg overflow-hidden">
+              <div className="relative h-64 md:h-[500px] rounded-3xl overflow-hidden shadow-2xl">
                 <Image
                   src={post.image}
                   alt={post.title}
@@ -141,49 +149,61 @@ npm run dev</code></pre>
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
         {/* Content */}
-        <div className="container mx-auto px-4 py-16">
-          <div className="max-w-4xl mx-auto">
-            <article className="prose prose-lg dark:prose-invert max-w-none">
-              <div
-                dangerouslySetInnerHTML={{ __html: post.content }}
-                className="text-neutral-800 dark:text-neutral-100"
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto space-y-8">
+              {/* Author Section */}
+              <BlogAuthorSection
+                author={post.author}
+                readTime={post.readTime}
+                date={post.date}
               />
-            </article>
 
-            {/* Share and Navigation */}
-            <div className="mt-16 pt-8 border-t border-neutral-200 dark:border-neutral-700">
-              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-                <div>
-                  <h3 className="text-lg font-semibold text-neutral-800 dark:text-neutral-100 mb-2">
-                    Share this post
+              {/* Blog Content */}
+              <BlogPostContent slug={slug} />
+
+              {/* Share Section */}
+              <BlogShareSection title={post.title} slug={slug} />
+
+              {/* Newsletter CTA */}
+              <div className="p-8 md:p-12 bg-gradient-to-r from-green-500 to-teal-500 rounded-3xl shadow-2xl text-white text-center">
+                <div className="flex items-center justify-center gap-3 mb-4">
+                  <span className="text-4xl">📬</span>
+                  <h3 className="text-3xl font-bold">
+                    Want More Content Like This?
                   </h3>
-                  <div className="flex gap-4">
-                    <button className="text-neutral-600 dark:text-neutral-400 hover:text-primary-200 transition-colors">
-                      Twitter
-                    </button>
-                    <button className="text-neutral-600 dark:text-neutral-400 hover:text-primary-200 transition-colors">
-                      LinkedIn
-                    </button>
-                    <button className="text-neutral-600 dark:text-neutral-400 hover:text-primary-200 transition-colors">
-                      Facebook
-                    </button>
-                  </div>
                 </div>
-
+                <p className="text-lg text-green-50 mb-6 max-w-2xl mx-auto">
+                  Subscribe to our newsletter and get the latest programming
+                  tutorials, tips, and insights delivered to your inbox.
+                </p>
                 <Link
-                  href="/blog"
-                  className="px-6 py-2 bg-primary-200 hover:bg-primary-300 text-white rounded-lg transition-colors"
+                  href="/newsletter"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-white text-green-600 hover:bg-green-50 rounded-xl transition-all hover:scale-105 shadow-lg hover:shadow-xl font-semibold"
                 >
-                  View All Posts
+                  Subscribe Now
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 7l5 5m0 0l-5 5m5-5H6"
+                    />
+                  </svg>
                 </Link>
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        </section>
+      </main>
     </Fragment>
   );
 };

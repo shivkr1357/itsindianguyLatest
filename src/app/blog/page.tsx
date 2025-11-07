@@ -107,6 +107,94 @@ const samplePosts = [
     readTime: "14 min read",
     slug: "docker-for-beginners",
   },
+  {
+    id: "7",
+    title: "GraphQL vs REST: Which Should You Choose?",
+    description:
+      "A comprehensive comparison of GraphQL and REST APIs to help you make the right choice for your project.",
+    image: "https://cdn-icons-png.flaticon.com/512/2920/2920277.png",
+    author: "ItsIndianGuy",
+    date: "2023-12-20",
+    readTime: "16 min read",
+    slug: "graphql-vs-rest",
+  },
+  {
+    id: "8",
+    title: "Node.js Performance Optimization",
+    description:
+      "Advanced techniques to optimize your Node.js applications for maximum performance and scalability.",
+    image: "https://cdn-icons-png.flaticon.com/512/5968/5968322.png",
+    author: "ItsIndianGuy",
+    date: "2023-12-15",
+    readTime: "18 min read",
+    slug: "nodejs-performance",
+  },
+  {
+    id: "9",
+    title: "Modern CSS Techniques in 2024",
+    description:
+      "Explore the latest CSS features including Grid, Flexbox, Container Queries, and CSS Variables.",
+    image: "https://cdn-icons-png.flaticon.com/512/732/732190.png",
+    author: "ItsIndianGuy",
+    date: "2023-12-10",
+    readTime: "15 min read",
+    slug: "modern-css",
+  },
+  {
+    id: "10",
+    title: "TypeScript Best Practices",
+    description:
+      "Write better TypeScript code with these proven best practices and design patterns.",
+    image: "https://cdn-icons-png.flaticon.com/512/5968/5968381.png",
+    author: "ItsIndianGuy",
+    date: "2023-12-05",
+    readTime: "17 min read",
+    slug: "typescript-practices",
+  },
+  {
+    id: "11",
+    title: "Understanding React Server Components",
+    description:
+      "Deep dive into React Server Components and how they revolutionize React applications.",
+    image: "https://cdn-icons-png.flaticon.com/512/1183/1183672.png",
+    author: "ItsIndianGuy",
+    date: "2023-11-30",
+    readTime: "19 min read",
+    slug: "server-components",
+  },
+  {
+    id: "12",
+    title: "What's New in Next.js 14",
+    description:
+      "Explore the latest features and improvements in Next.js 14 including Turbopack and Server Actions.",
+    image: "https://cdn-icons-png.flaticon.com/512/6062/6062646.png",
+    author: "ItsIndianGuy",
+    date: "2023-11-25",
+    readTime: "13 min read",
+    slug: "nextjs-14",
+  },
+  {
+    id: "13",
+    title: "Web Security Best Practices",
+    description:
+      "Essential security practices to protect your web applications from common vulnerabilities.",
+    image: "https://cdn-icons-png.flaticon.com/512/2092/2092663.png",
+    author: "ItsIndianGuy",
+    date: "2023-11-20",
+    readTime: "20 min read",
+    slug: "web-security",
+  },
+  {
+    id: "14",
+    title: "MongoDB Mastery Guide",
+    description:
+      "Master MongoDB from basics to advanced topics including aggregation, indexing, and sharding.",
+    image: "https://cdn-icons-png.flaticon.com/512/528/528260.png",
+    author: "ItsIndianGuy",
+    date: "2023-11-15",
+    readTime: "22 min read",
+    slug: "mongodb-mastery",
+  },
 ];
 
 const Blog = () => {
@@ -175,39 +263,82 @@ const Blog = () => {
           __html: JSON.stringify(structuredData),
         }}
       />
-      <div className="min-h-screen bg-neutral-50 dark:bg-neutral-900">
-        {/* Header */}
-        <div className="bg-white dark:bg-neutral-800 shadow-sm">
-          <div className="container mx-auto px-4 py-16">
-            <div className="max-w-4xl mx-auto">
-              <div className="mb-4">
-                <a
-                  href="/"
-                  className="text-primary-200 hover:text-primary-300 transition-colors"
-                >
-                  ← Back to Home
-                </a>
-              </div>
+      <main className="min-h-screen bg-gradient-to-br from-neutral-50 via-green-50/30 to-teal-50/20 dark:from-neutral-900 dark:via-green-950/20 dark:to-teal-950/10">
+        {/* Hero Section */}
+        <section className="relative bg-gradient-to-b from-white to-green-50/30 dark:from-neutral-800 dark:to-green-950/10 overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-green-500 via-teal-500 to-blue-500" />
+          <div className="absolute top-20 right-10 w-72 h-72 bg-green-500/5 rounded-full blur-3xl animate-pulse" />
+          <div
+            className="absolute bottom-20 left-10 w-80 h-80 bg-teal-500/5 rounded-full blur-3xl animate-pulse"
+            style={{ animationDelay: "2s" }}
+          />
 
-              <h1 className="text-4xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-100 mb-4">
-                Programming Blog
+          <div className="relative container mx-auto px-4 py-20">
+            <div className="max-w-4xl mx-auto text-center">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-green-500/10 to-teal-500/10 rounded-full mb-6">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                </span>
+                <span className="text-sm font-medium text-green-600 dark:text-green-400">
+                  Updated Weekly
+                </span>
+              </div>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
+                <span className="text-neutral-800 dark:text-neutral-100">
+                  Programming
+                </span>
+                <span className="block mt-2 bg-gradient-to-r from-green-500 via-teal-500 to-blue-500 bg-clip-text text-transparent">
+                  Blog & Insights
+                </span>
               </h1>
-              <p className="text-lg text-neutral-600 dark:text-neutral-400">
-                Latest programming tutorials, tech insights, and development
-                articles to help you stay ahead in the world of software
-                development.
+              <p className="text-xl md:text-2xl text-neutral-600 dark:text-neutral-400 leading-relaxed max-w-3xl mx-auto">
+                Latest programming tutorials, tech insights, and development articles to help you stay ahead in the world of software development.
               </p>
             </div>
           </div>
-        </div>
+        </section>
 
         {/* Blog List */}
-        <div className="container mx-auto px-4 py-8">
-          <div className="max-w-6xl mx-auto">
-            <BlogListClient posts={samplePosts} />
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <BlogListClient posts={samplePosts} />
+            </div>
           </div>
-        </div>
-      </div>
+        </section>
+
+        {/* Bottom CTA */}
+        <section className="py-16 bg-white dark:bg-neutral-800">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto bg-gradient-to-r from-white to-green-50/50 dark:from-neutral-800 dark:to-green-950/20 rounded-3xl p-8 md:p-12 shadow-2xl border border-neutral-200 dark:border-neutral-700 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-neutral-800 dark:text-neutral-100 mb-4">
+                Want More Content?
+              </h2>
+              <p className="text-lg text-neutral-600 dark:text-neutral-400 mb-8 max-w-2xl mx-auto">
+                Subscribe to our newsletter and never miss a post
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="/newsletter"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white rounded-xl transition-all hover:scale-105 shadow-lg hover:shadow-xl font-semibold"
+                >
+                  Subscribe Newsletter
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </a>
+                <a
+                  href="/"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-white dark:bg-neutral-700 border-2 border-green-500 text-green-500 hover:bg-green-500 hover:text-white dark:hover:bg-green-500 rounded-xl transition-all hover:scale-105 shadow-md hover:shadow-lg font-semibold"
+                >
+                  Back to Home
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
     </Fragment>
   );
 };

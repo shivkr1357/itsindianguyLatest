@@ -17,40 +17,46 @@ const BlogCard = ({ title, description, image, author, date, readTime, slug }: B
   return (
     <Link 
       href={`/blog/${slug}`}
-      className="block bg-white dark:bg-neutral-800 rounded-lg shadow-lg overflow-hidden transform transition-all hover:-translate-y-1 hover:shadow-xl"
+      className="group block bg-white dark:bg-neutral-800 rounded-2xl shadow-md overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border border-neutral-200 dark:border-neutral-700"
     >
-      <div className="relative h-48 w-full">
+      <div className="relative h-56 w-full overflow-hidden">
         <Image
           src={image}
           alt={title}
           fill
-          className="object-cover"
+          className="object-cover transition-transform duration-300 group-hover:scale-110"
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        <div className="absolute bottom-4 right-4 px-3 py-1 bg-gradient-to-r from-green-500 to-teal-500 text-white text-xs font-semibold rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          Read More →
+        </div>
       </div>
       
       <div className="p-6">
-        <h3 className="text-xl font-bold mb-2 text-neutral-800 dark:text-neutral-100">
+        <h3 className="text-xl font-bold mb-3 text-neutral-800 dark:text-neutral-100 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors line-clamp-2">
           {title}
         </h3>
         
-        <p className="text-neutral-600 dark:text-neutral-400 mb-4 line-clamp-2">
+        <p className="text-neutral-600 dark:text-neutral-400 mb-4 line-clamp-3 leading-relaxed">
           {description}
         </p>
         
-        <div className="flex flex-wrap gap-4 text-sm text-neutral-500 dark:text-neutral-400">
-          <div className="flex items-center gap-2">
-            <FontAwesomeIcon icon={faUser} className="w-4 h-4" />
+        <div className="flex items-center justify-between pt-4 border-t border-neutral-200 dark:border-neutral-700">
+          <div className="flex items-center gap-2 text-sm text-neutral-500 dark:text-neutral-400">
+            <FontAwesomeIcon icon={faUser} className="w-3.5 h-3.5 text-green-500" />
             <span>{author}</span>
           </div>
           
-          <div className="flex items-center gap-2">
-            <FontAwesomeIcon icon={faCalendar} className="w-4 h-4" />
-            <span>{date}</span>
-          </div>
-          
-          <div className="flex items-center gap-2">
-            <FontAwesomeIcon icon={faClock} className="w-4 h-4" />
-            <span>{readTime}</span>
+          <div className="flex items-center gap-3 text-xs text-neutral-500 dark:text-neutral-400">
+            <div className="flex items-center gap-1.5">
+              <FontAwesomeIcon icon={faCalendar} className="w-3.5 h-3.5" />
+              <span>{new Date(date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+            </div>
+            
+            <div className="flex items-center gap-1.5">
+              <FontAwesomeIcon icon={faClock} className="w-3.5 h-3.5" />
+              <span>{readTime}</span>
+            </div>
           </div>
         </div>
       </div>

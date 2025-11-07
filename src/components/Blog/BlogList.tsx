@@ -1,4 +1,4 @@
-import { useInView } from "react-intersection-observer";
+"use client";
 import BlogCard from "@/components/Blog/BlogCard";
 
 interface BlogPost {
@@ -17,22 +17,10 @@ interface BlogListProps {
 }
 
 const BlogList = ({ posts }: BlogListProps) => {
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {posts.map((post, index) => (
-        <div
-          key={post.id}
-          ref={ref}
-          className={`transform transition-all duration-500 ${
-            inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          }`}
-          style={{ transitionDelay: `${index * 100}ms` }}
-        >
+      {posts.map((post) => (
+        <div key={post.id}>
           <BlogCard
             title={post.title}
             description={post.description}

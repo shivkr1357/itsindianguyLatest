@@ -191,24 +191,87 @@ const Tutorials = () => {
           __html: JSON.stringify(structuredData),
         }}
       />
-      <div className="min-h-screen bg-neutral-50 dark:bg-neutral-900">
+      <div className="min-h-screen bg-gradient-to-br from-neutral-50 via-green-50/30 to-teal-50/20 dark:from-neutral-900 dark:via-green-950/20 dark:to-teal-950/10">
         {/* Header */}
-        <div className="bg-white dark:bg-neutral-800 shadow-sm">
-          <div className="container mx-auto px-4 py-16">
+        <div className="relative bg-gradient-to-b from-white to-green-50/30 dark:from-neutral-800 dark:to-green-950/10 shadow-sm overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-green-500 via-teal-500 to-blue-500" />
+          <div className="absolute top-20 right-10 w-64 h-64 bg-green-500/5 rounded-full blur-3xl" />
+
+          <div className="relative container mx-auto px-4 py-20">
             <div className="text-center">
-              <h1 className="text-4xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-100 mb-4">
-                Programming Tutorials
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-green-500/10 to-teal-500/10 rounded-full mb-6">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                </span>
+                <span className="text-sm font-medium text-green-600 dark:text-green-400">
+                  {sampleTutorials.length} Tutorials Available
+                </span>
+              </div>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
+                <span className="text-neutral-800 dark:text-neutral-100">
+                  Programming
+                </span>
+                <span className="block mt-2 bg-gradient-to-r from-green-500 via-teal-500 to-blue-500 bg-clip-text text-transparent">
+                  Tutorials
+                </span>
               </h1>
-              <p className="text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
+              <p className="text-xl md:text-2xl text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto mb-8">
                 Master new skills with our comprehensive tutorials. From
                 beginner to advanced, we have something for every developer.
               </p>
+
+              {/* Feature highlights */}
+              <div className="flex flex-wrap items-center justify-center gap-6 max-w-3xl mx-auto">
+                <div className="flex items-center gap-2 text-neutral-600 dark:text-neutral-400">
+                  <svg
+                    className="w-5 h-5 text-green-500"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  <span className="font-medium">Step-by-Step</span>
+                </div>
+                <div className="flex items-center gap-2 text-neutral-600 dark:text-neutral-400">
+                  <svg
+                    className="w-5 h-5 text-teal-500"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  <span className="font-medium">Hands-on Projects</span>
+                </div>
+                <div className="flex items-center gap-2 text-neutral-600 dark:text-neutral-400">
+                  <svg
+                    className="w-5 h-5 text-blue-500"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  <span className="font-medium">Code Examples</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Search, Filters and Tutorials Grid */}
-        <div className="container mx-auto px-4 py-8">
+        <div className="container mx-auto px-4 py-12">
           <div className="max-w-6xl mx-auto">
             <TutorialsClient
               tutorials={sampleTutorials}
