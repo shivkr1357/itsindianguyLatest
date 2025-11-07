@@ -58,7 +58,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
+      <body
+        className={`${roboto.className} min-h-screen flex flex-col bg-neutral-50 dark:bg-neutral-900`}
+      >
         {/* Google AdSense */}
         <Script
           async
@@ -76,10 +78,6 @@ export default function RootLayout({
             })(window,document,'script','dataLayer','GTM-KH5X88P4');
           `}
         </Script>
-      </head>
-      <body
-        className={`${roboto.className} min-h-screen flex flex-col bg-neutral-50 dark:bg-neutral-900`}
-      >
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
