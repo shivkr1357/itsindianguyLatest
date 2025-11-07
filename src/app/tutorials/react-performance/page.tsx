@@ -70,10 +70,10 @@ export default function ReactPerformancePage() {
           </h2>
           <div className="space-y-4 text-neutral-600 dark:text-neutral-300">
             <p>
-              Performance is crucial for delivering excellent user experiences. Slow applications frustrate users and hurt engagement. In this advanced tutorial, you'll learn proven techniques to optimize React applications for maximum performance.
+              Performance is crucial for delivering excellent user experiences. Slow applications frustrate users and hurt engagement. In this advanced tutorial, you&apos;ll learn proven techniques to optimize React applications for maximum performance.
             </p>
             <p>
-              We'll cover everything from identifying performance bottlenecks to implementing sophisticated optimization strategies. You'll learn about memoization, code splitting, virtualization, and profiling tools that professional developers use to build fast, responsive applications.
+              We&apos;ll cover everything from identifying performance bottlenecks to implementing sophisticated optimization strategies. You&apos;ll learn about memoization, code splitting, virtualization, and profiling tools that professional developers use to build fast, responsive applications.
             </p>
           </div>
         </div>
@@ -81,7 +81,7 @@ export default function ReactPerformancePage() {
         {/* What You'll Learn */}
         <div className="bg-white dark:bg-neutral-800 rounded-xl shadow-lg p-8 mb-8">
           <h2 className="text-2xl font-bold text-neutral-800 dark:text-neutral-100 mb-6">
-            What You'll Learn
+            What You&apos;ll Learn
           </h2>
           <div className="grid md:grid-cols-2 gap-4">
             {[
@@ -143,7 +143,7 @@ export default function ReactPerformancePage() {
           <div className="space-y-4">
             <div className="border-l-4 border-blue-500 pl-4">
               <h3 className="font-semibold text-lg text-neutral-800 dark:text-neutral-100">1. Understanding React Rendering</h3>
-              <p className="text-neutral-600 dark:text-neutral-400 text-sm">Learn how React's rendering process works and what triggers re-renders</p>
+              <p className="text-neutral-600 dark:text-neutral-400 text-sm">Learn how React&apos;s rendering process works and what triggers re-renders</p>
             </div>
             <div className="border-l-4 border-blue-500 pl-4">
               <h3 className="font-semibold text-lg text-neutral-800 dark:text-neutral-100">2. Profiling Your Application</h3>
@@ -195,7 +195,7 @@ export default function ReactPerformancePage() {
                 useMemo Hook
               </h3>
               <p className="text-neutral-600 dark:text-neutral-300">
-                Memoizes expensive calculations so they're only recomputed when dependencies change. Perfect for complex computations or transformations that don't need to run on every render.
+                Memoizes expensive calculations so they&apos;re only recomputed when dependencies change. Perfect for complex computations or transformations that don&apos;t need to run on every render.
               </p>
             </div>
             <div>
@@ -203,7 +203,7 @@ export default function ReactPerformancePage() {
                 useCallback Hook
               </h3>
               <p className="text-neutral-600 dark:text-neutral-300">
-                Returns a memoized callback function, preventing child components from re-rendering when the function reference doesn't actually change. Essential for optimizing child components.
+                Returns a memoized callback function, preventing child components from re-rendering when the function reference doesn&apos;t actually change. Essential for optimizing child components.
               </p>
             </div>
             <div>

@@ -75,7 +75,7 @@ export default function TypeScriptPracticesBlogPost() {
 
           <div className="bg-white dark:bg-neutral-800 rounded-xl shadow-lg p-8">
             <h2 className="text-2xl font-bold text-neutral-800 dark:text-neutral-100 mb-4">
-              2. Avoid Using 'any'
+              2. Avoid Using &apos;any&apos;
             </h2>
             <p className="text-neutral-600 dark:text-neutral-300 mb-4">
               The <code className="bg-neutral-200 dark:bg-neutral-700 px-2 py-1 rounded">any</code> type defeats the purpose of TypeScript. Use <code className="bg-neutral-200 dark:bg-neutral-700 px-2 py-1 rounded">unknown</code> when the type is truly unknown, or define proper types.
@@ -140,7 +140,7 @@ const name = "John";`}
               4. Leverage Union Types
             </h2>
             <p className="text-neutral-600 dark:text-neutral-300 mb-4">
-              Union types allow a value to be one of several types. They're powerful for modeling different states and preventing invalid combinations.
+              Union types allow a value to be one of several types. They&apos;re powerful for modeling different states and preventing invalid combinations.
             </p>
             <div className="bg-neutral-900 dark:bg-neutral-950 rounded-lg p-4">
               <pre className="text-sm text-neutral-300">

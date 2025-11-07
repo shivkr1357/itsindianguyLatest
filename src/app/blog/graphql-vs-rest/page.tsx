@@ -57,7 +57,7 @@ export default function GraphQLvsRESTBlogPost() {
               What is REST?
             </h2>
             <p className="text-neutral-600 dark:text-neutral-300 mb-4">
-              REST (Representational State Transfer) is an architectural style that uses HTTP methods and multiple endpoints to access and manipulate resources. It's been the standard for web APIs for over two decades.
+              REST (Representational State Transfer) is an architectural style that uses HTTP methods and multiple endpoints to access and manipulate resources. It&apos;s been the standard for web APIs for over two decades.
             </p>
             <div className="bg-neutral-900 dark:bg-neutral-950 rounded-lg p-4 overflow-x-auto">
               <pre className="text-sm text-neutral-300">
@@ -306,7 +306,7 @@ DELETE /api/users/123       // Delete user`}
               Conclusion
             </h2>
             <p className="text-neutral-600 dark:text-neutral-300">
-              There's no universal winner between GraphQL and REST. The choice depends on your specific requirements, team expertise, and use case. REST excels in simplicity and caching, while GraphQL shines in flexibility and efficiency. Evaluate your project needs carefully and choose the approach that best serves your users and development team.
+              There&apos;s no universal winner between GraphQL and REST. The choice depends on your specific requirements, team expertise, and use case. REST excels in simplicity and caching, while GraphQL shines in flexibility and efficiency. Evaluate your project needs carefully and choose the approach that best serves your users and development team.
             </p>
           </div>
         </div>

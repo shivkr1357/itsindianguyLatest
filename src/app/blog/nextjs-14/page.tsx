@@ -64,13 +64,13 @@ export default function NextJS14BlogPost() {
               Next.js 14 represents a significant milestone in modern web development, introducing powerful features that make building production-ready applications easier and faster than ever. This guide will walk you through the essential features and help you get started with Next.js 14.
             </p>
             <p className="text-neutral-600 dark:text-neutral-300">
-              Whether you're migrating from an older version or starting fresh, Next.js 14 offers improved performance, better developer experience, and new capabilities that will transform how you build web applications.
+              Whether you&apos;re migrating from an older version or starting fresh, Next.js 14 offers improved performance, better developer experience, and new capabilities that will transform how you build web applications.
             </p>
           </div>
 
           <div className="bg-white dark:bg-neutral-800 rounded-xl shadow-lg p-8 mb-8">
             <h2 className="text-2xl font-bold text-neutral-800 dark:text-neutral-100 mb-4">
-              What's New in Next.js 14?
+              What&apos;s New in Next.js 14?
             </h2>
             <div className="space-y-4 text-neutral-600 dark:text-neutral-300">
               <div>
@@ -139,7 +139,7 @@ export default function NextJS14BlogPost() {
                   Server and Client Components
                 </h3>
                 <p>
-                  By default, all components in the App Router are Server Components. Use the <code className="bg-neutral-200 dark:bg-neutral-700 px-2 py-1 rounded">'use client'</code> directive at the top of a file to create Client Components when you need interactivity or browser APIs.
+                  By default, all components in the App Router are Server Components. Use the <code className="bg-neutral-200 dark:bg-neutral-700 px-2 py-1 rounded">&apos;use client&apos;</code> directive at the top of a file to create Client Components when you need interactivity or browser APIs.
                 </p>
               </div>
               <div>
@@ -155,7 +155,7 @@ export default function NextJS14BlogPost() {
                   Layouts and Templates
                 </h3>
                 <p>
-                  Create shared UI with <code className="bg-neutral-200 dark:bg-neutral-700 px-2 py-1 rounded">layout.tsx</code> files that wrap multiple pages. Layouts preserve state and don't re-render on navigation.
+                  Create shared UI with <code className="bg-neutral-200 dark:bg-neutral-700 px-2 py-1 rounded">layout.tsx</code> files that wrap multiple pages. Layouts preserve state and don&apos;t re-render on navigation.
                 </p>
               </div>
             </div>

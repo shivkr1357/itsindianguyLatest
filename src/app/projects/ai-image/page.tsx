@@ -76,7 +76,7 @@ export default function AIImagePage() {
           </h2>
           <div className="space-y-4 text-neutral-600 dark:text-neutral-300">
             <p>
-              An advanced AI-powered image generation system that creates unique, high-quality images from text descriptions. Built using state-of-the-art generative AI models including Stable Diffusion and OpenAI's DALL-E API.
+              An advanced AI-powered image generation system that creates unique, high-quality images from text descriptions. Built using state-of-the-art generative AI models including Stable Diffusion and OpenAI&apos;s DALL-E API.
             </p>
             <p>
               The application leverages deep learning techniques to understand natural language prompts and generate corresponding visual content. Users can fine-tune generation parameters such as style, resolution, and artistic direction to achieve their desired results.

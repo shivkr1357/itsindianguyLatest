@@ -70,10 +70,10 @@ export default function FullStackNextJSPage() {
           </h2>
           <div className="space-y-4 text-neutral-600 dark:text-neutral-300">
             <p>
-              Next.js 14 has revolutionized full-stack development with its powerful App Router, React Server Components, and seamless API integration. In this comprehensive tutorial, you'll learn how to build a complete full-stack application from scratch.
+              Next.js 14 has revolutionized full-stack development with its powerful App Router, React Server Components, and seamless API integration. In this comprehensive tutorial, you&apos;ll learn how to build a complete full-stack application from scratch.
             </p>
             <p>
-              We'll cover everything from setting up your development environment to deploying your application to production. You'll learn how to work with databases, implement authentication, create API routes, and leverage the power of server and client components.
+              We&apos;ll cover everything from setting up your development environment to deploying your application to production. You&apos;ll learn how to work with databases, implement authentication, create API routes, and leverage the power of server and client components.
             </p>
           </div>
         </div>
@@ -81,7 +81,7 @@ export default function FullStackNextJSPage() {
         {/* What You'll Learn */}
         <div className="bg-white dark:bg-neutral-800 rounded-xl shadow-lg p-8 mb-8">
           <h2 className="text-2xl font-bold text-neutral-800 dark:text-neutral-100 mb-6">
-            What You'll Learn
+            What You&apos;ll Learn
           </h2>
           <div className="grid md:grid-cols-2 gap-4">
             {[

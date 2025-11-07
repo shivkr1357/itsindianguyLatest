@@ -57,7 +57,7 @@ export default function ModernCSSBlogPost() {
               1. Container Queries
             </h2>
             <p className="text-neutral-600 dark:text-neutral-300 mb-4">
-              Container queries allow components to respond to their parent container's size rather than the viewport. This enables truly modular, context-aware components.
+              Container queries allow components to respond to their parent container&apos;s size rather than the viewport. This enables truly modular, context-aware components.
             </p>
             <div className="bg-neutral-900 dark:bg-neutral-950 rounded-lg p-4 overflow-x-auto mb-4">
               <pre className="text-sm text-neutral-300">

@@ -70,10 +70,10 @@ export default function TypeScriptGenericsPage() {
           </h2>
           <div className="space-y-4 text-neutral-600 dark:text-neutral-300">
             <p>
-              Generics are one of TypeScript's most powerful features, allowing you to create reusable components that work with multiple types while maintaining type safety. They enable you to write flexible code without sacrificing the benefits of static typing.
+              Generics are one of TypeScript&apos;s most powerful features, allowing you to create reusable components that work with multiple types while maintaining type safety. They enable you to write flexible code without sacrificing the benefits of static typing.
             </p>
             <p>
-              In this advanced tutorial, you'll learn how to leverage generics to create robust, maintainable code. We'll explore generic functions, classes, interfaces, and advanced patterns that will elevate your TypeScript skills to the next level.
+              In this advanced tutorial, you&apos;ll learn how to leverage generics to create robust, maintainable code. We&apos;ll explore generic functions, classes, interfaces, and advanced patterns that will elevate your TypeScript skills to the next level.
             </p>
           </div>
         </div>
@@ -81,7 +81,7 @@ export default function TypeScriptGenericsPage() {
         {/* What You'll Learn */}
         <div className="bg-white dark:bg-neutral-800 rounded-xl shadow-lg p-8 mb-8">
           <h2 className="text-2xl font-bold text-neutral-800 dark:text-neutral-100 mb-6">
-            What You'll Learn
+            What You&apos;ll Learn
           </h2>
           <div className="grid md:grid-cols-2 gap-4">
             {[

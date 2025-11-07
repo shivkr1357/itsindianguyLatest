@@ -122,7 +122,7 @@ export default function ServerComponentsBlogPost() {
                   1. Zero Bundle Impact
                 </h3>
                 <p>
-                  Server Components don't add any JavaScript to your client bundle. Large dependencies used in Server Components have zero impact on the client, improving initial load times significantly.
+                  Server Components don&apos;t add any JavaScript to your client bundle. Large dependencies used in Server Components have zero impact on the client, improving initial load times significantly.
                 </p>
               </div>
               <div>
@@ -221,7 +221,7 @@ export default function ServerComponentsBlogPost() {
             <ul className="space-y-3 text-neutral-600 dark:text-neutral-300">
               <li className="flex items-start">
                 <span className="text-blue-600 dark:text-blue-400 mr-2">1.</span>
-                <span><strong>Start with Server Components:</strong> Make components Server Components by default and only use 'use client' when necessary.</span>
+                <span><strong>Start with Server Components:</strong> Make components Server Components by default and only use &apos;use client&apos; when necessary.</span>
               </li>
               <li className="flex items-start">
                 <span className="text-blue-600 dark:text-blue-400 mr-2">2.</span>

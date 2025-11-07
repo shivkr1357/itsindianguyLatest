@@ -120,7 +120,7 @@ export default function ChatPage() {
               </div>
               <div>
                 <h3 className="font-semibold text-neutral-800 dark:text-neutral-100">Online Status</h3>
-                <p className="text-neutral-600 dark:text-neutral-400 text-sm">See who's online in real-time</p>
+                <p className="text-neutral-600 dark:text-neutral-400 text-sm">See who&apos;s online in real-time</p>
               </div>
             </div>
             <div className="flex items-start space-x-3">
