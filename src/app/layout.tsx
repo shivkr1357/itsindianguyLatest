@@ -64,7 +64,14 @@ export default function RootLayout({
           strategy="afterInteractive"
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7213785205715000"
           crossOrigin="anonymous"
-        />
+        >
+          {`
+            (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-7213785205715000",
+              enable_page_level_ads: true
+            });
+          `}
+        </Script>
         {/* Google Tag Manager */}
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`
