@@ -33,7 +33,7 @@ export default function HomePageClient() {
     <Layout>
       <main className="min-h-screen bg-gradient-to-br from-neutral-50 via-blue-50/30 to-purple-50/20 dark:from-neutral-900 dark:via-blue-950/20 dark:to-purple-950/10">
         {/* Hero Section */}
-        <section className="relative container mx-auto px-4 pb-20 overflow-hidden">
+        <section className="relative container mx-auto px-6 sm:px-8 lg:px-20 xl:px-32 pt-0 pb-2 overflow-hidden">
           {/* Animated background elements */}
           <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400/10 rounded-full blur-3xl animate-pulse" />
           <div
@@ -155,9 +155,9 @@ export default function HomePageClient() {
         </section>
 
         {/* Featured Blogs Section */}
-        <section className="relative bg-white dark:bg-neutral-800 py-20 overflow-hidden">
+        <section className="relative bg-white dark:bg-neutral-800 py-2 overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary-200 to-transparent" />
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-6 sm:px-8 lg:px-20 xl:px-32">
             <div className="text-center mb-12">
               <span className="inline-block px-4 py-1 bg-primary-200/10 text-primary-200 rounded-full text-sm font-medium mb-4">
                 Latest Content
@@ -176,7 +176,7 @@ export default function HomePageClient() {
 
         {/* Dev Cards Section */}
         <section className="relative py-20">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-6 sm:px-8 lg:px-20 xl:px-32">
             <div className="text-center mb-12">
               <span className="inline-block px-4 py-1 bg-blue-500/10 text-blue-500 rounded-full text-sm font-medium mb-4">
                 Explore Topics
@@ -198,7 +198,7 @@ export default function HomePageClient() {
 
         {/* Project Showcase */}
         <section className="relative bg-gradient-to-b from-white to-blue-50/30 dark:from-neutral-800 dark:to-blue-950/10 py-20">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-6 sm:px-8 lg:px-20 xl:px-32">
             <div className="text-center mb-12">
               <span className="inline-block px-4 py-1 bg-purple-500/10 text-purple-500 rounded-full text-sm font-medium mb-4">
                 Portfolio
@@ -217,7 +217,7 @@ export default function HomePageClient() {
 
         {/* Latest Tutorials */}
         <section className="relative py-20">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-6 sm:px-8 lg:px-20 xl:px-32">
             <div className="text-center mb-12">
               <span className="inline-block px-4 py-1 bg-green-500/10 text-green-500 rounded-full text-sm font-medium mb-4">
                 Learn & Grow
@@ -236,7 +236,7 @@ export default function HomePageClient() {
 
         {/* Interview Section */}
         <section className="relative bg-gradient-to-b from-white to-orange-50/20 dark:from-neutral-800 dark:to-orange-950/10 py-20">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-6 sm:px-8 lg:px-20 xl:px-32">
             <div className="text-center mb-12">
               <span className="inline-block px-4 py-1 bg-orange-500/10 text-orange-500 rounded-full text-sm font-medium mb-4">
                 Career Prep
@@ -255,7 +255,7 @@ export default function HomePageClient() {
 
         {/* About Section */}
         <section className="relative py-20 bg-gradient-to-b from-neutral-50 to-white dark:from-neutral-900 dark:to-neutral-800">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-6 sm:px-8 lg:px-20 xl:px-32">
             <div className="text-center mb-12">
               <span className="inline-block px-4 py-1 bg-primary-200/10 text-primary-200 rounded-full text-sm font-medium mb-4">
                 Meet the Creator
@@ -269,8 +269,8 @@ export default function HomePageClient() {
         </section>
 
         {/* GitHub Activity */}
-        <section className="relative bg-white dark:bg-neutral-800 py-20">
-          <div className="container mx-auto px-4">
+        <section className="relative bg-white dark:bg-neutral-800 py-2">
+          <div className="container mx-auto px-6 sm:px-8 lg:px-20 xl:px-32">
             <div className="text-center mb-12">
               <span className="inline-block px-4 py-1 bg-neutral-700/10 dark:bg-neutral-500/10 text-neutral-700 dark:text-neutral-300 rounded-full text-sm font-medium mb-4">
                 Open Source
@@ -288,7 +288,7 @@ export default function HomePageClient() {
 
         {/* Testimonials */}
         <section className="relative py-20 bg-gradient-to-b from-neutral-50 to-purple-50/20 dark:from-neutral-900 dark:to-purple-950/10">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-6 sm:px-8 lg:px-20 xl:px-32 py-2">
             <div className="text-center mb-12">
               <span className="inline-block px-4 py-1 bg-purple-500/10 text-purple-500 rounded-full text-sm font-medium mb-4">
                 Success Stories
@@ -306,7 +306,7 @@ export default function HomePageClient() {
 
         {/* Social Feed */}
         <section className="relative bg-white dark:bg-neutral-800 py-20">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-6 sm:px-8 lg:px-20 xl:px-32 py-12">
             <div className="text-center mb-12">
               <span className="inline-block px-4 py-1 bg-blue-500/10 text-blue-500 rounded-full text-sm font-medium mb-4">
                 Stay Connected
@@ -324,7 +324,7 @@ export default function HomePageClient() {
 
         {/* Newsletter & Contact */}
         <section className="relative py-20 bg-gradient-to-b from-neutral-50 via-blue-50/20 to-purple-50/20 dark:from-neutral-900 dark:via-blue-950/10 dark:to-purple-950/10">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-6 sm:px-8 lg:px-20 xl:px-32 py-2">
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-50 mb-4">
                 Let&apos;s{" "}
