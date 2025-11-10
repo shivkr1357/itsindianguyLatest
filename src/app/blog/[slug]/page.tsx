@@ -6,6 +6,7 @@ import BlogPostContent from "@/components/Blog/BlogPostContent";
 import BlogAuthorSection from "@/components/Blog/BlogAuthorSection";
 import BlogShareSection from "@/components/Blog/BlogShareSection";
 import { getBlogPost } from "@/lib/blogContent";
+import AdUnit from "@/components/AdSense/AdUnit";
 
 type Props = {
   params: { slug: string };
@@ -162,8 +163,18 @@ const BlogPost = ({ params }: Props) => {
                 date={post.date}
               />
 
+              {/* Ad Unit - Top of Article */}
+              <div className="my-8">
+                <AdUnit adSlot="1234567890" adFormat="auto" />
+              </div>
+
               {/* Blog Content */}
               <BlogPostContent slug={slug} />
+
+              {/* Ad Unit - Middle of Content */}
+              <div className="my-8">
+                <AdUnit adSlot="1234567891" adFormat="auto" />
+              </div>
 
               {/* Share Section */}
               <BlogShareSection title={post.title} slug={slug} />

@@ -13,6 +13,7 @@ import NewsletterSignup from "@/components/LandingPage/NewsletterSignup";
 import LatestTutorials from "@/components/LandingPage/LatestTutorials";
 import GithubActivity from "@/components/LandingPage/GithubActivity";
 import SocialFeed from "@/components/LandingPage/SocialFeed";
+import AdUnit from "@/components/AdSense/AdUnit";
 
 export default function HomePageClient() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -152,6 +153,11 @@ export default function HomePageClient() {
               </div>
             </div>
           </div>
+        </section>
+
+        {/* Ad Unit - After Hero */}
+        <section className="container mx-auto px-6 sm:px-8 lg:px-20 xl:px-32 pb-12">
+          <AdUnit adSlot="1234567892" adFormat="auto" />
         </section>
 
         {/* Featured Blogs Section */}
