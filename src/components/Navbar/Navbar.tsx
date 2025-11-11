@@ -1,13 +1,24 @@
+'use client';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useThemeState } from "@/context/ThemeContext";
 import Search from '../ui/Search';
 import ThemeSwitcher from '../ui/ThemeSwitcher';
 
 export default function Navbar() {
   const { customTheme, toggleTheme } = useThemeState();
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Helper function to check if link is active
+  const isActive = (path: string) => {
+    if (path === '/') {
+      return pathname === '/';
+    }
+    return pathname?.startsWith(path);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,16 +47,44 @@ export default function Navbar() {
           <div className="hidden md:flex items-center space-x-4">
             <Search />
             <ThemeSwitcher />
-            <Link href="/blog" className="text-neutral-600 hover:text-primary-200 dark:text-neutral-300 dark:hover:text-primary-200 transition-colors">
+            <Link 
+              href="/blog" 
+              className={`transition-colors font-medium ${
+                isActive('/blog')
+                  ? 'text-primary-200 dark:text-primary-200 border-b-2 border-primary-200'
+                  : 'text-neutral-600 hover:text-primary-200 dark:text-neutral-300 dark:hover:text-primary-200'
+              }`}
+            >
               Blog
             </Link>
-            <Link href="/tutorials" className="text-neutral-600 hover:text-primary-200 dark:text-neutral-300 dark:hover:text-primary-200 transition-colors">
+            <Link 
+              href="/tutorials" 
+              className={`transition-colors font-medium ${
+                isActive('/tutorials')
+                  ? 'text-primary-200 dark:text-primary-200 border-b-2 border-primary-200'
+                  : 'text-neutral-600 hover:text-primary-200 dark:text-neutral-300 dark:hover:text-primary-200'
+              }`}
+            >
               Tutorials
             </Link>
-            <Link href="/resources" className="text-neutral-600 hover:text-primary-200 dark:text-neutral-300 dark:hover:text-primary-200 transition-colors">
+            <Link 
+              href="/resources" 
+              className={`transition-colors font-medium ${
+                isActive('/resources')
+                  ? 'text-primary-200 dark:text-primary-200 border-b-2 border-primary-200'
+                  : 'text-neutral-600 hover:text-primary-200 dark:text-neutral-300 dark:hover:text-primary-200'
+              }`}
+            >
               Resources
             </Link>
-            <Link href="/about" className="text-neutral-600 hover:text-primary-200 dark:text-neutral-300 dark:hover:text-primary-200 transition-colors">
+            <Link 
+              href="/about" 
+              className={`transition-colors font-medium ${
+                isActive('/about')
+                  ? 'text-primary-200 dark:text-primary-200 border-b-2 border-primary-200'
+                  : 'text-neutral-600 hover:text-primary-200 dark:text-neutral-300 dark:hover:text-primary-200'
+              }`}
+            >
               About
             </Link>
             
@@ -77,16 +116,44 @@ export default function Navbar() {
       {/* Mobile menu */}
       <div className={`md:hidden ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
         <div className="px-2 pt-2 pb-3 space-y-1 bg-white dark:bg-neutral-900 shadow-lg">
-          <Link href="/blog" className="block px-3 py-2 rounded-md text-neutral-600 hover:text-primary-200 dark:text-neutral-300 dark:hover:text-primary-200">
+          <Link 
+            href="/blog" 
+            className={`block px-3 py-2 rounded-md font-medium ${
+              isActive('/blog')
+                ? 'bg-primary-200/10 text-primary-200 dark:text-primary-200'
+                : 'text-neutral-600 hover:text-primary-200 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:text-primary-200 dark:hover:bg-neutral-800'
+            }`}
+          >
             Blog
           </Link>
-          <Link href="/tutorials" className="block px-3 py-2 rounded-md text-neutral-600 hover:text-primary-200 dark:text-neutral-300 dark:hover:text-primary-200">
+          <Link 
+            href="/tutorials" 
+            className={`block px-3 py-2 rounded-md font-medium ${
+              isActive('/tutorials')
+                ? 'bg-primary-200/10 text-primary-200 dark:text-primary-200'
+                : 'text-neutral-600 hover:text-primary-200 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:text-primary-200 dark:hover:bg-neutral-800'
+            }`}
+          >
             Tutorials
           </Link>
-          <Link href="/resources" className="block px-3 py-2 rounded-md text-neutral-600 hover:text-primary-200 dark:text-neutral-300 dark:hover:text-primary-200">
+          <Link 
+            href="/resources" 
+            className={`block px-3 py-2 rounded-md font-medium ${
+              isActive('/resources')
+                ? 'bg-primary-200/10 text-primary-200 dark:text-primary-200'
+                : 'text-neutral-600 hover:text-primary-200 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:text-primary-200 dark:hover:bg-neutral-800'
+            }`}
+          >
             Resources
           </Link>
-          <Link href="/about" className="block px-3 py-2 rounded-md text-neutral-600 hover:text-primary-200 dark:text-neutral-300 dark:hover:text-primary-200">
+          <Link 
+            href="/about" 
+            className={`block px-3 py-2 rounded-md font-medium ${
+              isActive('/about')
+                ? 'bg-primary-200/10 text-primary-200 dark:text-primary-200'
+                : 'text-neutral-600 hover:text-primary-200 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:text-primary-200 dark:hover:bg-neutral-800'
+            }`}
+          >
             About
           </Link>
           <div className="flex items-center justify-between px-3 py-2">
