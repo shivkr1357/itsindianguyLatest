@@ -43,7 +43,7 @@ export default function FullStackNextJSContentPage() {
                 Initialize Your Next.js Project
               </h3>
               <p className="text-neutral-600 dark:text-neutral-300 mb-4">
-                First, let's create a new Next.js project with TypeScript and the App Router:
+                First, let&apos;s create a new Next.js project with TypeScript and the App Router:
               </p>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
                 <pre className="text-green-400 font-mono text-sm">
@@ -66,7 +66,7 @@ cd my-fullstack-app
                 Install Required Dependencies
               </h3>
               <p className="text-neutral-600 dark:text-neutral-300 mb-4">
-                Install the packages we'll need for our full-stack application:
+                Install the packages we&apos;ll need for our full-stack application:
               </p>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
                 <pre className="text-green-400 font-mono text-sm">
