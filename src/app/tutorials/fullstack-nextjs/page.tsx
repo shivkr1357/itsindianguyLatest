@@ -207,6 +207,27 @@ export default function FullStackNextJSPage() {
           </div>
         </div>
 
+        {/* Start Tutorial */}
+        <div className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-xl shadow-lg p-8 mb-8">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold text-white mb-4">
+              Ready to Start Building?
+            </h2>
+            <p className="text-xl text-blue-50 mb-6">
+              Follow our step-by-step guide with complete code examples
+            </p>
+            <Link
+              href="/tutorials/fullstack-nextjs/content"
+              className="inline-flex items-center px-8 py-4 bg-white text-blue-600 rounded-xl font-bold text-lg hover:bg-blue-50 transition-all transform hover:scale-105 shadow-lg"
+            >
+              Start Tutorial
+              <svg className="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+
         {/* Resources */}
         <div className="bg-white dark:bg-neutral-800 rounded-xl shadow-lg p-8">
           <h2 className="text-2xl font-bold text-neutral-800 dark:text-neutral-100 mb-6">
