@@ -19,27 +19,27 @@ module.exports = {
 
     // Blog posts
     const blogSlugs = [
-      'getting-started-with-nextjs-14',
-      'typescript-best-practices',
-      'react-server-components',
-      'nodejs-performance-tips',
-      'graphql-vs-rest',
-      'modern-css-techniques',
-      'docker-kubernetes',
-      'nextjs-14',
-      'web-security',
-      'mongodb-mastery',
-      'microservices-architecture',
-      'react-hooks-guide',
-      'aws-deployment',
-      'testing-best-practices',
-      'nextjs-15-features',
+      "getting-started-with-nextjs-14",
+      "typescript-best-practices",
+      "react-server-components",
+      "nodejs-performance-tips",
+      "graphql-vs-rest",
+      "modern-css-techniques",
+      "docker-kubernetes",
+      "nextjs-14",
+      "web-security",
+      "mongodb-mastery",
+      "microservices-architecture",
+      "react-hooks-guide",
+      "aws-deployment",
+      "testing-best-practices",
+      "nextjs-15-features",
     ];
 
     blogSlugs.forEach((slug) => {
       result.push({
         loc: `/blog/${slug}`,
-        changefreq: 'monthly',
+        changefreq: "monthly",
         priority: 0.7,
         lastmod: new Date().toISOString(),
       });
@@ -47,20 +47,20 @@ module.exports = {
 
     // Tutorial pages
     const tutorialSlugs = [
-      'fullstack-nextjs',
-      'typescript-generics',
-      'react-performance',
-      'nodejs-api',
-      'docker-developers',
-      'ml-basics',
-      'graphql-api',
-      'aws-deployment',
+      "fullstack-nextjs",
+      "typescript-generics",
+      "react-performance",
+      "nodejs-api",
+      "docker-developers",
+      "ml-basics",
+      "graphql-api",
+      "aws-deployment",
     ];
 
     tutorialSlugs.forEach((slug) => {
       result.push({
         loc: `/tutorials/${slug}`,
-        changefreq: 'monthly',
+        changefreq: "monthly",
         priority: 0.7,
         lastmod: new Date().toISOString(),
       });
@@ -68,23 +68,23 @@ module.exports = {
 
     // Interview Q&A pages
     const interviewSlugs = [
-      'javascript',
-      'react',
-      'node',
-      'cpp',
-      'python',
-      'dsa-interview',
-      'database-interview',
-      'ml-interview',
-      'typescript',
-      'next',
-      'nest'
+      "javascript",
+      "react",
+      "node",
+      "cpp",
+      "python",
+      "dsa-interview",
+      "database-interview",
+      "ml-interview",
+      "typescript",
+      "next",
+      "nest",
     ];
 
     interviewSlugs.forEach((slug) => {
       result.push({
         loc: `/interview-qa/${slug}`,
-        changefreq: 'monthly',
+        changefreq: "monthly",
         priority: 0.7,
         lastmod: new Date().toISOString(),
       });
@@ -92,8 +92,8 @@ module.exports = {
 
     // Newsletter page
     result.push({
-      loc: '/newsletter',
-      changefreq: 'monthly',
+      loc: "/newsletter",
+      changefreq: "monthly",
       priority: 0.6,
       lastmod: new Date().toISOString(),
     });
@@ -217,12 +217,6 @@ module.exports = {
       changefreq,
       priority,
       lastmod: new Date().toISOString(),
-      alternateRefs: [
-        {
-          href: `https://www.itsindianguy.in${path}`,
-          hreflang: "en",
-        },
-      ],
     };
   },
 };
