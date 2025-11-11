@@ -17,6 +17,55 @@ module.exports = {
   additionalPaths: async (config) => {
     const result = [];
 
+    // Blog posts
+    const blogSlugs = [
+      'getting-started-with-nextjs-14',
+      'typescript-best-practices',
+      'react-server-components',
+      'nodejs-performance-tips',
+      'graphql-vs-rest',
+      'modern-css-techniques',
+      'docker-kubernetes',
+      'nextjs-14',
+      'web-security',
+      'mongodb-mastery',
+      'microservices-architecture',
+      'react-hooks-guide',
+      'aws-deployment',
+      'testing-best-practices',
+      'nextjs-15-features',
+    ];
+
+    blogSlugs.forEach((slug) => {
+      result.push({
+        loc: `/blog/${slug}`,
+        changefreq: 'monthly',
+        priority: 0.7,
+        lastmod: new Date().toISOString(),
+      });
+    });
+
+    // Tutorial pages
+    const tutorialSlugs = [
+      'fullstack-nextjs',
+      'typescript-generics',
+      'react-performance',
+      'nodejs-api',
+      'docker-developers',
+      'ml-basics',
+      'graphql-api',
+      'aws-deployment',
+    ];
+
+    tutorialSlugs.forEach((slug) => {
+      result.push({
+        loc: `/tutorials/${slug}`,
+        changefreq: 'monthly',
+        priority: 0.7,
+        lastmod: new Date().toISOString(),
+      });
+    });
+
     // Interview Q&A pages
     const interviewSlugs = [
       'javascript',

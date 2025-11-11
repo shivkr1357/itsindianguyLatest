@@ -50,7 +50,7 @@ const sampleTutorials = [
     image: "https://cdn-icons-png.flaticon.com/512/6062/6062646.png",
     slug: "fullstack-nextjs",
     description:
-      "Learn to build a complete full-stack application using Next.js, TypeScript, and modern web technologies.",
+      "Learn to build a complete full-stack application with authentication, database integration, and deployment using Next.js 14, TypeScript, Prisma, and modern web technologies.",
   },
   {
     id: "2",
@@ -61,7 +61,7 @@ const sampleTutorials = [
     image: "https://cdn-icons-png.flaticon.com/512/5968/5968381.png",
     slug: "typescript-generics",
     description:
-      "Deep dive into TypeScript generics and learn how to write more flexible and reusable code.",
+      "Deep dive into TypeScript generics with real-world examples. Learn constraints, inference, utility types, and advanced patterns for writing flexible, type-safe code.",
   },
   {
     id: "3",
@@ -72,7 +72,7 @@ const sampleTutorials = [
     image: "https://cdn-icons-png.flaticon.com/512/1183/1183672.png",
     slug: "react-performance",
     description:
-      "Essential techniques to optimize your React applications for better performance and user experience.",
+      "Master React performance optimization with memo, useMemo, useCallback, virtualization, code splitting, and profiling techniques to build lightning-fast applications.",
   },
   {
     id: "4",
@@ -83,7 +83,7 @@ const sampleTutorials = [
     image: "https://cdn-icons-png.flaticon.com/512/5968/5968322.png",
     slug: "nodejs-api",
     description:
-      "Build scalable REST APIs using Node.js, Express, and MongoDB with best practices.",
+      "Build production-ready REST APIs with Node.js, Express, and MongoDB. Learn authentication, validation, error handling, security, and deployment best practices.",
   },
   {
     id: "5",
@@ -94,7 +94,7 @@ const sampleTutorials = [
     image: "https://cdn-icons-png.flaticon.com/512/9433/9433667.png",
     slug: "docker-developers",
     description:
-      "Learn Docker basics and containerize your applications for easier deployment and scaling.",
+      "Master Docker containerization from scratch. Learn Dockerfile creation, Docker Compose, multi-stage builds, networking, volumes, and deployment strategies.",
   },
   {
     id: "6",
@@ -105,7 +105,29 @@ const sampleTutorials = [
     image: "https://cdn-icons-png.flaticon.com/512/2103/2103832.png",
     slug: "ml-basics",
     description:
-      "Start your journey into machine learning with practical examples and real-world applications.",
+      "Begin your ML journey with Python, scikit-learn, and TensorFlow. Build your first models for classification, regression, and clustering with practical examples.",
+  },
+  {
+    id: "7",
+    title: "GraphQL API Development",
+    category: "Backend",
+    level: "Intermediate",
+    duration: "55 min",
+    image: "https://cdn-icons-png.flaticon.com/512/2920/2920277.png",
+    slug: "graphql-api",
+    description:
+      "Build powerful GraphQL APIs with Apollo Server and Node.js. Learn schemas, resolvers, mutations, subscriptions, and best practices for scalable API design.",
+  },
+  {
+    id: "8",
+    title: "AWS Cloud Deployment",
+    category: "DevOps",
+    level: "Intermediate",
+    duration: "65 min",
+    image: "https://cdn-icons-png.flaticon.com/512/873/873120.png",
+    slug: "aws-deployment",
+    description:
+      "Deploy full-stack applications to AWS. Learn EC2, S3, RDS, Lambda, CloudFront, and CI/CD pipelines with GitHub Actions for production deployments.",
   },
 ];
 

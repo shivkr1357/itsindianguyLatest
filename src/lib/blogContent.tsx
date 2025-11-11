@@ -149,6 +149,16 @@ export const blogPosts: { [key: string]: BlogPost } = {
     readTime: "22 min read",
     slug: "mongodb-mastery",
   },
+  "nextjs-15-features": {
+    title: "Next.js 15: What's New and Revolutionary",
+    description:
+      "Explore the groundbreaking features in Next.js 15 including React 19, async request APIs, and enhanced caching strategies.",
+    image: "https://cdn-icons-png.flaticon.com/512/6062/6062646.png",
+    author: "ItsIndianGuy",
+    date: "2024-11-10",
+    readTime: "16 min read",
+    slug: "nextjs-15-features",
+  },
 };
 
 export function getBlogPost(slug: string): BlogPost | null {

@@ -63,6 +63,9 @@ const WebSecurityContent = dynamic(
 const MongoDBContent = dynamic(() => import("./content/MongoDBContent"), {
   loading: () => <ContentSkeleton />,
 });
+const NextJS15Content = dynamic(() => import("./content/NextJS15Content"), {
+  loading: () => <ContentSkeleton />,
+});
 
 // Loading skeleton
 function ContentSkeleton() {
@@ -121,6 +124,8 @@ const BlogPostContent = ({ slug }: BlogPostContentProps) => {
         return <WebSecurityContent />;
       case "mongodb-mastery":
         return <MongoDBContent />;
+      case "nextjs-15-features":
+        return <NextJS15Content />;
       default:
         return <NextJSContent />; // Default fallback
     }
