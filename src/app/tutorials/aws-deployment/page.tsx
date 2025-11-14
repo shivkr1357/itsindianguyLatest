@@ -12,16 +12,28 @@ export default function AWSDeploymentPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-neutral-50 to-neutral-100 dark:from-neutral-900 dark:to-neutral-800">
       <div className="container mx-auto px-4 py-16 max-w-5xl">
-        {/* Back Button */}
-        <Link
-          href="/tutorials"
-          className="inline-flex items-center text-orange-600 dark:text-orange-400 hover:underline mb-8"
-        >
-          <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-          Back to Tutorials
-        </Link>
+        {/* Navigation */}
+        <div className="flex items-center justify-between mb-8">
+          <Link
+            href="/tutorials"
+            className="inline-flex items-center text-orange-600 dark:text-orange-400 hover:underline"
+          >
+            <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+            Back to Tutorials
+          </Link>
+          
+          <Link
+            href="/tutorials/aws-deployment/content"
+            className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-semibold hover:from-blue-600 hover:to-purple-700 transition-all transform hover:scale-105 shadow-lg"
+          >
+            Start Tutorial
+            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </Link>
+        </div>
 
         {/* Header */}
         <div className="text-center mb-12">
@@ -208,6 +220,27 @@ export default function AWSDeploymentPage() {
                 Serverless compute service to run code without managing servers. Pay only for what you use.
               </p>
             </div>
+          </div>
+        </div>
+
+        {/* Start Tutorial */}
+        <div className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-xl shadow-lg p-8 mb-8">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold text-white mb-4">
+              Ready to Deploy to AWS?
+            </h2>
+            <p className="text-xl text-blue-50 mb-6">
+              Learn AWS cloud deployment with real-world examples
+            </p>
+            <Link
+              href="/tutorials/aws-deployment/content"
+              className="inline-flex items-center px-8 py-4 bg-white text-blue-600 rounded-xl font-bold text-lg hover:bg-blue-50 transition-all transform hover:scale-105 shadow-lg"
+            >
+              Start Tutorial
+              <svg className="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </Link>
           </div>
         </div>
 

@@ -1,43 +1,51 @@
-# robots.txt for ItsIndianGuy.in
-# Allow all crawlers
-
+# *
 User-agent: *
 Allow: /
+Allow: /about
+Allow: /contact-us
+Allow: /blog
+Allow: /tutorials
+Allow: /interview-qa
+Allow: /memes
+Allow: /resources
+Allow: /documentation
+Allow: /support
+Allow: /faq
+Allow: /search
+Allow: /web-development
+Allow: /mobile-development
+Allow: /backend-development
+Allow: /devops
+Allow: /cloud
+Allow: /database
+Allow: /ui-ux
+Allow: /ai-ml
+Allow: /blockchain
+Allow: /security
+Allow: /privacy-policy
+Allow: /terms
+Disallow: /api/*
+Disallow: /admin/*
+Disallow: /private/*
+Disallow: /_next/*
+Disallow: /login
+Disallow: /signup
+Disallow: /forgot-password
 
-# Block admin and API routes
-Disallow: /api/
-Disallow: /admin/
-Disallow: /_next/
-Disallow: /private/
-
-# Sitemap location
-Sitemap: https://www.itsindianguy.in/sitemap.xml
-Sitemap: https://www.itsindianguy.in/sitemap-0.xml
-
-# Crawl-delay for polite bots
-Crawl-delay: 1
-
-# Specific rules for major search engines
+# Googlebot
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 0
-
-User-agent: Bingbot
-Allow: /
 Crawl-delay: 1
 
-User-agent: Slurp
+# Bingbot
+User-agent: Bingbot
 Allow: /
+Crawl-delay: 2
 
-# Block bad bots
-User-agent: AhrefsBot
-Crawl-delay: 10
+# Host
+Host: https://www.itsindianguy.in
 
-User-agent: SemrushBot
-Crawl-delay: 10
-
-User-agent: MJ12bot
-Disallow: /
-
-User-agent: DotBot
-Disallow: /
+# Sitemaps
+Sitemap: https://www.itsindianguy.in/sitemap.xml
+Sitemap: https://www.itsindianguy.in/blog-sitemap.xml
+Sitemap: https://www.itsindianguy.in/tutorials-sitemap.xml
