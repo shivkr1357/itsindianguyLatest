@@ -27,6 +27,8 @@ export async function generateMetadata(
     author: "ItsIndianGuy",
     date: "2024-01-15",
     readTime: "8 min read",
+    image: "https://www.itsindianguy.in/og-blog.jpg",
+    slug: slug,
   };
 
   // Enhanced keywords for better SEO
