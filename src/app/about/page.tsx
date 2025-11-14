@@ -3,21 +3,35 @@ import { Metadata } from "next";
 import React, { Fragment } from "react";
 
 export const metadata: Metadata = {
-  title: `About ItsIndianGuy - Programming Tutorials, Web Development Guides & Tech Learning Platform`,
+  title: `About ItsIndianGuy - Your Trusted Programming Tutorial Platform in India`,
   description:
-    "Learn about ItsIndianGuy, your trusted platform for programming tutorials, web development guides, and tech education. Discover our mission to help developers master JavaScript, React, Node.js, and modern web technologies.",
+    "Meet ItsIndianGuy - Your guide to mastering programming. Learn Next.js, React, TypeScript & full-stack development with free tutorials, real-world projects, and step-by-step guides. Best programming education platform in India.",
   keywords:
-    "ItsIndianGuy, programming tutorials, web development guides, tech education, JavaScript tutorials, React tutorials, Node.js tutorials, programming courses, coding tutorials, software development, ItsIndianGuy about",
+    "about ItsIndianGuy, ItsIndianGuy programming, who is ItsIndianGuy, ItsIndianGuy developer, programming tutorial platform India, ItsIndianGuy mission, learn programming ItsIndianGuy, ItsIndianGuy about page, programming educator India, ItsIndianGuy story",
+  authors: [{ name: "ItsIndianGuy", url: "https://www.itsindianguy.in/about" }],
+  creator: "ItsIndianGuy",
+  publisher: "ItsIndianGuy",
   alternates: {
     canonical: "https://www.itsindianguy.in/about",
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
     title:
-      "About ItsIndianGuy - Programming Tutorials, Web Development Guides & Tech Learning Platform",
+      "About ItsIndianGuy - Programming Tutorial Platform India",
     description:
-      "Learn about ItsIndianGuy, your trusted platform for programming tutorials, web development guides, and tech education. Discover our mission to help developers master JavaScript, React, Node.js, and modern web technologies through comprehensive learning resources.",
+      "Meet ItsIndianGuy, your trusted guide to learning programming in India. Free Next.js, React & full-stack development tutorials with real-world projects.",
     url: "https://www.itsindianguy.in/about",
-    siteName: "ItsIndianGuy",
+    siteName: "ItsIndianGuy - Programming Tutorials India",
     locale: "en_IN",
     type: "website",
     images: [
@@ -32,9 +46,11 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "About ItsIndianGuy - Programming Tutorials, Web Development Guides & Tech Learning Platform",
+      "About ItsIndianGuy - Programming Tutorials Platform",
     description:
-      "Learn about ItsIndianGuy, your trusted platform for programming tutorials, web development guides, and tech education. Discover our mission to help developers master modern web technologies.",
+      "Meet ItsIndianGuy - Learn programming with free Next.js, React & full-stack tutorials. Best programming education in India.",
+    creator: "@itsindianguy",
+    site: "@itsindianguy",
     images: ["https://www.itsindianguy.in/og-about.jpg"],
   },
 };

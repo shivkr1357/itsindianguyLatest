@@ -4,21 +4,35 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: `Mobile App Development Tutorials | ItsIndianGuy - Learn React Native, Flutter, iOS & Android`,
+  title: `Mobile App Development by ItsIndianGuy - React Native, Flutter, iOS & Android`,
   description:
-    "Master mobile app development with comprehensive tutorials covering React Native, Flutter, iOS Swift, Android Kotlin, and cross-platform development. Learn to build native and hybrid mobile applications.",
+    "Learn mobile app development with ItsIndianGuy. Master React Native, Flutter, iOS Swift & Android Kotlin. Build cross-platform apps with step-by-step tutorials. Best mobile development guides in India.",
   keywords:
-    "mobile app development tutorials, React Native tutorials, Flutter tutorials, iOS development, Android development, mobile programming, ItsIndianGuy mobile development, programming tutorials, coding tutorials, mobile app programming",
+    "mobile app development ItsIndianGuy, React Native tutorial ItsIndianGuy, Flutter tutorial, iOS development India, Android tutorial ItsIndianGuy, mobile programming ItsIndianGuy, cross-platform development, ItsIndianGuy mobile, app development India",
+  authors: [{ name: "ItsIndianGuy", url: "https://www.itsindianguy.in/about" }],
+  creator: "ItsIndianGuy",
+  publisher: "ItsIndianGuy",
   alternates: {
     canonical: "https://www.itsindianguy.in/mobile-development",
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
     title:
-      "Mobile App Development Tutorials | ItsIndianGuy - Learn React Native, Flutter, iOS & Android",
+      "Mobile App Development by ItsIndianGuy",
     description:
-      "Master mobile app development with comprehensive tutorials covering React Native, Flutter, iOS Swift, Android Kotlin, and cross-platform development. Learn to build native and hybrid mobile applications with step-by-step guides and real-world projects.",
+      "Learn mobile app development with ItsIndianGuy. React Native, Flutter, iOS & Android tutorials. Build cross-platform apps.",
     url: "https://www.itsindianguy.in/mobile-development",
-    siteName: "ItsIndianGuy",
+    siteName: "ItsIndianGuy - Programming Tutorials India",
     locale: "en_IN",
     type: "website",
     images: [
@@ -33,9 +47,11 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "Mobile App Development Tutorials | ItsIndianGuy - Learn React Native, Flutter, iOS & Android",
+      "Mobile Development | ItsIndianGuy",
     description:
-      "Master mobile app development with comprehensive tutorials covering React Native, Flutter, iOS Swift, Android Kotlin, and cross-platform development. Learn to build native and hybrid mobile applications.",
+      "Learn mobile app development with ItsIndianGuy. React Native, Flutter, iOS & Android tutorials.",
+    creator: "@itsindianguy",
+    site: "@itsindianguy",
     images: ["https://www.itsindianguy.in/og-mobile-dev.jpg"],
   },
 };

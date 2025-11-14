@@ -4,21 +4,35 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: `Backend Development Tutorials | ItsIndianGuy - Learn Node.js, Python, APIs & Database Design`,
+  title: `Backend Development by ItsIndianGuy - Node.js, Python, APIs & Databases`,
   description:
-    "Master backend development with comprehensive tutorials covering Node.js, Python, Express, Django, REST APIs, GraphQL, database design, and server architecture. Learn to build scalable server-side applications.",
+    "Master backend development with ItsIndianGuy. Learn Node.js, Python, Express, REST APIs, GraphQL & database design. Build scalable server applications. Best backend tutorials in India.",
   keywords:
-    "backend development tutorials, Node.js tutorials, Python tutorials, API development, database design, server-side programming, ItsIndianGuy backend development, programming tutorials, coding tutorials, backend programming",
+    "backend development ItsIndianGuy, Node.js tutorial ItsIndianGuy, Python backend, API development ItsIndianGuy, database design tutorial, server-side programming ItsIndianGuy, ItsIndianGuy backend, REST API tutorial, GraphQL ItsIndianGuy",
+  authors: [{ name: "ItsIndianGuy", url: "https://www.itsindianguy.in/about" }],
+  creator: "ItsIndianGuy",
+  publisher: "ItsIndianGuy",
   alternates: {
     canonical: "https://www.itsindianguy.in/backend-development",
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
     title:
-      "Backend Development Tutorials | ItsIndianGuy - Learn Node.js, Python, APIs & Database Design",
+      "Backend Development by ItsIndianGuy",
     description:
-      "Master backend development with comprehensive tutorials covering Node.js, Python, Express, Django, REST APIs, GraphQL, database design, and server architecture. Learn to build scalable server-side applications with authentication, security, and deployment strategies.",
+      "Master backend development with ItsIndianGuy. Node.js, Python, APIs & database tutorials. Build scalable servers.",
     url: "https://www.itsindianguy.in/backend-development",
-    siteName: "ItsIndianGuy",
+    siteName: "ItsIndianGuy - Programming Tutorials India",
     locale: "en_IN",
     type: "website",
     images: [
@@ -33,9 +47,11 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "Backend Development Tutorials | ItsIndianGuy - Learn Node.js, Python, APIs & Database Design",
+      "Backend Development | ItsIndianGuy",
     description:
-      "Master backend development with comprehensive tutorials covering Node.js, Python, Express, Django, REST APIs, GraphQL, database design, and server architecture. Learn to build scalable server-side applications.",
+      "Master backend development with ItsIndianGuy. Node.js, Python, APIs & database tutorials.",
+    creator: "@itsindianguy",
+    site: "@itsindianguy",
     images: ["https://www.itsindianguy.in/og-backend-dev.jpg"],
   },
 };

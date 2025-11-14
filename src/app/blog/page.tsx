@@ -3,21 +3,35 @@ import BlogListClient from "@/components/Blog/BlogListClient";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: `Programming Blog | ItsIndianGuy - Web Development, React, Node.js Tutorials & Tech Insights`,
+  title: `ItsIndianGuy Blog - Next.js 15, React, TypeScript & Full-Stack Development Tutorials`,
   description:
-    "Discover in-depth programming tutorials, web development guides, React tips, Node.js best practices, and the latest tech trends. Expert insights for developers at all skill levels.",
+    "Latest programming tutorials by ItsIndianGuy. Learn Next.js 15, React performance, TypeScript best practices, Node.js, GraphQL, Docker & full-stack development. In-depth guides with code examples for Indian developers.",
   keywords:
-    "programming blog, tech articles, web development blog, coding tutorials, software development, tech insights, programming tips, developer blog, coding articles, tech trends, React tutorials, Node.js guides, JavaScript tips, ItsIndianGuy, programming tutorials",
+    "ItsIndianGuy blog, Next.js 15 tutorial, React performance optimization, TypeScript best practices, Node.js tutorial India, full-stack development blog, programming blog ItsIndianGuy, web development tutorials, GraphQL tutorial, Docker guide, coding blog India, ItsIndianGuy articles, Next.js 14 vs 15, React Server Components tutorial",
+  authors: [{ name: "ItsIndianGuy", url: "https://www.itsindianguy.in/about" }],
+  creator: "ItsIndianGuy",
+  publisher: "ItsIndianGuy",
   alternates: {
     canonical: "https://www.itsindianguy.in/blog",
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   openGraph: {
     title:
-      "Programming Blog | ItsIndianGuy - Web Development, React, Node.js Tutorials & Tech Insights",
+      "ItsIndianGuy Blog - Next.js, React & Full-Stack Development",
     description:
-      "Discover in-depth programming tutorials, web development guides, React tips, Node.js best practices, and the latest tech trends. Expert insights for developers at all skill levels with practical coding examples and industry updates.",
+      "Latest programming tutorials by ItsIndianGuy. Learn Next.js 15, React, TypeScript & full-stack development with practical code examples.",
     url: "https://www.itsindianguy.in/blog",
-    siteName: "ItsIndianGuy",
+    siteName: "ItsIndianGuy - Programming Blog India",
     locale: "en_IN",
     type: "website",
     images: [
@@ -32,9 +46,11 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "Programming Blog | ItsIndianGuy - Web Development, React, Node.js Tutorials & Tech Insights",
+      "ItsIndianGuy Blog - Programming Tutorials",
     description:
-      "Discover in-depth programming tutorials, web development guides, React tips, Node.js best practices, and the latest tech trends. Expert insights for developers at all skill levels.",
+      "Latest Next.js, React, TypeScript tutorials by ItsIndianGuy. Learn full-stack development with practical code examples.",
+    creator: "@itsindianguy",
+    site: "@itsindianguy",
     images: ["https://www.itsindianguy.in/og-blog.jpg"],
   },
 };

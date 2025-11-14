@@ -35,14 +35,14 @@ googleProvider.setCustomParameters({
 });
 
 // Connect to auth emulator in development
-if (process.env.NODE_ENV === "development") {
-  try {
-    connectAuthEmulator(auth, "http://localhost:9099");
-    connectFirestoreEmulator(db, "localhost", 8080);
-  } catch (error) {
-    // Emulator might not be running, which is fine
-    console.log("Firebase Emulators not running");
-  }
-}
+// if (process.env.NODE_ENV === "development") {
+//   try {
+//     connectAuthEmulator(auth, "http://localhost:9099");
+//     connectFirestoreEmulator(db, "localhost", 8080);
+//   } catch (error) {
+//     // Emulator might not be running, which is fine
+//     console.log("Firebase Emulators not running");
+//   }
+// }
 
 export default app;

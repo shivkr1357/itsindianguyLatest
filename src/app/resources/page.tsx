@@ -4,21 +4,35 @@ import Image from "next/image";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: `Developer Resources | ItsIndianGuy - Programming Tools, Frameworks & Learning Materials`,
+  title: `Developer Resources by ItsIndianGuy - Best Programming Tools & Frameworks`,
   description:
-    "Discover curated developer resources including programming tools, frameworks, learning platforms, and essential software for web development, mobile apps, and software engineering.",
+    "Curated developer resources by ItsIndianGuy. Best programming tools, frameworks & platforms for web development. VS Code, GitHub, React, Next.js, TypeScript resources. Free learning materials for Indian developers.",
   keywords:
-    "developer resources, programming tools, frameworks, learning materials, ItsIndianGuy resources, programming resources, web development tools, coding resources, ItsIndianGuy developer resources, programming learning materials",
+    "developer resources ItsIndianGuy, programming tools ItsIndianGuy, web development resources, React resources, Next.js tools, TypeScript resources, ItsIndianGuy resources, coding tools India, programming frameworks, developer tools ItsIndianGuy, free resources",
+  authors: [{ name: "ItsIndianGuy", url: "https://www.itsindianguy.in/about" }],
+  creator: "ItsIndianGuy",
+  publisher: "ItsIndianGuy",
   alternates: {
     canonical: "https://www.itsindianguy.in/resources",
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
     title:
-      "Developer Resources | ItsIndianGuy - Programming Tools, Frameworks & Learning Materials",
+      "Developer Resources by ItsIndianGuy",
     description:
-      "Discover curated developer resources including programming tools, frameworks, learning platforms, and essential software for web development, mobile apps, and software engineering. Everything you need to build amazing applications.",
+      "Curated programming tools & resources by ItsIndianGuy. Best frameworks, platforms & learning materials for web development.",
     url: "https://www.itsindianguy.in/resources",
-    siteName: "ItsIndianGuy",
+    siteName: "ItsIndianGuy - Programming Tutorials India",
     locale: "en_IN",
     type: "website",
     images: [
@@ -33,9 +47,11 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "Developer Resources | ItsIndianGuy - Programming Tools, Frameworks & Learning Materials",
+      "Developer Resources | ItsIndianGuy",
     description:
-      "Discover curated developer resources including programming tools, frameworks, learning platforms, and essential software for web development, mobile apps, and software engineering.",
+      "Curated programming tools & resources by ItsIndianGuy. Best frameworks, platforms & free learning materials.",
+    creator: "@itsindianguy",
+    site: "@itsindianguy",
     images: ["https://www.itsindianguy.in/og-resources.jpg"],
   },
 };

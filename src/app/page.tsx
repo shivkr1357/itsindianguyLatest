@@ -4,21 +4,35 @@ import HomePageClient from "@/components/HomePageClient";
 
 export const metadata: Metadata = {
   title:
-    "ItsIndianGuy - Programming Tutorials, Interview Prep & Tech Resources",
+    "ItsIndianGuy - Learn Programming, Next.js, React & Full-Stack Development | Free Tutorials",
   description:
-    "Master programming with comprehensive tutorials, interview questions, and tech resources. Learn web development, mobile apps, AI/ML, and more with ItsIndianGuy.",
+    "Learn programming with ItsIndianGuy. Free tutorials on Next.js, React, TypeScript, Node.js, and full-stack development. Step-by-step guides, code examples, and real-world projects. Best programming tutorials in India.",
   keywords:
-    "programming tutorials, interview questions, web development, coding, software development, tech resources, programming courses, coding interview prep, JavaScript, React, Python, Node.js, mobile development, AI/ML, blockchain, cybersecurity",
+    "ItsIndianGuy programming, ItsIndianGuy tutorials, Next.js tutorial India, React tutorial ItsIndianGuy, TypeScript tutorial, full-stack development India, programming tutorials India, learn coding ItsIndianGuy, web development tutorial, Node.js tutorial, free programming courses India, coding tutorial ItsIndianGuy, ItsIndianGuy blog, programming interview questions, best programming tutorials",
+  authors: [{ name: "ItsIndianGuy", url: "https://www.itsindianguy.in/about" }],
+  creator: "ItsIndianGuy",
+  publisher: "ItsIndianGuy",
   alternates: {
     canonical: "https://www.itsindianguy.in",
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
-    title: "ItsIndianGuy - Programming Tutorials & Interview Preparation",
+    title: "ItsIndianGuy - Learn Next.js, React & Full-Stack Development",
     description:
-      "Master programming with comprehensive tutorials, interview questions, and tech resources. Learn web development, mobile apps, AI/ML, and more.",
+      "Free programming tutorials by ItsIndianGuy. Learn Next.js, React, TypeScript & full-stack development with step-by-step guides and real-world projects.",
     url: "https://www.itsindianguy.in",
-    siteName: "ItsIndianGuy",
-    locale: "en_US",
+    siteName: "ItsIndianGuy - Programming Tutorials India",
+    locale: "en_IN",
     type: "website",
     images: [
       {
@@ -31,9 +45,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ItsIndianGuy - Programming Tutorials & Interview Preparation",
+    title: "ItsIndianGuy - Free Programming Tutorials",
     description:
-      "Master programming with comprehensive tutorials, interview questions, and tech resources.",
+      "Learn Next.js, React, TypeScript & full-stack development. Free tutorials with code examples by ItsIndianGuy.",
+    creator: "@itsindianguy",
+    site: "@itsindianguy",
     images: ["https://www.itsindianguy.in/og-image.jpg"],
   },
 };
@@ -43,14 +59,27 @@ const Home = () => {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "ItsIndianGuy",
+    name: "ItsIndianGuy - Programming Tutorials India",
+    alternateName: "ItsIndianGuy",
     description:
-      "Your one-stop destination for programming tutorials and interview preparation",
+      "Free programming tutorials on Next.js, React, TypeScript, and full-stack development by ItsIndianGuy. Learn coding with step-by-step guides and real-world projects.",
     url: "https://www.itsindianguy.in",
+    inLanguage: "en-IN",
     potentialAction: {
       "@type": "SearchAction",
       target: "https://www.itsindianguy.in/search?q={search_term_string}",
       "query-input": "required name=search_term_string",
+    },
+    author: {
+      "@type": "Person",
+      name: "ItsIndianGuy",
+      url: "https://www.itsindianguy.in/about",
+      jobTitle: "Full-Stack Developer & Programming Instructor",
+      sameAs: [
+        "https://github.com/itsindianguy",
+        "https://twitter.com/itsindianguy",
+        "https://linkedin.com/in/itsindianguy",
+      ],
     },
     publisher: {
       "@type": "Organization",
@@ -59,6 +88,11 @@ const Home = () => {
       logo: {
         "@type": "ImageObject",
         url: "https://www.itsindianguy.in/logo.png",
+      },
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "Customer Support",
+        email: "contact@itsindianguy.in",
       },
     },
     mainEntity: {

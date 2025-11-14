@@ -3,15 +3,190 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Build a Full-Stack App with Next.js - Tutorial | ItsIndianGuy",
-  description: "Learn how to build a complete full-stack application with Next.js 14, including server components, API routes, database integration, and authentication.",
-  keywords: "Next.js tutorial, full-stack development, Next.js 14, React Server Components, API routes, authentication",
+  title: "Full-Stack Next.js Tutorial 2024 | Build Complete App | ItsIndianGuy",
+  description: "Complete Next.js 14 full-stack tutorial by ItsIndianGuy. Learn authentication, Prisma database, API routes, and deployment. Step-by-step guide with code examples. 45 min tutorial.",
+  keywords: "full-stack nextjs tutorial, nextjs 14 tutorial ItsIndianGuy, nextjs authentication tutorial, prisma nextjs tutorial, nextjs api routes tutorial, full-stack development nextjs, nextjs tutorial India, learn nextjs 2024, nextjs complete guide, ItsIndianGuy nextjs",
+  authors: [{ name: "ItsIndianGuy", url: "https://www.itsindianguy.in/about" }],
+  creator: "ItsIndianGuy",
+  publisher: "ItsIndianGuy",
+  alternates: {
+    canonical: "https://www.itsindianguy.in/tutorials/fullstack-nextjs",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  openGraph: {
+    title: "Full-Stack Next.js 14 Tutorial - Complete Guide | ItsIndianGuy",
+    description: "Master full-stack development with Next.js 14. Authentication, database, API routes. Complete tutorial by ItsIndianGuy.",
+    url: "https://www.itsindianguy.in/tutorials/fullstack-nextjs",
+    siteName: "ItsIndianGuy - Programming Tutorials",
+    locale: "en_IN",
+    type: "article",
+    images: [
+      {
+        url: "https://cdn-icons-png.flaticon.com/512/6062/6062646.png",
+        width: 1200,
+        height: 630,
+        alt: "Full-Stack Next.js Tutorial by ItsIndianGuy",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Full-Stack Next.js Tutorial | ItsIndianGuy",
+    description: "Complete Next.js 14 tutorial with authentication, database & deployment",
+    creator: "@itsindianguy",
+    images: ["https://cdn-icons-png.flaticon.com/512/6062/6062646.png"],
+  },
 };
 
 export default function FullStackNextJSPage() {
+  // Structured Data for Tutorial
+  const tutorialSchema = {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    headline: "Build a Full-Stack App with Next.js 14",
+    description: "Complete Next.js 14 full-stack tutorial with authentication, Prisma database, and API routes",
+    image: "https://cdn-icons-png.flaticon.com/512/6062/6062646.png",
+    author: {
+      "@type": "Person",
+      name: "ItsIndianGuy",
+      url: "https://www.itsindianguy.in/about",
+      sameAs: [
+        "https://github.com/itsindianguy",
+        "https://twitter.com/itsindianguy",
+      ],
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "ItsIndianGuy",
+      url: "https://www.itsindianguy.in",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.itsindianguy.in/logo.png",
+      },
+    },
+    datePublished: "2024-01-15",
+    dateModified: "2024-01-15",
+    mainEntityOfPage: "https://www.itsindianguy.in/tutorials/fullstack-nextjs",
+    proficiencyLevel: "Intermediate",
+    educationalLevel: "Intermediate",
+    timeRequired: "PT45M",
+    inLanguage: "en-IN",
+    keywords: "Next.js, full-stack, authentication, Prisma, API routes, ItsIndianGuy",
+  };
+
+  // Breadcrumb Schema
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.itsindianguy.in",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Tutorials",
+        item: "https://www.itsindianguy.in/tutorials",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Full-Stack Next.js",
+        item: "https://www.itsindianguy.in/tutorials/fullstack-nextjs",
+      },
+    ],
+  };
+
+  // How-To Schema
+  const howToSchema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "How to Build a Full-Stack Next.js Application",
+    description: "Step-by-step guide to building a complete full-stack application with Next.js 14",
+    image: "https://cdn-icons-png.flaticon.com/512/6062/6062646.png",
+    totalTime: "PT45M",
+    estimatedCost: {
+      "@type": "MonetaryAmount",
+      currency: "USD",
+      value: "0",
+    },
+    tool: [
+      {
+        "@type": "HowToTool",
+        name: "Next.js 14",
+      },
+      {
+        "@type": "HowToTool",
+        name: "TypeScript",
+      },
+      {
+        "@type": "HowToTool",
+        name: "Prisma",
+      },
+      {
+        "@type": "HowToTool",
+        name: "NextAuth.js",
+      },
+    ],
+    step: [
+      {
+        "@type": "HowToStep",
+        name: "Project Setup",
+        text: "Initialize Next.js project with TypeScript and App Router",
+        url: "https://www.itsindianguy.in/tutorials/fullstack-nextjs/content#setup",
+      },
+      {
+        "@type": "HowToStep",
+        name: "Database Configuration",
+        text: "Set up Prisma with your database",
+        url: "https://www.itsindianguy.in/tutorials/fullstack-nextjs/content#database",
+      },
+      {
+        "@type": "HowToStep",
+        name: "Authentication",
+        text: "Implement authentication with NextAuth.js",
+        url: "https://www.itsindianguy.in/tutorials/fullstack-nextjs/content#auth",
+      },
+      {
+        "@type": "HowToStep",
+        name: "API Routes",
+        text: "Create API endpoints for your application",
+        url: "https://www.itsindianguy.in/tutorials/fullstack-nextjs/content#api",
+      },
+    ],
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-neutral-50 to-neutral-100 dark:from-neutral-900 dark:to-neutral-800">
-      <div className="container mx-auto px-4 py-16 max-w-5xl">
+    <>
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(tutorialSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+      />
+      
+      <div className="min-h-screen bg-gradient-to-b from-neutral-50 to-neutral-100 dark:from-neutral-900 dark:to-neutral-800">
+        <div className="container mx-auto px-4 py-16 max-w-5xl">
         {/* Back Button */}
         <Link
           href="/"
@@ -258,6 +433,7 @@ export default function FullStackNextJSPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

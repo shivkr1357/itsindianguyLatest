@@ -4,21 +4,35 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: `Cloud Computing Tutorials | ItsIndianGuy - Learn AWS, Azure, Google Cloud & Serverless`,
+  title: `Cloud Computing by ItsIndianGuy - AWS, Azure, Google Cloud & Serverless`,
   description:
-    "Master cloud computing with comprehensive tutorials covering AWS, Azure, Google Cloud Platform, serverless architecture, and cloud deployment. Learn to build scalable applications and manage cloud infrastructure.",
+    "Learn cloud computing with ItsIndianGuy. Master AWS, Azure, Google Cloud & serverless. Build scalable applications. Best cloud tutorials in India.",
   keywords:
-    "cloud computing tutorials, AWS tutorials, Azure tutorials, Google Cloud tutorials, serverless tutorials, ItsIndianGuy cloud, programming tutorials, coding tutorials, cloud programming, cloud deployment",
+    "cloud computing ItsIndianGuy, AWS tutorial ItsIndianGuy, Azure tutorial, Google Cloud ItsIndianGuy, serverless tutorial, cloud deployment ItsIndianGuy, ItsIndianGuy cloud, cloud programming India",
+  authors: [{ name: "ItsIndianGuy", url: "https://www.itsindianguy.in/about" }],
+  creator: "ItsIndianGuy",
+  publisher: "ItsIndianGuy",
   alternates: {
     canonical: "https://www.itsindianguy.in/cloud",
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
     title:
-      "Cloud Computing Tutorials | ItsIndianGuy - Learn AWS, Azure, Google Cloud & Serverless",
+      "Cloud Computing by ItsIndianGuy",
     description:
-      "Master cloud computing with comprehensive tutorials covering AWS, Azure, Google Cloud Platform, serverless architecture, and cloud deployment. Learn to build scalable applications, manage cloud infrastructure, and optimize costs for modern web applications.",
+      "Learn cloud computing with ItsIndianGuy. AWS, Azure, Google Cloud & serverless tutorials. Build scalable apps.",
     url: "https://www.itsindianguy.in/cloud",
-    siteName: "ItsIndianGuy",
+    siteName: "ItsIndianGuy - Programming Tutorials India",
     locale: "en_IN",
     type: "website",
     images: [
@@ -33,9 +47,11 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "Cloud Computing Tutorials | ItsIndianGuy - Learn AWS, Azure, Google Cloud & Serverless",
+      "Cloud Computing | ItsIndianGuy",
     description:
-      "Master cloud computing with comprehensive tutorials covering AWS, Azure, Google Cloud Platform, serverless architecture, and cloud deployment. Learn to build scalable applications, manage cloud infrastructure, and optimize costs.",
+      "Learn cloud computing with ItsIndianGuy. AWS, Azure & Google Cloud tutorials. Build scalable apps.",
+    creator: "@itsindianguy",
+    site: "@itsindianguy",
     images: ["https://www.itsindianguy.in/og-cloud.jpg"],
   },
 };

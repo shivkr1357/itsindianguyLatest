@@ -29,33 +29,55 @@ export async function generateMetadata(
     readTime: "8 min read",
   };
 
+  // Enhanced keywords for better SEO
+  const keywords = `${post.title}, ItsIndianGuy blog, ${slug.replace(/-/g, ' ')}, programming tutorial, web development guide, coding tutorial by ItsIndianGuy, ${post.author} tutorial, learn programming India`;
+
   return {
-    title: `${post.title} | ItsIndianGuy Blog`,
-    description: post.description,
+    title: `${post.title} | ItsIndianGuy Blog - ${post.readTime}`,
+    description: `${post.description} | Step-by-step tutorial by ItsIndianGuy. ${post.readTime} | Learn programming with real-world examples.`,
+    keywords: keywords,
+    authors: [{ name: post.author, url: "https://www.itsindianguy.in/about" }],
+    creator: post.author,
+    publisher: "ItsIndianGuy",
     alternates: {
       canonical: `https://www.itsindianguy.in/blog/${slug}`,
     },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
     openGraph: {
-      title: `${post.title} | ItsIndianGuy`,
-      description: post.description,
+      title: `${post.title} | ItsIndianGuy Tutorial`,
+      description: `${post.description} | Complete guide by ItsIndianGuy`,
       url: `https://www.itsindianguy.in/blog/${slug}`,
-      siteName: "ItsIndianGuy",
-      locale: "en_US",
+      siteName: "ItsIndianGuy - Programming Tutorials & Tech Blog",
+      locale: "en_IN",
       type: "article",
+      publishedTime: post.date,
+      authors: [post.author],
       images: [
         {
-          url: "https://www.itsindianguy.in/og-blog.jpg",
+          url: post.image || "https://www.itsindianguy.in/og-blog.jpg",
           width: 1200,
           height: 630,
-          alt: post.title,
+          alt: `${post.title} - ItsIndianGuy Tutorial`,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
       title: `${post.title} | ItsIndianGuy`,
-      description: post.description,
-      images: ["https://www.itsindianguy.in/og-blog.jpg"],
+      description: `${post.description} | ${post.readTime}`,
+      creator: "@itsindianguy",
+      site: "@itsindianguy",
+      images: [post.image || "https://www.itsindianguy.in/og-blog.jpg"],
     },
   };
 }
@@ -74,8 +96,112 @@ const BlogPost = ({ params }: Props) => {
     slug: slug,
   };
 
+  // Calculate word count for article schema (approximate)
+  const wordCount = Math.ceil(parseInt(post.readTime) * 200);
+
+  // Structured Data for Article
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.description,
+    image: post.image,
+    datePublished: post.date,
+    dateModified: post.date,
+    author: {
+      "@type": "Person",
+      name: post.author,
+      url: "https://www.itsindianguy.in/about",
+      sameAs: [
+        "https://github.com/itsindianguy",
+        "https://twitter.com/itsindianguy",
+        "https://linkedin.com/in/itsindianguy",
+      ],
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "ItsIndianGuy",
+      url: "https://www.itsindianguy.in",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.itsindianguy.in/logo.png",
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://www.itsindianguy.in/blog/${slug}`,
+    },
+    wordCount: wordCount,
+    articleSection: "Programming Tutorials",
+    inLanguage: "en-IN",
+    keywords: `${post.title}, ItsIndianGuy, programming tutorial, ${slug.replace(/-/g, ', ')}`,
+  };
+
+  // Breadcrumb Schema
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.itsindianguy.in",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: "https://www.itsindianguy.in/blog",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: post.title,
+        item: `https://www.itsindianguy.in/blog/${slug}`,
+      },
+    ],
+  };
+
+  // FAQ Schema (if applicable)
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: `What is ${post.title}?`,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: post.description,
+        },
+      },
+      {
+        "@type": "Question",
+        name: `Who wrote this ${post.title} tutorial?`,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: `This tutorial was written by ${post.author}, an experienced developer sharing programming knowledge on ItsIndianGuy.in`,
+        },
+      },
+    ],
+  };
+
   return (
     <Fragment>
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <main className="min-h-screen bg-gradient-to-br from-neutral-50 via-green-50/20 to-teal-50/10 dark:from-neutral-900 dark:via-green-950/10 dark:to-teal-950/5">
         {/* Hero Section */}
         <section className="relative bg-gradient-to-b from-white to-green-50/20 dark:from-neutral-800 dark:to-green-950/10 overflow-hidden">

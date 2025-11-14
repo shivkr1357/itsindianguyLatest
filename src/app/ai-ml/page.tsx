@@ -4,21 +4,35 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: `AI/ML Tutorials | ItsIndianGuy - Learn Machine Learning, Deep Learning & Artificial Intelligence`,
+  title: `AI/ML Tutorials by ItsIndianGuy - Machine Learning & Deep Learning Guide`,
   description:
-    "Master artificial intelligence and machine learning with comprehensive tutorials covering Python, TensorFlow, PyTorch, scikit-learn, neural networks, computer vision, and NLP. Learn to build intelligent applications.",
+    "Learn AI & machine learning with ItsIndianGuy. Master Python, TensorFlow, PyTorch & neural networks. Build intelligent applications. Best AI/ML tutorials in India.",
   keywords:
-    "AI tutorials, machine learning tutorials, deep learning tutorials, artificial intelligence, Python ML, TensorFlow tutorials, PyTorch tutorials, ItsIndianGuy AI ML, programming tutorials, coding tutorials, AI programming",
+    "AI tutorials ItsIndianGuy, machine learning ItsIndianGuy, deep learning tutorial, artificial intelligence ItsIndianGuy, Python ML tutorial, TensorFlow ItsIndianGuy, neural networks guide, ItsIndianGuy AI ML, computer vision tutorial",
+  authors: [{ name: "ItsIndianGuy", url: "https://www.itsindianguy.in/about" }],
+  creator: "ItsIndianGuy",
+  publisher: "ItsIndianGuy",
   alternates: {
     canonical: "https://www.itsindianguy.in/ai-ml",
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
     title:
-      "AI/ML Tutorials | ItsIndianGuy - Learn Machine Learning, Deep Learning & Artificial Intelligence",
+      "AI/ML Tutorials by ItsIndianGuy",
     description:
-      "Master artificial intelligence and machine learning with comprehensive tutorials covering Python, TensorFlow, PyTorch, scikit-learn, neural networks, computer vision, and NLP. Learn to build intelligent applications with hands-on projects and real-world examples.",
+      "Learn AI & machine learning with ItsIndianGuy. Python, TensorFlow & neural networks tutorials. Build intelligent apps.",
     url: "https://www.itsindianguy.in/ai-ml",
-    siteName: "ItsIndianGuy",
+    siteName: "ItsIndianGuy - Programming Tutorials India",
     locale: "en_IN",
     type: "website",
     images: [
@@ -33,9 +47,11 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "AI/ML Tutorials | ItsIndianGuy - Learn Machine Learning, Deep Learning & Artificial Intelligence",
+      "AI/ML Tutorials | ItsIndianGuy",
     description:
-      "Master artificial intelligence and machine learning with comprehensive tutorials covering Python, TensorFlow, PyTorch, scikit-learn, neural networks, computer vision, and NLP. Learn to build intelligent applications.",
+      "Learn AI & machine learning with ItsIndianGuy. Python, TensorFlow & neural networks tutorials.",
+    creator: "@itsindianguy",
+    site: "@itsindianguy",
     images: ["https://www.itsindianguy.in/og-ai-ml.jpg"],
   },
 };

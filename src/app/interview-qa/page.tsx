@@ -3,21 +3,35 @@ import { Metadata } from "next";
 import React, { Fragment } from "react";
 
 export const metadata: Metadata = {
-  title: `Programming Interview Questions | ItsIndianGuy - JavaScript, Python, React, Node.js Interview Prep`,
+  title: `Programming Interview Questions by ItsIndianGuy - Master Tech Interviews`,
   description:
-    "Master programming interviews with comprehensive question banks covering JavaScript, Python, React, Node.js, data structures, algorithms, and system design. Practice with detailed explanations and coding challenges.",
+    "Ace tech interviews with ItsIndianGuy. Practice JavaScript, React, Node.js, Python interview questions with detailed solutions. Data structures, algorithms & system design prep. Best interview preparation for Indian developers.",
   keywords:
-    "programming interview questions, JavaScript interview prep, Python interview questions, React interview prep, Node.js interview questions, coding interviews, ItsIndianGuy interview prep, programming interview preparation, ItsIndianGuy interview questions",
+    "programming interview questions ItsIndianGuy, JavaScript interview ItsIndianGuy, React interview questions, Node.js interview prep, coding interview ItsIndianGuy, interview preparation India, ItsIndianGuy interview, tech interview questions, coding challenges ItsIndianGuy, algorithm questions",
+  authors: [{ name: "ItsIndianGuy", url: "https://www.itsindianguy.in/about" }],
+  creator: "ItsIndianGuy",
+  publisher: "ItsIndianGuy",
   alternates: {
     canonical: "https://www.itsindianguy.in/interview-qa",
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
     title:
-      "Programming Interview Questions | ItsIndianGuy - JavaScript, Python, React, Node.js Interview Prep",
+      "Programming Interview Prep by ItsIndianGuy",
     description:
-      "Master programming interviews with comprehensive question banks covering JavaScript, Python, React, Node.js, data structures, algorithms, and system design. Practice with detailed explanations and coding challenges for top tech companies.",
+      "Ace tech interviews with ItsIndianGuy. JavaScript, React, Node.js interview questions with solutions. Best interview prep for Indian developers.",
     url: "https://www.itsindianguy.in/interview-qa",
-    siteName: "ItsIndianGuy",
+    siteName: "ItsIndianGuy - Programming Tutorials India",
     locale: "en_IN",
     type: "website",
     images: [
@@ -32,9 +46,11 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "Programming Interview Questions | ItsIndianGuy - JavaScript, Python, React, Node.js Interview Prep",
+      "Interview Questions | ItsIndianGuy",
     description:
-      "Master programming interviews with comprehensive question banks covering JavaScript, Python, React, Node.js, data structures, algorithms, and system design. Practice with detailed explanations and coding challenges.",
+      "Ace tech interviews with ItsIndianGuy. Practice JavaScript, React, Node.js questions with solutions. Best interview prep.",
+    creator: "@itsindianguy",
+    site: "@itsindianguy",
     images: ["https://www.itsindianguy.in/og-interview.jpg"],
   },
 };

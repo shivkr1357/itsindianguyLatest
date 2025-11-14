@@ -3,21 +3,35 @@ import TutorialsClient from "@/components/Tutorials/TutorialsClient";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: `Programming Tutorials | ItsIndianGuy - Learn Web Development, React, Node.js & Full-Stack Development`,
+  title: `ItsIndianGuy Tutorials - Learn Next.js, React, TypeScript & Full-Stack Development`,
   description:
-    "Master programming with step-by-step tutorials covering web development, React, Node.js, TypeScript, and full-stack development. From beginner to advanced, learn practical coding skills.",
+    "Free step-by-step programming tutorials by ItsIndianGuy. Master Next.js, React, TypeScript, Node.js, Docker, GraphQL & full-stack development. Beginner to advanced tutorials with real-world projects and code examples. Best coding tutorials in India.",
   keywords:
-    "programming tutorials, web development tutorials, coding tutorials, software development courses, learn programming, coding lessons, developer tutorials, programming courses, tech tutorials, coding education, React tutorials, Node.js guides, TypeScript lessons, ItsIndianGuy, programming courses",
+    "ItsIndianGuy tutorials, Next.js tutorial ItsIndianGuy, React tutorial India, TypeScript tutorial, full-stack development tutorial, programming tutorials ItsIndianGuy, learn coding India, web development tutorial, Node.js tutorial, Docker tutorial, GraphQL tutorial, free programming courses, coding tutorials India, ItsIndianGuy programming, best tutorials India",
+  authors: [{ name: "ItsIndianGuy", url: "https://www.itsindianguy.in/about" }],
+  creator: "ItsIndianGuy",
+  publisher: "ItsIndianGuy",
   alternates: {
     canonical: "https://www.itsindianguy.in/tutorials",
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   openGraph: {
     title:
-      "Programming Tutorials | ItsIndianGuy - Learn Web Development, React, Node.js & Full-Stack Development",
+      "ItsIndianGuy Tutorials - Next.js, React & Full-Stack Development",
     description:
-      "Master programming with step-by-step tutorials covering web development, React, Node.js, TypeScript, and full-stack development. From beginner to advanced, learn practical coding skills with hands-on projects and real-world examples.",
+      "Free programming tutorials by ItsIndianGuy. Learn Next.js, React, TypeScript & full-stack development with step-by-step guides and real-world projects.",
     url: "https://www.itsindianguy.in/tutorials",
-    siteName: "ItsIndianGuy",
+    siteName: "ItsIndianGuy - Programming Tutorials India",
     locale: "en_IN",
     type: "website",
     images: [
@@ -32,9 +46,11 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "Programming Tutorials | ItsIndianGuy - Learn Web Development, React, Node.js & Full-Stack Development",
+      "ItsIndianGuy Tutorials - Programming Step-by-Step",
     description:
-      "Master programming with step-by-step tutorials covering web development, React, Node.js, TypeScript, and full-stack development. From beginner to advanced, learn practical coding skills.",
+      "Learn Next.js, React, TypeScript & full-stack development. Free tutorials with code examples by ItsIndianGuy.",
+    creator: "@itsindianguy",
+    site: "@itsindianguy",
     images: ["https://www.itsindianguy.in/og-tutorials.jpg"],
   },
 };
