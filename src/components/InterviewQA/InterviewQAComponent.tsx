@@ -36,6 +36,23 @@ const InterviewQAComponent = () => {
       'dsa-interview': 'Data Structures & Algorithms',
       'database-interview': 'Database',
       'ml-interview': 'Machine Learning',
+      'vue': 'Vue.js',
+      'angular': 'Angular',
+      'java': 'Java',
+      'golang': 'Go (Golang)',
+      'aws': 'AWS Cloud',
+      'docker': 'Docker',
+      'kubernetes': 'Kubernetes',
+      'git': 'Git & GitHub',
+      'redis': 'Redis',
+      'cpp-lang': 'C++',
+      'csharp': 'C#',
+      'express': 'Express.js',
+      'mongodb': 'MongoDB',
+      'postgresql': 'PostgreSQL',
+      'graphql': 'GraphQL',
+      'flutter': 'Flutter',
+      'react-native': 'React Native',
     };
     return displayNames[slug] || slug.toUpperCase();
   };

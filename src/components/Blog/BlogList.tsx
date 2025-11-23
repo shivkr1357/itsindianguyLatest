@@ -20,7 +20,7 @@ const BlogList = ({ posts }: BlogListProps) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {posts.map((post) => (
-        <div key={post.id}>
+        <div key={post.id} className="h-full">
           <BlogCard
             title={post.title}
             description={post.description}

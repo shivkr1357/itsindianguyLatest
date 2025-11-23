@@ -45,13 +45,13 @@ const databaseContent = {
   description: "Learn to design and manage databases effectively",
   topics: [
     {
-      title: "SQL",
+      title: "SQL Databases",
       description: "Master SQL databases and query optimization",
       image: "https://cdn-icons-png.flaticon.com/512/4248/4248443.png",
       link: "/tutorials/sql",
     },
     {
-      title: "NoSQL",
+      title: "NoSQL Databases",
       description: "Work with MongoDB, Redis, and other NoSQL databases",
       image: "https://cdn-icons-png.flaticon.com/512/4248/4248443.png",
       link: "/tutorials/nosql",
@@ -63,7 +63,7 @@ const databaseContent = {
       link: "/tutorials/database-design",
     },
     {
-      title: "ORM",
+      title: "ORM Tools",
       description: "Use Object-Relational Mapping tools effectively",
       image: "https://cdn-icons-png.flaticon.com/512/8099/8099100.png",
       link: "/tutorials/orm",

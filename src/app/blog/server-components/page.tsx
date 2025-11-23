@@ -48,7 +48,7 @@ export default function ServerComponentsBlogPost() {
             React Server Components Explained
           </h1>
           <div className="flex items-center gap-4 text-neutral-600 dark:text-neutral-400 text-sm">
-            <time dateTime="2024-03-10">Mar 10, 2024</time>
+            <time dateTime="2024-12-12">Dec 12, 2024</time>
             <span>•</span>
             <span>8 min read</span>
           </div>

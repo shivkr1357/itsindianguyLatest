@@ -61,28 +61,28 @@ const backendDevelopmentContent = {
   description: "Learn to build robust server-side applications and APIs",
   topics: [
     {
-      title: "Node.js",
+      title: "Node.js APIs",
       description: "Build scalable backend applications with JavaScript",
       image: "https://cdn-icons-png.flaticon.com/512/5968/5968322.png",
-      link: "/tutorials/nodejs",
+      link: "/tutorials/nodejs-api",
     },
     {
-      title: "Python",
-      description: "Create powerful backend services with Python",
+      title: "GraphQL APIs",
+      description: "Create powerful APIs with GraphQL",
       image: "https://cdn-icons-png.flaticon.com/512/5968/5968350.png",
-      link: "/tutorials/python-backend",
+      link: "/tutorials/graphql-api",
     },
     {
-      title: "Databases",
+      title: "Database Integration",
       description: "Master SQL and NoSQL database management",
       image: "https://cdn-icons-png.flaticon.com/512/4248/4248443.png",
-      link: "/tutorials/databases",
+      link: "/tutorials/fullstack-nextjs",
     },
     {
-      title: "APIs",
+      title: "API Development",
       description: "Design and build RESTful and GraphQL APIs",
       image: "https://cdn-icons-png.flaticon.com/512/8099/8099100.png",
-      link: "/tutorials/api-development",
+      link: "/tutorials/nodejs-api",
     },
   ],
 };

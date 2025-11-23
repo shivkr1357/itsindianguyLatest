@@ -87,6 +87,16 @@ export default function Navbar() {
             >
               About
             </Link>
+            <Link 
+              href="/hire-me" 
+              className={`transition-colors font-medium ${
+                isActive('/hire-me')
+                  ? 'text-primary-200 dark:text-primary-200 border-b-2 border-primary-200'
+                  : 'text-neutral-600 hover:text-primary-200 dark:text-neutral-300 dark:hover:text-primary-200'
+              }`}
+            >
+              Hire Me
+            </Link>
             
             <Link href="/newsletter" className="px-4 py-2 bg-primary-200 hover:bg-primary-300 text-white rounded-lg transition-colors">
               Subscribe
@@ -155,6 +165,16 @@ export default function Navbar() {
             }`}
           >
             About
+          </Link>
+          <Link 
+            href="/hire-me" 
+            className={`block px-3 py-2 rounded-md font-medium ${
+              isActive('/hire-me')
+                ? 'bg-primary-200/10 text-primary-200 dark:text-primary-200'
+                : 'text-neutral-600 hover:text-primary-200 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:text-primary-200 dark:hover:bg-neutral-800'
+            }`}
+          >
+            Hire Me
           </Link>
           <div className="flex items-center justify-between px-3 py-2">
             <button

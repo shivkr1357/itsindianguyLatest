@@ -36,7 +36,7 @@ export default function ModernCSSBlogPost() {
             Modern CSS Techniques
           </h1>
           <div className="flex items-center gap-4 text-neutral-600 dark:text-neutral-400 text-sm">
-            <time dateTime="2024-03-01">Mar 1, 2024</time>
+            <time dateTime="2024-12-05">Dec 5, 2024</time>
             <span>•</span>
             <span>7 min read</span>
           </div>

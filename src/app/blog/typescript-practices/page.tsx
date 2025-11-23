@@ -36,7 +36,7 @@ export default function TypeScriptPracticesBlogPost() {
             TypeScript Best Practices
           </h1>
           <div className="flex items-center gap-4 text-neutral-600 dark:text-neutral-400 text-sm">
-            <time dateTime="2024-03-05">Mar 5, 2024</time>
+            <time dateTime="2024-12-08">Dec 8, 2024</time>
             <span>•</span>
             <span>6 min read</span>
           </div>

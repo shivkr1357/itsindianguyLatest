@@ -48,7 +48,7 @@ export default function NextJS14BlogPost() {
             Getting Started with Next.js 14
           </h1>
           <div className="flex items-center gap-4 text-neutral-600 dark:text-neutral-400 text-sm">
-            <time dateTime="2024-03-15">Mar 15, 2024</time>
+            <time dateTime="2024-12-15">Dec 15, 2024</time>
             <span>•</span>
             <span>5 min read</span>
           </div>

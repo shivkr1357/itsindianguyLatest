@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useThemeState } from "@/context/ThemeContext";
 import { useAuth } from "@/context/AuthContext";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { WiDaySunny, WiMoonAltWaxingCrescent4 } from "react-icons/wi";
 import { HiMenu, HiX } from "react-icons/hi";
 import AuthModal from "@/components/Auth/AuthModal";
@@ -11,10 +12,19 @@ import UserProfile from "@/components/Auth/UserProfile";
 const Topbar = () => {
   const { customTheme, toggleTheme } = useThemeState();
   const { user } = useAuth();
+  const router = useRouter();
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [authModalOpen, setAuthModalOpen] = useState(false);
   const [authMode, setAuthMode] = useState<"signin" | "signup">("signin");
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const handleLinkClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    e.preventDefault();
+    router.push(href);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,7 +37,7 @@ const Topbar = () => {
   return (
     <>
       <nav
-        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        className={`fixed top-0 w-full z-50 transition-all duration-300 pointer-events-auto ${
           isScrolled
             ? customTheme === "dark"
               ? "bg-neutral-900/95 backdrop-blur-xl shadow-lg border-b border-neutral-800"
@@ -40,10 +50,7 @@ const Topbar = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             {/* Logo/Brand */}
-            <Link
-              href="/"
-              className="flex items-center gap-2 group"
-            >
+            <Link href="/" className="flex items-center gap-2 group">
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-primary-200 to-blue-500 rounded-lg blur opacity-50 group-hover:opacity-75 transition-opacity" />
                 <div className="relative w-10 h-10 bg-gradient-to-br from-primary-200 to-blue-500 rounded-lg flex items-center justify-center">
@@ -56,10 +63,11 @@ const Topbar = () => {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-1">
+            <div className="hidden lg:flex items-center gap-1 pointer-events-auto">
               <Link
                 href="/interview-qa"
-                className={`px-4 py-2 rounded-lg font-medium transition-all hover:scale-105 ${
+                onClick={(e) => handleLinkClick(e, "/interview-qa")}
+                className={`px-4 py-2 rounded-lg font-medium transition-all hover:scale-105 pointer-events-auto ${
                   customTheme === "dark"
                     ? "text-neutral-300 hover:text-white hover:bg-neutral-800"
                     : "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100"
@@ -69,7 +77,8 @@ const Topbar = () => {
               </Link>
               <Link
                 href="/blog"
-                className={`px-4 py-2 rounded-lg font-medium transition-all hover:scale-105 ${
+                onClick={(e) => handleLinkClick(e, "/blog")}
+                className={`px-4 py-2 rounded-lg font-medium transition-all hover:scale-105 pointer-events-auto ${
                   customTheme === "dark"
                     ? "text-neutral-300 hover:text-white hover:bg-neutral-800"
                     : "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100"
@@ -79,7 +88,8 @@ const Topbar = () => {
               </Link>
               <Link
                 href="/tutorials"
-                className={`px-4 py-2 rounded-lg font-medium transition-all hover:scale-105 ${
+                onClick={(e) => handleLinkClick(e, "/tutorials")}
+                className={`px-4 py-2 rounded-lg font-medium transition-all hover:scale-105 pointer-events-auto ${
                   customTheme === "dark"
                     ? "text-neutral-300 hover:text-white hover:bg-neutral-800"
                     : "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100"
@@ -89,7 +99,8 @@ const Topbar = () => {
               </Link>
               <Link
                 href="/memes"
-                className={`px-4 py-2 rounded-lg font-medium transition-all hover:scale-105 ${
+                onClick={(e) => handleLinkClick(e, "/memes")}
+                className={`px-4 py-2 rounded-lg font-medium transition-all hover:scale-105 pointer-events-auto ${
                   customTheme === "dark"
                     ? "text-neutral-300 hover:text-white hover:bg-neutral-800"
                     : "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100"
@@ -99,7 +110,8 @@ const Topbar = () => {
               </Link>
               <Link
                 href="/about"
-                className={`px-4 py-2 rounded-lg font-medium transition-all hover:scale-105 ${
+                onClick={(e) => handleLinkClick(e, "/about")}
+                className={`px-4 py-2 rounded-lg font-medium transition-all hover:scale-105 pointer-events-auto ${
                   customTheme === "dark"
                     ? "text-neutral-300 hover:text-white hover:bg-neutral-800"
                     : "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100"
@@ -108,8 +120,20 @@ const Topbar = () => {
                 About
               </Link>
               <Link
+                href="/hire-me"
+                onClick={(e) => handleLinkClick(e, "/hire-me")}
+                className={`px-4 py-2 rounded-lg font-medium transition-all hover:scale-105 pointer-events-auto ${
+                  customTheme === "dark"
+                    ? "text-neutral-300 hover:text-white hover:bg-neutral-800"
+                    : "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100"
+                }`}
+              >
+                Hire Me
+              </Link>
+              <Link
                 href="/contact-us"
-                className={`px-4 py-2 rounded-lg font-medium transition-all hover:scale-105 ${
+                onClick={(e) => handleLinkClick(e, "/contact-us")}
+                className={`px-4 py-2 rounded-lg font-medium transition-all hover:scale-105 pointer-events-auto ${
                   customTheme === "dark"
                     ? "text-neutral-300 hover:text-white hover:bg-neutral-800"
                     : "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100"
@@ -184,20 +208,19 @@ const Topbar = () => {
               </button>
             </div>
           </div>
-
         </div>
 
         {/* Overlay */}
         {drawerOpen && (
           <div
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm lg:hidden transition-opacity duration-300"
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm lg:hidden transition-opacity duration-300 z-40"
             onClick={() => setDrawerOpen(false)}
           />
         )}
 
         {/* Mobile Navigation Drawer - Slides from Right */}
         <div
-          className={`fixed top-0 right-0 h-screen w-80 lg:hidden transform transition-transform duration-300 ease-in-out z-[60] ${
+          className={`fixed top-0 right-0 h-screen w-80 lg:hidden transform transition-transform duration-300 ease-in-out z-50 ${
             drawerOpen ? "translate-x-0" : "translate-x-full"
           } ${
             customTheme === "dark"
@@ -231,7 +254,10 @@ const Topbar = () => {
           </div>
 
           {/* Drawer Content */}
-          <div className="p-6 space-y-2 overflow-y-auto" style={{ height: 'calc(100vh - 92px)' }}>
+          <div
+            className="p-6 space-y-2 overflow-y-auto"
+            style={{ height: "calc(100vh - 92px)" }}
+          >
             <Link
               href="/interview-qa"
               onClick={() => setDrawerOpen(false)}
@@ -286,6 +312,17 @@ const Topbar = () => {
               }`}
             >
               About
+            </Link>
+            <Link
+              href="/hire-me"
+              onClick={() => setDrawerOpen(false)}
+              className={`block px-4 py-3 rounded-xl font-medium transition-all hover:scale-105 ${
+                customTheme === "dark"
+                  ? "text-neutral-300 hover:text-white hover:bg-neutral-800"
+                  : "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100"
+              }`}
+            >
+              Hire Me
             </Link>
             <Link
               href="/contact-us"

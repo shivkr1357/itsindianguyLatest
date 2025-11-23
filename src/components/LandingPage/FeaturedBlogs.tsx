@@ -4,10 +4,18 @@ import Image from 'next/image';
 
 const blogPosts = [
    {
+      title: "Technology and AI: Transforming Our Everyday Lives",
+      excerpt: "Discover how artificial intelligence and modern technology are seamlessly integrated into our daily routines, making life easier and smarter.",
+      image: "https://cdn-icons-png.flaticon.com/512/2103/2103832.png",
+      date: "Nov 23, 2025",
+      readTime: "12 min read",
+      link: "/blog/ai-technology-everyday-life"
+   },
+   {
       title: "Getting Started with Next.js 14",
       excerpt: "Learn how to build modern web applications with Next.js 14's latest features",
       image: "https://cdn-icons-png.flaticon.com/512/919/919825.png",
-      date: "Mar 15, 2024",
+      date: "Dec 15, 2024",
       readTime: "5 min read",
       link: "/blog/nextjs-14"
    },
@@ -15,7 +23,7 @@ const blogPosts = [
       title: "React Server Components Explained",
       excerpt: "Deep dive into React Server Components and their benefits",
       image: "https://cdn-icons-png.flaticon.com/512/1260/1260667.png",
-      date: "Mar 10, 2024",
+      date: "Dec 12, 2024",
       readTime: "8 min read",
       link: "/blog/server-components"
    },
@@ -23,7 +31,7 @@ const blogPosts = [
       title: "TypeScript Best Practices",
       excerpt: "Essential TypeScript patterns and practices for better code",
       image: "https://cdn-icons-png.flaticon.com/512/919/919832.png",
-      date: "Mar 5, 2024",
+      date: "Dec 8, 2024",
       readTime: "6 min read",
       link: "/blog/typescript-practices"
    },
@@ -31,7 +39,7 @@ const blogPosts = [
       title: "Modern CSS Techniques",
       excerpt: "Exploring the latest CSS features and best practices",
       image: "https://cdn-icons-png.flaticon.com/512/919/919826.png",
-      date: "Mar 1, 2024",
+      date: "Dec 5, 2024",
       readTime: "7 min read",
       link: "/blog/modern-css"
    },
@@ -39,7 +47,7 @@ const blogPosts = [
       title: "Node.js Performance Tips",
       excerpt: "Optimize your Node.js applications for better performance",
       image: "https://cdn-icons-png.flaticon.com/512/919/919825.png",
-      date: "Feb 28, 2024",
+      date: "Dec 1, 2024",
       readTime: "10 min read",
       link: "/blog/nodejs-performance"
    },
@@ -47,7 +55,7 @@ const blogPosts = [
       title: "GraphQL vs REST API",
       excerpt: "Comparing GraphQL and REST for modern APIs",
       image: "https://cdn-icons-png.flaticon.com/512/8297/8297437.png",
-      date: "Feb 25, 2024",
+      date: "Nov 28, 2024",
       readTime: "8 min read",
       link: "/blog/graphql-vs-rest"
    }
@@ -60,7 +68,7 @@ const FeaturedBlogs = () => {
             <Link 
                href={post.link} 
                key={index}
-               className="group bg-neutral-50 dark:bg-neutral-800 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all"
+               className="group h-full flex flex-col bg-neutral-50 dark:bg-neutral-800 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all"
             >
                <div className="relative h-48 bg-white dark:bg-neutral-700">
                   <Image
@@ -70,7 +78,7 @@ const FeaturedBlogs = () => {
                      className="object-contain p-6 group-hover:scale-105 transition-transform duration-300"
                   />
                </div>
-               <div className="p-4">
+               <div className="p-4 flex flex-col flex-grow">
                   <div className="flex items-center text-sm text-neutral-600 dark:text-neutral-400 mb-2">
                      <span>{post.date}</span>
                      <span className="mx-2">•</span>
@@ -79,7 +87,7 @@ const FeaturedBlogs = () => {
                   <h3 className="text-lg font-semibold mb-2 text-neutral-800 dark:text-neutral-100 group-hover:text-primary-200 transition-colors">
                      {post.title}
                   </h3>
-                  <p className="text-sm text-neutral-600 dark:text-neutral-400">
+                  <p className="text-sm text-neutral-600 dark:text-neutral-400 flex-grow">
                      {post.excerpt}
                   </p>
                </div>

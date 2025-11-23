@@ -36,7 +36,7 @@ export default function NodeJSPerformanceBlogPost() {
             Node.js Performance Tips
           </h1>
           <div className="flex items-center gap-4 text-neutral-600 dark:text-neutral-400 text-sm">
-            <time dateTime="2024-02-28">Feb 28, 2024</time>
+            <time dateTime="2024-12-01">Dec 1, 2024</time>
             <span>•</span>
             <span>10 min read</span>
           </div>

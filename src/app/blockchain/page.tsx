@@ -45,28 +45,28 @@ const blockchainContent = {
   description: "Learn blockchain development and Web3 technologies",
   topics: [
     {
-      title: "Solidity",
-      description: "Build smart contracts with Ethereum's language",
+      title: "Smart Contracts",
+      description: "Build smart contracts with Solidity and Ethereum",
       image: "https://cdn-icons-png.flaticon.com/512/2091/2091665.png",
-      link: "/tutorials/solidity",
+      link: "/tutorials",
     },
     {
-      title: "Web3",
+      title: "Web3 Development",
       description: "Build decentralized applications (dApps)",
       image: "https://cdn-icons-png.flaticon.com/512/2091/2091665.png",
-      link: "/tutorials/web3",
+      link: "/tutorials",
     },
     {
-      title: "DeFi",
+      title: "DeFi Protocols",
       description: "Learn decentralized finance protocols",
       image: "https://cdn-icons-png.flaticon.com/512/2091/2091665.png",
-      link: "/tutorials/defi",
+      link: "/tutorials",
     },
     {
-      title: "NFTs",
-      description: "Create and manage non-fungible tokens",
+      title: "Blockchain APIs",
+      description: "Integrate blockchain with your applications",
       image: "https://cdn-icons-png.flaticon.com/512/8099/8099100.png",
-      link: "/tutorials/nfts",
+      link: "/tutorials/graphql-api",
     },
   ],
 };

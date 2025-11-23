@@ -45,28 +45,28 @@ const uiuxContent = {
   description: "Learn to create beautiful and user-friendly interfaces",
   topics: [
     {
-      title: "Figma",
-      description: "Design interfaces with the industry-standard tool",
+      title: "Design Tools",
+      description: "Design interfaces with industry-standard tools",
       image: "https://cdn-icons-png.flaticon.com/512/5278/5278663.png",
-      link: "/tutorials/figma",
+      link: "/tutorials",
     },
     {
       title: "Design Systems",
       description: "Create consistent design systems and components",
       image: "https://cdn-icons-png.flaticon.com/512/5278/5278663.png",
-      link: "/tutorials/design-systems",
+      link: "/tutorials",
     },
     {
-      title: "User Research",
-      description: "Conduct user research and usability testing",
+      title: "User Experience",
+      description: "Learn user research and usability principles",
       image: "https://cdn-icons-png.flaticon.com/512/5278/5278663.png",
-      link: "/tutorials/user-research",
+      link: "/tutorials",
     },
     {
-      title: "Prototyping",
-      description: "Create interactive prototypes and wireframes",
+      title: "Frontend Development",
+      description: "Build beautiful interfaces with React and Next.js",
       image: "https://cdn-icons-png.flaticon.com/512/8099/8099100.png",
-      link: "/tutorials/prototyping",
+      link: "/tutorials/react-performance",
     },
   ],
 };
