@@ -11,7 +11,7 @@ import UserProfile from "@/components/Auth/UserProfile";
 
 const Topbar = () => {
   const { customTheme, toggleTheme } = useThemeState();
-  const { user } = useAuth();
+  const { user, loading } = useAuth();
   const router = useRouter();
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [authModalOpen, setAuthModalOpen] = useState(false);
@@ -164,7 +164,9 @@ const Topbar = () => {
 
               {/* Auth Buttons - Desktop */}
               <div className="hidden lg:flex items-center gap-3">
-                {user ? (
+                {loading ? (
+                  <div className="w-8 h-8 border-2 border-primary-200 border-t-transparent rounded-full animate-spin" />
+                ) : user ? (
                   <UserProfile />
                 ) : (
                   <>
@@ -343,7 +345,11 @@ const Topbar = () => {
 
             {/* Mobile Auth Buttons */}
             <div className="space-y-3">
-              {user ? (
+              {loading ? (
+                <div className="flex justify-center py-3">
+                  <div className="w-6 h-6 border-2 border-primary-200 border-t-transparent rounded-full animate-spin" />
+                </div>
+              ) : user ? (
                 <UserProfile />
               ) : (
                 <>

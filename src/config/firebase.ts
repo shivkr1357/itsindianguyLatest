@@ -30,8 +30,9 @@ export const db = getFirestore(app);
 export const googleProvider = new GoogleAuthProvider();
 
 // Add custom parameters for Google sign-in
+// Remove prompt to allow automatic sign-in with Chrome account
 googleProvider.setCustomParameters({
-  prompt: "select_account",
+  prompt: "none", // This allows automatic sign-in if user is already logged into Chrome
 });
 
 // Connect to auth emulator in development
