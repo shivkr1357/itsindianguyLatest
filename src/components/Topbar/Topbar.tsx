@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useThemeState } from "@/context/ThemeContext";
 import { useAuth } from "@/context/AuthContext";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { WiDaySunny, WiMoonAltWaxingCrescent4 } from "react-icons/wi";
 import { HiMenu, HiX } from "react-icons/hi";
 import AuthModal from "@/components/Auth/AuthModal";
@@ -13,6 +13,7 @@ const Topbar = () => {
   const { customTheme, toggleTheme } = useThemeState();
   const { user, loading } = useAuth();
   const router = useRouter();
+  const pathname = usePathname();
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [authModalOpen, setAuthModalOpen] = useState(false);
   const [authMode, setAuthMode] = useState<"signin" | "signup">("signin");
@@ -68,7 +69,11 @@ const Topbar = () => {
                 href="/interview-qa"
                 onClick={(e) => handleLinkClick(e, "/interview-qa")}
                 className={`px-4 py-2 rounded-lg font-medium transition-all hover:scale-105 pointer-events-auto ${
-                  customTheme === "dark"
+                  pathname === "/interview-qa"
+                    ? customTheme === "dark"
+                      ? "bg-primary-200/20 text-white"
+                      : "bg-primary-200/10 text-primary-200"
+                    : customTheme === "dark"
                     ? "text-neutral-300 hover:text-white hover:bg-neutral-800"
                     : "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100"
                 }`}
@@ -79,7 +84,11 @@ const Topbar = () => {
                 href="/blog"
                 onClick={(e) => handleLinkClick(e, "/blog")}
                 className={`px-4 py-2 rounded-lg font-medium transition-all hover:scale-105 pointer-events-auto ${
-                  customTheme === "dark"
+                  pathname.startsWith("/blog")
+                    ? customTheme === "dark"
+                      ? "bg-primary-200/20 text-white"
+                      : "bg-primary-200/10 text-primary-200"
+                    : customTheme === "dark"
                     ? "text-neutral-300 hover:text-white hover:bg-neutral-800"
                     : "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100"
                 }`}
@@ -90,7 +99,11 @@ const Topbar = () => {
                 href="/tutorials"
                 onClick={(e) => handleLinkClick(e, "/tutorials")}
                 className={`px-4 py-2 rounded-lg font-medium transition-all hover:scale-105 pointer-events-auto ${
-                  customTheme === "dark"
+                  pathname.startsWith("/tutorials")
+                    ? customTheme === "dark"
+                      ? "bg-primary-200/20 text-white"
+                      : "bg-primary-200/10 text-primary-200"
+                    : customTheme === "dark"
                     ? "text-neutral-300 hover:text-white hover:bg-neutral-800"
                     : "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100"
                 }`}
@@ -101,7 +114,11 @@ const Topbar = () => {
                 href="/memes"
                 onClick={(e) => handleLinkClick(e, "/memes")}
                 className={`px-4 py-2 rounded-lg font-medium transition-all hover:scale-105 pointer-events-auto ${
-                  customTheme === "dark"
+                  pathname === "/memes"
+                    ? customTheme === "dark"
+                      ? "bg-primary-200/20 text-white"
+                      : "bg-primary-200/10 text-primary-200"
+                    : customTheme === "dark"
                     ? "text-neutral-300 hover:text-white hover:bg-neutral-800"
                     : "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100"
                 }`}
@@ -112,7 +129,11 @@ const Topbar = () => {
                 href="/about"
                 onClick={(e) => handleLinkClick(e, "/about")}
                 className={`px-4 py-2 rounded-lg font-medium transition-all hover:scale-105 pointer-events-auto ${
-                  customTheme === "dark"
+                  pathname === "/about"
+                    ? customTheme === "dark"
+                      ? "bg-primary-200/20 text-white"
+                      : "bg-primary-200/10 text-primary-200"
+                    : customTheme === "dark"
                     ? "text-neutral-300 hover:text-white hover:bg-neutral-800"
                     : "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100"
                 }`}
@@ -123,7 +144,11 @@ const Topbar = () => {
                 href="/hire-me"
                 onClick={(e) => handleLinkClick(e, "/hire-me")}
                 className={`px-4 py-2 rounded-lg font-medium transition-all hover:scale-105 pointer-events-auto ${
-                  customTheme === "dark"
+                  pathname === "/hire-me"
+                    ? customTheme === "dark"
+                      ? "bg-primary-200/20 text-white"
+                      : "bg-primary-200/10 text-primary-200"
+                    : customTheme === "dark"
                     ? "text-neutral-300 hover:text-white hover:bg-neutral-800"
                     : "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100"
                 }`}
@@ -134,7 +159,11 @@ const Topbar = () => {
                 href="/contact-us"
                 onClick={(e) => handleLinkClick(e, "/contact-us")}
                 className={`px-4 py-2 rounded-lg font-medium transition-all hover:scale-105 pointer-events-auto ${
-                  customTheme === "dark"
+                  pathname === "/contact-us"
+                    ? customTheme === "dark"
+                      ? "bg-primary-200/20 text-white"
+                      : "bg-primary-200/10 text-primary-200"
+                    : customTheme === "dark"
                     ? "text-neutral-300 hover:text-white hover:bg-neutral-800"
                     : "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100"
                 }`}
@@ -264,7 +293,11 @@ const Topbar = () => {
               href="/interview-qa"
               onClick={() => setDrawerOpen(false)}
               className={`block px-4 py-3 rounded-xl font-medium transition-all hover:scale-105 ${
-                customTheme === "dark"
+                pathname === "/interview-qa"
+                  ? customTheme === "dark"
+                    ? "bg-primary-200/20 text-white"
+                    : "bg-primary-200/10 text-primary-200"
+                  : customTheme === "dark"
                   ? "text-neutral-300 hover:text-white hover:bg-neutral-800"
                   : "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100"
               }`}
@@ -275,7 +308,11 @@ const Topbar = () => {
               href="/blog"
               onClick={() => setDrawerOpen(false)}
               className={`block px-4 py-3 rounded-xl font-medium transition-all hover:scale-105 ${
-                customTheme === "dark"
+                pathname.startsWith("/blog")
+                  ? customTheme === "dark"
+                    ? "bg-primary-200/20 text-white"
+                    : "bg-primary-200/10 text-primary-200"
+                  : customTheme === "dark"
                   ? "text-neutral-300 hover:text-white hover:bg-neutral-800"
                   : "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100"
               }`}
@@ -286,7 +323,11 @@ const Topbar = () => {
               href="/tutorials"
               onClick={() => setDrawerOpen(false)}
               className={`block px-4 py-3 rounded-xl font-medium transition-all hover:scale-105 ${
-                customTheme === "dark"
+                pathname.startsWith("/tutorials")
+                  ? customTheme === "dark"
+                    ? "bg-primary-200/20 text-white"
+                    : "bg-primary-200/10 text-primary-200"
+                  : customTheme === "dark"
                   ? "text-neutral-300 hover:text-white hover:bg-neutral-800"
                   : "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100"
               }`}
@@ -297,7 +338,11 @@ const Topbar = () => {
               href="/memes"
               onClick={() => setDrawerOpen(false)}
               className={`block px-4 py-3 rounded-xl font-medium transition-all hover:scale-105 ${
-                customTheme === "dark"
+                pathname === "/memes"
+                  ? customTheme === "dark"
+                    ? "bg-primary-200/20 text-white"
+                    : "bg-primary-200/10 text-primary-200"
+                  : customTheme === "dark"
                   ? "text-neutral-300 hover:text-white hover:bg-neutral-800"
                   : "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100"
               }`}
@@ -308,7 +353,11 @@ const Topbar = () => {
               href="/about"
               onClick={() => setDrawerOpen(false)}
               className={`block px-4 py-3 rounded-xl font-medium transition-all hover:scale-105 ${
-                customTheme === "dark"
+                pathname === "/about"
+                  ? customTheme === "dark"
+                    ? "bg-primary-200/20 text-white"
+                    : "bg-primary-200/10 text-primary-200"
+                  : customTheme === "dark"
                   ? "text-neutral-300 hover:text-white hover:bg-neutral-800"
                   : "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100"
               }`}
@@ -319,7 +368,11 @@ const Topbar = () => {
               href="/hire-me"
               onClick={() => setDrawerOpen(false)}
               className={`block px-4 py-3 rounded-xl font-medium transition-all hover:scale-105 ${
-                customTheme === "dark"
+                pathname === "/hire-me"
+                  ? customTheme === "dark"
+                    ? "bg-primary-200/20 text-white"
+                    : "bg-primary-200/10 text-primary-200"
+                  : customTheme === "dark"
                   ? "text-neutral-300 hover:text-white hover:bg-neutral-800"
                   : "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100"
               }`}
@@ -330,7 +383,11 @@ const Topbar = () => {
               href="/contact-us"
               onClick={() => setDrawerOpen(false)}
               className={`block px-4 py-3 rounded-xl font-medium transition-all hover:scale-105 ${
-                customTheme === "dark"
+                pathname === "/contact-us"
+                  ? customTheme === "dark"
+                    ? "bg-primary-200/20 text-white"
+                    : "bg-primary-200/10 text-primary-200"
+                  : customTheme === "dark"
                   ? "text-neutral-300 hover:text-white hover:bg-neutral-800"
                   : "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100"
               }`}
