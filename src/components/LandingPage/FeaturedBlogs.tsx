@@ -4,6 +4,14 @@ import Image from 'next/image';
 
 const blogPosts = [
    {
+      title: "Hot Tech Trends 2025: What Every Developer Should Know",
+      excerpt: "Discover the hottest technology trends shaping 2025 - from AI breakthroughs to quantum computing, Web3 innovations, and the future of software development.",
+      image: "https://cdn-icons-png.flaticon.com/512/2103/2103832.png",
+      date: "Dec 20, 2024",
+      readTime: "15 min read",
+      link: "/blog/hot-tech-trends-2025"
+   },
+   {
       title: "Technology and AI: Transforming Our Everyday Lives",
       excerpt: "Discover how artificial intelligence and modern technology are seamlessly integrated into our daily routines, making life easier and smarter.",
       image: "https://cdn-icons-png.flaticon.com/512/2103/2103832.png",

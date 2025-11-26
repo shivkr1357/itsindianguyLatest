@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "@/config/firebase";
+import { getFirestore, collection, addDoc, query, where, getDocs } from "firebase/firestore";
+import { db } from "@/config/firebase";
 
 export async function POST(request: NextRequest) {
   try {
@@ -28,6 +30,31 @@ export async function POST(request: NextRequest) {
       password
     );
     const user = userCredential.user;
+
+    // Auto-subscribe to newsletter (optional)
+    // Set AUTO_SUBSCRIBE_NEWSLETTER=true in .env.local to enable
+    if (process.env.AUTO_SUBSCRIBE_NEWSLETTER === "true" && user.email) {
+      try {
+        const subscribersRef = collection(db, "newsletter_subscribers");
+        const q = query(subscribersRef, where("email", "==", user.email));
+        const querySnapshot = await getDocs(q);
+
+        // Only subscribe if not already subscribed
+        if (querySnapshot.empty) {
+          await addDoc(subscribersRef, {
+            email: user.email,
+            name: user.displayName || "",
+            interests: "all",
+            subscribedAt: new Date().toISOString(),
+            isActive: true,
+            unsubscribedAt: null,
+          });
+        }
+      } catch (newsletterError) {
+        // Log error but don't fail signup
+        console.error("Failed to auto-subscribe user to newsletter:", newsletterError);
+      }
+    }
 
     // Return user data (excluding sensitive information)
     const userData = {

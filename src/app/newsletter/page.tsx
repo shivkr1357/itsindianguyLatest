@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import NewsletterForm from "@/components/Newsletter/NewsletterForm";
 
 export const metadata: Metadata = {
   title: "Subscribe to Our Newsletter - ItsIndianGuy",
@@ -132,102 +133,7 @@ export default function NewsletterPage() {
           <h2 className="text-2xl font-bold text-neutral-800 dark:text-neutral-100 mb-6 text-center">
             Join 10,000+ Developers
           </h2>
-          <form className="max-w-md mx-auto space-y-6">
-            <div>
-              <label
-                htmlFor="name"
-                className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2"
-              >
-                Full Name
-              </label>
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Image
-                    src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png"
-                    alt="Name"
-                    width={20}
-                    height={20}
-                  />
-                </div>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  placeholder="John Doe"
-                  className="w-full pl-12 pr-4 py-3 border border-neutral-300 dark:border-neutral-600 rounded-lg 
-                           bg-white dark:bg-neutral-700 text-neutral-800 dark:text-neutral-100
-                           focus:ring-2 focus:ring-primary-200 focus:border-transparent
-                           placeholder:text-neutral-400 dark:placeholder:text-neutral-500"
-                />
-              </div>
-            </div>
-            <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2"
-              >
-                Email Address
-              </label>
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Image
-                    src="https://cdn-icons-png.flaticon.com/512/542/542638.png"
-                    alt="Email"
-                    width={20}
-                    height={20}
-                  />
-                </div>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  placeholder="john@example.com"
-                  className="w-full pl-12 pr-4 py-3 border border-neutral-300 dark:border-neutral-600 rounded-lg 
-                           bg-white dark:bg-neutral-700 text-neutral-800 dark:text-neutral-100
-                           focus:ring-2 focus:ring-primary-200 focus:border-transparent
-                           placeholder:text-neutral-400 dark:placeholder:text-neutral-500"
-                />
-              </div>
-            </div>
-            <div>
-              <label
-                htmlFor="interests"
-                className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2"
-              >
-                I&apos;m interested in
-              </label>
-              <select
-                id="interests"
-                name="interests"
-                className="w-full px-4 py-3 border border-neutral-300 dark:border-neutral-600 rounded-lg 
-                         bg-white dark:bg-neutral-700 text-neutral-800 dark:text-neutral-100
-                         focus:ring-2 focus:ring-primary-200 focus:border-transparent"
-              >
-                <option value="all">All Topics</option>
-                <option value="web">Web Development</option>
-                <option value="mobile">Mobile Development</option>
-                <option value="backend">Backend Development</option>
-                <option value="devops">DevOps & Cloud</option>
-                <option value="ai-ml">AI & Machine Learning</option>
-                <option value="interview">Interview Preparation</option>
-              </select>
-            </div>
-            <button
-              type="submit"
-              className="w-full px-6 py-3 bg-primary-200 hover:bg-primary-300 text-white rounded-lg 
-                       transition-colors font-medium flex items-center justify-center gap-2"
-            >
-              <Image
-                src="https://cdn-icons-png.flaticon.com/512/2530/2530914.png"
-                alt="Subscribe"
-                width={24}
-                height={24}
-              />
-              Subscribe Now
-            </button>
-          </form>
+          <NewsletterForm />
           <p className="text-xs text-center text-neutral-500 dark:text-neutral-400 mt-6">
             By subscribing, you agree to our{" "}
             <Link

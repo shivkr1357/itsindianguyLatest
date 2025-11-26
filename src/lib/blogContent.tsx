@@ -9,6 +9,16 @@ export interface BlogPost {
 }
 
 export const blogPosts: { [key: string]: BlogPost } = {
+  "hot-tech-trends-2025": {
+    title: "Hot Tech Trends 2025: What Every Developer Should Know",
+    description:
+      "Discover the hottest technology trends shaping 2025 - from AI breakthroughs to quantum computing, Web3 innovations, and the future of software development.",
+    image: "https://cdn-icons-png.flaticon.com/512/2103/2103832.png",
+    author: "ItsIndianGuy",
+    date: "2024-12-20",
+    readTime: "15 min read",
+    slug: "hot-tech-trends-2025",
+  },
   "ai-technology-everyday-life": {
     title: "Technology and AI: Transforming Our Everyday Lives",
     description:
@@ -168,6 +178,16 @@ export const blogPosts: { [key: string]: BlogPost } = {
     date: "2024-11-05",
     readTime: "16 min read",
     slug: "nextjs-15-features",
+  },
+  "react-native-expert-guide": {
+    title: "React Native Expert Guide: Building Cross-Platform Mobile Apps",
+    description:
+      "Master React Native development with expert tips, best practices, and advanced techniques for building high-performance mobile applications.",
+    image: "https://cdn-icons-png.flaticon.com/512/1183/1183672.png",
+    author: "ItsIndianGuy",
+    date: "2024-12-20",
+    readTime: "18 min read",
+    slug: "react-native-expert-guide",
   },
 };
 

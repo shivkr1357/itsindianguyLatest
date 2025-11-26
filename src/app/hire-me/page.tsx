@@ -6,9 +6,9 @@ import SocialIcon from "./SocialIcon";
 export const metadata: Metadata = {
   title: "Hire Me - Full-Stack Developer | ItsIndianGuy | Upwork & LinkedIn",
   description:
-    "Hire ItsIndianGuy for your next project. Expert full-stack developer specializing in Next.js, React, Node.js, TypeScript. View portfolio, Upwork profile, LinkedIn, and get in touch.",
+    "Hire ItsIndianGuy for your next project. Expert full-stack developer specializing in Next.js, React, React Native, Node.js, TypeScript. View portfolio, Upwork profile, LinkedIn, and get in touch.",
   keywords:
-    "hire ItsIndianGuy, full-stack developer for hire, Next.js developer, React developer India, Upwork freelancer, LinkedIn profile ItsIndianGuy, web developer portfolio, hire developer India, ItsIndianGuy services",
+    "hire ItsIndianGuy, full-stack developer for hire, Next.js developer, React developer India, React Native developer, mobile app developer, Upwork freelancer, LinkedIn profile ItsIndianGuy, web developer portfolio, hire developer India, ItsIndianGuy services",
   authors: [{ name: "ItsIndianGuy", url: "https://www.itsindianguy.in/about" }],
   creator: "ItsIndianGuy",
   publisher: "ItsIndianGuy",
@@ -108,11 +108,27 @@ const projects = [
     link: "/projects/social",
     featured: false,
   },
+  {
+    title: "React Native Mobile App",
+    description:
+      "Cross-platform mobile application built with React Native, featuring offline support, push notifications, and native performance. Available on both iOS and Android.",
+    image: "https://cdn-icons-png.flaticon.com/512/1183/1183672.png",
+    tech: [
+      "React Native",
+      "TypeScript",
+      "Redux",
+      "Firebase",
+      "React Navigation",
+    ],
+    link: "/projects/react-native-app",
+    featured: true,
+  },
 ];
 
 const skills = [
   { name: "Next.js", level: "Expert" },
   { name: "React", level: "Expert" },
+  { name: "React Native", level: "Expert" },
   { name: "TypeScript", level: "Expert" },
   { name: "Node.js", level: "Expert" },
   { name: "Python", level: "Advanced" },
@@ -205,9 +221,9 @@ export default function HireMePage() {
                 </span>
               </h1>
               <p className="text-xl md:text-2xl text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto mb-8">
-                Expert in Next.js, React, Node.js, TypeScript, and modern web
-                technologies. Available for freelance projects and long-term
-                collaborations.
+                Expert in Next.js, React, React Native, Node.js, TypeScript, and
+                modern web technologies. Available for freelance projects and
+                long-term collaborations.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Link

@@ -259,11 +259,18 @@ const imageLinksInterview = [
   },
 ];
 
-const InterviewCard = () => {
+interface InterviewCardProps {
+  limit?: number;
+  showSeeMore?: boolean;
+}
+
+const InterviewCard = ({ limit, showSeeMore = false }: InterviewCardProps) => {
+  const displayedItems = limit ? imageLinksInterview.slice(0, limit) : imageLinksInterview;
+  
   return (
     <div className="container mx-auto px-4 max-w-7xl py-12">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {imageLinksInterview.map((item, index) => (
+        {displayedItems.map((item, index) => (
           <Link
             href={item.link}
             key={index}
@@ -334,6 +341,29 @@ const InterviewCard = () => {
           </Link>
         ))}
       </div>
+      {showSeeMore && limit && imageLinksInterview.length > limit && (
+        <div className="text-center mt-8">
+          <Link
+            href="/interview-qa"
+            className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-lg font-semibold hover:from-orange-600 hover:to-red-600 transition-all transform hover:scale-105 shadow-lg"
+          >
+            See More Interview Topics
+            <svg
+              className="w-5 h-5 ml-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+              />
+            </svg>
+          </Link>
+        </div>
+      )}
     </div>
   );
 };

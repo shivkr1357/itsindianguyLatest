@@ -255,7 +255,7 @@ export default function HomePageClient() {
                 major technologies
               </p>
             </div>
-            <InterviewCard />
+            <InterviewCard limit={4} showSeeMore={true} />
           </div>
         </section>
 
