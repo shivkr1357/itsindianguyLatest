@@ -15,7 +15,7 @@ export const blogPosts: { [key: string]: BlogPost } = {
       "Discover the hottest technology trends shaping 2025 - from AI breakthroughs to quantum computing, Web3 innovations, and the future of software development.",
     image: "https://cdn-icons-png.flaticon.com/512/2103/2103832.png",
     author: "ItsIndianGuy",
-    date: "2024-12-20",
+    date: "2025-11-26",
     readTime: "15 min read",
     slug: "hot-tech-trends-2025",
   },
@@ -198,4 +198,3 @@ export function getBlogPost(slug: string): BlogPost | null {
 export function getAllBlogSlugs(): string[] {
   return Object.keys(blogPosts);
 }
-
