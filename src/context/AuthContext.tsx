@@ -164,6 +164,12 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
         // Add a small delay before prompting to ensure everything is ready
         setTimeout(() => {
+          if (!window.google?.accounts?.id) {
+            console.error("[Auto Sign-In] Google Identity Services not available when prompting");
+            setAutoSignInAttempted(true);
+            return;
+          }
+
           console.log("[Auto Sign-In] Prompting One Tap sign-in...");
           // Prompt One Tap sign-in (this will automatically detect Chrome login)
           window.google.accounts.id.prompt((notification) => {
