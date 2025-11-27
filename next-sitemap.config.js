@@ -19,21 +19,25 @@ module.exports = {
 
     // Blog posts
     const blogSlugs = [
+      "hot-tech-trends-2025",
+      "ai-technology-everyday-life",
       "getting-started-with-nextjs-14",
-      "typescript-best-practices",
-      "react-server-components",
-      "nodejs-performance-tips",
+      "mastering-typescript-generics",
+      "react-performance-optimization-tips",
+      "building-rest-apis-with-nodejs",
+      "introduction-to-machine-learning",
+      "docker-for-beginners",
       "graphql-vs-rest",
-      "modern-css-techniques",
-      "docker-kubernetes",
+      "nodejs-performance",
+      "modern-css",
+      "typescript-practices",
+      "server-components",
       "nextjs-14",
       "web-security",
       "mongodb-mastery",
-      "microservices-architecture",
-      "react-hooks-guide",
-      "aws-deployment",
-      "testing-best-practices",
       "nextjs-15-features",
+      "react-native-expert-guide",
+      "ai-agents-autonomous-systems-2025",
     ];
 
     blogSlugs.forEach((slug) => {

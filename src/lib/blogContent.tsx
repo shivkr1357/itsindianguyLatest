@@ -189,6 +189,16 @@ export const blogPosts: { [key: string]: BlogPost } = {
     readTime: "18 min read",
     slug: "react-native-expert-guide",
   },
+  "ai-agents-autonomous-systems-2025": {
+    title: "AI Agents and Autonomous Systems: The Future of Intelligent Automation in 2025",
+    description:
+      "Explore how AI agents and autonomous systems are revolutionizing industries in 2025, from autonomous vehicles to intelligent assistants and self-operating software agents.",
+    image: "https://cdn-icons-png.flaticon.com/512/2103/2103832.png",
+    author: "Shiv Shankar Prasad",
+    date: "2025-11-27",
+    readTime: "17 min read",
+    slug: "ai-agents-autonomous-systems-2025",
+  },
 };
 
 export function getBlogPost(slug: string): BlogPost | null {
