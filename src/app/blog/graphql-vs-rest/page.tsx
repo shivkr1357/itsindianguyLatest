@@ -4,8 +4,53 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "GraphQL vs REST API - Complete Comparison Guide | ItsIndianGuy",
-  description: "Comparing GraphQL and REST for modern APIs. Learn the differences, advantages, and when to use each approach for your API development.",
-  keywords: "GraphQL, REST API, API design, GraphQL vs REST, API development, modern APIs",
+  description:
+    "Comparing GraphQL and REST for modern APIs. Learn the differences, advantages, and when to use each approach for your API development.",
+  keywords:
+    "GraphQL, REST API, API design, GraphQL vs REST, API development, modern APIs, ItsIndianGuy blog",
+  authors: [{ name: "ItsIndianGuy", url: "https://www.itsindianguy.in/about" }],
+  creator: "ItsIndianGuy",
+  publisher: "ItsIndianGuy",
+  alternates: {
+    canonical: "https://www.itsindianguy.in/blog/graphql-vs-rest",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    title: "GraphQL vs REST API - Complete Comparison Guide | ItsIndianGuy",
+    description:
+      "Comparing GraphQL and REST for modern APIs. Learn the differences, advantages, and when to use each approach for your API development.",
+    url: "https://www.itsindianguy.in/blog/graphql-vs-rest",
+    siteName: "ItsIndianGuy - Programming Tutorials India",
+    locale: "en_IN",
+    type: "article",
+    images: [
+      {
+        url: "https://www.itsindianguy.in/og-graphql-vs-rest.jpg",
+        width: 1200,
+        height: 630,
+        alt: "GraphQL vs REST API - Complete Comparison Guide",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "GraphQL vs REST API - Complete Comparison Guide | ItsIndianGuy",
+    description:
+      "Comparing GraphQL and REST for modern APIs. Learn the differences, advantages, and when to use each approach.",
+    creator: "@itsindianguy",
+    site: "@itsindianguy",
+    images: ["https://www.itsindianguy.in/og-graphql-vs-rest.jpg"],
+  },
 };
 
 export default function GraphQLvsRESTBlogPost() {

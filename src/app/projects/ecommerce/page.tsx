@@ -4,8 +4,53 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "E-Commerce Platform - Full-Stack Project | ItsIndianGuy",
-  description: "A full-stack e-commerce solution built with Next.js and Stripe integration. Learn about modern e-commerce development with secure payment processing.",
-  keywords: "e-commerce, Next.js, Stripe, online store, payment gateway, full-stack development",
+  description:
+    "A full-stack e-commerce solution built with Next.js and Stripe integration. Learn about modern e-commerce development with secure payment processing.",
+  keywords:
+    "e-commerce, Next.js, Stripe, online store, payment gateway, full-stack development, ItsIndianGuy projects",
+  authors: [{ name: "ItsIndianGuy", url: "https://www.itsindianguy.in/about" }],
+  creator: "ItsIndianGuy",
+  publisher: "ItsIndianGuy",
+  alternates: {
+    canonical: "https://www.itsindianguy.in/projects/ecommerce",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    title: "E-Commerce Platform - Full-Stack Project | ItsIndianGuy",
+    description:
+      "Full-stack e-commerce solution with Next.js and Stripe. Learn modern e-commerce development with secure payment processing.",
+    url: "https://www.itsindianguy.in/projects/ecommerce",
+    siteName: "ItsIndianGuy - Programming Tutorials India",
+    locale: "en_IN",
+    type: "website",
+    images: [
+      {
+        url: "https://www.itsindianguy.in/og-ecommerce.jpg",
+        width: 1200,
+        height: 630,
+        alt: "E-Commerce Platform - Full-Stack Project",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "E-Commerce Platform - Full-Stack Project | ItsIndianGuy",
+    description:
+      "Full-stack e-commerce solution with Next.js and Stripe integration. Learn modern e-commerce development.",
+    creator: "@itsindianguy",
+    site: "@itsindianguy",
+    images: ["https://www.itsindianguy.in/og-ecommerce.jpg"],
+  },
 };
 
 export default function ECommercePage() {
@@ -14,7 +59,7 @@ export default function ECommercePage() {
       <div className="container mx-auto px-4 py-16 max-w-5xl">
         {/* Back Button */}
         <Link
-          href="/"
+          href="/projects"
           className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:underline mb-8"
         >
           <svg
@@ -30,7 +75,7 @@ export default function ECommercePage() {
               d="M15 19l-7-7 7-7"
             />
           </svg>
-          Back to Home
+          Back to Projects
         </Link>
 
         {/* Header */}

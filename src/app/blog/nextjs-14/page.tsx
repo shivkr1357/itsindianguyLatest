@@ -4,8 +4,53 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Getting Started with Next.js 14 - Complete Guide | ItsIndianGuy",
-  description: "Learn how to build modern web applications with Next.js 14's latest features including App Router, Server Components, and improved performance.",
-  keywords: "Next.js 14, App Router, React Server Components, Next.js tutorial, web development",
+  description:
+    "Learn how to build modern web applications with Next.js 14's latest features including App Router, Server Components, and improved performance.",
+  keywords:
+    "Next.js 14, App Router, React Server Components, Next.js tutorial, web development, ItsIndianGuy blog, Next.js guide",
+  authors: [{ name: "ItsIndianGuy", url: "https://www.itsindianguy.in/about" }],
+  creator: "ItsIndianGuy",
+  publisher: "ItsIndianGuy",
+  alternates: {
+    canonical: "https://www.itsindianguy.in/blog/nextjs-14",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    title: "Getting Started with Next.js 14 - Complete Guide | ItsIndianGuy",
+    description:
+      "Learn how to build modern web applications with Next.js 14's latest features including App Router, Server Components, and improved performance.",
+    url: "https://www.itsindianguy.in/blog/nextjs-14",
+    siteName: "ItsIndianGuy - Programming Tutorials India",
+    locale: "en_IN",
+    type: "article",
+    images: [
+      {
+        url: "https://cdn-icons-png.flaticon.com/512/5968/5968667.png",
+        width: 1200,
+        height: 630,
+        alt: "Getting Started with Next.js 14 - Complete Guide",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Getting Started with Next.js 14 - Complete Guide | ItsIndianGuy",
+    description:
+      "Learn how to build modern web applications with Next.js 14's latest features including App Router and Server Components.",
+    creator: "@itsindianguy",
+    site: "@itsindianguy",
+    images: ["https://cdn-icons-png.flaticon.com/512/5968/5968667.png"],
+  },
 };
 
 export default function NextJS14BlogPost() {
@@ -14,7 +59,7 @@ export default function NextJS14BlogPost() {
       <div className="container mx-auto px-4 py-16 max-w-4xl">
         {/* Back Button */}
         <Link
-          href="/"
+          href="/blog"
           className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:underline mb-8"
         >
           <svg
@@ -30,7 +75,7 @@ export default function NextJS14BlogPost() {
               d="M15 19l-7-7 7-7"
             />
           </svg>
-          Back to Home
+          Back to Blog
         </Link>
 
         {/* Header */}
@@ -61,10 +106,17 @@ export default function NextJS14BlogPost() {
               Introduction
             </h2>
             <p className="text-neutral-600 dark:text-neutral-300 mb-4">
-              Next.js 14 represents a significant milestone in modern web development, introducing powerful features that make building production-ready applications easier and faster than ever. This guide will walk you through the essential features and help you get started with Next.js 14.
+              Next.js 14 represents a significant milestone in modern web
+              development, introducing powerful features that make building
+              production-ready applications easier and faster than ever. This
+              guide will walk you through the essential features and help you
+              get started with Next.js 14.
             </p>
             <p className="text-neutral-600 dark:text-neutral-300">
-              Whether you&apos;re migrating from an older version or starting fresh, Next.js 14 offers improved performance, better developer experience, and new capabilities that will transform how you build web applications.
+              Whether you&apos;re migrating from an older version or starting
+              fresh, Next.js 14 offers improved performance, better developer
+              experience, and new capabilities that will transform how you build
+              web applications.
             </p>
           </div>
 
@@ -78,7 +130,10 @@ export default function NextJS14BlogPost() {
                   1. Turbopack (Stable)
                 </h3>
                 <p>
-                  Next.js 14 marks Turbopack as stable for local development, offering up to 53% faster local server startup and 94% faster code updates with Fast Refresh. This Rust-powered bundler significantly improves the development experience.
+                  Next.js 14 marks Turbopack as stable for local development,
+                  offering up to 53% faster local server startup and 94% faster
+                  code updates with Fast Refresh. This Rust-powered bundler
+                  significantly improves the development experience.
                 </p>
               </div>
               <div>
@@ -86,7 +141,10 @@ export default function NextJS14BlogPost() {
                   2. Server Actions (Stable)
                 </h3>
                 <p>
-                  Server Actions are now stable, allowing you to write server-side mutations directly in your React components. This eliminates the need for separate API routes for simple data mutations.
+                  Server Actions are now stable, allowing you to write
+                  server-side mutations directly in your React components. This
+                  eliminates the need for separate API routes for simple data
+                  mutations.
                 </p>
               </div>
               <div>
@@ -94,7 +152,9 @@ export default function NextJS14BlogPost() {
                   3. Partial Prerendering (Preview)
                 </h3>
                 <p>
-                  A groundbreaking feature that combines static and dynamic rendering on the same page. Components can be rendered statically at build time while keeping other parts dynamic.
+                  A groundbreaking feature that combines static and dynamic
+                  rendering on the same page. Components can be rendered
+                  statically at build time while keeping other parts dynamic.
                 </p>
               </div>
             </div>
@@ -115,7 +175,8 @@ export default function NextJS14BlogPost() {
                   </code>
                 </div>
                 <p className="mt-2">
-                  The setup wizard will guide you through selecting TypeScript, ESLint, Tailwind CSS, and the App Router.
+                  The setup wizard will guide you through selecting TypeScript,
+                  ESLint, Tailwind CSS, and the App Router.
                 </p>
               </div>
               <div>
@@ -123,7 +184,17 @@ export default function NextJS14BlogPost() {
                   Project Structure
                 </h3>
                 <p>
-                  Next.js 14 uses the App Router by default, with a file-based routing system in the <code className="bg-neutral-200 dark:bg-neutral-700 px-2 py-1 rounded">app</code> directory. Each folder represents a route, and special files like <code className="bg-neutral-200 dark:bg-neutral-700 px-2 py-1 rounded">page.tsx</code> define the UI for that route.
+                  Next.js 14 uses the App Router by default, with a file-based
+                  routing system in the{" "}
+                  <code className="bg-neutral-200 dark:bg-neutral-700 px-2 py-1 rounded">
+                    app
+                  </code>{" "}
+                  directory. Each folder represents a route, and special files
+                  like{" "}
+                  <code className="bg-neutral-200 dark:bg-neutral-700 px-2 py-1 rounded">
+                    page.tsx
+                  </code>{" "}
+                  define the UI for that route.
                 </p>
               </div>
             </div>
@@ -139,7 +210,13 @@ export default function NextJS14BlogPost() {
                   Server and Client Components
                 </h3>
                 <p>
-                  By default, all components in the App Router are Server Components. Use the <code className="bg-neutral-200 dark:bg-neutral-700 px-2 py-1 rounded">&apos;use client&apos;</code> directive at the top of a file to create Client Components when you need interactivity or browser APIs.
+                  By default, all components in the App Router are Server
+                  Components. Use the{" "}
+                  <code className="bg-neutral-200 dark:bg-neutral-700 px-2 py-1 rounded">
+                    &apos;use client&apos;
+                  </code>{" "}
+                  directive at the top of a file to create Client Components
+                  when you need interactivity or browser APIs.
                 </p>
               </div>
               <div>
@@ -147,7 +224,9 @@ export default function NextJS14BlogPost() {
                   Data Fetching
                 </h3>
                 <p>
-                  Next.js 14 simplifies data fetching with async/await in Server Components. You can fetch data directly in your components without useEffect or separate API routes.
+                  Next.js 14 simplifies data fetching with async/await in Server
+                  Components. You can fetch data directly in your components
+                  without useEffect or separate API routes.
                 </p>
               </div>
               <div>
@@ -155,7 +234,12 @@ export default function NextJS14BlogPost() {
                   Layouts and Templates
                 </h3>
                 <p>
-                  Create shared UI with <code className="bg-neutral-200 dark:bg-neutral-700 px-2 py-1 rounded">layout.tsx</code> files that wrap multiple pages. Layouts preserve state and don&apos;t re-render on navigation.
+                  Create shared UI with{" "}
+                  <code className="bg-neutral-200 dark:bg-neutral-700 px-2 py-1 rounded">
+                    layout.tsx
+                  </code>{" "}
+                  files that wrap multiple pages. Layouts preserve state and
+                  don&apos;t re-render on navigation.
                 </p>
               </div>
             </div>
@@ -168,11 +252,15 @@ export default function NextJS14BlogPost() {
             <ul className="space-y-3 text-neutral-600 dark:text-neutral-300">
               <li className="flex items-start">
                 <span className="text-blue-600 dark:text-blue-400 mr-2">✓</span>
-                <span>Use Server Components by default for better performance</span>
+                <span>
+                  Use Server Components by default for better performance
+                </span>
               </li>
               <li className="flex items-start">
                 <span className="text-blue-600 dark:text-blue-400 mr-2">✓</span>
-                <span>Implement proper error boundaries with error.tsx files</span>
+                <span>
+                  Implement proper error boundaries with error.tsx files
+                </span>
               </li>
               <li className="flex items-start">
                 <span className="text-blue-600 dark:text-blue-400 mr-2">✓</span>
@@ -194,7 +282,11 @@ export default function NextJS14BlogPost() {
               Conclusion
             </h2>
             <p className="text-neutral-600 dark:text-neutral-300">
-              Next.js 14 brings significant improvements to performance, developer experience, and capabilities. With Turbopack, Server Actions, and Partial Prerendering, building modern web applications has never been more efficient. Start your Next.js 14 journey today and experience the future of web development.
+              Next.js 14 brings significant improvements to performance,
+              developer experience, and capabilities. With Turbopack, Server
+              Actions, and Partial Prerendering, building modern web
+              applications has never been more efficient. Start your Next.js 14
+              journey today and experience the future of web development.
             </p>
           </div>
         </div>
@@ -202,4 +294,3 @@ export default function NextJS14BlogPost() {
     </article>
   );
 }
-

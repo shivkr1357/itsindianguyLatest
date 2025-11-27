@@ -4,8 +4,53 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Technology and AI: Transforming Our Everyday Lives | ItsIndianGuy",
-  description: "Discover how artificial intelligence and modern technology are seamlessly integrated into our daily routines, making life easier, smarter, and more connected than ever before.",
-  keywords: "AI in daily life, technology impact, artificial intelligence, smart technology, digital transformation, AI lifestyle, technology trends",
+  description:
+    "Discover how artificial intelligence and modern technology are seamlessly integrated into our daily routines, making life easier, smarter, and more connected than ever before.",
+  keywords:
+    "AI in daily life, technology impact, artificial intelligence, smart technology, digital transformation, AI lifestyle, technology trends, ItsIndianGuy blog",
+  authors: [{ name: "ItsIndianGuy", url: "https://www.itsindianguy.in/about" }],
+  creator: "ItsIndianGuy",
+  publisher: "ItsIndianGuy",
+  alternates: {
+    canonical: "https://www.itsindianguy.in/blog/ai-technology-everyday-life",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    title: "Technology and AI: Transforming Our Everyday Lives | ItsIndianGuy",
+    description:
+      "Discover how artificial intelligence and modern technology are seamlessly integrated into our daily routines, making life easier, smarter, and more connected than ever before.",
+    url: "https://www.itsindianguy.in/blog/ai-technology-everyday-life",
+    siteName: "ItsIndianGuy - Programming Tutorials India",
+    locale: "en_IN",
+    type: "article",
+    images: [
+      {
+        url: "https://cdn-icons-png.flaticon.com/512/1995/1995515.png",
+        width: 1200,
+        height: 630,
+        alt: "Technology and AI: Transforming Our Everyday Lives",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Technology and AI: Transforming Our Everyday Lives | ItsIndianGuy",
+    description:
+      "Discover how artificial intelligence and modern technology are seamlessly integrated into our daily routines, making life easier, smarter, and more connected.",
+    creator: "@itsindianguy",
+    site: "@itsindianguy",
+    images: ["https://cdn-icons-png.flaticon.com/512/1995/1995515.png"],
+  },
 };
 
 export default function AITechnologyEverydayLifeBlogPost() {

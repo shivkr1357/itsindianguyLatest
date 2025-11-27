@@ -4,8 +4,53 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Node.js Performance Tips - Optimization Guide | ItsIndianGuy",
-  description: "Optimize your Node.js applications for better performance. Learn caching, clustering, profiling, and best practices for high-performance Node.js apps.",
-  keywords: "Node.js performance, Node.js optimization, Node.js clustering, caching, profiling, performance tuning",
+  description:
+    "Optimize your Node.js applications for better performance. Learn caching, clustering, profiling, and best practices for high-performance Node.js apps.",
+  keywords:
+    "Node.js performance, Node.js optimization, Node.js clustering, caching, profiling, performance tuning, ItsIndianGuy blog",
+  authors: [{ name: "ItsIndianGuy", url: "https://www.itsindianguy.in/about" }],
+  creator: "ItsIndianGuy",
+  publisher: "ItsIndianGuy",
+  alternates: {
+    canonical: "https://www.itsindianguy.in/blog/nodejs-performance",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    title: "Node.js Performance Tips - Optimization Guide | ItsIndianGuy",
+    description:
+      "Optimize your Node.js applications for better performance. Learn caching, clustering, profiling, and best practices for high-performance Node.js apps.",
+    url: "https://www.itsindianguy.in/blog/nodejs-performance",
+    siteName: "ItsIndianGuy - Programming Tutorials India",
+    locale: "en_IN",
+    type: "article",
+    images: [
+      {
+        url: "https://www.itsindianguy.in/og-nodejs-performance.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Node.js Performance Tips - Optimization Guide",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Node.js Performance Tips - Optimization Guide | ItsIndianGuy",
+    description:
+      "Optimize your Node.js applications for better performance. Learn caching, clustering, profiling, and best practices.",
+    creator: "@itsindianguy",
+    site: "@itsindianguy",
+    images: ["https://www.itsindianguy.in/og-nodejs-performance.jpg"],
+  },
 };
 
 export default function NodeJSPerformanceBlogPost() {
@@ -13,13 +58,13 @@ export default function NodeJSPerformanceBlogPost() {
     <article className="min-h-screen bg-gradient-to-b from-neutral-50 to-neutral-100 dark:from-neutral-900 dark:to-neutral-800">
       <div className="container mx-auto px-4 py-16 max-w-4xl">
         <Link
-          href="/"
+          href="/blog"
           className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:underline mb-8"
         >
           <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
-          Back to Home
+          Back to Blog
         </Link>
 
         <header className="mb-12">

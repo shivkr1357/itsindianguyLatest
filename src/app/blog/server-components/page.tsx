@@ -4,8 +4,53 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "React Server Components Explained - Complete Guide | ItsIndianGuy",
-  description: "Deep dive into React Server Components and their benefits. Learn how to use Server Components to build faster, more efficient React applications.",
-  keywords: "React Server Components, RSC, Next.js, Server Components, React 18, performance optimization",
+  description:
+    "Deep dive into React Server Components and their benefits. Learn how to use Server Components to build faster, more efficient React applications.",
+  keywords:
+    "React Server Components, RSC, Next.js, Server Components, React 18, performance optimization, ItsIndianGuy blog",
+  authors: [{ name: "ItsIndianGuy", url: "https://www.itsindianguy.in/about" }],
+  creator: "ItsIndianGuy",
+  publisher: "ItsIndianGuy",
+  alternates: {
+    canonical: "https://www.itsindianguy.in/blog/server-components",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    title: "React Server Components Explained - Complete Guide | ItsIndianGuy",
+    description:
+      "Deep dive into React Server Components and their benefits. Learn how to use Server Components to build faster, more efficient React applications.",
+    url: "https://www.itsindianguy.in/blog/server-components",
+    siteName: "ItsIndianGuy - Programming Tutorials India",
+    locale: "en_IN",
+    type: "article",
+    images: [
+      {
+        url: "https://cdn-icons-png.flaticon.com/512/2103/2103648.png",
+        width: 1200,
+        height: 630,
+        alt: "React Server Components Explained - Complete Guide",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "React Server Components Explained - Complete Guide | ItsIndianGuy",
+    description:
+      "Deep dive into React Server Components and their benefits. Learn how to use Server Components to build faster applications.",
+    creator: "@itsindianguy",
+    site: "@itsindianguy",
+    images: ["https://cdn-icons-png.flaticon.com/512/2103/2103648.png"],
+  },
 };
 
 export default function ServerComponentsBlogPost() {
@@ -14,7 +59,7 @@ export default function ServerComponentsBlogPost() {
       <div className="container mx-auto px-4 py-16 max-w-4xl">
         {/* Back Button */}
         <Link
-          href="/"
+          href="/blog"
           className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:underline mb-8"
         >
           <svg
@@ -30,7 +75,7 @@ export default function ServerComponentsBlogPost() {
               d="M15 19l-7-7 7-7"
             />
           </svg>
-          Back to Home
+          Back to Blog
         </Link>
 
         {/* Header */}

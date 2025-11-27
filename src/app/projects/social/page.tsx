@@ -4,8 +4,53 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Social Media App - Full-Featured Social Network | ItsIndianGuy",
-  description: "Full-featured social network with real-time updates built with Next.js, GraphQL, and MongoDB. Learn to build modern social platforms.",
-  keywords: "social media app, Next.js, GraphQL, MongoDB, real-time updates, social network",
+  description:
+    "Full-featured social network with real-time updates built with Next.js, GraphQL, and MongoDB. Learn to build modern social platforms.",
+  keywords:
+    "social media app, Next.js, GraphQL, MongoDB, real-time updates, social network, ItsIndianGuy projects",
+  authors: [{ name: "ItsIndianGuy", url: "https://www.itsindianguy.in/about" }],
+  creator: "ItsIndianGuy",
+  publisher: "ItsIndianGuy",
+  alternates: {
+    canonical: "https://www.itsindianguy.in/projects/social",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    title: "Social Media App - Full-Featured Social Network | ItsIndianGuy",
+    description:
+      "Full-featured social network with real-time updates. Learn to build modern social platforms with Next.js, GraphQL, and MongoDB.",
+    url: "https://www.itsindianguy.in/projects/social",
+    siteName: "ItsIndianGuy - Programming Tutorials India",
+    locale: "en_IN",
+    type: "website",
+    images: [
+      {
+        url: "https://www.itsindianguy.in/og-social.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Social Media App - Full-Featured Social Network",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Social Media App - Full-Featured Social Network | ItsIndianGuy",
+    description:
+      "Full-featured social network with real-time updates built with Next.js, GraphQL, and MongoDB.",
+    creator: "@itsindianguy",
+    site: "@itsindianguy",
+    images: ["https://www.itsindianguy.in/og-social.jpg"],
+  },
 };
 
 export default function SocialPage() {

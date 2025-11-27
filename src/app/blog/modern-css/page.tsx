@@ -4,8 +4,53 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Modern CSS Techniques - Latest Features & Best Practices | ItsIndianGuy",
-  description: "Exploring the latest CSS features and best practices including Container Queries, CSS Grid, Flexbox, and modern layout techniques.",
-  keywords: "modern CSS, CSS Grid, Flexbox, Container Queries, CSS best practices, responsive design",
+  description:
+    "Exploring the latest CSS features and best practices including Container Queries, CSS Grid, Flexbox, and modern layout techniques.",
+  keywords:
+    "modern CSS, CSS Grid, Flexbox, Container Queries, CSS best practices, responsive design, ItsIndianGuy blog",
+  authors: [{ name: "ItsIndianGuy", url: "https://www.itsindianguy.in/about" }],
+  creator: "ItsIndianGuy",
+  publisher: "ItsIndianGuy",
+  alternates: {
+    canonical: "https://www.itsindianguy.in/blog/modern-css",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    title: "Modern CSS Techniques - Latest Features & Best Practices | ItsIndianGuy",
+    description:
+      "Exploring the latest CSS features and best practices including Container Queries, CSS Grid, Flexbox, and modern layout techniques.",
+    url: "https://www.itsindianguy.in/blog/modern-css",
+    siteName: "ItsIndianGuy - Programming Tutorials India",
+    locale: "en_IN",
+    type: "article",
+    images: [
+      {
+        url: "https://www.itsindianguy.in/og-modern-css.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Modern CSS Techniques - Latest Features & Best Practices",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Modern CSS Techniques - Latest Features & Best Practices | ItsIndianGuy",
+    description:
+      "Exploring the latest CSS features and best practices including Container Queries, CSS Grid, Flexbox, and modern layout techniques.",
+    creator: "@itsindianguy",
+    site: "@itsindianguy",
+    images: ["https://www.itsindianguy.in/og-modern-css.jpg"],
+  },
 };
 
 export default function ModernCSSBlogPost() {

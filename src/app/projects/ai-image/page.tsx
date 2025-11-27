@@ -4,8 +4,53 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "AI Image Generator - Machine Learning Project | ItsIndianGuy",
-  description: "Generate unique images using AI and machine learning with Python and TensorFlow. Explore the world of generative AI and deep learning.",
-  keywords: "AI image generator, machine learning, TensorFlow, OpenAI, DALL-E, generative AI, deep learning",
+  description:
+    "Generate unique images using AI and machine learning with Python and TensorFlow. Explore the world of generative AI and deep learning.",
+  keywords:
+    "AI image generator, machine learning, TensorFlow, OpenAI, DALL-E, generative AI, deep learning, ItsIndianGuy projects, AI projects",
+  authors: [{ name: "ItsIndianGuy", url: "https://www.itsindianguy.in/about" }],
+  creator: "ItsIndianGuy",
+  publisher: "ItsIndianGuy",
+  alternates: {
+    canonical: "https://www.itsindianguy.in/projects/ai-image",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    title: "AI Image Generator - Machine Learning Project | ItsIndianGuy",
+    description:
+      "Generate unique images using AI and machine learning. Explore generative AI and deep learning with Python and TensorFlow.",
+    url: "https://www.itsindianguy.in/projects/ai-image",
+    siteName: "ItsIndianGuy - Programming Tutorials India",
+    locale: "en_IN",
+    type: "website",
+    images: [
+      {
+        url: "https://www.itsindianguy.in/og-ai-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "AI Image Generator - Machine Learning Project",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AI Image Generator - Machine Learning Project | ItsIndianGuy",
+    description:
+      "Generate unique images using AI and machine learning with Python and TensorFlow.",
+    creator: "@itsindianguy",
+    site: "@itsindianguy",
+    images: ["https://www.itsindianguy.in/og-ai-image.jpg"],
+  },
 };
 
 export default function AIImagePage() {

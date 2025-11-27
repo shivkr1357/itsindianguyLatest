@@ -13,6 +13,11 @@ module.exports = {
     "/login",
     "/signup",
     "/forgot-password",
+    // Exclude duplicate nested paths
+    "/blog/*/blog/*",
+    "/projects/*/projects/*",
+    "/tutorials/*/tutorials/*",
+    "/security/security",
   ],
   additionalPaths: async (config) => {
     const result = [];
@@ -165,6 +170,16 @@ module.exports = {
   changefreq: "weekly",
   priority: 0.7,
   transform: async (config, path) => {
+    // Exclude duplicate nested paths
+    if (
+      path.match(/\/blog\/[^/]+\/blog\//) ||
+      path.match(/\/projects\/[^/]+\/projects\//) ||
+      path.match(/\/tutorials\/[^/]+\/tutorials\//) ||
+      path === "/security/security"
+    ) {
+      return null; // Exclude from sitemap
+    }
+
     // Custom priority and changefreq based on path
     let priority = 0.7;
     let changefreq = "weekly";

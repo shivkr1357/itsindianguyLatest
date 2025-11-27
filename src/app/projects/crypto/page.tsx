@@ -4,8 +4,53 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Crypto Dashboard - Real-Time Cryptocurrency Tracker | ItsIndianGuy",
-  description: "Real-time cryptocurrency tracking and analytics dashboard built with React and Chart.js. Monitor crypto prices, trends, and portfolio performance.",
-  keywords: "cryptocurrency, crypto dashboard, Bitcoin, Ethereum, Chart.js, CoinGecko API, portfolio tracker",
+  description:
+    "Real-time cryptocurrency tracking and analytics dashboard built with React and Chart.js. Monitor crypto prices, trends, and portfolio performance.",
+  keywords:
+    "cryptocurrency, crypto dashboard, Bitcoin, Ethereum, Chart.js, CoinGecko API, portfolio tracker, ItsIndianGuy projects",
+  authors: [{ name: "ItsIndianGuy", url: "https://www.itsindianguy.in/about" }],
+  creator: "ItsIndianGuy",
+  publisher: "ItsIndianGuy",
+  alternates: {
+    canonical: "https://www.itsindianguy.in/projects/crypto",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    title: "Crypto Dashboard - Real-Time Cryptocurrency Tracker | ItsIndianGuy",
+    description:
+      "Real-time cryptocurrency tracking and analytics dashboard. Monitor crypto prices, trends, and portfolio performance with React and Chart.js.",
+    url: "https://www.itsindianguy.in/projects/crypto",
+    siteName: "ItsIndianGuy - Programming Tutorials India",
+    locale: "en_IN",
+    type: "website",
+    images: [
+      {
+        url: "https://www.itsindianguy.in/og-crypto.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Crypto Dashboard - Real-Time Cryptocurrency Tracker",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Crypto Dashboard - Real-Time Cryptocurrency Tracker | ItsIndianGuy",
+    description:
+      "Real-time cryptocurrency tracking and analytics dashboard built with React and Chart.js.",
+    creator: "@itsindianguy",
+    site: "@itsindianguy",
+    images: ["https://www.itsindianguy.in/og-crypto.jpg"],
+  },
 };
 
 export default function CryptoPage() {

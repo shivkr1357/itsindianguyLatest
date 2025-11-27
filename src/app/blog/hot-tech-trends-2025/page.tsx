@@ -4,8 +4,53 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Hot Tech Trends 2025: What Every Developer Should Know | ItsIndianGuy",
-  description: "Discover the hottest technology trends shaping 2025 - from AI breakthroughs to quantum computing, Web3 innovations, and the future of software development.",
-  keywords: "tech trends 2025, technology trends, AI trends, quantum computing, Web3, software development trends, programming trends 2025",
+  description:
+    "Discover the hottest technology trends shaping 2025 - from AI breakthroughs to quantum computing, Web3 innovations, and the future of software development.",
+  keywords:
+    "tech trends 2025, technology trends, AI trends, quantum computing, Web3, software development trends, programming trends 2025, ItsIndianGuy blog",
+  authors: [{ name: "ItsIndianGuy", url: "https://www.itsindianguy.in/about" }],
+  creator: "ItsIndianGuy",
+  publisher: "ItsIndianGuy",
+  alternates: {
+    canonical: "https://www.itsindianguy.in/blog/hot-tech-trends-2025",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    title: "Hot Tech Trends 2025: What Every Developer Should Know | ItsIndianGuy",
+    description:
+      "Discover the hottest technology trends shaping 2025 - from AI breakthroughs to quantum computing, Web3 innovations, and the future of software development.",
+    url: "https://www.itsindianguy.in/blog/hot-tech-trends-2025",
+    siteName: "ItsIndianGuy - Programming Tutorials India",
+    locale: "en_IN",
+    type: "article",
+    images: [
+      {
+        url: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
+        width: 1200,
+        height: 630,
+        alt: "Hot Tech Trends 2025: What Every Developer Should Know",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Hot Tech Trends 2025: What Every Developer Should Know | ItsIndianGuy",
+    description:
+      "Discover the hottest technology trends shaping 2025 - from AI breakthroughs to quantum computing, Web3 innovations, and the future of software development.",
+    creator: "@itsindianguy",
+    site: "@itsindianguy",
+    images: ["https://cdn-icons-png.flaticon.com/512/3135/3135715.png"],
+  },
 };
 
 export default function HotTechTrends2025BlogPost() {

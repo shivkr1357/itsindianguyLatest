@@ -4,8 +4,53 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "AI Agents and Autonomous Systems: The Future of Intelligent Automation in 2025 | ItsIndianGuy",
-  description: "Explore how AI agents and autonomous systems are revolutionizing industries in 2025, from autonomous vehicles to intelligent assistants and self-operating software agents.",
-  keywords: "AI agents, autonomous systems, AI automation, intelligent agents, autonomous vehicles, AI assistants, 2025 tech trends, machine learning agents",
+  description:
+    "Explore how AI agents and autonomous systems are revolutionizing industries in 2025, from autonomous vehicles to intelligent assistants and self-operating software agents.",
+  keywords:
+    "AI agents, autonomous systems, AI automation, intelligent agents, autonomous vehicles, AI assistants, 2025 tech trends, machine learning agents, ItsIndianGuy blog",
+  authors: [{ name: "ItsIndianGuy", url: "https://www.itsindianguy.in/about" }],
+  creator: "ItsIndianGuy",
+  publisher: "ItsIndianGuy",
+  alternates: {
+    canonical: "https://www.itsindianguy.in/blog/ai-agents-autonomous-systems-2025",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    title: "AI Agents and Autonomous Systems: The Future of Intelligent Automation in 2025 | ItsIndianGuy",
+    description:
+      "Explore how AI agents and autonomous systems are revolutionizing industries in 2025, from autonomous vehicles to intelligent assistants and self-operating software agents.",
+    url: "https://www.itsindianguy.in/blog/ai-agents-autonomous-systems-2025",
+    siteName: "ItsIndianGuy - Programming Tutorials India",
+    locale: "en_IN",
+    type: "article",
+    images: [
+      {
+        url: "https://cdn-icons-png.flaticon.com/512/2103/2103644.png",
+        width: 1200,
+        height: 630,
+        alt: "AI Agents and Autonomous Systems: The Future of Intelligent Automation in 2025",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AI Agents and Autonomous Systems: The Future of Intelligent Automation in 2025 | ItsIndianGuy",
+    description:
+      "Explore how AI agents and autonomous systems are revolutionizing industries in 2025, from autonomous vehicles to intelligent assistants.",
+    creator: "@itsindianguy",
+    site: "@itsindianguy",
+    images: ["https://cdn-icons-png.flaticon.com/512/2103/2103644.png"],
+  },
 };
 
 export default function AIAgentsAutonomousSystems2025BlogPost() {

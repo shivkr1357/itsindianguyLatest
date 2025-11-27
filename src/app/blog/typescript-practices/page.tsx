@@ -4,8 +4,53 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "TypeScript Best Practices - Essential Patterns | ItsIndianGuy",
-  description: "Essential TypeScript patterns and practices for better code. Learn advanced TypeScript techniques to write safer, more maintainable applications.",
-  keywords: "TypeScript best practices, TypeScript patterns, TypeScript tips, type safety, TypeScript advanced",
+  description:
+    "Essential TypeScript patterns and practices for better code. Learn advanced TypeScript techniques to write safer, more maintainable applications.",
+  keywords:
+    "TypeScript best practices, TypeScript patterns, TypeScript tips, type safety, TypeScript advanced, ItsIndianGuy blog",
+  authors: [{ name: "ItsIndianGuy", url: "https://www.itsindianguy.in/about" }],
+  creator: "ItsIndianGuy",
+  publisher: "ItsIndianGuy",
+  alternates: {
+    canonical: "https://www.itsindianguy.in/blog/typescript-practices",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    title: "TypeScript Best Practices - Essential Patterns | ItsIndianGuy",
+    description:
+      "Essential TypeScript patterns and practices for better code. Learn advanced TypeScript techniques to write safer, more maintainable applications.",
+    url: "https://www.itsindianguy.in/blog/typescript-practices",
+    siteName: "ItsIndianGuy - Programming Tutorials India",
+    locale: "en_IN",
+    type: "article",
+    images: [
+      {
+        url: "https://cdn-icons-png.flaticon.com/512/919/919832.png",
+        width: 1200,
+        height: 630,
+        alt: "TypeScript Best Practices - Essential Patterns",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "TypeScript Best Practices - Essential Patterns | ItsIndianGuy",
+    description:
+      "Essential TypeScript patterns and practices for better code. Learn advanced TypeScript techniques.",
+    creator: "@itsindianguy",
+    site: "@itsindianguy",
+    images: ["https://cdn-icons-png.flaticon.com/512/919/919832.png"],
+  },
 };
 
 export default function TypeScriptPracticesBlogPost() {
@@ -13,13 +58,13 @@ export default function TypeScriptPracticesBlogPost() {
     <article className="min-h-screen bg-gradient-to-b from-neutral-50 to-neutral-100 dark:from-neutral-900 dark:to-neutral-800">
       <div className="container mx-auto px-4 py-16 max-w-4xl">
         <Link
-          href="/"
+          href="/blog"
           className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:underline mb-8"
         >
           <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
-          Back to Home
+          Back to Blog
         </Link>
 
         <header className="mb-12">

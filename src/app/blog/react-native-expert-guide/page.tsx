@@ -4,8 +4,53 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "React Native Expert Guide: Building Cross-Platform Mobile Apps | ItsIndianGuy",
-  description: "Master React Native development with expert tips, best practices, and advanced techniques for building high-performance mobile applications.",
-  keywords: "React Native, mobile app development, cross-platform apps, React Native tutorial, mobile development guide, iOS Android development, React Native best practices",
+  description:
+    "Master React Native development with expert tips, best practices, and advanced techniques for building high-performance mobile applications.",
+  keywords:
+    "React Native, mobile app development, cross-platform apps, React Native tutorial, mobile development guide, iOS Android development, React Native best practices, ItsIndianGuy blog",
+  authors: [{ name: "ItsIndianGuy", url: "https://www.itsindianguy.in/about" }],
+  creator: "ItsIndianGuy",
+  publisher: "ItsIndianGuy",
+  alternates: {
+    canonical: "https://www.itsindianguy.in/blog/react-native-expert-guide",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    title: "React Native Expert Guide: Building Cross-Platform Mobile Apps | ItsIndianGuy",
+    description:
+      "Master React Native development with expert tips, best practices, and advanced techniques for building high-performance mobile applications.",
+    url: "https://www.itsindianguy.in/blog/react-native-expert-guide",
+    siteName: "ItsIndianGuy - Programming Tutorials India",
+    locale: "en_IN",
+    type: "article",
+    images: [
+      {
+        url: "https://cdn-icons-png.flaticon.com/512/2111/2111432.png",
+        width: 1200,
+        height: 630,
+        alt: "React Native Expert Guide: Building Cross-Platform Mobile Apps",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "React Native Expert Guide: Building Cross-Platform Mobile Apps | ItsIndianGuy",
+    description:
+      "Master React Native development with expert tips, best practices, and advanced techniques for building high-performance mobile applications.",
+    creator: "@itsindianguy",
+    site: "@itsindianguy",
+    images: ["https://cdn-icons-png.flaticon.com/512/2111/2111432.png"],
+  },
 };
 
 export default function ReactNativeExpertGuideBlogPost() {
