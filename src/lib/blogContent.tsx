@@ -13,7 +13,7 @@ export const blogPosts: { [key: string]: BlogPost } = {
     title: "Hot Tech Trends 2025: What Every Developer Should Know",
     description:
       "Discover the hottest technology trends shaping 2025 - from AI breakthroughs to quantum computing, Web3 innovations, and the future of software development.",
-    image: "https://cdn-icons-png.flaticon.com/512/2103/2103832.png",
+    image: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
     author: "Shiv Shankar Prasad",
     date: "2025-11-26",
     readTime: "15 min read",
@@ -23,7 +23,7 @@ export const blogPosts: { [key: string]: BlogPost } = {
     title: "Technology and AI: Transforming Our Everyday Lives",
     description:
       "Discover how artificial intelligence and modern technology are seamlessly integrated into our daily routines, making life easier, smarter, and more connected than ever before.",
-    image: "https://cdn-icons-png.flaticon.com/512/2103/2103832.png",
+    image: "https://cdn-icons-png.flaticon.com/512/1995/1995515.png",
     author: "Shiv Shankar Prasad",
     date: "2025-11-23",
     readTime: "12 min read",
@@ -33,7 +33,7 @@ export const blogPosts: { [key: string]: BlogPost } = {
     title: "Getting Started with Next.js 14",
     description:
       "Learn the fundamentals of Next.js 14 and build your first application with the latest features and improvements.",
-    image: "https://cdn-icons-png.flaticon.com/512/6062/6062646.png",
+    image: "https://cdn-icons-png.flaticon.com/512/5968/5968666.png",
     author: "Shiv Shankar Prasad",
     date: "2024-12-15",
     readTime: "8 min read",
@@ -53,7 +53,7 @@ export const blogPosts: { [key: string]: BlogPost } = {
     title: "React Performance Optimization Tips",
     description:
       "Essential techniques to optimize your React applications for better performance and user experience.",
-    image: "https://cdn-icons-png.flaticon.com/512/1183/1183672.png",
+    image: "https://cdn-icons-png.flaticon.com/512/2103/2103634.png",
     author: "Shiv Shankar Prasad",
     date: "2024-12-08",
     readTime: "10 min read",
@@ -63,7 +63,7 @@ export const blogPosts: { [key: string]: BlogPost } = {
     title: "Building REST APIs with Node.js",
     description:
       "Complete guide to building scalable REST APIs using Node.js, Express, and MongoDB.",
-    image: "https://cdn-icons-png.flaticon.com/512/5968/5968322.png",
+    image: "https://cdn-icons-png.flaticon.com/512/2164/2164837.png",
     author: "Shiv Shankar Prasad",
     date: "2024-12-05",
     readTime: "15 min read",
@@ -73,7 +73,7 @@ export const blogPosts: { [key: string]: BlogPost } = {
     title: "Introduction to Machine Learning",
     description:
       "Start your journey into machine learning with practical examples and real-world applications.",
-    image: "https://cdn-icons-png.flaticon.com/512/2103/2103832.png",
+    image: "https://cdn-icons-png.flaticon.com/512/2103/2103633.png",
     author: "Shiv Shankar Prasad",
     date: "2024-12-01",
     readTime: "20 min read",
@@ -123,7 +123,7 @@ export const blogPosts: { [key: string]: BlogPost } = {
     title: "TypeScript Best Practices",
     description:
       "Write better TypeScript code with these proven best practices and design patterns.",
-    image: "https://cdn-icons-png.flaticon.com/512/5968/5968381.png",
+    image: "https://cdn-icons-png.flaticon.com/512/2103/2103655.png",
     author: "Shiv Shankar Prasad",
     date: "2024-11-18",
     readTime: "17 min read",
@@ -133,7 +133,7 @@ export const blogPosts: { [key: string]: BlogPost } = {
     title: "Understanding React Server Components",
     description:
       "Deep dive into React Server Components and how they revolutionize React applications.",
-    image: "https://cdn-icons-png.flaticon.com/512/1183/1183672.png",
+    image: "https://cdn-icons-png.flaticon.com/512/2103/2103648.png",
     author: "Shiv Shankar Prasad",
     date: "2024-11-15",
     readTime: "19 min read",
@@ -143,7 +143,7 @@ export const blogPosts: { [key: string]: BlogPost } = {
     title: "What's New in Next.js 14",
     description:
       "Explore the latest features and improvements in Next.js 14 including Turbopack and Server Actions.",
-    image: "https://cdn-icons-png.flaticon.com/512/6062/6062646.png",
+    image: "https://cdn-icons-png.flaticon.com/512/5968/5968667.png",
     author: "Shiv Shankar Prasad",
     date: "2024-11-12",
     readTime: "13 min read",
@@ -183,7 +183,7 @@ export const blogPosts: { [key: string]: BlogPost } = {
     title: "React Native Expert Guide: Building Cross-Platform Mobile Apps",
     description:
       "Master React Native development with expert tips, best practices, and advanced techniques for building high-performance mobile applications.",
-    image: "https://cdn-icons-png.flaticon.com/512/1183/1183672.png",
+    image: "https://cdn-icons-png.flaticon.com/512/2111/2111432.png",
     author: "Shiv Shankar Prasad",
     date: "2024-12-20",
     readTime: "18 min read",
@@ -193,7 +193,7 @@ export const blogPosts: { [key: string]: BlogPost } = {
     title: "AI Agents and Autonomous Systems: The Future of Intelligent Automation in 2025",
     description:
       "Explore how AI agents and autonomous systems are revolutionizing industries in 2025, from autonomous vehicles to intelligent assistants and self-operating software agents.",
-    image: "https://cdn-icons-png.flaticon.com/512/2103/2103832.png",
+    image: "https://cdn-icons-png.flaticon.com/512/2103/2103644.png",
     author: "Shiv Shankar Prasad",
     date: "2025-11-27",
     readTime: "17 min read",

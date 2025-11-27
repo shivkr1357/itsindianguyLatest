@@ -37,7 +37,7 @@ export default function AIAgentsAutonomousSystems2025BlogPost() {
         <header className="mb-12">
           <div className="flex justify-center mb-8">
             <Image
-              src="https://cdn-icons-png.flaticon.com/512/2103/2103832.png"
+              src="https://cdn-icons-png.flaticon.com/512/2103/2103644.png"
               alt="AI Agents and Autonomous Systems"
               width={120}
               height={120}
