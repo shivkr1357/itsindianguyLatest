@@ -190,7 +190,8 @@ export const blogPosts: { [key: string]: BlogPost } = {
     slug: "react-native-expert-guide",
   },
   "ai-agents-autonomous-systems-2025": {
-    title: "AI Agents and Autonomous Systems: The Future of Intelligent Automation in 2025",
+    title:
+      "AI Agents and Autonomous Systems: The Future of Intelligent Automation in 2025",
     description:
       "Explore how AI agents and autonomous systems are revolutionizing industries in 2025, from autonomous vehicles to intelligent assistants and self-operating software agents.",
     image: "https://cdn-icons-png.flaticon.com/512/2103/2103644.png",
@@ -198,6 +199,16 @@ export const blogPosts: { [key: string]: BlogPost } = {
     date: "2025-11-27",
     readTime: "17 min read",
     slug: "ai-agents-autonomous-systems-2025",
+  },
+  "ai-assisted-development-2025": {
+    title: "AI-Assisted Development: Revolutionizing Coding in 2025",
+    description:
+      "Discover how AI-powered coding assistants like GitHub Copilot, ChatGPT, and Gemini are transforming software development, boosting productivity, and reshaping the future of programming.",
+    image: "https://cdn-icons-png.flaticon.com/512/2103/2103771.png",
+    author: "Shiv Shankar Prasad",
+    date: "2025-12-05",
+    readTime: "16 min read",
+    slug: "ai-assisted-development-2025",
   },
 };
 
