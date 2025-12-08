@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
+import CopyCodeButton from "@/components/Tutorials/CopyCodeButton";
 
 export const metadata: Metadata = {
   title: "SQL Database Tutorial - Complete Guide | ItsIndianGuy",
@@ -53,7 +54,27 @@ export default function SQLContentPage() {
               <p className="text-neutral-600 dark:text-neutral-300 mb-4">
                 Start with simple SELECT statements to retrieve data:
               </p>
-              <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
+              <div className="relative bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
+                <CopyCodeButton code={`-- Select all columns from a table
+SELECT * FROM users;
+
+-- Select specific columns
+SELECT id, name, email FROM users;
+
+-- Select with conditions
+SELECT * FROM users WHERE age > 18;
+
+-- Select with multiple conditions
+SELECT * FROM users 
+WHERE age > 18 AND status = 'active';
+
+-- Select with ordering
+SELECT * FROM users 
+ORDER BY created_at DESC;
+
+-- Select with limit
+SELECT * FROM users 
+LIMIT 10;`} />
                 <SyntaxHighlighter
                   language="sql"
                   style={vscDarkPlus}
@@ -95,18 +116,8 @@ LIMIT 10;`}
               <p className="text-neutral-600 dark:text-neutral-300 mb-4">
                 Learn to modify data in your database:
               </p>
-              <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <SyntaxHighlighter
-                  language="sql"
-                  style={vscDarkPlus}
-                  customStyle={{
-                    margin: 0,
-                    padding: 0,
-                    fontSize: "0.875rem",
-                    background: "transparent",
-                  }}
-                >
-                  {`-- Insert new record
+              <div className="relative bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
+                <CopyCodeButton code={`-- Insert new record
 INSERT INTO users (name, email, age)
 VALUES ('John Doe', 'john@example.com', 25);
 
@@ -137,18 +148,8 @@ WHERE id = 1;`}
               <p className="text-neutral-600 dark:text-neutral-300 mb-4">
                 Combine rows from two tables where there is a match:
               </p>
-              <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <SyntaxHighlighter
-                  language="sql"
-                  style={vscDarkPlus}
-                  customStyle={{
-                    margin: 0,
-                    padding: 0,
-                    fontSize: "0.875rem",
-                    background: "transparent",
-                  }}
-                >
-                  {`SELECT users.name, orders.total
+              <div className="relative bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
+                <CopyCodeButton code={`SELECT users.name, orders.total
 FROM users
 INNER JOIN orders ON users.id = orders.user_id;`}
                 </SyntaxHighlighter>
@@ -162,18 +163,8 @@ INNER JOIN orders ON users.id = orders.user_id;`}
               <p className="text-neutral-600 dark:text-neutral-300 mb-4">
                 Return all rows from the left table, even if there&apos;s no match:
               </p>
-              <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <SyntaxHighlighter
-                  language="sql"
-                  style={vscDarkPlus}
-                  customStyle={{
-                    margin: 0,
-                    padding: 0,
-                    fontSize: "0.875rem",
-                    background: "transparent",
-                  }}
-                >
-                  {`SELECT users.name, orders.total
+              <div className="relative bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
+                <CopyCodeButton code={`SELECT users.name, orders.total
 FROM users
 LEFT JOIN orders ON users.id = orders.user_id;`}
                 </SyntaxHighlighter>
@@ -187,18 +178,8 @@ LEFT JOIN orders ON users.id = orders.user_id;`}
               <p className="text-neutral-600 dark:text-neutral-300 mb-4">
                 Join multiple tables in a single query:
               </p>
-              <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <SyntaxHighlighter
-                  language="sql"
-                  style={vscDarkPlus}
-                  customStyle={{
-                    margin: 0,
-                    padding: 0,
-                    fontSize: "0.875rem",
-                    background: "transparent",
-                  }}
-                >
-                  {`SELECT 
+              <div className="relative bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
+                <CopyCodeButton code={`SELECT 
   users.name,
   products.name AS product_name,
   order_items.quantity
@@ -225,18 +206,8 @@ INNER JOIN products ON order_items.product_id = products.id;`}
               <p className="text-neutral-600 dark:text-neutral-300 mb-4">
                 Use subqueries to filter results based on another query:
               </p>
-              <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <SyntaxHighlighter
-                  language="sql"
-                  style={vscDarkPlus}
-                  customStyle={{
-                    margin: 0,
-                    padding: 0,
-                    fontSize: "0.875rem",
-                    background: "transparent",
-                  }}
-                >
-                  {`-- Find users who have placed orders
+              <div className="relative bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
+                <CopyCodeButton code={`-- Find users who have placed orders
 SELECT * FROM users
 WHERE id IN (
   SELECT DISTINCT user_id FROM orders
@@ -256,18 +227,8 @@ WHERE age > (SELECT AVG(age) FROM users);`}
               <p className="text-neutral-600 dark:text-neutral-300 mb-4">
                 Subqueries that reference the outer query:
               </p>
-              <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <SyntaxHighlighter
-                  language="sql"
-                  style={vscDarkPlus}
-                  customStyle={{
-                    margin: 0,
-                    padding: 0,
-                    fontSize: "0.875rem",
-                    background: "transparent",
-                  }}
-                >
-                  {`-- Find users with their latest order
+              <div className="relative bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
+                <CopyCodeButton code={`-- Find users with their latest order
 SELECT 
   u.name,
   (SELECT MAX(created_at) 
@@ -293,18 +254,8 @@ FROM users u;`}
               <p className="text-neutral-600 dark:text-neutral-300 mb-4">
                 Group data and calculate aggregates:
               </p>
-              <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <SyntaxHighlighter
-                  language="sql"
-                  style={vscDarkPlus}
-                  customStyle={{
-                    margin: 0,
-                    padding: 0,
-                    fontSize: "0.875rem",
-                    background: "transparent",
-                  }}
-                >
-                  {`-- Count orders per user
+              <div className="relative bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
+                <CopyCodeButton code={`-- Count orders per user
 SELECT user_id, COUNT(*) AS order_count
 FROM orders
 GROUP BY user_id;
@@ -343,18 +294,8 @@ HAVING COUNT(*) > 10;`}
               <p className="text-neutral-600 dark:text-neutral-300 mb-4">
                 Indexes improve query performance by allowing faster data retrieval:
               </p>
-              <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <SyntaxHighlighter
-                  language="sql"
-                  style={vscDarkPlus}
-                  customStyle={{
-                    margin: 0,
-                    padding: 0,
-                    fontSize: "0.875rem",
-                    background: "transparent",
-                  }}
-                >
-                  {`-- Create single column index
+              <div className="relative bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
+                <CopyCodeButton code={`-- Create single column index
 CREATE INDEX idx_user_email ON users(email);
 
 -- Create composite index
@@ -394,18 +335,8 @@ CREATE UNIQUE INDEX idx_user_email_unique ON users(email);`}
               <p className="text-neutral-600 dark:text-neutral-300 mb-4">
                 Ensure data integrity with transactions:
               </p>
-              <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <SyntaxHighlighter
-                  language="sql"
-                  style={vscDarkPlus}
-                  customStyle={{
-                    margin: 0,
-                    padding: 0,
-                    fontSize: "0.875rem",
-                    background: "transparent",
-                  }}
-                >
-                  {`-- Start a transaction
+              <div className="relative bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
+                <CopyCodeButton code={`-- Start a transaction
 BEGIN TRANSACTION;
 
 -- Perform multiple operations
