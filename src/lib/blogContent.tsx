@@ -210,6 +210,27 @@ export const blogPosts: { [key: string]: BlogPost } = {
     readTime: "16 min read",
     slug: "ai-assisted-development-2025",
   },
+  "chatgpt-helping-developers-real-experiences": {
+    title:
+      "How ChatGPT Actually Helps Developers: Real Stories and Practical Tips from Daily Coding",
+    description:
+      "Learn how developers are using ChatGPT to solve real coding problems, debug errors faster, and accelerate their learning. Discover practical ChatGPT prompts, real-world examples, and honest insights from daily development work.",
+    image: "https://cdn-icons-png.flaticon.com/512/2111/2111615.png",
+    author: "Shiv Shankar Prasad",
+    date: "2025-12-05",
+    readTime: "18 min read",
+    slug: "chatgpt-helping-developers-real-experiences",
+  },
+  "building-ai-powered-web-applications-2025": {
+    title: "Building AI-Powered Web Applications: Complete Guide 2025",
+    description:
+      "Learn how to build AI-powered web applications from scratch. Complete guide covering OpenAI API integration, AI features, best practices, and real-world examples for Next.js, React, and modern web development in 2025.",
+    image: "https://cdn-icons-png.flaticon.com/512/2103/2103632.png",
+    author: "Shiv Shankar Prasad",
+    date: "2025-12-08",
+    readTime: "22 min read",
+    slug: "building-ai-powered-web-applications-2025",
+  },
 };
 
 export function getBlogPost(slug: string): BlogPost | null {

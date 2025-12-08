@@ -24,8 +24,12 @@ module.exports = {
 
     // Blog posts
     const blogSlugs = [
+      "building-ai-powered-web-applications-2025",
+      "ai-assisted-development-2025",
+      "chatgpt-helping-developers-real-experiences",
       "hot-tech-trends-2025",
       "ai-technology-everyday-life",
+      "ai-agents-autonomous-systems-2025",
       "getting-started-with-nextjs-14",
       "mastering-typescript-generics",
       "react-performance-optimization-tips",
@@ -42,7 +46,6 @@ module.exports = {
       "mongodb-mastery",
       "nextjs-15-features",
       "react-native-expert-guide",
-      "ai-agents-autonomous-systems-2025",
     ];
 
     blogSlugs.forEach((slug) => {

@@ -4,6 +4,15 @@ import Image from "next/image";
 
 const blogPosts = [
   {
+    title: "Building AI-Powered Web Applications: Complete Guide 2025",
+    excerpt:
+      "Learn how to build AI-powered web applications from scratch. Complete guide covering OpenAI API integration, AI features, best practices, and real-world examples for Next.js, React, and modern web development.",
+    image: "https://cdn-icons-png.flaticon.com/512/2103/2103632.png",
+    date: "Dec 5, 2025",
+    readTime: "22 min read",
+    link: "/blog/building-ai-powered-web-applications-2025",
+  },
+  {
     title: "AI-Assisted Development: Revolutionizing Coding in 2025",
     excerpt:
       "Discover how AI-powered coding assistants like GitHub Copilot, ChatGPT, and Gemini are transforming software development, boosting productivity, and reshaping the future of programming.",
