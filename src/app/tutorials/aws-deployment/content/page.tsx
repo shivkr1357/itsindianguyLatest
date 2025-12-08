@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 export const metadata: Metadata = {
   title: "AWS Cloud Deployment Tutorial - Complete Guide | ItsIndianGuy",
@@ -41,8 +43,17 @@ export default function AWSDeploymentContentPage() {
                 Install and Configure AWS CLI
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`# Install AWS CLI (Windows)
+                <SyntaxHighlighter
+                  language="bash"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`# Install AWS CLI (Windows)
 msiexec.exe /i https://awscli.amazonaws.com/AWSCLIV2.msi
 
 # Install AWS CLI (Mac)
@@ -64,8 +75,8 @@ aws configure
 # Default output format: json
 
 # Test configuration
-aws s3 ls`}</code>
-                </pre>
+aws s3 ls`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
@@ -83,8 +94,17 @@ aws s3 ls`}</code>
                 Launch and Configure EC2 Instance
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`# Launch EC2 instance (AWS Console or CLI)
+                <SyntaxHighlighter
+                  language="bash"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`# Launch EC2 instance (AWS Console or CLI)
 aws ec2 run-instances \\
   --image-id ami-0c55b159cbfafe1f0 \\
   --instance-type t2.micro \\
@@ -123,8 +143,8 @@ pm2 save
 
 # Check status
 pm2 status
-pm2 logs api`}</code>
-                </pre>
+pm2 logs api`}
+                </SyntaxHighlighter>
               </div>
             </div>
 
@@ -133,8 +153,17 @@ pm2 logs api`}</code>
                 Configure Nginx as Reverse Proxy
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`# Install Nginx
+                <SyntaxHighlighter
+                  language="bash"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`# Install Nginx
 sudo apt install nginx -y
 
 # Create Nginx configuration
@@ -164,8 +193,8 @@ sudo systemctl restart nginx
 
 # Install SSL with Let's Encrypt
 sudo apt install certbot python3-certbot-nginx -y
-sudo certbot --nginx -d api.yourdomain.com`}</code>
-                </pre>
+sudo certbot --nginx -d api.yourdomain.com`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
@@ -183,8 +212,17 @@ sudo certbot --nginx -d api.yourdomain.com`}</code>
                 Deploy React/Next.js to S3
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`# Create S3 bucket
+                <SyntaxHighlighter
+                  language="bash"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`# Create S3 bucket
 aws s3 mb s3://my-app-frontend
 
 # Enable static website hosting
@@ -216,8 +254,8 @@ aws s3 sync build/ s3://my-app-frontend --delete
 
 # Get website URL
 aws s3api get-bucket-website \\
-  --bucket my-app-frontend`}</code>
-                </pre>
+  --bucket my-app-frontend`}
+                </SyntaxHighlighter>
               </div>
             </div>
 
@@ -226,8 +264,17 @@ aws s3api get-bucket-website \\
                 CloudFront CDN Setup
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`# Create CloudFront distribution
+                <SyntaxHighlighter
+                  language="bash"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`# Create CloudFront distribution
 aws cloudfront create-distribution \\
   --origin-domain-name my-app-frontend.s3-website-us-east-1.amazonaws.com \\
   --default-root-object index.html
@@ -235,8 +282,8 @@ aws cloudfront create-distribution \\
 # Invalidate cache after updates
 aws cloudfront create-invalidation \\
   --distribution-id DISTRIBUTION_ID \\
-  --paths "/*"`}</code>
-                </pre>
+  --paths "/*"`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
@@ -254,8 +301,17 @@ aws cloudfront create-invalidation \\
                 Create PostgreSQL RDS Instance
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`# Create RDS instance
+                <SyntaxHighlighter
+                  language="bash"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`# Create RDS instance
 aws rds create-db-instance \\
   --db-instance-identifier myapp-db \\
   --db-instance-class db.t3.micro \\
@@ -276,8 +332,8 @@ aws rds describe-db-instances \\
 # Connect from EC2
 psql -h myapp-db.xxxxxx.us-east-1.rds.amazonaws.com \\
      -U admin \\
-     -d postgres`}</code>
-                </pre>
+     -d postgres`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
@@ -295,8 +351,17 @@ psql -h myapp-db.xxxxxx.us-east-1.rds.amazonaws.com \\
                 GitHub Actions Workflow
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`# .github/workflows/deploy.yml
+                <SyntaxHighlighter
+                  language="bash"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`# .github/workflows/deploy.yml
 name: Deploy to AWS
 
 on:
@@ -366,8 +431,8 @@ jobs:
         run: |
           aws cloudfront create-invalidation \\
             --distribution-id \${{ secrets.CLOUDFRONT_ID }} \\
-            --paths "/*"`}</code>
-                </pre>
+            --paths "/*"`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
@@ -385,8 +450,17 @@ jobs:
                 Create Lambda Function
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`// index.js - Lambda function
+                <SyntaxHighlighter
+                  language="bash"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`// index.js - Lambda function
 export const handler = async (event) => {
     try {
         const body = JSON.parse(event.body || '{}');
@@ -414,8 +488,8 @@ export const handler = async (event) => {
             })
         };
     }
-};`}</code>
-                </pre>
+};`}
+                </SyntaxHighlighter>
               </div>
             </div>
 
@@ -424,8 +498,17 @@ export const handler = async (event) => {
                 Deploy Lambda with AWS CLI
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`# Package function
+                <SyntaxHighlighter
+                  language="bash"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`# Package function
 zip -r function.zip index.js node_modules
 
 # Create IAM role for Lambda
@@ -452,8 +535,8 @@ aws lambda invoke \\
   --payload '{"key": "value"}' \\
   response.json
 
-cat response.json`}</code>
-                </pre>
+cat response.json`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
@@ -471,8 +554,17 @@ cat response.json`}</code>
                 Create REST API with API Gateway
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`# Create REST API
+                <SyntaxHighlighter
+                  language="bash"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`# Create REST API
 aws apigateway create-rest-api \\
   --name "MyAPI" \\
   --description "My REST API"
@@ -515,8 +607,8 @@ aws apigateway put-integration \\
 # Deploy API
 aws apigateway create-deployment \\
   --rest-api-id $API_ID \\
-  --stage-name prod`}</code>
-                </pre>
+  --stage-name prod`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
@@ -534,8 +626,17 @@ aws apigateway create-deployment \\
                 CloudWatch Logs and Metrics
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`# View Lambda logs
+                <SyntaxHighlighter
+                  language="bash"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`# View Lambda logs
 aws logs tail /aws/lambda/myFunction --follow
 
 # Create CloudWatch alarm for errors
@@ -558,8 +659,8 @@ aws cloudwatch get-metric-statistics \\
   --start-time 2024-01-01T00:00:00Z \\
   --end-time 2024-01-01T23:59:59Z \\
   --period 3600 \\
-  --statistics Average`}</code>
-                </pre>
+  --statistics Average`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>

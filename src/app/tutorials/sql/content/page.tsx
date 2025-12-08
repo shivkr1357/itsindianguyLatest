@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 export const metadata: Metadata = {
   title: "SQL Database Tutorial - Complete Guide | ItsIndianGuy",
@@ -52,8 +54,17 @@ export default function SQLContentPage() {
                 Start with simple SELECT statements to retrieve data:
               </p>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`-- Select all columns from a table
+                <SyntaxHighlighter
+                  language="sql"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`-- Select all columns from a table
 SELECT * FROM users;
 
 -- Select specific columns
@@ -72,8 +83,8 @@ ORDER BY created_at DESC;
 
 -- Select with limit
 SELECT * FROM users 
-LIMIT 10;`}</code>
-                </pre>
+LIMIT 10;`}
+                </SyntaxHighlighter>
               </div>
             </div>
 
@@ -85,8 +96,17 @@ LIMIT 10;`}</code>
                 Learn to modify data in your database:
               </p>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`-- Insert new record
+                <SyntaxHighlighter
+                  language="sql"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`-- Insert new record
 INSERT INTO users (name, email, age)
 VALUES ('John Doe', 'john@example.com', 25);
 
@@ -97,8 +117,8 @@ WHERE id = 1;
 
 -- Delete record
 DELETE FROM users 
-WHERE id = 1;`}</code>
-                </pre>
+WHERE id = 1;`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
@@ -118,11 +138,20 @@ WHERE id = 1;`}</code>
                 Combine rows from two tables where there is a match:
               </p>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`SELECT users.name, orders.total
+                <SyntaxHighlighter
+                  language="sql"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`SELECT users.name, orders.total
 FROM users
-INNER JOIN orders ON users.id = orders.user_id;`}</code>
-                </pre>
+INNER JOIN orders ON users.id = orders.user_id;`}
+                </SyntaxHighlighter>
               </div>
             </div>
 
@@ -134,11 +163,20 @@ INNER JOIN orders ON users.id = orders.user_id;`}</code>
                 Return all rows from the left table, even if there&apos;s no match:
               </p>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`SELECT users.name, orders.total
+                <SyntaxHighlighter
+                  language="sql"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`SELECT users.name, orders.total
 FROM users
-LEFT JOIN orders ON users.id = orders.user_id;`}</code>
-                </pre>
+LEFT JOIN orders ON users.id = orders.user_id;`}
+                </SyntaxHighlighter>
               </div>
             </div>
 
@@ -150,16 +188,25 @@ LEFT JOIN orders ON users.id = orders.user_id;`}</code>
                 Join multiple tables in a single query:
               </p>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`SELECT 
+                <SyntaxHighlighter
+                  language="sql"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`SELECT 
   users.name,
   products.name AS product_name,
   order_items.quantity
 FROM users
 INNER JOIN orders ON users.id = orders.user_id
 INNER JOIN order_items ON orders.id = order_items.order_id
-INNER JOIN products ON order_items.product_id = products.id;`}</code>
-                </pre>
+INNER JOIN products ON order_items.product_id = products.id;`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
@@ -179,8 +226,17 @@ INNER JOIN products ON order_items.product_id = products.id;`}</code>
                 Use subqueries to filter results based on another query:
               </p>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`-- Find users who have placed orders
+                <SyntaxHighlighter
+                  language="sql"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`-- Find users who have placed orders
 SELECT * FROM users
 WHERE id IN (
   SELECT DISTINCT user_id FROM orders
@@ -188,8 +244,8 @@ WHERE id IN (
 
 -- Find users with above-average age
 SELECT * FROM users
-WHERE age > (SELECT AVG(age) FROM users);`}</code>
-                </pre>
+WHERE age > (SELECT AVG(age) FROM users);`}
+                </SyntaxHighlighter>
               </div>
             </div>
 
@@ -201,15 +257,24 @@ WHERE age > (SELECT AVG(age) FROM users);`}</code>
                 Subqueries that reference the outer query:
               </p>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`-- Find users with their latest order
+                <SyntaxHighlighter
+                  language="sql"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`-- Find users with their latest order
 SELECT 
   u.name,
   (SELECT MAX(created_at) 
    FROM orders o 
    WHERE o.user_id = u.id) AS last_order_date
-FROM users u;`}</code>
-                </pre>
+FROM users u;`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
@@ -229,8 +294,17 @@ FROM users u;`}</code>
                 Group data and calculate aggregates:
               </p>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`-- Count orders per user
+                <SyntaxHighlighter
+                  language="sql"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`-- Count orders per user
 SELECT user_id, COUNT(*) AS order_count
 FROM orders
 GROUP BY user_id;
@@ -249,8 +323,8 @@ SELECT
   COUNT(*) AS user_count
 FROM users
 GROUP BY city
-HAVING COUNT(*) > 10;`}</code>
-                </pre>
+HAVING COUNT(*) > 10;`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
@@ -270,16 +344,25 @@ HAVING COUNT(*) > 10;`}</code>
                 Indexes improve query performance by allowing faster data retrieval:
               </p>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`-- Create single column index
+                <SyntaxHighlighter
+                  language="sql"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`-- Create single column index
 CREATE INDEX idx_user_email ON users(email);
 
 -- Create composite index
 CREATE INDEX idx_user_name_email ON users(name, email);
 
 -- Create unique index
-CREATE UNIQUE INDEX idx_user_email_unique ON users(email);`}</code>
-                </pre>
+CREATE UNIQUE INDEX idx_user_email_unique ON users(email);`}
+                </SyntaxHighlighter>
               </div>
             </div>
 
@@ -312,8 +395,17 @@ CREATE UNIQUE INDEX idx_user_email_unique ON users(email);`}</code>
                 Ensure data integrity with transactions:
               </p>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`-- Start a transaction
+                <SyntaxHighlighter
+                  language="sql"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`-- Start a transaction
 BEGIN TRANSACTION;
 
 -- Perform multiple operations
@@ -324,8 +416,8 @@ UPDATE accounts SET balance = balance + 100 WHERE id = 2;
 COMMIT;
 
 -- Or rollback on error
-ROLLBACK;`}</code>
-                </pre>
+ROLLBACK;`}
+                </SyntaxHighlighter>
               </div>
             </div>
 

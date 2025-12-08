@@ -1,5 +1,7 @@
 "use client";
 import { useState } from "react";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 interface CodeBlockProps {
   code: string;
@@ -50,12 +52,19 @@ const CodeBlock = ({ code, language = "javascript", title, className = "" }: Cod
           )}
         </button>
       </div>
-      <div className="p-6">
-        <pre className="text-sm overflow-x-auto">
-          <code className="text-green-400 font-mono block whitespace-pre">
-            {code}
-          </code>
-        </pre>
+      <div className="overflow-x-auto">
+        <SyntaxHighlighter
+          language={language}
+          style={vscDarkPlus}
+          customStyle={{
+            margin: 0,
+            padding: "1.5rem",
+            fontSize: "0.875rem",
+            background: "transparent",
+          }}
+        >
+          {code}
+        </SyntaxHighlighter>
       </div>
     </div>
   );

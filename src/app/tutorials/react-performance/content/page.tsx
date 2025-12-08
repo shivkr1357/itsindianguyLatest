@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 export const metadata: Metadata = {
   title: "React Performance Optimization - Complete Tutorial | ItsIndianGuy",
@@ -44,8 +46,17 @@ export default function ReactPerformanceContentPage() {
                 Without memoization, child components re-render whenever parent re-renders, even if props haven&apos;t changed:
               </p>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`// ❌ Bad: Child re-renders on every parent update
+                <SyntaxHighlighter
+                  language="tsx"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`// ❌ Bad: Child re-renders on every parent update
 function ExpensiveChild({ data }) {
   console.log('ExpensiveChild rendered');
   // Expensive calculations here
@@ -65,8 +76,8 @@ function Parent() {
       {/* Child re-renders even though data hasn't changed! */}
     </div>
   );
-}`}</code>
-                </pre>
+}`}
+                </SyntaxHighlighter>
               </div>
             </div>
 
@@ -75,8 +86,17 @@ function Parent() {
                 The Solution: React.memo
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`// ✅ Good: Child only re-renders when props change
+                <SyntaxHighlighter
+                  language="tsx"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`// ✅ Good: Child only re-renders when props change
 const ExpensiveChild = React.memo(function ExpensiveChild({ data }) {
   console.log('ExpensiveChild rendered');
   return <div>{data.value}</div>;
@@ -91,8 +111,8 @@ const ExpensiveChild = React.memo(
     // Return true if props are equal (skip re-render)
     return prevProps.user.id === nextProps.user.id;
   }
-);`}</code>
-                </pre>
+);`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
@@ -113,8 +133,17 @@ const ExpensiveChild = React.memo(
                 Use useMemo for expensive calculations that don&apos;t need to run on every render:
               </p>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`import { useMemo } from 'react';
+                <SyntaxHighlighter
+                  language="tsx"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`import { useMemo } from 'react';
 
 function ProductList({ products, filterText }) {
   // ❌ Bad: Expensive filter runs on every render
@@ -137,8 +166,8 @@ function ProductList({ products, filterText }) {
       ))}
     </div>
   );
-}`}</code>
-                </pre>
+}`}
+                </SyntaxHighlighter>
               </div>
             </div>
 
@@ -147,8 +176,17 @@ function ProductList({ products, filterText }) {
                 Real-World Examples
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`// Example 1: Expensive computation
+                <SyntaxHighlighter
+                  language="tsx"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`// Example 1: Expensive computation
 function DataAnalysis({ data }) {
   const analysis = useMemo(() => {
     const sum = data.reduce((a, b) => a + b, 0);
@@ -178,8 +216,8 @@ function UserProfile({ userId }) {
   }, [userId, fetchOptions]);
   
   return <div>{user?.name}</div>;
-}`}</code>
-                </pre>
+}`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
@@ -197,8 +235,17 @@ function UserProfile({ userId }) {
                 Why useCallback Matters
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`import { useCallback } from 'react';
+                <SyntaxHighlighter
+                  language="tsx"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`import { useCallback } from 'react';
 
 const SearchableList = React.memo(function SearchableList({ onSearch }) {
   return <input onChange={(e) => onSearch(e.target.value)} />;
@@ -226,8 +273,8 @@ function Parent() {
       {/* SearchableList doesn't re-render when count changes */}
     </div>
   );
-}`}</code>
-                </pre>
+}`}
+                </SyntaxHighlighter>
               </div>
             </div>
 
@@ -236,8 +283,17 @@ function Parent() {
                 Practical Examples
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`function TodoApp() {
+                <SyntaxHighlighter
+                  language="tsx"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`function TodoApp() {
   const [todos, setTodos] = useState([]);
   const [filter, setFilter] = useState('all');
   
@@ -266,8 +322,8 @@ function Parent() {
       />
     </div>
   );
-}`}</code>
-                </pre>
+}`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
@@ -285,8 +341,17 @@ function Parent() {
                 Lazy Loading Components
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`import { lazy, Suspense } from 'react';
+                <SyntaxHighlighter
+                  language="tsx"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`import { lazy, Suspense } from 'react';
 
 // ❌ Bad: Load everything upfront
 import HeavyChart from './HeavyChart';
@@ -316,8 +381,8 @@ function Dashboard() {
       </Suspense>
     </div>
   );
-}`}</code>
-                </pre>
+}`}
+                </SyntaxHighlighter>
               </div>
             </div>
 
@@ -326,8 +391,17 @@ function Dashboard() {
                 Route-Based Code Splitting
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`import { lazy, Suspense } from 'react';
+                <SyntaxHighlighter
+                  language="tsx"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`import { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // Lazy load routes
@@ -354,8 +428,8 @@ function App() {
       </Suspense>
     </BrowserRouter>
   );
-}`}</code>
-                </pre>
+}`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
@@ -376,8 +450,17 @@ function App() {
                 Install react-window: <code className="px-2 py-1 bg-neutral-100 dark:bg-neutral-700 rounded">npm install react-window</code>
               </p>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`import { FixedSizeList } from 'react-window';
+                <SyntaxHighlighter
+                  language="tsx"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`import { FixedSizeList } from 'react-window';
 
 // ❌ Bad: Rendering 10,000 items
 function LargeList({ items }) {
@@ -428,8 +511,8 @@ function DynamicList({ items }) {
       {Row}
     </VariableSizeList>
   );
-}`}</code>
-                </pre>
+}`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
@@ -473,8 +556,17 @@ function DynamicList({ items }) {
                 Programmatic Profiling
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`import { Profiler } from 'react';
+                <SyntaxHighlighter
+                  language="tsx"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`import { Profiler } from 'react';
 
 function onRenderCallback(
   id,              // the "id" prop of the Profiler tree
@@ -494,8 +586,8 @@ function App() {
       <Dashboard />
     </Profiler>
   );
-}`}</code>
-                </pre>
+}`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 export const metadata: Metadata = {
   title: "Full-Stack Next.js Tutorial - Complete Guide | ItsIndianGuy",
@@ -46,8 +48,17 @@ export default function FullStackNextJSContentPage() {
                 First, let&apos;s create a new Next.js project with TypeScript and the App Router:
               </p>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`npx create-next-app@latest my-fullstack-app
+                <SyntaxHighlighter
+                  language="bash"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`npx create-next-app@latest my-fullstack-app
 cd my-fullstack-app
 
 # When prompted, select:
@@ -56,8 +67,8 @@ cd my-fullstack-app
 # ✓ Tailwind CSS: Yes
 # ✓ src/ directory: Yes
 # ✓ App Router: Yes
-# ✓ Import alias: @/*`}</code>
-                </pre>
+# ✓ Import alias: @/*`}
+                </SyntaxHighlighter>
               </div>
             </div>
 
@@ -69,8 +80,17 @@ cd my-fullstack-app
                 Install the packages we&apos;ll need for our full-stack application:
               </p>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`# Database and ORM
+                <SyntaxHighlighter
+                  language="bash"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`# Database and ORM
 npm install prisma @prisma/client
 
 # Authentication
@@ -84,8 +104,8 @@ npm install zod react-hook-form @hookform/resolvers
 npm install @radix-ui/react-dialog @radix-ui/react-dropdown-menu
 
 # Initialize Prisma
-npx prisma init`}</code>
-                </pre>
+npx prisma init`}
+                </SyntaxHighlighter>
               </div>
             </div>
 
@@ -97,8 +117,17 @@ npx prisma init`}</code>
                 Your project structure should look like this:
               </p>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`my-fullstack-app/
+                <SyntaxHighlighter
+                  language="typescript"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`my-fullstack-app/
 ├── prisma/
 │   └── schema.prisma
 ├── src/
@@ -117,8 +146,8 @@ npx prisma init`}</code>
 │   │   └── auth.ts
 │   └── types/
 ├── .env
-└── package.json`}</code>
-                </pre>
+└── package.json`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
@@ -139,8 +168,17 @@ npx prisma init`}</code>
                 Create a <code className="px-2 py-1 bg-neutral-100 dark:bg-neutral-700 rounded">.env</code> file:
               </p>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`# PostgreSQL (recommended for production)
+                <SyntaxHighlighter
+                  language="bash"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`# PostgreSQL (recommended for production)
 DATABASE_URL="postgresql://user:password@localhost:5432/mydb"
 
 # Or SQLite for development
@@ -148,8 +186,8 @@ DATABASE_URL="postgresql://user:password@localhost:5432/mydb"
 
 # NextAuth Secret
 NEXTAUTH_SECRET="your-secret-key-here"
-NEXTAUTH_URL="http://localhost:3000"`}</code>
-                </pre>
+NEXTAUTH_URL="http://localhost:3000"`}
+                </SyntaxHighlighter>
               </div>
             </div>
 
@@ -161,8 +199,17 @@ NEXTAUTH_URL="http://localhost:3000"`}</code>
                 Update <code className="px-2 py-1 bg-neutral-100 dark:bg-neutral-700 rounded">prisma/schema.prisma</code>:
               </p>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`generator client {
+                <SyntaxHighlighter
+                  language="prisma"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`generator client {
   provider = "prisma-client-js"
 }
 
@@ -190,8 +237,8 @@ model Post {
   authorId  String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-}`}</code>
-                </pre>
+}`}
+                </SyntaxHighlighter>
               </div>
             </div>
 
@@ -203,8 +250,17 @@ model Post {
                 Create <code className="px-2 py-1 bg-neutral-100 dark:bg-neutral-700 rounded">src/lib/prisma.ts</code>:
               </p>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`import { PrismaClient } from '@prisma/client';
+                <SyntaxHighlighter
+                  language="typescript"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`import { PrismaClient } from '@prisma/client';
 
 const globalForPrisma = global as unknown as {
   prisma: PrismaClient | undefined;
@@ -214,8 +270,8 @@ export const prisma = globalForPrisma.prisma ?? new PrismaClient();
 
 if (process.env.NODE_ENV !== 'production') {
   globalForPrisma.prisma = prisma;
-}`}</code>
-                </pre>
+}`}
+                </SyntaxHighlighter>
               </div>
             </div>
 
@@ -224,13 +280,22 @@ if (process.env.NODE_ENV !== 'production') {
                 Run Migrations
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`# Create and apply migration
+                <SyntaxHighlighter
+                  language="bash"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`# Create and apply migration
 npx prisma migrate dev --name init
 
 # Generate Prisma Client
-npx prisma generate`}</code>
-                </pre>
+npx prisma generate`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
@@ -251,8 +316,17 @@ npx prisma generate`}</code>
                 Create <code className="px-2 py-1 bg-neutral-100 dark:bg-neutral-700 rounded">src/app/api/auth/[...nextauth]/route.ts</code>:
               </p>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`import NextAuth from 'next-auth';
+                <SyntaxHighlighter
+                  language="typescript"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`import NextAuth from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import { prisma } from '@/lib/prisma';
 import bcrypt from 'bcryptjs';
@@ -303,8 +377,8 @@ const handler = NextAuth({
   }
 });
 
-export { handler as GET, handler as POST };`}</code>
-                </pre>
+export { handler as GET, handler as POST };`}
+                </SyntaxHighlighter>
               </div>
             </div>
 
@@ -316,8 +390,17 @@ export { handler as GET, handler as POST };`}</code>
                 Create <code className="px-2 py-1 bg-neutral-100 dark:bg-neutral-700 rounded">src/app/api/register/route.ts</code>:
               </p>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`import { NextResponse } from 'next/server';
+                <SyntaxHighlighter
+                  language="typescript"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import bcrypt from 'bcryptjs';
 import { z } from 'zod';
@@ -374,8 +457,8 @@ export async function POST(req: Request) {
       { status: 500 }
     );
   }
-}`}</code>
-                </pre>
+}`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
@@ -396,8 +479,17 @@ export async function POST(req: Request) {
                 Create <code className="px-2 py-1 bg-neutral-100 dark:bg-neutral-700 rounded">src/app/api/posts/route.ts</code>:
               </p>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`import { NextResponse } from 'next/server';
+                <SyntaxHighlighter
+                  language="typescript"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`import { NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import { prisma } from '@/lib/prisma';
 
@@ -455,8 +547,8 @@ export async function POST(req: Request) {
       { status: 500 }
     );
   }
-}`}</code>
-                </pre>
+}`}
+                </SyntaxHighlighter>
               </div>
             </div>
 
@@ -468,8 +560,17 @@ export async function POST(req: Request) {
                 Create <code className="px-2 py-1 bg-neutral-100 dark:bg-neutral-700 rounded">src/app/api/posts/[id]/route.ts</code>:
               </p>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`import { NextResponse } from 'next/server';
+                <SyntaxHighlighter
+                  language="typescript"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 
 export async function GET(
@@ -541,8 +642,8 @@ export async function DELETE(
       { status: 500 }
     );
   }
-}`}</code>
-                </pre>
+}`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>

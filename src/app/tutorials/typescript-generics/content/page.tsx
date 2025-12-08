@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 export const metadata: Metadata = {
   title: "TypeScript Generics - Complete Tutorial | ItsIndianGuy",
@@ -46,8 +48,17 @@ export default function TypeScriptGenericsContentPage() {
                 Imagine you need a function that returns the first element of an array. Without generics:
               </p>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`// Option 1: Lose type safety
+                <SyntaxHighlighter
+                  language="typescript"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`// Option 1: Lose type safety
 function getFirst(arr: any[]): any {
   return arr[0];
 }
@@ -63,8 +74,8 @@ function getFirstNumber(arr: number[]): number {
 function getFirstString(arr: string[]): string {
   return arr[0];
 }
-// ... need a function for every type! 😫`}</code>
-                </pre>
+// ... need a function for every type! 😫`}
+                </SyntaxHighlighter>
               </div>
             </div>
 
@@ -76,8 +87,17 @@ function getFirstString(arr: string[]): string {
                 Generics allow us to create ONE function that works with ANY type while maintaining type safety:
               </p>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`// Generic function - works with any type!
+                <SyntaxHighlighter
+                  language="typescript"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`// Generic function - works with any type!
 function getFirst<T>(arr: T[]): T {
   return arr[0];
 }
@@ -86,8 +106,8 @@ const num = getFirst([1, 2, 3]);      // Type is 'number' ✅
 const str = getFirst(['a', 'b']);     // Type is 'string' ✅
 const bool = getFirst([true, false]); // Type is 'boolean' ✅
 
-// TypeScript infers the type automatically!`}</code>
-                </pre>
+// TypeScript infers the type automatically!`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
@@ -105,8 +125,17 @@ const bool = getFirst([true, false]); // Type is 'boolean' ✅
                 Basic Generic Function
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`// Identity function - returns the same type it receives
+                <SyntaxHighlighter
+                  language="typescript"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`// Identity function - returns the same type it receives
 function identity<T>(value: T): T {
   return value;
 }
@@ -117,8 +146,8 @@ const strResult = identity("hello");    // string
 const objResult = identity({ x: 10 }); // { x: number }
 
 // You can also explicitly specify the type
-const explicitResult = identity<string>("world");`}</code>
-                </pre>
+const explicitResult = identity<string>("world");`}
+                </SyntaxHighlighter>
               </div>
             </div>
 
@@ -127,8 +156,17 @@ const explicitResult = identity<string>("world");`}</code>
                 Multiple Type Parameters
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`// Function with two generic types
+                <SyntaxHighlighter
+                  language="typescript"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`// Function with two generic types
 function pair<T, U>(first: T, second: U): [T, U] {
   return [first, second];
 }
@@ -149,8 +187,8 @@ const userMap = createMap(
   ['user1', 'user2'],
   [{ age: 25 }, { age: 30 }]
 );
-// Map<string, { age: number }>`}</code>
-                </pre>
+// Map<string, { age: number }>`}
+                </SyntaxHighlighter>
               </div>
             </div>
 
@@ -159,8 +197,17 @@ const userMap = createMap(
                 Generic Arrow Functions
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`// Arrow function syntax
+                <SyntaxHighlighter
+                  language="typescript"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`// Arrow function syntax
 const wrap = <T>(value: T): { value: T } => {
   return { value };
 };
@@ -174,8 +221,8 @@ const strings = numbers.map<string>(n => n.toString());
 const items = [1, "hello", 2, "world", 3];
 const numbersOnly = items.filter((item): item is number => {
   return typeof item === 'number';
-}); // Type is number[]`}</code>
-                </pre>
+}); // Type is number[]`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
@@ -193,8 +240,17 @@ const numbersOnly = items.filter((item): item is number => {
                 Generic Interfaces
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`// Generic API response interface
+                <SyntaxHighlighter
+                  language="typescript"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`// Generic API response interface
 interface ApiResponse<T> {
   data: T;
   status: number;
@@ -235,8 +291,8 @@ class SimpleStore<K, V> implements KeyValueStore<K, V> {
 }
 
 const userStore = new SimpleStore<string, User>();
-const configStore = new SimpleStore<string, Config>();`}</code>
-                </pre>
+const configStore = new SimpleStore<string, Config>();`}
+                </SyntaxHighlighter>
               </div>
             </div>
 
@@ -245,8 +301,17 @@ const configStore = new SimpleStore<string, Config>();`}</code>
                 Generic Type Aliases
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`// Generic promise type
+                <SyntaxHighlighter
+                  language="typescript"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`// Generic promise type
 type AsyncResult<T> = Promise<T | Error>;
 
 // Generic callback type
@@ -258,8 +323,8 @@ type Factory<T> = () => T;
 // Usage
 const fetchUser: AsyncResult<User> = fetchUserData();
 const handleData: Callback<string> = (data) => console.log(data);
-const createUser: Factory<User> = () => ({ id: '1', name: 'John' });`}</code>
-                </pre>
+const createUser: Factory<User> = () => ({ id: '1', name: 'John' });`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
@@ -277,8 +342,17 @@ const createUser: Factory<User> = () => ({ id: '1', name: 'John' });`}</code>
                 Building a Generic Stack
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`class Stack<T> {
+                <SyntaxHighlighter
+                  language="typescript"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`class Stack<T> {
   private items: T[] = [];
 
   push(item: T): void {
@@ -314,8 +388,8 @@ console.log(numberStack.pop()); // 2
 
 const stringStack = new Stack<string>();
 stringStack.push("hello");
-stringStack.push("world");`}</code>
-                </pre>
+stringStack.push("world");`}
+                </SyntaxHighlighter>
               </div>
             </div>
 
@@ -324,8 +398,17 @@ stringStack.push("world");`}</code>
                 Generic Queue with Advanced Features
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`class Queue<T> {
+                <SyntaxHighlighter
+                  language="typescript"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`class Queue<T> {
   private items: T[] = [];
 
   enqueue(item: T): void {
@@ -372,8 +455,8 @@ taskQueue.enqueue({ id: 1, name: "Task 1" });
 taskQueue.enqueue({ id: 2, name: "Task 2" });
 
 // Transform queue items
-const idQueue = taskQueue.map(task => task.id); // Queue<number>`}</code>
-                </pre>
+const idQueue = taskQueue.map(task => task.id); // Queue<number>`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
@@ -394,8 +477,17 @@ const idQueue = taskQueue.map(task => task.id); // Queue<number>`}</code>
                 Sometimes you need to ensure a generic type has certain properties:
               </p>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`// Constraint: T must have a length property
+                <SyntaxHighlighter
+                  language="typescript"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`// Constraint: T must have a length property
 function logLength<T extends { length: number }>(item: T): void {
   console.log(\`Length: \${item.length}\`);
 }
@@ -426,8 +518,8 @@ interface Product extends Identifiable {
 }
 
 const users: User[] = [{ id: '1', name: 'John' }];
-const foundUser = findById(users, '1'); // Type is User | undefined`}</code>
-                </pre>
+const foundUser = findById(users, '1'); // Type is User | undefined`}
+                </SyntaxHighlighter>
               </div>
             </div>
 
@@ -436,8 +528,17 @@ const foundUser = findById(users, '1'); // Type is User | undefined`}</code>
                 Using keyof Constraint
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`// Get property value safely
+                <SyntaxHighlighter
+                  language="typescript"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`// Get property value safely
 function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {
   return obj[key];
 }
@@ -462,8 +563,8 @@ function setProperty<T, K extends keyof T>(
 }
 
 setProperty(user, 'age', 31);           // ✅
-// setProperty(user, 'age', 'invalid'); // ❌ Error: wrong type`}</code>
-                </pre>
+// setProperty(user, 'age', 'invalid'); // ❌ Error: wrong type`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
@@ -481,8 +582,17 @@ setProperty(user, 'age', 31);           // ✅
                 Conditional Types
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`// Conditional type: unwrap Promise type
+                <SyntaxHighlighter
+                  language="typescript"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`// Conditional type: unwrap Promise type
 type Awaited<T> = T extends Promise<infer U> ? U : T;
 
 type A = Awaited<Promise<string>>;  // string
@@ -501,8 +611,8 @@ function getUser() {
   return { id: '1', name: 'John' };
 }
 
-type UserType = ReturnType<typeof getUser>; // { id: string; name: string }`}</code>
-                </pre>
+type UserType = ReturnType<typeof getUser>; // { id: string; name: string }`}
+                </SyntaxHighlighter>
               </div>
             </div>
 
@@ -511,8 +621,17 @@ type UserType = ReturnType<typeof getUser>; // { id: string; name: string }`}</c
                 Mapped Types
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`// Make all properties optional
+                <SyntaxHighlighter
+                  language="typescript"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`// Make all properties optional
 type Partial<T> = {
   [K in keyof T]?: T[K];
 };
@@ -544,8 +663,8 @@ type PartialUser = Partial<User>;
 // { id?: string; name?: string; email?: string; age?: number }
 
 type UserPreview = Pick<User, 'id' | 'name'>;
-// { id: string; name: string }`}</code>
-                </pre>
+// { id: string; name: string }`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
@@ -563,8 +682,17 @@ type UserPreview = Pick<User, 'id' | 'name'>;
                 Type-Safe API Client with Generics
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`class ApiClient {
+                <SyntaxHighlighter
+                  language="typescript"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`class ApiClient {
   private baseUrl: string;
 
   constructor(baseUrl: string) {
@@ -613,8 +741,8 @@ const newUser = await api.post<CreateUserDto, User>('/users', {
   email: 'john@example.com'
 });
 
-// TypeScript knows the exact types! ✨`}</code>
-                </pre>
+// TypeScript knows the exact types! ✨`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>

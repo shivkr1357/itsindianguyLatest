@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 export const metadata: Metadata = {
   title: "Docker for Developers Tutorial - Complete Guide | ItsIndianGuy",
@@ -44,8 +46,17 @@ export default function DockerContentPage() {
                 Install Docker Desktop for your operating system:
               </p>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`# Windows/Mac: Download Docker Desktop from docker.com
+                <SyntaxHighlighter
+                  language="dockerfile"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`# Windows/Mac: Download Docker Desktop from docker.com
 
 # Linux (Ubuntu):
 curl -fsSL https://get.docker.com -o get-docker.sh
@@ -53,8 +64,8 @@ sudo sh get-docker.sh
 
 # Verify installation
 docker --version
-docker run hello-world`}</code>
-                </pre>
+docker run hello-world`}
+                </SyntaxHighlighter>
               </div>
             </div>
 
@@ -63,8 +74,17 @@ docker run hello-world`}</code>
                 Essential Docker Commands
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`# Images
+                <SyntaxHighlighter
+                  language="dockerfile"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`# Images
 docker images                    # List all images
 docker pull nginx:latest         # Pull image from Docker Hub
 docker build -t myapp:1.0 .     # Build image from Dockerfile
@@ -77,8 +97,8 @@ docker run -d -p 80:80 nginx   # Run container
 docker stop container_id        # Stop container
 docker rm container_id          # Remove container
 docker logs container_id        # View logs
-docker exec -it container_id sh # Enter container`}</code>
-                </pre>
+docker exec -it container_id sh # Enter container`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
@@ -96,8 +116,17 @@ docker exec -it container_id sh # Enter container`}</code>
                 Node.js Application Dockerfile
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`# Dockerfile
+                <SyntaxHighlighter
+                  language="dockerfile"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`# Dockerfile
 FROM node:18-alpine
 
 # Set working directory
@@ -119,8 +148,8 @@ EXPOSE 3000
 ENV NODE_ENV=production
 
 # Start application
-CMD ["node", "server.js"]`}</code>
-                </pre>
+CMD ["node", "server.js"]`}
+                </SyntaxHighlighter>
               </div>
             </div>
 
@@ -129,8 +158,17 @@ CMD ["node", "server.js"]`}</code>
                 Next.js Application Dockerfile
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`# Dockerfile
+                <SyntaxHighlighter
+                  language="dockerfile"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`# Dockerfile
 FROM node:18-alpine AS deps
 WORKDIR /app
 COPY package*.json ./
@@ -153,8 +191,8 @@ COPY --from=builder /app/.next/static ./.next/static
 EXPOSE 3000
 ENV PORT 3000
 
-CMD ["node", "server.js"]`}</code>
-                </pre>
+CMD ["node", "server.js"]`}
+                </SyntaxHighlighter>
               </div>
             </div>
 
@@ -163,8 +201,17 @@ CMD ["node", "server.js"]`}</code>
                 Python Application Dockerfile
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`# Dockerfile
+                <SyntaxHighlighter
+                  language="dockerfile"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`# Dockerfile
 FROM python:3.11-slim
 
 WORKDIR /app
@@ -178,8 +225,8 @@ COPY . .
 
 EXPOSE 8000
 
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]`}</code>
-                </pre>
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
@@ -200,8 +247,17 @@ CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]`}</code>
                 Multi-stage builds reduce final image size significantly:
               </p>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`# Multi-stage Dockerfile for React
+                <SyntaxHighlighter
+                  language="dockerfile"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`# Multi-stage Dockerfile for React
 # Stage 1: Build
 FROM node:18-alpine AS build
 WORKDIR /app
@@ -215,8 +271,8 @@ FROM nginx:alpine
 COPY --from=build /app/build /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]`}</code>
-                </pre>
+CMD ["nginx", "-g", "daemon off;"]`}
+                </SyntaxHighlighter>
               </div>
             </div>
 
@@ -225,8 +281,17 @@ CMD ["nginx", "-g", "daemon off;"]`}</code>
                 .dockerignore File
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`# .dockerignore
+                <SyntaxHighlighter
+                  language="dockerfile"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`# .dockerignore
 node_modules
 npm-debug.log
 .git
@@ -238,8 +303,8 @@ README.md
 dist
 build
 coverage
-*.md`}</code>
-                </pre>
+*.md`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
@@ -257,8 +322,17 @@ coverage
                 Full-Stack Application with Docker Compose
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`# docker-compose.yml
+                <SyntaxHighlighter
+                  language="dockerfile"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`# docker-compose.yml
 version: '3.8'
 
 services:
@@ -335,8 +409,8 @@ volumes:
 
 networks:
   app-network:
-    driver: bridge`}</code>
-                </pre>
+    driver: bridge`}
+                </SyntaxHighlighter>
               </div>
             </div>
 
@@ -345,8 +419,17 @@ networks:
                 Docker Compose Commands
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`# Start all services
+                <SyntaxHighlighter
+                  language="dockerfile"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`# Start all services
 docker-compose up -d
 
 # View logs
@@ -362,8 +445,8 @@ docker-compose up -d --build
 docker-compose up -d --scale backend=3
 
 # Remove volumes
-docker-compose down -v`}</code>
-                </pre>
+docker-compose down -v`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
@@ -381,8 +464,17 @@ docker-compose down -v`}</code>
                 Network Types and Commands
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`# Create custom network
+                <SyntaxHighlighter
+                  language="dockerfile"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`# Create custom network
 docker network create my-network
 
 # List networks
@@ -399,8 +491,8 @@ docker network inspect my-network
 docker network connect my-network container_name
 
 # Disconnect
-docker network disconnect my-network container_name`}</code>
-                </pre>
+docker network disconnect my-network container_name`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
@@ -418,8 +510,17 @@ docker network disconnect my-network container_name`}</code>
                 Working with Volumes
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`# Create volume
+                <SyntaxHighlighter
+                  language="dockerfile"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`# Create volume
 docker volume create my-data
 
 # List volumes
@@ -444,8 +545,8 @@ docker volume inspect my-data
 docker volume rm my-data
 
 # Remove all unused volumes
-docker volume prune`}</code>
-                </pre>
+docker volume prune`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
@@ -495,8 +596,17 @@ docker volume prune`}</code>
                 Optimized Production Dockerfile
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`# Production-ready Dockerfile
+                <SyntaxHighlighter
+                  language="dockerfile"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`# Production-ready Dockerfile
 FROM node:18-alpine AS deps
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
@@ -531,8 +641,8 @@ EXPOSE 3000
 
 ENV PORT 3000
 
-CMD ["node", "server.js"]`}</code>
-                </pre>
+CMD ["node", "server.js"]`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>

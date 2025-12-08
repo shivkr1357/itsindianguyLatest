@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 export const metadata: Metadata = {
   title: "Machine Learning Basics Tutorial - Complete Guide | ItsIndianGuy",
@@ -41,8 +43,17 @@ export default function MLBasicsContentPage() {
                 Install Required Libraries
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`# Create virtual environment
+                <SyntaxHighlighter
+                  language="python"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`# Create virtual environment
 python -m venv ml-env
 source ml-env/bin/activate  # On Windows: ml-env\\Scripts\\activate
 
@@ -55,8 +66,8 @@ pip install jupyter notebook
 python -c "import sklearn, tensorflow; print('All set!')"
 
 # Start Jupyter Notebook
-jupyter notebook`}</code>
-                </pre>
+jupyter notebook`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
@@ -74,8 +85,17 @@ jupyter notebook`}</code>
                 Loading and Exploring Data
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`import pandas as pd
+                <SyntaxHighlighter
+                  language="python"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -111,8 +131,8 @@ sns.histplot(data=df, x='sepal width (cm)', hue='species')
 plt.subplot(133)
 sns.histplot(data=df, x='petal length (cm)', hue='species')
 plt.tight_layout()
-plt.show()`}</code>
-                </pre>
+plt.show()`}
+                </SyntaxHighlighter>
               </div>
             </div>
 
@@ -121,8 +141,17 @@ plt.show()`}</code>
                 Data Preprocessing
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`from sklearn.model_selection import train_test_split
+                <SyntaxHighlighter
+                  language="python"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
 # Prepare features and target
@@ -140,8 +169,8 @@ X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
 
 print(f"Training set size: {X_train.shape}")
-print(f"Test set size: {X_test.shape}")`}</code>
-                </pre>
+print(f"Test set size: {X_test.shape}")`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
@@ -159,8 +188,17 @@ print(f"Test set size: {X_test.shape}")`}</code>
                 Train Classification Model
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`from sklearn.linear_model import LogisticRegression
+                <SyntaxHighlighter
+                  language="python"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, classification_report
 from sklearn.metrics import confusion_matrix
 
@@ -191,8 +229,8 @@ sns.heatmap(cm, annot=True, fmt='d', cmap='Blues',
 plt.xlabel('Predicted')
 plt.ylabel('Actual')
 plt.title('Confusion Matrix')
-plt.show()`}</code>
-                </pre>
+plt.show()`}
+                </SyntaxHighlighter>
               </div>
             </div>
 
@@ -201,8 +239,17 @@ plt.show()`}</code>
                 Try Different Algorithms
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`from sklearn.tree import DecisionTreeClassifier
+                <SyntaxHighlighter
+                  language="python"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.svm import SVC
 from sklearn.neighbors import KNeighborsClassifier
@@ -232,8 +279,8 @@ plt.ylabel('Accuracy')
 plt.title('Model Comparison')
 plt.xticks(rotation=45, ha='right')
 plt.tight_layout()
-plt.show()`}</code>
-                </pre>
+plt.show()`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
@@ -251,8 +298,17 @@ plt.show()`}</code>
                 Linear Regression Example
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`from sklearn.datasets import fetch_california_housing
+                <SyntaxHighlighter
+                  language="python"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`from sklearn.datasets import fetch_california_housing
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, r2_score
 
@@ -295,8 +351,8 @@ plt.plot([y_test.min(), y_test.max()],
 plt.xlabel('Actual Values')
 plt.ylabel('Predicted Values')
 plt.title('Predictions vs Actual Values')
-plt.show()`}</code>
-                </pre>
+plt.show()`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
@@ -314,8 +370,17 @@ plt.show()`}</code>
                 Build Your First Neural Network with TensorFlow
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`import tensorflow as tf
+                <SyntaxHighlighter
+                  language="python"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers
 
@@ -380,8 +445,8 @@ plt.ylabel('Loss')
 plt.legend()
 plt.title('Model Loss')
 plt.tight_layout()
-plt.show()`}</code>
-                </pre>
+plt.show()`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
@@ -399,8 +464,17 @@ plt.show()`}</code>
                 Save and Load Models
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`import joblib
+                <SyntaxHighlighter
+                  language="python"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`import joblib
 
 # Save scikit-learn model
 joblib.dump(model, 'iris_model.pkl')
@@ -425,8 +499,8 @@ loaded_nn_model = keras.models.load_model('iris_nn_model.h5')
 # Make predictions
 new_prediction = loaded_nn_model.predict(new_data)
 predicted_class = np.argmax(new_prediction)
-print(f"Predicted class: {iris.target_names[predicted_class]}")`}</code>
-                </pre>
+print(f"Predicted class: {iris.target_names[predicted_class]}")`}
+                </SyntaxHighlighter>
               </div>
             </div>
 
@@ -435,8 +509,17 @@ print(f"Predicted class: {iris.target_names[predicted_class]}")`}</code>
                 Create Simple API for Model
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`# app.py - Flask API for ML model
+                <SyntaxHighlighter
+                  language="python"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`# app.py - Flask API for ML model
 from flask import Flask, request, jsonify
 import joblib
 import numpy as np
@@ -472,8 +555,8 @@ def predict():
         return jsonify({'error': str(e)}), 400
 
 if __name__ == '__main__':
-    app.run(debug=True)`}</code>
-                </pre>
+    app.run(debug=True)`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>

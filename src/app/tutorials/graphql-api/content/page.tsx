@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 export const metadata: Metadata = {
   title: "GraphQL API Development Tutorial - Complete Guide | ItsIndianGuy",
@@ -41,8 +43,17 @@ export default function GraphQLAPIContentPage() {
                 Initialize GraphQL Project
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`# Create project
+                <SyntaxHighlighter
+                  language="graphql"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`# Create project
 mkdir graphql-api
 cd graphql-api
 npm init -y
@@ -54,8 +65,8 @@ npm install mongoose dotenv
 npm install --save-dev typescript @types/node
 
 # Initialize TypeScript
-npx tsc --init`}</code>
-                </pre>
+npx tsc --init`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
@@ -73,8 +84,17 @@ npx tsc --init`}</code>
                 Type Definitions
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`// src/schema/typeDefs.ts
+                <SyntaxHighlighter
+                  language="graphql"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`// src/schema/typeDefs.ts
 import { gql } from 'apollo-server-express';
 
 export const typeDefs = gql\`
@@ -132,8 +152,8 @@ export const typeDefs = gql\`
     postCreated: Post!
     postUpdated: Post!
   }
-\`;`}</code>
-                </pre>
+\`;`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
@@ -151,8 +171,17 @@ export const typeDefs = gql\`
                 Query Resolvers
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`// src/resolvers/resolvers.ts
+                <SyntaxHighlighter
+                  language="graphql"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`// src/resolvers/resolvers.ts
 import User from '../models/User';
 import Post from '../models/Post';
 import jwt from 'jsonwebtoken';
@@ -310,8 +339,8 @@ export const resolvers = {
       return await User.findById(parent.author);
     },
   },
-};`}</code>
-                </pre>
+};`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
@@ -329,8 +358,17 @@ export const resolvers = {
                 Server Configuration with Authentication
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`// src/server.ts
+                <SyntaxHighlighter
+                  language="graphql"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`// src/server.ts
 import { ApolloServer } from '@apollo/server';
 import { expressMiddleware } from '@apollo/server/express4';
 import express from 'express';
@@ -384,8 +422,8 @@ async function startServer() {
   });
 }
 
-startServer();`}</code>
-                </pre>
+startServer();`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
@@ -403,8 +441,17 @@ startServer();`}</code>
                 Example Queries
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`# Get all users
+                <SyntaxHighlighter
+                  language="graphql"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`# Get all users
 query GetUsers {
   users {
     id
@@ -460,8 +507,8 @@ query Me {
       title
     }
   }
-}`}</code>
-                </pre>
+}`}
+                </SyntaxHighlighter>
               </div>
             </div>
 
@@ -470,8 +517,17 @@ query Me {
                 Example Mutations
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`# Signup
+                <SyntaxHighlighter
+                  language="graphql"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`# Signup
 mutation Signup {
   signup(
     name: "John Doe"
@@ -536,8 +592,8 @@ mutation UpdatePost {
 # Delete post
 mutation DeletePost {
   deletePost(id: "POST_ID")
-}`}</code>
-                </pre>
+}`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
@@ -555,8 +611,17 @@ mutation DeletePost {
                 Pagination with Cursor-Based Approach
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`// Add to typeDefs
+                <SyntaxHighlighter
+                  language="graphql"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`// Add to typeDefs
 type PostConnection {
   edges: [PostEdge!]!
   pageInfo: PageInfo!
@@ -602,8 +667,8 @@ postsPaginated: async (_: any, { first = 10, after }: any) => {
       endCursor: edges[edges.length - 1]?.cursor
     }
   };
-}`}</code>
-                </pre>
+}`}
+                </SyntaxHighlighter>
               </div>
             </div>
 
@@ -612,8 +677,17 @@ postsPaginated: async (_: any, { first = 10, after }: any) => {
                 DataLoader for N+1 Problem
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`import DataLoader from 'dataloader';
+                <SyntaxHighlighter
+                  language="graphql"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`import DataLoader from 'dataloader';
 
 // Create DataLoader for batching
 const userLoader = new DataLoader(async (userIds: string[]) => {
@@ -630,8 +704,8 @@ Post: {
   author: async (parent: any, _: any, context: any) => {
     return context.loaders.userLoader.load(parent.author);
   }
-}`}</code>
-                </pre>
+}`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>

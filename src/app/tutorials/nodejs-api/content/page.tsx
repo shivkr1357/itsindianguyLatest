@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 export const metadata: Metadata = {
   title: "Node.js API Development Tutorial - Complete Guide | ItsIndianGuy",
@@ -44,8 +46,17 @@ export default function NodeJSAPIContentPage() {
                 Let&apos;s start by creating a new Node.js project with Express:
               </p>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`# Create project directory
+                <SyntaxHighlighter
+                  language="javascript"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`# Create project directory
 mkdir node-api-tutorial
 cd node-api-tutorial
 
@@ -57,8 +68,8 @@ npm install express mongoose dotenv cors helmet
 npm install --save-dev nodemon typescript @types/node @types/express
 
 # Initialize TypeScript
-npx tsc --init`}</code>
-                </pre>
+npx tsc --init`}
+                </SyntaxHighlighter>
               </div>
             </div>
 
@@ -67,8 +78,17 @@ npx tsc --init`}</code>
                 Project Structure
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`node-api-tutorial/
+                <SyntaxHighlighter
+                  language="javascript"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`node-api-tutorial/
 ├── src/
 │   ├── config/
 │   │   └── database.ts
@@ -85,8 +105,8 @@ npx tsc --init`}</code>
 ├── .env
 ├── .gitignore
 ├── package.json
-└── tsconfig.json`}</code>
-                </pre>
+└── tsconfig.json`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
@@ -104,8 +124,17 @@ npx tsc --init`}</code>
                 Basic Server Configuration
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`// src/server.ts
+                <SyntaxHighlighter
+                  language="javascript"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`// src/server.ts
 import express, { Application, Request, Response } from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
@@ -140,8 +169,8 @@ app.listen(PORT, () => {
   console.log(\`🚀 Server running on port \${PORT}\`);
 });
 
-export default app;`}</code>
-                </pre>
+export default app;`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
@@ -159,8 +188,17 @@ export default app;`}</code>
                 Database Connection
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`// src/config/database.ts
+                <SyntaxHighlighter
+                  language="javascript"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`// src/config/database.ts
 import mongoose from 'mongoose';
 
 const connectDB = async (): Promise<void> => {
@@ -185,8 +223,8 @@ const connectDB = async (): Promise<void> => {
   }
 };
 
-export default connectDB;`}</code>
-                </pre>
+export default connectDB;`}
+                </SyntaxHighlighter>
               </div>
             </div>
 
@@ -195,13 +233,22 @@ export default connectDB;`}</code>
                 Environment Variables
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`# .env
+                <SyntaxHighlighter
+                  language="javascript"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`# .env
 PORT=5000
 MONGODB_URI=mongodb://localhost:27017/nodeapi
 JWT_SECRET=your_jwt_secret_key_here
-NODE_ENV=development`}</code>
-                </pre>
+NODE_ENV=development`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
@@ -219,8 +266,17 @@ NODE_ENV=development`}</code>
                 User Model with Mongoose
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`// src/models/User.ts
+                <SyntaxHighlighter
+                  language="javascript"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`// src/models/User.ts
 import mongoose, { Document, Schema } from 'mongoose';
 import bcrypt from 'bcryptjs';
 
@@ -284,8 +340,8 @@ userSchema.methods.comparePassword = async function (
   return bcrypt.compare(candidatePassword, this.password);
 };
 
-export default mongoose.model<IUser>('User', userSchema);`}</code>
-                </pre>
+export default mongoose.model<IUser>('User', userSchema);`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
@@ -303,8 +359,17 @@ export default mongoose.model<IUser>('User', userSchema);`}</code>
                 User Controller with CRUD Operations
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`// src/controllers/userController.ts
+                <SyntaxHighlighter
+                  language="javascript"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`// src/controllers/userController.ts
 import { Request, Response } from 'express';
 import User from '../models/User';
 import jwt from 'jsonwebtoken';
@@ -508,8 +573,8 @@ export const deleteUser = async (req: Request, res: Response) => {
       error: error.message
     });
   }
-};`}</code>
-                </pre>
+};`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
@@ -527,8 +592,17 @@ export const deleteUser = async (req: Request, res: Response) => {
                 JWT Authentication Middleware
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`// src/middleware/auth.ts
+                <SyntaxHighlighter
+                  language="javascript"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`// src/middleware/auth.ts
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 
@@ -594,8 +668,8 @@ export const authorize = (...roles: string[]) => {
     
     next();
   };
-};`}</code>
-                </pre>
+};`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
@@ -613,8 +687,17 @@ export const authorize = (...roles: string[]) => {
                 User Routes Configuration
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`// src/routes/userRoutes.ts
+                <SyntaxHighlighter
+                  language="javascript"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`// src/routes/userRoutes.ts
 import express from 'express';
 import {
   register,
@@ -638,8 +721,8 @@ router.get('/:id', authenticate, getUserById);
 router.put('/:id', authenticate, updateUser);
 router.delete('/:id', authenticate, deleteUser);
 
-export default router;`}</code>
-                </pre>
+export default router;`}
+                </SyntaxHighlighter>
               </div>
             </div>
 
@@ -648,8 +731,17 @@ export default router;`}</code>
                 Register Routes in Server
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`// src/server.ts (add this)
+                <SyntaxHighlighter
+                  language="javascript"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`// src/server.ts (add this)
 import userRoutes from './routes/userRoutes';
 
 // ... existing middleware
@@ -657,8 +749,8 @@ import userRoutes from './routes/userRoutes';
 // API Routes
 app.use('/api/v1/users', userRoutes);
 
-// ... rest of server code`}</code>
-                </pre>
+// ... rest of server code`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
@@ -676,8 +768,17 @@ app.use('/api/v1/users', userRoutes);
                 Example API Requests
               </h3>
               <div className="bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
-                <pre className="text-green-400 font-mono text-sm">
-                  <code>{`# Register new user
+                <SyntaxHighlighter
+                  language="javascript"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: "0.875rem",
+                    background: "transparent",
+                  }}
+                >
+                  {`# Register new user
 curl -X POST http://localhost:5000/api/v1/users/register \\
   -H "Content-Type: application/json" \\
   -d '{
@@ -713,8 +814,8 @@ curl -X PUT http://localhost:5000/api/v1/users/USER_ID \\
 
 # Delete user
 curl -X DELETE http://localhost:5000/api/v1/users/USER_ID \\
-  -H "Authorization: Bearer YOUR_JWT_TOKEN"`}</code>
-                </pre>
+  -H "Authorization: Bearer YOUR_JWT_TOKEN"`}
+                </SyntaxHighlighter>
               </div>
             </div>
           </div>
