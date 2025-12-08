@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import RelatedArticles from "@/components/Blog/RelatedArticles";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 export const metadata: Metadata = {
   title:
@@ -219,11 +221,20 @@ export default function BuildingAIPoweredWebApplicationsBlogPost() {
                 <h3 className="text-xl font-semibold text-neutral-800 dark:text-neutral-100 mb-2">
                   Step 1: Create a Next.js Project
                 </h3>
-                <div className="bg-neutral-900 dark:bg-neutral-950 rounded-lg p-4 overflow-x-auto mb-3">
-                  <code className="text-green-400 text-sm">
+                <div className="rounded-lg overflow-hidden mb-3">
+                  <SyntaxHighlighter
+                    language="bash"
+                    style={vscDarkPlus}
+                    customStyle={{
+                      margin: 0,
+                      padding: "1rem",
+                      borderRadius: "0.5rem",
+                      fontSize: "0.875rem",
+                    }}
+                  >
                     {`npx create-next-app@latest ai-web-app --typescript --tailwind --app
 cd ai-web-app`}
-                  </code>
+                  </SyntaxHighlighter>
                 </div>
               </div>
 
@@ -231,11 +242,20 @@ cd ai-web-app`}
                 <h3 className="text-xl font-semibold text-neutral-800 dark:text-neutral-100 mb-2">
                   Step 2: Install Required Dependencies
                 </h3>
-                <div className="bg-neutral-900 dark:bg-neutral-950 rounded-lg p-4 overflow-x-auto mb-3">
-                  <code className="text-green-400 text-sm">
+                <div className="rounded-lg overflow-hidden mb-3">
+                  <SyntaxHighlighter
+                    language="bash"
+                    style={vscDarkPlus}
+                    customStyle={{
+                      margin: 0,
+                      padding: "1rem",
+                      borderRadius: "0.5rem",
+                      fontSize: "0.875rem",
+                    }}
+                  >
                     {`npm install openai
 npm install @types/node --save-dev`}
-                  </code>
+                  </SyntaxHighlighter>
                 </div>
               </div>
 
@@ -246,11 +266,20 @@ npm install @types/node --save-dev`}
                 <p className="mb-2">
                   Create a <code className="bg-neutral-200 dark:bg-neutral-700 px-2 py-1 rounded">.env.local</code> file in your project root:
                 </p>
-                <div className="bg-neutral-900 dark:bg-neutral-950 rounded-lg p-4 overflow-x-auto mb-3">
-                  <code className="text-green-400 text-sm">
+                <div className="rounded-lg overflow-hidden mb-3">
+                  <SyntaxHighlighter
+                    language="bash"
+                    style={vscDarkPlus}
+                    customStyle={{
+                      margin: 0,
+                      padding: "1rem",
+                      borderRadius: "0.5rem",
+                      fontSize: "0.875rem",
+                    }}
+                  >
                     {`OPENAI_API_KEY=your_api_key_here
 NEXT_PUBLIC_APP_URL=http://localhost:3000`}
-                  </code>
+                  </SyntaxHighlighter>
                 </div>
                 <p className="text-sm text-neutral-500 dark:text-neutral-400">
                   <strong>Important:</strong> Never commit your API keys to version control. Add <code className="bg-neutral-200 dark:bg-neutral-700 px-2 py-1 rounded">.env.local</code> to your <code className="bg-neutral-200 dark:bg-neutral-700 px-2 py-1 rounded">.gitignore</code> file.
@@ -284,8 +313,17 @@ NEXT_PUBLIC_APP_URL=http://localhost:3000`}
                 <p className="mb-2">
                   Create <code className="bg-neutral-200 dark:bg-neutral-700 px-2 py-1 rounded">app/api/generate/route.ts</code>:
                 </p>
-                <div className="bg-neutral-900 dark:bg-neutral-950 rounded-lg p-4 overflow-x-auto mb-3">
-                  <code className="text-green-400 text-sm">
+                <div className="rounded-lg overflow-hidden mb-3">
+                  <SyntaxHighlighter
+                    language="typescript"
+                    style={vscDarkPlus}
+                    customStyle={{
+                      margin: 0,
+                      padding: "1rem",
+                      borderRadius: "0.5rem",
+                      fontSize: "0.875rem",
+                    }}
+                  >
                     {`import { NextRequest, NextResponse } from 'next/server';
 import OpenAI from 'openai';
 
@@ -331,7 +369,7 @@ export async function POST(request: NextRequest) {
     );
   }
 }`}
-                  </code>
+                  </SyntaxHighlighter>
                 </div>
               </div>
 
@@ -342,8 +380,17 @@ export async function POST(request: NextRequest) {
                 <p className="mb-2">
                   Create <code className="bg-neutral-200 dark:bg-neutral-700 px-2 py-1 rounded">app/components/TextGenerator.tsx</code>:
                 </p>
-                <div className="bg-neutral-900 dark:bg-neutral-950 rounded-lg p-4 overflow-x-auto mb-3">
-                  <code className="text-green-400 text-sm">
+                <div className="rounded-lg overflow-hidden mb-3">
+                  <SyntaxHighlighter
+                    language="tsx"
+                    style={vscDarkPlus}
+                    customStyle={{
+                      margin: 0,
+                      padding: "1rem",
+                      borderRadius: "0.5rem",
+                      fontSize: "0.875rem",
+                    }}
+                  >
                     {`'use client';
 
 import { useState } from 'react';
@@ -406,7 +453,7 @@ export default function TextGenerator() {
     </div>
   );
 }`}
-                  </code>
+                  </SyntaxHighlighter>
                 </div>
               </div>
 
@@ -429,8 +476,17 @@ export default function TextGenerator() {
                 <h3 className="text-xl font-semibold text-neutral-800 dark:text-neutral-100 mb-2">
                   Enhanced API Route with Conversation History
                 </h3>
-                <div className="bg-neutral-900 dark:bg-neutral-950 rounded-lg p-4 overflow-x-auto mb-3">
-                  <code className="text-green-400 text-sm">
+                <div className="rounded-lg overflow-hidden mb-3">
+                  <SyntaxHighlighter
+                    language="typescript"
+                    style={vscDarkPlus}
+                    customStyle={{
+                      margin: 0,
+                      padding: "1rem",
+                      borderRadius: "0.5rem",
+                      fontSize: "0.875rem",
+                    }}
+                  >
                     {`import { NextRequest, NextResponse } from 'next/server';
 import OpenAI from 'openai';
 
@@ -473,7 +529,7 @@ export async function POST(request: NextRequest) {
     );
   }
 }`}
-                  </code>
+                  </SyntaxHighlighter>
                 </div>
               </div>
 
@@ -484,8 +540,17 @@ export async function POST(request: NextRequest) {
                 <p className="mb-2">
                   This component maintains conversation context:
                 </p>
-                <div className="bg-neutral-900 dark:bg-neutral-950 rounded-lg p-4 overflow-x-auto mb-3">
-                  <code className="text-green-400 text-sm">
+                <div className="rounded-lg overflow-hidden mb-3">
+                  <SyntaxHighlighter
+                    language="tsx"
+                    style={vscDarkPlus}
+                    customStyle={{
+                      margin: 0,
+                      padding: "1rem",
+                      borderRadius: "0.5rem",
+                      fontSize: "0.875rem",
+                    }}
+                  >
                     {`'use client';
 
 import { useState } from 'react';
@@ -559,7 +624,7 @@ export default function ChatBot() {
     </div>
   );
 }`}
-                  </code>
+                  </SyntaxHighlighter>
                 </div>
               </div>
             </div>
@@ -577,8 +642,17 @@ export default function ChatBot() {
                 <p className="mb-2">
                   Always implement proper error handling and rate limiting to prevent abuse and manage costs:
                 </p>
-                <div className="bg-neutral-900 dark:bg-neutral-950 rounded-lg p-4 overflow-x-auto mb-3">
-                  <code className="text-green-400 text-sm">
+                <div className="rounded-lg overflow-hidden mb-3">
+                  <SyntaxHighlighter
+                    language="typescript"
+                    style={vscDarkPlus}
+                    customStyle={{
+                      margin: 0,
+                      padding: "1rem",
+                      borderRadius: "0.5rem",
+                      fontSize: "0.875rem",
+                    }}
+                  >
                     {`// Rate limiting example
 import { NextRequest, NextResponse } from 'next/server';
 
@@ -612,7 +686,7 @@ export async function POST(request: NextRequest) {
 
   // Your AI API call here
 }`}
-                  </code>
+                  </SyntaxHighlighter>
                 </div>
               </div>
 
