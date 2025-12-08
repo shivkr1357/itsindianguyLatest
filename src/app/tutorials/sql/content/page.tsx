@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import CopyCodeButton from "@/components/Tutorials/CopyCodeButton";
 
 export const metadata: Metadata = {
@@ -74,38 +72,7 @@ ORDER BY created_at DESC;
 
 -- Select with limit
 SELECT * FROM users 
-LIMIT 10;`} />
-                <SyntaxHighlighter
-                  language="sql"
-                  style={vscDarkPlus}
-                  customStyle={{
-                    margin: 0,
-                    padding: 0,
-                    fontSize: "0.875rem",
-                    background: "transparent",
-                  }}
-                >
-                  {`-- Select all columns from a table
-SELECT * FROM users;
-
--- Select specific columns
-SELECT id, name, email FROM users;
-
--- Select with conditions
-SELECT * FROM users WHERE age > 18;
-
--- Select with multiple conditions
-SELECT * FROM users 
-WHERE age > 18 AND status = 'active';
-
--- Select with ordering
-SELECT * FROM users 
-ORDER BY created_at DESC;
-
--- Select with limit
-SELECT * FROM users 
-LIMIT 10;`}
-                </SyntaxHighlighter>
+LIMIT 10;`} language="sql" />
               </div>
             </div>
 
@@ -128,8 +95,7 @@ WHERE id = 1;
 
 -- Delete record
 DELETE FROM users 
-WHERE id = 1;`}
-                </SyntaxHighlighter>
+WHERE id = 1;`} language="sql" />
               </div>
             </div>
           </div>
@@ -151,8 +117,7 @@ WHERE id = 1;`}
               <div className="relative bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
                 <CopyCodeButton code={`SELECT users.name, orders.total
 FROM users
-INNER JOIN orders ON users.id = orders.user_id;`}
-                </SyntaxHighlighter>
+INNER JOIN orders ON users.id = orders.user_id;`} language="sql" />
               </div>
             </div>
 
@@ -166,8 +131,7 @@ INNER JOIN orders ON users.id = orders.user_id;`}
               <div className="relative bg-neutral-900 dark:bg-neutral-950 rounded-xl p-6 overflow-x-auto">
                 <CopyCodeButton code={`SELECT users.name, orders.total
 FROM users
-LEFT JOIN orders ON users.id = orders.user_id;`}
-                </SyntaxHighlighter>
+LEFT JOIN orders ON users.id = orders.user_id;`} language="sql" />
               </div>
             </div>
 
@@ -186,8 +150,7 @@ LEFT JOIN orders ON users.id = orders.user_id;`}
 FROM users
 INNER JOIN orders ON users.id = orders.user_id
 INNER JOIN order_items ON orders.id = order_items.order_id
-INNER JOIN products ON order_items.product_id = products.id;`}
-                </SyntaxHighlighter>
+INNER JOIN products ON order_items.product_id = products.id;`} language="sql" />
               </div>
             </div>
           </div>
@@ -215,8 +178,7 @@ WHERE id IN (
 
 -- Find users with above-average age
 SELECT * FROM users
-WHERE age > (SELECT AVG(age) FROM users);`}
-                </SyntaxHighlighter>
+WHERE age > (SELECT AVG(age) FROM users);`} language="sql" />
               </div>
             </div>
 
@@ -234,8 +196,7 @@ SELECT
   (SELECT MAX(created_at) 
    FROM orders o 
    WHERE o.user_id = u.id) AS last_order_date
-FROM users u;`}
-                </SyntaxHighlighter>
+FROM users u;`} language="sql" />
               </div>
             </div>
           </div>
@@ -274,8 +235,7 @@ SELECT
   COUNT(*) AS user_count
 FROM users
 GROUP BY city
-HAVING COUNT(*) > 10;`}
-                </SyntaxHighlighter>
+HAVING COUNT(*) > 10;`} language="sql" />
               </div>
             </div>
           </div>
@@ -302,8 +262,7 @@ CREATE INDEX idx_user_email ON users(email);
 CREATE INDEX idx_user_name_email ON users(name, email);
 
 -- Create unique index
-CREATE UNIQUE INDEX idx_user_email_unique ON users(email);`}
-                </SyntaxHighlighter>
+CREATE UNIQUE INDEX idx_user_email_unique ON users(email);`} language="sql" />
               </div>
             </div>
 
@@ -347,8 +306,7 @@ UPDATE accounts SET balance = balance + 100 WHERE id = 2;
 COMMIT;
 
 -- Or rollback on error
-ROLLBACK;`}
-                </SyntaxHighlighter>
+ROLLBACK;`} language="sql" />
               </div>
             </div>
 
