@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import StickyShareButton from "@/components/Blog/StickyShareButton";
 
 export const metadata: Metadata = {
   title: "React Native Expert Guide: Building Cross-Platform Mobile Apps | ItsIndianGuy",
@@ -56,6 +57,11 @@ export const metadata: Metadata = {
 export default function ReactNativeExpertGuideBlogPost() {
   return (
     <article className="min-h-screen bg-gradient-to-b from-neutral-50 to-neutral-100 dark:from-neutral-900 dark:to-neutral-800">
+      <StickyShareButton
+        title="React Native Expert Guide: Building Cross-Platform Mobile Apps"
+        url="/blog/react-native-expert-guide"
+        description="Master React Native development with expert tips, best practices, and advanced techniques for building high-performance mobile applications."
+      />
       <div className="container mx-auto px-4 py-16 max-w-4xl">
         {/* Back Button */}
         <Link

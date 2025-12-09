@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import StickyShareButton from "@/components/Blog/StickyShareButton";
 
 export const metadata: Metadata = {
   title: "TypeScript Best Practices - Essential Patterns | ItsIndianGuy",
@@ -56,6 +57,11 @@ export const metadata: Metadata = {
 export default function TypeScriptPracticesBlogPost() {
   return (
     <article className="min-h-screen bg-gradient-to-b from-neutral-50 to-neutral-100 dark:from-neutral-900 dark:to-neutral-800">
+      <StickyShareButton
+        title="TypeScript Best Practices"
+        url="/blog/typescript-practices"
+        description="Write better TypeScript code with these proven best practices and design patterns."
+      />
       <div className="container mx-auto px-4 py-16 max-w-4xl">
         <Link
           href="/blog"

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import RelatedArticles from "@/components/Blog/RelatedArticles";
+import StickyShareButton from "@/components/Blog/StickyShareButton";
+import StickyShareButton from "@/components/Blog/StickyShareButton";
 
 export const metadata: Metadata = {
   title: "Getting Started with Next.js 14 - Complete Guide | ItsIndianGuy",
@@ -57,6 +59,11 @@ export const metadata: Metadata = {
 export default function NextJS14BlogPost() {
   return (
     <article className="min-h-screen bg-gradient-to-b from-neutral-50 to-neutral-100 dark:from-neutral-900 dark:to-neutral-800">
+      <StickyShareButton
+        title="Getting Started with Next.js 14 - Complete Guide"
+        url="/blog/nextjs-14"
+        description="Learn how to build modern web applications with Next.js 14's latest features including App Router, Server Components, and improved performance."
+      />
       <div className="container mx-auto px-4 py-16 max-w-4xl">
         {/* Back Button */}
         <Link

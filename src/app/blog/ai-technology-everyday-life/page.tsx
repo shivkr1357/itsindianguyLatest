@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import StickyShareButton from "@/components/Blog/StickyShareButton";
 
 export const metadata: Metadata = {
   title: "Technology and AI: Transforming Our Everyday Lives | ItsIndianGuy",
@@ -56,6 +57,11 @@ export const metadata: Metadata = {
 export default function AITechnologyEverydayLifeBlogPost() {
   return (
     <article className="min-h-screen bg-gradient-to-b from-neutral-50 to-neutral-100 dark:from-neutral-900 dark:to-neutral-800">
+      <StickyShareButton
+        title="Technology and AI: Transforming Our Everyday Lives"
+        url="/blog/ai-technology-everyday-life"
+        description="Discover how artificial intelligence and modern technology are seamlessly integrated into our daily routines, making life easier, smarter, and more connected than ever before."
+      />
       <div className="container mx-auto px-4 py-16 max-w-4xl">
         {/* Back Button */}
         <Link

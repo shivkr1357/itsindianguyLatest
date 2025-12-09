@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import RelatedArticles from "@/components/Blog/RelatedArticles";
+import StickyShareButton from "@/components/Blog/StickyShareButton";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
@@ -63,6 +64,11 @@ export const metadata: Metadata = {
 export default function BuildingAIPoweredWebApplicationsBlogPost() {
   return (
     <article className="min-h-screen bg-gradient-to-b from-neutral-50 to-neutral-100 dark:from-neutral-900 dark:to-neutral-800">
+      <StickyShareButton
+        title="Building AI-Powered Web Applications: Complete Guide 2025"
+        url="/blog/building-ai-powered-web-applications-2025"
+        description="Learn how to build AI-powered web applications from scratch. Complete guide covering OpenAI API integration, AI features, best practices, and real-world examples for Next.js, React, and modern web development in 2025."
+      />
       <div className="container mx-auto px-4 py-16 max-w-4xl">
         {/* Back Button */}
         <Link

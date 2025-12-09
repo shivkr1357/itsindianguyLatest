@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import StickyShareButton from "@/components/Blog/StickyShareButton";
 
 export const metadata: Metadata = {
   title: "AI Agents and Autonomous Systems: The Future of Intelligent Automation in 2025 | ItsIndianGuy",
@@ -56,6 +57,11 @@ export const metadata: Metadata = {
 export default function AIAgentsAutonomousSystems2025BlogPost() {
   return (
     <article className="min-h-screen bg-gradient-to-b from-neutral-50 to-neutral-100 dark:from-neutral-900 dark:to-neutral-800">
+      <StickyShareButton
+        title="AI Agents and Autonomous Systems: The Future of Intelligent Automation in 2025"
+        url="/blog/ai-agents-autonomous-systems-2025"
+        description="Explore how AI agents and autonomous systems are revolutionizing industries in 2025, from autonomous vehicles to intelligent assistants and self-operating software agents."
+      />
       <div className="container mx-auto px-4 py-16 max-w-4xl">
         {/* Back Button */}
         <Link

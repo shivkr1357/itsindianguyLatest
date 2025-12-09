@@ -5,6 +5,7 @@ import Image from "next/image";
 import BlogPostContent from "@/components/Blog/BlogPostContent";
 import BlogAuthorSection from "@/components/Blog/BlogAuthorSection";
 import BlogShareSection from "@/components/Blog/BlogShareSection";
+import StickyShareButton from "@/components/Blog/StickyShareButton";
 import { getBlogPost } from "@/lib/blogContent";
 import AdUnit from "@/components/AdSense/AdUnit";
 
@@ -191,6 +192,11 @@ const BlogPost = ({ params }: Props) => {
 
   return (
     <Fragment>
+      <StickyShareButton
+        title={post.title}
+        url={`/blog/${slug}`}
+        description={post.description}
+      />
       {/* Structured Data */}
       <script
         type="application/ld+json"
