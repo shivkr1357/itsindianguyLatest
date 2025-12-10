@@ -59,25 +59,34 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <script
-          async
+        <Script
+          id="adsbygoogle-init"
+          strategy="afterInteractive"
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7213785205715000"
           crossOrigin="anonymous"
-        ></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (adsbygoogle = window.adsbygoogle || []).push({
-                google_ad_client: "ca-pub-7213785205715000",
-                enable_page_level_ads: true
-              });
-            `,
-          }}
         />
       </head>
       <body
         className={`${roboto.className} min-h-screen flex flex-col bg-neutral-50 dark:bg-neutral-900`}
       >
+        <Script
+          id="adsbygoogle-config"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                if (typeof window !== 'undefined' && !window.adsbygoogleInitialized) {
+                  window.adsbygoogle = window.adsbygoogle || [];
+                  window.adsbygoogle.push({
+                    google_ad_client: "ca-pub-7213785205715000",
+                    enable_page_level_ads: true
+                  });
+                  window.adsbygoogleInitialized = true;
+                }
+              })();
+            `,
+          }}
+        />
         {/* Google Tag Manager */}
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`
