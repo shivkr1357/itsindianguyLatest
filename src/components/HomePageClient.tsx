@@ -1,11 +1,13 @@
 "use client";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import InterviewCard from "@/components/InterviewCards/InterviewCard";
 import AboutCard from "@/components/LandingPage/AboutCard";
 import DevCards from "@/components/LandingPage/DevCards";
 import Layout from "@/components/Layout/Layout";
 import FeaturedBlogs from "@/components/LandingPage/FeaturedBlogs";
+import FeaturedHindiStories from "@/components/LandingPage/FeaturedHindiStories";
 import ProjectShowcase from "@/components/LandingPage/ProjectShowcase";
 import Testimonials from "@/components/LandingPage/Testimonials";
 import ContactSection from "@/components/LandingPage/ContactSection";
@@ -177,6 +179,55 @@ export default function HomePageClient() {
               </p>
             </div>
             <FeaturedBlogs />
+          </div>
+        </section>
+
+        {/* Featured Hindi Stories Section */}
+        <section className="relative bg-gradient-to-br from-orange-50/50 via-red-50/30 to-pink-50/20 dark:from-orange-950/10 dark:via-red-950/10 dark:to-pink-950/10 py-20 overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 via-red-500 to-pink-500" />
+          <div className="absolute top-20 right-10 w-72 h-72 bg-orange-500/5 rounded-full blur-3xl animate-pulse" />
+          <div
+            className="absolute bottom-20 left-10 w-80 h-80 bg-red-500/5 rounded-full blur-3xl animate-pulse"
+            style={{ animationDelay: "2s" }}
+          />
+          <div className="relative container mx-auto px-6 sm:px-8 lg:px-20 xl:px-32">
+            <div className="text-center mb-12">
+              <span className="inline-block px-4 py-1 bg-gradient-to-r from-orange-500/10 to-red-500/10 text-orange-600 dark:text-orange-400 rounded-full text-sm font-medium mb-4">
+                <span className="text-lg mr-2">🇮🇳</span>
+                हिंदी कहानियां
+              </span>
+              <h2 className="text-4xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-50 mb-4">
+                Featured{" "}
+                <span className="bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 bg-clip-text text-transparent font-[var(--font-hindi)]">
+                  हिंदी कहानियां
+                </span>
+              </h2>
+              <p className="text-lg md:text-xl text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto font-[var(--font-hindi)]">
+                Inspiring और motivational हिंदी कहानियां जो जीवन में सीख देती हैं
+              </p>
+              <div className="mt-6">
+                <Link
+                  href="/blog/hindi-stories"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white rounded-xl transition-all hover:scale-105 shadow-lg hover:shadow-xl font-medium font-[var(--font-hindi)]"
+                >
+                  <span>सभी हिंदी कहानियां देखें</span>
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 7l5 5m0 0l-5 5m5-5H6"
+                    />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+            <FeaturedHindiStories />
           </div>
         </section>
 

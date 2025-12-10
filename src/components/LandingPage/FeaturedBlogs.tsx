@@ -4,11 +4,20 @@ import Image from "next/image";
 
 const blogPosts = [
   {
+    title: "React 19 Features: Complete Guide to the Latest Updates",
+    excerpt:
+      "Explore React 19's groundbreaking features including Actions, Server Components, new hooks, and improved performance. Complete guide with examples and migration tips for React developers in 2025.",
+    image: "https://cdn-icons-png.flaticon.com/512/919/919825.png",
+    date: "Dec 9, 2025",
+    readTime: "20 min read",
+    link: "/blog/react-19-features-complete-guide-2025",
+  },
+  {
     title: "Building AI-Powered Web Applications: Complete Guide 2025",
     excerpt:
       "Learn how to build AI-powered web applications from scratch. Complete guide covering OpenAI API integration, AI features, best practices, and real-world examples for Next.js, React, and modern web development.",
     image: "https://cdn-icons-png.flaticon.com/512/2103/2103632.png",
-    date: "Dec 5, 2025",
+    date: "Dec 8, 2025",
     readTime: "22 min read",
     link: "/blog/building-ai-powered-web-applications-2025",
   },
@@ -31,60 +40,29 @@ const blogPosts = [
     link: "/blog/hot-tech-trends-2025",
   },
   {
+    title:
+      "How ChatGPT Actually Helps Developers: Real Stories and Practical Tips",
+    excerpt:
+      "Real experiences from developers using ChatGPT in their daily workflow. Learn practical tips and discover how AI assistants are changing the way we code.",
+    image: "https://cdn-icons-png.flaticon.com/512/2103/2103771.png",
+    date: "Dec 6, 2025",
+    readTime: "14 min read",
+    link: "/blog/chatgpt-helping-developers-real-experiences",
+  },
+  {
     title: "Technology and AI: Transforming Our Everyday Lives",
     excerpt:
-      "Discover how artificial intelligence and modern technology are seamlessly integrated into our daily routines, making life easier and smarter.",
-    image: "https://cdn-icons-png.flaticon.com/512/2103/2103832.png",
+      "Discover how artificial intelligence and modern technology are seamlessly integrated into our daily routines, making life easier, smarter, and more connected than ever before.",
+    image: "https://cdn-icons-png.flaticon.com/512/1995/1995515.png",
     date: "Nov 23, 2025",
     readTime: "12 min read",
     link: "/blog/ai-technology-everyday-life",
-  },
-  {
-    title: "Getting Started with Next.js 14",
-    excerpt:
-      "Learn how to build modern web applications with Next.js 14's latest features",
-    image: "https://cdn-icons-png.flaticon.com/512/919/919825.png",
-    date: "Dec 15, 2024",
-    readTime: "5 min read",
-    link: "/blog/nextjs-14",
-  },
-  {
-    title: "React Server Components Explained",
-    excerpt: "Deep dive into React Server Components and their benefits",
-    image: "https://cdn-icons-png.flaticon.com/512/1260/1260667.png",
-    date: "Dec 12, 2024",
-    readTime: "8 min read",
-    link: "/blog/server-components",
-  },
-  {
-    title: "TypeScript Best Practices",
-    excerpt: "Essential TypeScript patterns and practices for better code",
-    image: "https://cdn-icons-png.flaticon.com/512/919/919832.png",
-    date: "Dec 8, 2024",
-    readTime: "6 min read",
-    link: "/blog/typescript-practices",
-  },
-  {
-    title: "Modern CSS Techniques",
-    excerpt: "Exploring the latest CSS features and best practices",
-    image: "https://cdn-icons-png.flaticon.com/512/919/919826.png",
-    date: "Dec 5, 2024",
-    readTime: "7 min read",
-    link: "/blog/modern-css",
-  },
-  {
-    title: "Node.js Performance Tips",
-    excerpt: "Optimize your Node.js applications for better performance",
-    image: "https://cdn-icons-png.flaticon.com/512/919/919825.png",
-    date: "Dec 1, 2024",
-    readTime: "10 min read",
-    link: "/blog/nodejs-performance",
   },
 ];
 
 const FeaturedBlogs = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
       {blogPosts.map((post, index) => (
         <Link
           href={post.link}

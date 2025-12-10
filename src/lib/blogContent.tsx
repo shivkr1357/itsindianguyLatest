@@ -6,6 +6,7 @@ export interface BlogPost {
   readTime: string;
   image: string;
   slug: string;
+  category?: string; // Optional category field (e.g., "hindi-lifestyle", "tech", "programming")
 }
 
 export const blogPosts: { [key: string]: BlogPost } = {
@@ -230,6 +231,29 @@ export const blogPosts: { [key: string]: BlogPost } = {
     date: "2025-12-08",
     readTime: "22 min read",
     slug: "building-ai-powered-web-applications-2025",
+  },
+  "react-19-features-complete-guide-2025": {
+    title:
+      "React 19 Features: Complete Guide to the Latest Updates and Breaking Changes",
+    description:
+      "Explore React 19's groundbreaking features including Actions, Server Components, new hooks, and improved performance. Complete guide with examples and migration tips for React developers in 2025.",
+    image: "https://cdn-icons-png.flaticon.com/512/919/919825.png",
+    author: "Shiv Shankar Prasad",
+    date: "2025-12-09",
+    readTime: "20 min read",
+    slug: "react-19-features-complete-guide-2025",
+    category: "programming",
+  },
+  "hindi-story-first": {
+    title: "एक नई शुरुआत: सफलता की कहानी",
+    description:
+      "एक युवा की inspiring story जो अपने सपनों को पूरा करने के लिए संघर्ष करता है। जानो कैसे मेहनत और हिम्मत से कोई भी मंजिल हासिल की जा सकती है।",
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=600&fit=crop&q=80",
+    author: "Shiv Shankar Prasad",
+    date: "2025-12-09",
+    readTime: "10 min read",
+    slug: "hindi-story-first",
+    category: "hindi-stories",
   },
 };
 

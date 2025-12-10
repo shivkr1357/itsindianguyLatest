@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import Link from "next/link";
 import BlogListClient from "@/components/Blog/BlogListClient";
 import { Metadata } from "next";
 import { blogPosts, getAllBlogSlugs } from "@/lib/blogContent";
@@ -173,6 +174,15 @@ const Blog = () => {
                 articles to help you stay ahead in the world of software
                 development.
               </p>
+              <div className="mt-8 flex flex-wrap justify-center gap-4">
+                <Link
+                  href="/blog/hindi-stories"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white rounded-xl transition-all hover:scale-105 shadow-lg hover:shadow-xl font-medium font-[var(--font-hindi)]"
+                >
+                  <span className="text-xl">🇮🇳</span>
+                  <span>हिंदी कहानियां</span>
+                </Link>
+              </div>
             </div>
           </div>
         </section>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Roboto, Noto_Sans_Devanagari } from "next/font/google";
 import "./globals.css";
 import Topbar from "@/components/Topbar/Topbar";
 import Footer from "@/components/Footer/Footer";
@@ -11,6 +11,13 @@ const roboto = Roboto({
   weight: ["400", "500", "700"],
   subsets: ["latin"],
   display: "swap",
+});
+
+const notoSansDevanagari = Noto_Sans_Devanagari({
+  weight: ["400", "500", "600", "700"],
+  subsets: ["devanagari", "latin"],
+  display: "swap",
+  variable: "--font-hindi",
 });
 
 export const metadata: Metadata = {
@@ -67,7 +74,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${roboto.className} min-h-screen flex flex-col bg-neutral-50 dark:bg-neutral-900`}
+        className={`${roboto.className} ${notoSansDevanagari.variable} min-h-screen flex flex-col bg-neutral-50 dark:bg-neutral-900`}
       >
         <Script
           id="adsbygoogle-config"
@@ -78,9 +85,9 @@ export default function RootLayout({
                 if (typeof window !== 'undefined' && !window.adsbygoogleInitialized) {
                   window.adsbygoogle = window.adsbygoogle || [];
                   window.adsbygoogle.push({
-                    google_ad_client: "ca-pub-7213785205715000",
-                    enable_page_level_ads: true
-                  });
+                google_ad_client: "ca-pub-7213785205715000",
+                enable_page_level_ads: true
+              });
                   window.adsbygoogleInitialized = true;
                 }
               })();

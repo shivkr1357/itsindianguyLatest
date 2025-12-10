@@ -24,6 +24,8 @@ module.exports = {
 
     // Blog posts
     const blogSlugs = [
+      "hindi-story-first",
+      "react-19-features-complete-guide-2025",
       "building-ai-powered-web-applications-2025",
       "ai-assisted-development-2025",
       "chatgpt-helping-developers-real-experiences",
@@ -121,6 +123,7 @@ module.exports = {
           "/about",
           "/contact-us",
           "/blog",
+          "/blog/hindi-stories",
           "/tutorials",
           "/interview-qa",
           "/memes",
