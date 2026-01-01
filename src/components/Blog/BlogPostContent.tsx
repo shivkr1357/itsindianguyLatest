@@ -126,6 +126,8 @@ const BlogPostContent = ({ slug }: BlogPostContentProps) => {
         return <MongoDBContent />;
       case "nextjs-15-features":
         return <NextJS15Content />;
+      case "nextjs-15-whats-new-upgrade-guide":
+        return <NextJS15Content />;
       default:
         return <NextJSContent />; // Default fallback
     }

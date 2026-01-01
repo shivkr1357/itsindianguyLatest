@@ -125,6 +125,23 @@ const Topbar = () => {
               >
                 Memes
               </Link>
+              {user && (
+                <Link
+                  href="/social/dashboard"
+                  onClick={(e) => handleLinkClick(e, "/social/dashboard")}
+                  className={`px-4 py-2 rounded-lg font-medium transition-all hover:scale-105 pointer-events-auto ${
+                    pathname.startsWith("/social")
+                      ? customTheme === "dark"
+                        ? "bg-primary-200/20 text-white"
+                        : "bg-primary-200/10 text-primary-200"
+                      : customTheme === "dark"
+                      ? "text-neutral-300 hover:text-white hover:bg-neutral-800"
+                      : "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100"
+                  }`}
+                >
+                  Social Media
+                </Link>
+              )}
               <Link
                 href="/about"
                 onClick={(e) => handleLinkClick(e, "/about")}
@@ -334,21 +351,38 @@ const Topbar = () => {
             >
               Tutorials
             </Link>
-            <Link
-              href="/memes"
-              onClick={() => setDrawerOpen(false)}
-              className={`block px-4 py-3 rounded-xl font-medium transition-all hover:scale-105 ${
-                pathname === "/memes"
-                  ? customTheme === "dark"
-                    ? "bg-primary-200/20 text-white"
-                    : "bg-primary-200/10 text-primary-200"
-                  : customTheme === "dark"
-                  ? "text-neutral-300 hover:text-white hover:bg-neutral-800"
-                  : "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100"
-              }`}
-            >
-              Memes
-            </Link>
+              <Link
+                href="/memes"
+                onClick={() => setDrawerOpen(false)}
+                className={`block px-4 py-3 rounded-xl font-medium transition-all hover:scale-105 ${
+                  pathname === "/memes"
+                    ? customTheme === "dark"
+                      ? "bg-primary-200/20 text-white"
+                      : "bg-primary-200/10 text-primary-200"
+                    : customTheme === "dark"
+                    ? "text-neutral-300 hover:text-white hover:bg-neutral-800"
+                    : "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100"
+                }`}
+              >
+                Memes
+              </Link>
+              {user && (
+                <Link
+                  href="/social/dashboard"
+                  onClick={() => setDrawerOpen(false)}
+                  className={`block px-4 py-3 rounded-xl font-medium transition-all hover:scale-105 ${
+                    pathname.startsWith("/social")
+                      ? customTheme === "dark"
+                        ? "bg-primary-200/20 text-white"
+                        : "bg-primary-200/10 text-primary-200"
+                      : customTheme === "dark"
+                      ? "text-neutral-300 hover:text-white hover:bg-neutral-800"
+                      : "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100"
+                  }`}
+                >
+                  Social Media
+                </Link>
+              )}
             <Link
               href="/about"
               onClick={() => setDrawerOpen(false)}

@@ -244,6 +244,17 @@ export const blogPosts: { [key: string]: BlogPost } = {
     slug: "react-19-features-complete-guide-2025",
     category: "programming",
   },
+  "nextjs-15-whats-new-upgrade-guide": {
+    title: "Next.js 15: What's New and How to Upgrade",
+    description:
+      "Dive into Next.js 15's latest features including improved Server Components, enhanced caching strategies, and new developer experience improvements. Learn how to upgrade your existing Next.js applications.",
+    image: "https://cdn-icons-png.flaticon.com/512/919/919825.png",
+    author: "Shiv Shankar Prasad",
+    date: "2025-12-10",
+    readTime: "18 min read",
+    slug: "nextjs-15-whats-new-upgrade-guide",
+    category: "programming",
+  },
   "hindi-story-first": {
     title: "एक नई शुरुआत: सफलता की कहानी",
     description:
@@ -253,6 +264,17 @@ export const blogPosts: { [key: string]: BlogPost } = {
     date: "2025-12-09",
     readTime: "10 min read",
     slug: "hindi-story-first",
+    category: "hindi-stories",
+  },
+  "hindi-story-second": {
+    title: "विश्वास और साहस: एक जीत की कहानी",
+    description:
+      "एक लड़की की कहानी जो समाज की बाधाओं को पार करके अपने सपने को सच करती है। जानो कैसे आत्मविश्वास और दृढ़ संकल्प से हर मुश्किल को हराया जा सकता है।",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop&q=80",
+    author: "Shiv Shankar Prasad",
+    date: "2025-12-15",
+    readTime: "12 min read",
+    slug: "hindi-story-second",
     category: "hindi-stories",
   },
 };

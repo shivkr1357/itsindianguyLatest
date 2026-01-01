@@ -4,6 +4,15 @@ import Image from "next/image";
 
 const blogPosts = [
   {
+    title: "Next.js 15: What's New and How to Upgrade",
+    excerpt:
+      "Dive into Next.js 15's latest features including improved Server Components, enhanced caching strategies, and new developer experience improvements. Learn how to upgrade your existing Next.js applications.",
+    image: "https://cdn-icons-png.flaticon.com/512/919/919825.png",
+    date: "Dec 10, 2025",
+    readTime: "18 min read",
+    link: "/blog/nextjs-15-whats-new-upgrade-guide",
+  },
+  {
     title: "React 19 Features: Complete Guide to the Latest Updates",
     excerpt:
       "Explore React 19's groundbreaking features including Actions, Server Components, new hooks, and improved performance. Complete guide with examples and migration tips for React developers in 2025.",
