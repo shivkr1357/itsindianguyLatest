@@ -244,6 +244,17 @@ export const blogPosts: { [key: string]: BlogPost } = {
     slug: "react-19-features-complete-guide-2025",
     category: "programming",
   },
+  "nextjs-15-whats-new-upgrade-guide": {
+    title: "Next.js 15: What's New and How to Upgrade",
+    description:
+      "Dive into Next.js 15's latest features including improved Server Components, enhanced caching strategies, and new developer experience improvements. Learn how to upgrade your existing Next.js applications.",
+    image: "https://cdn-icons-png.flaticon.com/512/919/919825.png",
+    author: "Shiv Shankar Prasad",
+    date: "2025-12-10",
+    readTime: "18 min read",
+    slug: "nextjs-15-whats-new-upgrade-guide",
+    category: "programming",
+  },
   "hindi-story-first": {
     title: "एक नई शुरुआत: सफलता की कहानी",
     description:
