@@ -13,7 +13,7 @@ const Footer = () => {
       <div className="absolute bottom-20 right-10 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl" />
       
       <div className="relative container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12 text-center md:text-left">
           {/* Brand Column */}
           <div className="space-y-6">
             <Link href="/" className="inline-flex items-center gap-2 group">
@@ -30,7 +30,7 @@ const Footer = () => {
             <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">
               Empowering developers with comprehensive tutorials, cutting-edge insights, and interview preparation resources.
             </p>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center justify-center md:justify-start gap-2">
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
               <span className="text-sm text-neutral-600 dark:text-neutral-400">Active & Growing Community</span>
             </div>
@@ -38,7 +38,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-bold mb-6 text-neutral-800 dark:text-white flex items-center gap-2">
+            <h3 className="text-lg font-bold mb-6 text-neutral-800 dark:text-white flex items-center justify-center md:justify-start gap-2">
               <div className="w-1 h-6 bg-gradient-to-b from-primary-200 to-blue-500 rounded-full" />
               Quick Links
             </h3>
@@ -103,7 +103,7 @@ const Footer = () => {
 
           {/* Resources */}
           <div>
-            <h3 className="text-lg font-bold mb-6 text-neutral-800 dark:text-white flex items-center gap-2">
+            <h3 className="text-lg font-bold mb-6 text-neutral-800 dark:text-white flex items-center justify-center md:justify-start gap-2">
               <div className="w-1 h-6 bg-gradient-to-b from-blue-500 to-purple-500 rounded-full" />
               Resources
             </h3>
@@ -168,7 +168,7 @@ const Footer = () => {
 
           {/* Newsletter & Social */}
           <div>
-            <h3 className="text-lg font-bold mb-6 text-neutral-800 dark:text-white flex items-center gap-2">
+            <h3 className="text-lg font-bold mb-6 text-neutral-800 dark:text-white flex items-center justify-center md:justify-start gap-2">
               <div className="w-1 h-6 bg-gradient-to-b from-purple-500 to-pink-500 rounded-full" />
               Stay Connected
             </h3>
@@ -192,7 +192,7 @@ const Footer = () => {
             {/* Social Links */}
             <div>
               <p className="text-neutral-600 dark:text-neutral-400 text-sm mb-3">Follow us on social media</p>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap justify-center md:justify-start gap-3">
                 {socialIcons.map((social, index) => (
                   <a
                     key={index}

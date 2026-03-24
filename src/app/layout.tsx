@@ -3,6 +3,7 @@ import { Roboto, Noto_Sans_Devanagari } from "next/font/google";
 import "./globals.css";
 import Topbar from "@/components/Topbar/Topbar";
 import Footer from "@/components/Footer/Footer";
+import BuyMeAChaiButton from "@/components/Common/BuyMeAChaiButton";
 import ThemeProvider from "@/context/ThemeContext";
 import { AuthProvider } from "@/context/AuthContext";
 import Script from "next/script";
@@ -120,6 +121,7 @@ export default function RootLayout({
             <Topbar />
             <main className="flex-grow pt-16">{children}</main>
             <Footer />
+            <BuyMeAChaiButton />
           </AuthProvider>
         </ThemeProvider>
       </body>
