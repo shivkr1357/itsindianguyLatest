@@ -25,6 +25,8 @@ module.exports = {
     // Blog posts
     const blogSlugs = [
       "hindi-story-first",
+      "hindi-story-discipline-success",
+      "hindi-story-mothers-belief",
       "react-19-features-complete-guide-2025",
       "building-ai-powered-web-applications-2025",
       "ai-assisted-development-2025",
@@ -47,6 +49,7 @@ module.exports = {
       "web-security",
       "mongodb-mastery",
       "nextjs-15-features",
+      "nextjs-15-whats-new-upgrade-guide",
       "react-native-expert-guide",
     ];
 
@@ -93,6 +96,23 @@ module.exports = {
       "typescript",
       "next",
       "nest",
+      "vue",
+      "angular",
+      "java",
+      "golang",
+      "aws",
+      "docker",
+      "kubernetes",
+      "git",
+      "redis",
+      "cpp-lang",
+      "csharp",
+      "express",
+      "mongodb",
+      "postgresql",
+      "graphql",
+      "flutter",
+      "react-native",
     ];
 
     interviewSlugs.forEach((slug) => {
