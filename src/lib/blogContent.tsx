@@ -266,6 +266,28 @@ export const blogPosts: { [key: string]: BlogPost } = {
     slug: "hindi-story-first",
     category: "hindi-stories",
   },
+  "hindi-story-discipline-success": {
+    title: "अनुशासन की ताकत: छोटा कदम, बड़ी जीत",
+    description:
+      "यह कहानी है एक छात्र की जिसने रोज़ थोड़ा-थोड़ा अनुशासन अपनाकर अपनी जिंदगी बदल दी। जानिए कैसे consistency से बड़े सपने पूरे होते हैं।",
+    image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&h=600&fit=crop&q=80",
+    author: "Shiv Shankar Prasad",
+    date: "2026-03-24",
+    readTime: "9 min read",
+    slug: "hindi-story-discipline-success",
+    category: "hindi-stories",
+  },
+  "hindi-story-mothers-belief": {
+    title: "मां का विश्वास: हार से जीत तक",
+    description:
+      "एक बेटे की कहानी जो लगातार असफलताओं के बाद भी मां के भरोसे से फिर खड़ा हुआ और अपनी मंजिल तक पहुंचा।",
+    image: "https://images.unsplash.com/photo-1478145046317-39f10e56b5e9?w=800&h=600&fit=crop&q=80",
+    author: "Shiv Shankar Prasad",
+    date: "2026-03-24",
+    readTime: "11 min read",
+    slug: "hindi-story-mothers-belief",
+    category: "hindi-stories",
+  },
 };
 
 export function getBlogPost(slug: string): BlogPost | null {
