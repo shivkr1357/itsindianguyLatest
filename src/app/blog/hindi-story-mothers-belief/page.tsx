@@ -101,7 +101,7 @@ export default function HindiStoryMothersBelief() {
               विवेक ने कई नौकरी इंटरव्यू दिए, लेकिन हर बार रिजेक्शन मिला। धीरे-धीरे उसने खुद पर शक करना शुरू कर दिया।
             </p>
             <p className="text-neutral-600 dark:text-neutral-300 font-[var(--font-hindi)]">
-              उसे लगता था कि अब शायद उससे नहीं होगा। तभी उसकी मां ने कहा - "हार मानना तुम्हारा स्वभाव नहीं है।"
+              उसे लगता था कि अब शायद उससे नहीं होगा। तभी उसकी मां ने कहा - &quot;हार मानना तुम्हारा स्वभाव नहीं है।&quot;
             </p>
           </div>
 
@@ -110,7 +110,7 @@ export default function HindiStoryMothersBelief() {
               मां की सीख
             </h2>
             <p className="text-neutral-600 dark:text-neutral-300 mb-4 font-[var(--font-hindi)]">
-              मां ने विवेक को रोज़ एक घंटा skill improve करने और एक mock interview देने का नियम दिया। उन्होंने कहा, "रिजेक्शन तुम्हारी पहचान नहीं, तुम्हारी तैयारी का संकेत है।"
+              मां ने विवेक को रोज़ एक घंटा skill improve करने और एक mock interview देने का नियम दिया। उन्होंने कहा, &quot;रिजेक्शन तुम्हारी पहचान नहीं, तुम्हारी तैयारी का संकेत है।&quot;
             </p>
             <div className="bg-orange-50 dark:bg-orange-900/20 border-l-4 border-orange-500 p-4 rounded-r-lg">
               <p className="text-orange-900 dark:text-orange-100 font-[var(--font-hindi)]">
@@ -127,7 +127,7 @@ export default function HindiStoryMothersBelief() {
               दो महीनों की लगातार तैयारी के बाद विवेक ने फिर इंटरव्यू दिया। इस बार वह घबराया नहीं, क्योंकि वह सच में तैयार था।
             </p>
             <p className="text-neutral-600 dark:text-neutral-300 font-[var(--font-hindi)]">
-              उसे नौकरी मिल गई। उसने सबसे पहले अपनी मां को फोन किया और कहा - "आपका भरोसा ही मेरी सबसे बड़ी ताकत था।"
+              उसे नौकरी मिल गई। उसने सबसे पहले अपनी मां को फोन किया और कहा - &quot;आपका भरोसा ही मेरी सबसे बड़ी ताकत था।&quot;
             </p>
           </div>
         </div>
