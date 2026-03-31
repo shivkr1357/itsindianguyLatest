@@ -255,6 +255,72 @@ export const blogPosts: { [key: string]: BlogPost } = {
     slug: "nextjs-15-whats-new-upgrade-guide",
     category: "programming",
   },
+  "chatgpt-vs-gemini-vs-claude-2026": {
+    title: "ChatGPT vs Gemini vs Claude in 2026: Which AI Is Best for You?",
+    description:
+      "A practical comparison of ChatGPT, Gemini, and Claude for coding, research, writing, and daily productivity in 2026.",
+    image: "https://cdn-icons-png.flaticon.com/512/2103/2103771.png",
+    author: "Shiv Shankar Prasad",
+    date: "2026-03-24",
+    readTime: "14 min read",
+    slug: "chatgpt-vs-gemini-vs-claude-2026",
+    category: "programming",
+  },
+  "google-ai-tools-productivity-guide-2026": {
+    title: "Google AI Tools in 2026: Complete Productivity Guide",
+    description:
+      "Explore the most useful Google AI tools and how to use them for faster work, better writing, smarter search, and automation.",
+    image: "https://cdn-icons-png.flaticon.com/512/2991/2991148.png",
+    author: "Shiv Shankar Prasad",
+    date: "2026-03-24",
+    readTime: "12 min read",
+    slug: "google-ai-tools-productivity-guide-2026",
+    category: "programming",
+  },
+  "best-ai-video-tools-2026": {
+    title: "Best AI Video Generation Tools in 2026",
+    description:
+      "Hands-on guide to top AI video tools for creators and developers, with feature comparison, pricing, and best use cases.",
+    image: "https://cdn-icons-png.flaticon.com/512/3649/3649587.png",
+    author: "Shiv Shankar Prasad",
+    date: "2026-03-24",
+    readTime: "13 min read",
+    slug: "best-ai-video-tools-2026",
+    category: "programming",
+  },
+  "microsoft-ai-strategy-mustafa-suleyman": {
+    title: "Microsoft AI Strategy and Mustafa Suleyman: What It Means for Developers",
+    description:
+      "A breakdown of Microsoft's AI direction under Mustafa Suleyman and the impact on AI products, copilots, and developer workflows.",
+    image: "https://cdn-icons-png.flaticon.com/512/732/732221.png",
+    author: "Shiv Shankar Prasad",
+    date: "2026-03-24",
+    readTime: "11 min read",
+    slug: "microsoft-ai-strategy-mustafa-suleyman",
+    category: "programming",
+  },
+  "uncensored-ai-open-source-github-guide": {
+    title: "Uncensored AI on GitHub: Open-Source Models, Risks, and Safe Usage",
+    description:
+      "Understand uncensored AI repos on GitHub, how they work, legal/safety concerns, and best practices for responsible experimentation.",
+    image: "https://cdn-icons-png.flaticon.com/512/733/733553.png",
+    author: "Shiv Shankar Prasad",
+    date: "2026-03-24",
+    readTime: "15 min read",
+    slug: "uncensored-ai-open-source-github-guide",
+    category: "programming",
+  },
+  "gemini-ai-complete-guide-2026": {
+    title: "Gemini AI Complete Guide 2026: Features, Use Cases, and Pro Tips",
+    description:
+      "Everything you need to know about Gemini AI in 2026 with practical prompts, workflows, and real productivity use cases.",
+    image: "https://cdn-icons-png.flaticon.com/512/3523/3523063.png",
+    author: "Shiv Shankar Prasad",
+    date: "2026-03-24",
+    readTime: "12 min read",
+    slug: "gemini-ai-complete-guide-2026",
+    category: "programming",
+  },
   "hindi-story-first": {
     title: "एक नई शुरुआत: सफलता की कहानी",
     description:

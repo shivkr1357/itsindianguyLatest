@@ -110,6 +110,21 @@ const Topbar = () => {
               >
                 Tutorials
               </Link>
+              {/* <Link
+                href="/study-materials"
+                onClick={(e) => handleLinkClick(e, "/study-materials")}
+                className={`px-4 py-2 rounded-lg font-medium transition-all hover:scale-105 pointer-events-auto ${
+                  pathname === "/study-materials"
+                    ? customTheme === "dark"
+                      ? "bg-primary-200/20 text-white"
+                      : "bg-primary-200/10 text-primary-200"
+                    : customTheme === "dark"
+                    ? "text-neutral-300 hover:text-white hover:bg-neutral-800"
+                    : "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100"
+                }`}
+              >
+                Study Materials
+              </Link> */}
               <Link
                 href="/memes"
                 onClick={(e) => handleLinkClick(e, "/memes")}
@@ -333,6 +348,21 @@ const Topbar = () => {
               }`}
             >
               Tutorials
+            </Link>
+            <Link
+              href="/study-materials"
+              onClick={() => setDrawerOpen(false)}
+              className={`block px-4 py-3 rounded-xl font-medium transition-all hover:scale-105 ${
+                pathname === "/study-materials"
+                  ? customTheme === "dark"
+                    ? "bg-primary-200/20 text-white"
+                    : "bg-primary-200/10 text-primary-200"
+                  : customTheme === "dark"
+                  ? "text-neutral-300 hover:text-white hover:bg-neutral-800"
+                  : "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100"
+              }`}
+            >
+              Study Materials
             </Link>
             <Link
               href="/memes"

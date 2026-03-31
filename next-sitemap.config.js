@@ -51,6 +51,12 @@ module.exports = {
       "nextjs-15-features",
       "nextjs-15-whats-new-upgrade-guide",
       "react-native-expert-guide",
+      "chatgpt-vs-gemini-vs-claude-2026",
+      "google-ai-tools-productivity-guide-2026",
+      "best-ai-video-tools-2026",
+      "microsoft-ai-strategy-mustafa-suleyman",
+      "uncensored-ai-open-source-github-guide",
+      "gemini-ai-complete-guide-2026",
     ];
 
     blogSlugs.forEach((slug) => {
