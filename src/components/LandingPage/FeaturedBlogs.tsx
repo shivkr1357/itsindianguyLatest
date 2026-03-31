@@ -4,59 +4,58 @@ import Image from "next/image";
 
 const blogPosts = [
   {
-    title: "React 19 Features: Complete Guide to the Latest Updates",
+    title: "ChatGPT vs Gemini vs Claude in 2026: Which AI Is Best for You?",
     excerpt:
-      "Explore React 19's groundbreaking features including Actions, Server Components, new hooks, and improved performance. Complete guide with examples and migration tips for React developers in 2025.",
-    image: "https://cdn-icons-png.flaticon.com/512/919/919825.png",
-    date: "Dec 9, 2025",
-    readTime: "20 min read",
-    link: "/blog/react-19-features-complete-guide-2025",
-  },
-  {
-    title: "Building AI-Powered Web Applications: Complete Guide 2025",
-    excerpt:
-      "Learn how to build AI-powered web applications from scratch. Complete guide covering OpenAI API integration, AI features, best practices, and real-world examples for Next.js, React, and modern web development.",
-    image: "https://cdn-icons-png.flaticon.com/512/2103/2103632.png",
-    date: "Dec 8, 2025",
-    readTime: "22 min read",
-    link: "/blog/building-ai-powered-web-applications-2025",
-  },
-  {
-    title: "AI-Assisted Development: Revolutionizing Coding in 2025",
-    excerpt:
-      "Discover how AI-powered coding assistants like GitHub Copilot, ChatGPT, and Gemini are transforming software development, boosting productivity, and reshaping the future of programming.",
+      "A practical comparison of ChatGPT, Gemini, and Claude for coding, research, writing, and daily productivity in 2026.",
     image: "https://cdn-icons-png.flaticon.com/512/2103/2103771.png",
-    date: "Dec 5, 2025",
-    readTime: "16 min read",
-    link: "/blog/ai-assisted-development-2025",
-  },
-  {
-    title: "Hot Tech Trends 2025: What Every Developer Should Know",
-    excerpt:
-      "Discover the hottest technology trends shaping 2025 - from AI breakthroughs to quantum computing, Web3 innovations, and the future of software development.",
-    image: "https://cdn-icons-png.flaticon.com/512/2103/2103832.png",
-    date: "Nov 27, 2025",
-    readTime: "15 min read",
-    link: "/blog/hot-tech-trends-2025",
-  },
-  {
-    title:
-      "How ChatGPT Actually Helps Developers: Real Stories and Practical Tips",
-    excerpt:
-      "Real experiences from developers using ChatGPT in their daily workflow. Learn practical tips and discover how AI assistants are changing the way we code.",
-    image: "https://cdn-icons-png.flaticon.com/512/2103/2103771.png",
-    date: "Dec 6, 2025",
+    date: "Mar 24, 2026",
     readTime: "14 min read",
-    link: "/blog/chatgpt-helping-developers-real-experiences",
+    link: "/blog/chatgpt-vs-gemini-vs-claude-2026",
   },
   {
-    title: "Technology and AI: Transforming Our Everyday Lives",
+    title: "Google AI Tools in 2026: Complete Productivity Guide",
     excerpt:
-      "Discover how artificial intelligence and modern technology are seamlessly integrated into our daily routines, making life easier, smarter, and more connected than ever before.",
-    image: "https://cdn-icons-png.flaticon.com/512/1995/1995515.png",
-    date: "Nov 23, 2025",
+      "Explore the most useful Google AI tools and how to use them for faster work, better writing, smarter search, and automation.",
+    image: "https://cdn-icons-png.flaticon.com/512/2991/2991148.png",
+    date: "Mar 24, 2026",
     readTime: "12 min read",
-    link: "/blog/ai-technology-everyday-life",
+    link: "/blog/google-ai-tools-productivity-guide-2026",
+  },
+  {
+    title: "Best AI Video Generation Tools in 2026",
+    excerpt:
+      "Hands-on guide to top AI video tools for creators and developers, with feature comparison, pricing, and best use cases.",
+    image: "https://cdn-icons-png.flaticon.com/512/3649/3649587.png",
+    date: "Mar 24, 2026",
+    readTime: "13 min read",
+    link: "/blog/best-ai-video-tools-2026",
+  },
+  {
+    title: "Microsoft AI Strategy and Mustafa Suleyman: What It Means for Developers",
+    excerpt:
+      "A breakdown of Microsoft's AI direction under Mustafa Suleyman and the impact on AI products, copilots, and developer workflows.",
+    image: "https://cdn-icons-png.flaticon.com/512/732/732221.png",
+    date: "Mar 24, 2026",
+    readTime: "11 min read",
+    link: "/blog/microsoft-ai-strategy-mustafa-suleyman",
+  },
+  {
+    title: "Uncensored AI on GitHub: Open-Source Models, Risks, and Safe Usage",
+    excerpt:
+      "Understand uncensored AI repos on GitHub, how they work, legal/safety concerns, and best practices for responsible experimentation.",
+    image: "https://cdn-icons-png.flaticon.com/512/733/733553.png",
+    date: "Mar 24, 2026",
+    readTime: "15 min read",
+    link: "/blog/uncensored-ai-open-source-github-guide",
+  },
+  {
+    title: "Gemini AI Complete Guide 2026: Features, Use Cases, and Pro Tips",
+    excerpt:
+      "Everything you need to know about Gemini AI in 2026 with practical prompts, workflows, and real productivity use cases.",
+    image: "https://cdn-icons-png.flaticon.com/512/3523/3523063.png",
+    date: "Mar 24, 2026",
+    readTime: "12 min read",
+    link: "/blog/gemini-ai-complete-guide-2026",
   },
 ];
 

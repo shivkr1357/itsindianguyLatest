@@ -4,6 +4,7 @@ Allow: /
 Allow: /about
 Allow: /contact-us
 Allow: /blog
+Allow: /blog/hindi-stories
 Allow: /tutorials
 Allow: /interview-qa
 Allow: /memes

@@ -1,6 +1,18 @@
 "use client";
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
+import {
+  AiHumanizerFreeToolsContent,
+  BestAiHumanizerToolsContent,
+  BestAiPodcastToolsContent,
+  BestAiVideoToolsContent,
+  ChatgptVsGeminiVsClaudeContent,
+  GeminiAiGuideContent,
+  GoogleAiToolsProductivityContent,
+  MicrosoftAiStrategyContent,
+  StealthWriterReviewContent,
+  UncensoredAiGithubContent,
+} from "./content/AITrendingTopicContents";
 
 // Dynamic imports for better code splitting
 const NextJSContent = dynamic(() => import("./content/NextJSContent"), {
@@ -66,7 +78,6 @@ const MongoDBContent = dynamic(() => import("./content/MongoDBContent"), {
 const NextJS15Content = dynamic(() => import("./content/NextJS15Content"), {
   loading: () => <ContentSkeleton />,
 });
-
 // Loading skeleton
 function ContentSkeleton() {
   return (
@@ -128,6 +139,26 @@ const BlogPostContent = ({ slug }: BlogPostContentProps) => {
         return <NextJS15Content />;
       case "nextjs-15-whats-new-upgrade-guide":
         return <NextJS15Content />;
+      case "chatgpt-vs-gemini-vs-claude-2026":
+        return <ChatgptVsGeminiVsClaudeContent />;
+      case "google-ai-tools-productivity-guide-2026":
+        return <GoogleAiToolsProductivityContent />;
+      case "best-ai-video-tools-2026":
+        return <BestAiVideoToolsContent />;
+      case "microsoft-ai-strategy-mustafa-suleyman":
+        return <MicrosoftAiStrategyContent />;
+      case "uncensored-ai-open-source-github-guide":
+        return <UncensoredAiGithubContent />;
+      case "gemini-ai-complete-guide-2026":
+        return <GeminiAiGuideContent />;
+      case "ai-humanizer-free-tools-2026":
+        return <AiHumanizerFreeToolsContent />;
+      case "stealth-writer-ai-review-2026":
+        return <StealthWriterReviewContent />;
+      case "best-ai-podcast-tools-2026":
+        return <BestAiPodcastToolsContent />;
+      case "best-ai-humanizer-tools-2026":
+        return <BestAiHumanizerToolsContent />;
       default:
         return <NextJSContent />; // Default fallback
     }

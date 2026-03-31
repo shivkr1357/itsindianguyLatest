@@ -57,6 +57,10 @@ module.exports = {
       "microsoft-ai-strategy-mustafa-suleyman",
       "uncensored-ai-open-source-github-guide",
       "gemini-ai-complete-guide-2026",
+      "ai-humanizer-free-tools-2026",
+      "stealth-writer-ai-review-2026",
+      "best-ai-podcast-tools-2026",
+      "best-ai-humanizer-tools-2026",
     ];
 
     blogSlugs.forEach((slug) => {
