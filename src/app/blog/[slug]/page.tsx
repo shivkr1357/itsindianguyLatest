@@ -353,7 +353,12 @@ export default async function BlogPost({ params }: Props) {
               </div>
 
               {/* Share Section */}
-              <BlogShareSection title={post.title} slug={slug} />
+              <BlogShareSection
+                title={post.title}
+                slug={slug}
+                description={post.description}
+                readTime={post.readTime}
+              />
 
               {/* Newsletter CTA */}
               <div className="p-8 md:p-12 bg-gradient-to-r from-green-500 to-teal-500 rounded-3xl shadow-2xl text-white text-center">

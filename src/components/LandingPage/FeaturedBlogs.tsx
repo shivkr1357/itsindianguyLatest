@@ -1,8 +1,21 @@
-import React from "react";
+"use client";
+
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-const blogPosts = [
+type CmsPost = {
+  _id: string;
+  slug: string;
+  title: string;
+  description: string;
+  image: string;
+  readTime?: string;
+  publishedAt?: string;
+  updatedAt?: string;
+};
+
+const fallbackPosts = [
   {
     title: "ChatGPT vs Gemini vs Claude in 2026: Which AI Is Best for You?",
     excerpt:
@@ -30,42 +43,53 @@ const blogPosts = [
     readTime: "13 min read",
     link: "/blog/best-ai-video-tools-2026",
   },
-  {
-    title: "Microsoft AI Strategy and Mustafa Suleyman: What It Means for Developers",
-    excerpt:
-      "A breakdown of Microsoft's AI direction under Mustafa Suleyman and the impact on AI products, copilots, and developer workflows.",
-    image: "https://cdn-icons-png.flaticon.com/512/732/732221.png",
-    date: "Mar 24, 2026",
-    readTime: "11 min read",
-    link: "/blog/microsoft-ai-strategy-mustafa-suleyman",
-  },
-  {
-    title: "Uncensored AI on GitHub: Open-Source Models, Risks, and Safe Usage",
-    excerpt:
-      "Understand uncensored AI repos on GitHub, how they work, legal/safety concerns, and best practices for responsible experimentation.",
-    image: "https://cdn-icons-png.flaticon.com/512/733/733553.png",
-    date: "Mar 24, 2026",
-    readTime: "15 min read",
-    link: "/blog/uncensored-ai-open-source-github-guide",
-  },
-  {
-    title: "Gemini AI Complete Guide 2026: Features, Use Cases, and Pro Tips",
-    excerpt:
-      "Everything you need to know about Gemini AI in 2026 with practical prompts, workflows, and real productivity use cases.",
-    image: "https://cdn-icons-png.flaticon.com/512/3523/3523063.png",
-    date: "Mar 24, 2026",
-    readTime: "12 min read",
-    link: "/blog/gemini-ai-complete-guide-2026",
-  },
 ];
 
-const FeaturedBlogs = () => {
+function formatDate(iso?: string) {
+  if (!iso) return "";
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return "";
+  return d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+}
+
+export default function FeaturedBlogs() {
+  const [posts, setPosts] = useState<CmsPost[]>([]);
+
+  useEffect(() => {
+    void (async () => {
+      try {
+        const res = await fetch("/api/blog-cms?status=published&featured=1&limit=6", {
+          cache: "no-store",
+        });
+        if (!res.ok) return;
+        const json = (await res.json()) as { data?: CmsPost[] };
+        if (Array.isArray(json.data)) setPosts(json.data);
+      } catch {
+        // fallback remains visible
+      }
+    })();
+  }, []);
+
+  const cards = useMemo(() => {
+    if (posts.length > 0) {
+      return posts.map((p) => ({
+        title: p.title,
+        excerpt: p.description,
+        image: p.image,
+        date: formatDate(p.publishedAt || p.updatedAt) || "Recent",
+        readTime: p.readTime || "8 min read",
+        link: `/blog/${p.slug}`,
+      }));
+    }
+    return fallbackPosts;
+  }, [posts]);
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-      {blogPosts.map((post, index) => (
+      {cards.map((post, index) => (
         <Link
           href={post.link}
-          key={index}
+          key={`${post.link}-${index}`}
           className="group h-full flex flex-col bg-neutral-50 dark:bg-neutral-800 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all"
         >
           <div className="relative h-48 bg-white dark:bg-neutral-700">
@@ -93,6 +117,4 @@ const FeaturedBlogs = () => {
       ))}
     </div>
   );
-};
-
-export default FeaturedBlogs;
+}

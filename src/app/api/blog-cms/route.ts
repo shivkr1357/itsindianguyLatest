@@ -20,6 +20,7 @@ export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const status = searchParams.get("status") || "published";
   const category = searchParams.get("category");
+  const featured = searchParams.get("featured");
   const limit = searchParams.get("limit") || "200";
 
   if (status === "all" || status === "draft") {
@@ -32,6 +33,7 @@ export async function GET(request: NextRequest) {
   url.searchParams.set("status", status);
   url.searchParams.set("limit", limit);
   if (category) url.searchParams.set("category", category);
+  if (featured) url.searchParams.set("featured", featured);
 
   const res = await fetch(url.toString(), { cache: "no-store" });
   const data = await res.json().catch(() => ({}));

@@ -171,7 +171,12 @@ export default function CmsBlogPost({
                 <AdUnit adSlot="1234567891" adFormat="auto" />
               </div>
 
-              <BlogShareSection title={post.title} slug={slug} />
+              <BlogShareSection
+                title={post.title}
+                slug={slug}
+                description={post.description}
+                readTime={post.readTime}
+              />
             </div>
           </div>
         </section>
