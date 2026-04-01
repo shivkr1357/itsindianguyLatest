@@ -10,6 +10,8 @@ interface BlogPost {
   date: string;
   readTime: string;
   slug: string;
+  imageUnoptimized?: boolean;
+  featured?: boolean;
 }
 
 interface BlogListProps {
@@ -29,6 +31,8 @@ const BlogList = ({ posts }: BlogListProps) => {
             date={post.date}
             readTime={post.readTime}
             slug={post.slug}
+            imageUnoptimized={post.imageUnoptimized}
+            featured={post.featured}
           />
         </div>
       ))}

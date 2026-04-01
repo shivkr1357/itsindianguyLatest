@@ -3,6 +3,7 @@ import Link from "next/link";
 import BlogListClient from "@/components/Blog/BlogListClient";
 import { Metadata } from "next";
 import { blogPosts, getAllBlogSlugs } from "@/lib/blogContent";
+import { fetchPublishedCmsPosts } from "@/lib/blogCms";
 
 export const metadata: Metadata = {
   title: `ItsIndianGuy Blog - Next.js 15, React, TypeScript & Full-Stack Development Tutorials`,
@@ -57,24 +58,69 @@ export const metadata: Metadata = {
 
 // Get all blog posts from blogContent.tsx and convert to array format
 // Sort by date (newest first)
-const getAllBlogPosts = () => {
+const getStaticBlogPosts = () => {
   const slugs = getAllBlogSlugs();
   return slugs
     .map((slug, index) => ({
-      id: index.toString(),
+      id: `static-${index}`,
       ...blogPosts[slug],
+      imageUnoptimized: false as boolean,
+      featured: false,
     }))
     .sort((a, b) => {
-      // Sort by date descending (newest first)
       const dateA = new Date(a.date).getTime();
       const dateB = new Date(b.date).getTime();
       return dateB - dateA;
     });
 };
 
-const samplePosts = getAllBlogPosts();
+async function getMergedBlogPosts() {
+  const staticPosts = getStaticBlogPosts();
+  const cmsPosts: Array<{
+    id: string;
+    title: string;
+    description: string;
+    image: string;
+    author: string;
+    date: string;
+    readTime: string;
+    slug: string;
+    imageUnoptimized: boolean;
+    featured?: boolean;
+  }> = [];
+  try {
+    const cms = await fetchPublishedCmsPosts();
+    cms.forEach((p) => {
+      cmsPosts.push({
+      id: `cms-${p._id}`,
+      title: p.title,
+      description: p.description,
+      image: p.image,
+      author: p.author,
+      date: p.publishedAt
+        ? new Date(p.publishedAt).toISOString().slice(0, 10)
+        : new Date().toISOString().slice(0, 10),
+      readTime: p.readTime,
+      slug: p.slug,
+      imageUnoptimized: true,
+      featured: p.featured === true,
+    });
+    });
+  } catch {
+    /* CMS optional */
+  }
+  return [...cmsPosts, ...staticPosts].sort((a, b) => {
+    const fa = a.featured ? 1 : 0;
+    const fb = b.featured ? 1 : 0;
+    if (fb !== fa) return fb - fa;
+    const dateA = new Date(a.date).getTime();
+    const dateB = new Date(b.date).getTime();
+    return dateB - dateA;
+  });
+}
 
-const Blog = () => {
+const Blog = async () => {
+  const samplePosts = await getMergedBlogPosts();
   // Schema.org structured data for blog listing
   const structuredData = {
     "@context": "https://schema.org",

@@ -17,6 +17,10 @@ interface BlogCardProps {
   date: string;
   readTime: string;
   slug: string;
+  /** Use for CMS images from arbitrary CDNs */
+  imageUnoptimized?: boolean;
+  /** CMS: featured post */
+  featured?: boolean;
 }
 
 const BlogCard = ({
@@ -27,6 +31,8 @@ const BlogCard = ({
   date,
   readTime,
   slug,
+  imageUnoptimized,
+  featured,
 }: BlogCardProps) => {
   const [isLoading, setIsLoading] = useState(false);
 
@@ -69,12 +75,18 @@ const BlogCard = ({
       )}
 
       <div className="relative h-56 w-full overflow-hidden">
+        {featured && (
+          <span className="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-500 text-white shadow-md">
+            Featured
+          </span>
+        )}
         <Image
           src={image}
           alt={title}
           fill
           className="object-cover transition-transform duration-300 group-hover:scale-110"
           priority={false}
+          unoptimized={!!imageUnoptimized}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         <div className="absolute bottom-4 right-4 px-3 py-1 bg-gradient-to-r from-green-500 to-teal-500 text-white text-xs font-semibold rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">

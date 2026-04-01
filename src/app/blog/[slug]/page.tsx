@@ -1,12 +1,15 @@
-import type { Metadata, ResolvingMetadata } from "next";
+import type { Metadata } from "next";
 import React, { Fragment } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 import BlogPostContent from "@/components/Blog/BlogPostContent";
 import BlogAuthorSection from "@/components/Blog/BlogAuthorSection";
 import BlogShareSection from "@/components/Blog/BlogShareSection";
 import StickyShareButton from "@/components/Blog/StickyShareButton";
+import CmsBlogPost from "@/components/Blog/CmsBlogPost";
 import { getBlogPost } from "@/lib/blogContent";
+import { fetchCmsPostBySlug } from "@/lib/blogCms";
 import AdUnit from "@/components/AdSense/AdUnit";
 
 type Props = {
@@ -14,26 +17,66 @@ type Props = {
   searchParams: { [key: string]: string | string[] | undefined };
 };
 
-export async function generateMetadata(
-  { params }: Props,
-  parent: ResolvingMetadata
-): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const slug = params.slug;
 
-  // Fetch blog post data
-  const post = getBlogPost(slug) || {
-    title: "Blog Post",
-    description:
-      "Read our latest blog post on programming and web development.",
-    author: "ItsIndianGuy",
-    date: "2024-01-15",
-    readTime: "8 min read",
-    image: "https://www.itsindianguy.in/og-blog.jpg",
-    slug: slug,
-  };
+  const cms = await fetchCmsPostBySlug(slug);
+  if (cms) {
+    const title = cms.metaTitle || cms.title;
+    const canonical = cms.canonicalUrl || `https://www.itsindianguy.in/blog/${slug}`;
+    const keywords =
+      cms.keywords?.length && cms.keywords.length > 0
+        ? cms.keywords.join(", ")
+        : `${title}, ItsIndianGuy, ${cms.category}`;
+    const published = cms.publishedAt || cms.updatedAt || "";
+    return {
+      title: `${title} | ItsIndianGuy`,
+      description: cms.description,
+      keywords,
+      authors: [{ name: cms.author, url: "https://www.itsindianguy.in/about" }],
+      creator: cms.author,
+      publisher: "ItsIndianGuy",
+      alternates: { canonical },
+      robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          "max-video-preview": -1,
+          "max-image-preview": "large",
+          "max-snippet": -1,
+        },
+      },
+      openGraph: {
+        title: `${title} | ItsIndianGuy`,
+        description: cms.description,
+        url: canonical,
+        siteName: "ItsIndianGuy - Programming Tutorials & Tech Blog",
+        locale: "en_IN",
+        type: "article",
+        publishedTime: published,
+        authors: [cms.author],
+        images: [{ url: cms.image, width: 1200, height: 630, alt: title }],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title,
+        description: cms.description,
+        creator: "@itsindianguy",
+        site: "@itsindianguy",
+        images: [cms.image],
+      },
+    };
+  }
+
+  const post = getBlogPost(slug);
+  if (!post) {
+    return { title: "Not found | ItsIndianGuy" };
+  }
 
   // Enhanced keywords for better SEO
-  const keywords = `${post.title}, ItsIndianGuy blog, ${slug.replace(/-/g, ' ')}, programming tutorial, web development guide, coding tutorial by ItsIndianGuy, ${post.author} tutorial, learn programming India`;
+  const keywords = `${post.title}, ItsIndianGuy blog, ${slug.replace(/-/g, " ")}, programming tutorial, web development guide, coding tutorial by ItsIndianGuy, ${post.author} tutorial, learn programming India`;
 
   return {
     title: `${post.title} | ItsIndianGuy Blog - ${post.readTime}`,
@@ -85,19 +128,18 @@ export async function generateMetadata(
   };
 }
 
-const BlogPost = ({ params }: Props) => {
+export default async function BlogPost({ params }: Props) {
   const { slug } = params;
 
-  // Fetch blog post data based on slug
-  const post = getBlogPost(slug) || {
-    title: "Blog Post Not Found",
-    description: "The requested blog post could not be found.",
-    author: "ItsIndianGuy",
-    date: "2024-01-15",
-    readTime: "5 min read",
-    image: "https://cdn-icons-png.flaticon.com/512/6062/6062646.png",
-    slug: slug,
-  };
+  const cms = await fetchCmsPostBySlug(slug);
+  if (cms) {
+    return <CmsBlogPost post={cms} slug={slug} />;
+  }
+
+  const post = getBlogPost(slug);
+  if (!post) {
+    notFound();
+  }
 
   // Calculate word count for article schema (approximate)
   const wordCount = Math.ceil(parseInt(post.readTime) * 200);
@@ -351,6 +393,4 @@ const BlogPost = ({ params }: Props) => {
       </main>
     </Fragment>
   );
-};
-
-export default BlogPost;
+}

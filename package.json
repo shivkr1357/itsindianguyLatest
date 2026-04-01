@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "postinstall": "node scripts/copy-tinymce.js",
     "build": "next build",
     "postbuild": "next-sitemap",
     "start": "next start",
@@ -29,7 +30,10 @@
     "react-intersection-observer": "^9.10.3",
     "react-syntax-highlighter": "^16.1.0",
     "resend": "^6.5.2",
-    "tailwind-merge": "^2.6.0"
+    "tailwind-merge": "^2.6.0",
+    "@tanstack/react-table": "^8.20.5",
+    "@tinymce/tinymce-react": "^5.1.1",
+    "tinymce": "^7.6.0"
   },
   "devDependencies": {
     "@types/node": "^20",

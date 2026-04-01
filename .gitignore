@@ -16,6 +16,9 @@
 # production
 /build
 
+# TinyMCE (copied from node_modules on postinstall)
+/public/tinymce
+
 # misc
 .DS_Store
 *.pem

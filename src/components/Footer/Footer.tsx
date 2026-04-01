@@ -67,6 +67,17 @@ const Footer = () => {
               </li>
               <li>
                 <Link
+                  href="/admin"
+                  className="text-neutral-600 dark:text-neutral-400 hover:text-primary-200 transition-all hover:translate-x-1 inline-flex items-center gap-2 group text-sm"
+                >
+                  <svg className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                  Blog admin
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/tutorials"
                   className="text-neutral-600 dark:text-neutral-400 hover:text-primary-200 transition-all hover:translate-x-1 inline-flex items-center gap-2 group"
                 >
