@@ -1,7 +1,8 @@
 import { MetadataRoute } from "next";
 import { getAllBlogSlugs } from "@/lib/blogContent";
+import { fetchPublishedCmsPosts } from "@/lib/blogCms";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://www.itsindianguy.in";
 
   // Static routes
@@ -152,11 +153,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // Dynamic blog routes
-  const blogSlugs = getAllBlogSlugs();
-  const blogRoutes = blogSlugs.map((slug) => ({
+  // Dynamic blog routes: static (blogContent) + MongoDB CMS posts, deduped by slug
+  const staticBlogSlugs = getAllBlogSlugs();
+  const cmsPosts = await fetchPublishedCmsPosts();
+  const blogBySlug = new Map<string, Date>();
+  for (const slug of staticBlogSlugs) {
+    blogBySlug.set(slug, new Date());
+  }
+  for (const post of cmsPosts) {
+    const slug = post.slug?.trim();
+    if (!slug) continue;
+    const raw = post.updatedAt || post.publishedAt || post.createdAt;
+    const lastMod = raw ? new Date(raw) : new Date();
+    blogBySlug.set(slug, lastMod);
+  }
+  const blogRoutes = Array.from(blogBySlug.entries()).map(([slug, lastModified]) => ({
     url: `${baseUrl}/blog/${slug}`,
-    lastModified: new Date(),
+    lastModified,
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
